@@ -1,0 +1,138 @@
+/* UserProfileCard.css */
+.user-profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e8ed;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.profile-basic-info {
+  flex: 1;
+}
+
+.profile-name {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.profile-gender {
+  font-size: 14px;
+  color: #7f8c8d;
+  text-transform: capitalize;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-top: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.bmi-value {
+  font-weight: 700;
+}
+
+.profile-category {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.bmi-category {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 6px;
+}
+
+.user-profile-card:hover .profile-actions {
+  color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-profile-card {
+    padding: 15px;
+  }
+  
+  .profile-name {
+    font-size: 16px;
+  }
+  
+  .profile-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

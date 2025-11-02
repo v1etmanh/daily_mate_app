@@ -1,0 +1,303 @@
+/* TodoCard.css */
+
+.todo-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; /* Bo tròn các góc */
+    padding: 25px;
+    margin: 20px auto; /* Căn giữa và có khoảng cách */
+    max-width: 600px; /* Giới hạn chiều rộng */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ nhàng */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font chữ dễ đọc */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các phần */
+}
+
+/* Header */
+.todo-card-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.todo-description {
+    font-size: 1.8rem; /* Kích thước chữ lớn cho mô tả */
+    font-weight: 700; /* In đậm */
+    color: #2c3e50; /* Màu tối hơn */
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.todo-time-info {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.todo-time-icon {
+    color: #3498db; /* Màu xanh nước biển */
+    margin-right: 8px;
+}
+
+.todo-time-start {
+    font-weight: 600;
+}
+
+.todo-time-relative {
+    font-style: italic;
+    margin-left: 5px;
+    color: #888;
+}
+
+/* Main Info */
+.todo-main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start; /* Để icon căn trên cùng nếu text dài */
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.info-row .icon {
+    color: #7f8c8d; /* Màu xám đậm cho icon */
+    margin-right: 10px;
+    flex-shrink: 0; /* Ngăn icon bị co lại */
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px; /* Điều chỉnh vị trí icon */
+}
+
+.info-label {
+    font-weight: 600;
+    margin-right: 5px;
+    min-width: 130px; /* Đảm bảo căn chỉnh đều các nhãn */
+}
+
+.info-value {
+    flex: 1; /* Cho phép giá trị chiếm phần còn lại */
+}
+
+.todo-user-name {
+    color: #2980b9; /* Màu xanh nổi bật cho tên người dùng */
+    font-weight: 700;
+}
+
+/* AI Insights Section */
+.todo-ai-insights {
+    background-color: #f8f9fa; /* Nền nhẹ nhàng cho phần AI */
+    border-top: 1px dashed #e0e0e0; /* Đường phân cách mảnh */
+    padding-top: 20px;
+    margin-top: 15px;
+}
+
+.todo-ai-insights h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.ai-insight-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    gap: 10px; /* Khoảng cách giữa icon và text */
+    word-break: break-word; /* Đảm bảo từ dài không tràn ra ngoài */
+}
+
+.ai-insight-item .icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+    top: 2px;
+}
+
+/* Màu sắc cho từng loại đánh giá */
+.ai-insight-item.evaluation {
+    background-color: #e6f7ff; /* Xanh nhạt */
+    color: #2980b9; /* Xanh đậm */
+    border: 1px solid #a7d9f7;
+}
+.ai-insight-item.evaluation .icon-evaluation {
+    color: #3498db;
+}
+
+.ai-insight-item.warning {
+    background-color: #fff0e6; /* Cam nhạt */
+    color: #d35400; /* Cam đậm */
+    border: 1px solid #f7c393;
+}
+.ai-insight-item.warning .icon-warning {
+    color: #e67e22;
+}
+
+.ai-insight-item.traffic-check {
+    background-color: #e6ffe6; /* Xanh lá nhạt */
+    color: #27ae60; /* Xanh lá đậm */
+    border: 1px solid #99e099;
+}
+.ai-insight-item.traffic-check .icon-traffic {
+    color: #2ecc71;
+}
+
+/* --- Trạng thái rỗng --- */
+.todo-card-empty {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .todo-card {
+        margin: 15px;
+        padding: 20px;
+    }
+    .todo-description {
+        font-size: 1.5rem;
+    }
+    .info-label {
+        min-width: 100px; /* Điều chỉnh lại min-width cho màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-card {
+        padding: 15px;
+    }
+    .todo-description {
+        font-size: 1.3rem;
+    }
+    .info-row {
+        flex-direction: column; /* Đưa nhãn lên trên giá trị */
+        align-items: flex-start;
+        gap: 2px;
+    }
+    .info-row .icon {
+        margin-bottom: 5px; /* Khoảng cách với label */
+    }
+    .info-label {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+    .info-value {
+        font-size: 1rem;
+    }
+}
+/* Existing styles... */
+
+.todo-card-extend-section {
+    margin-top: 12px;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}
+
+.todo-card-extend-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: #495057;
+}
+
+.todo-card-extend-button:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.todo-card-extend-button:active {
+    transform: translateY(1px);
+}
+
+.todo-card-meta {
+    margin-top: 12px;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-card-evaluation,
+.todo-card-warning,
+.todo-card-traffic {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.todo-card-evaluation {
+    background: #e3f2fd;
+    color: #1976d2;
+    border-left: 4px solid #2196f3;
+}
+
+.todo-card-warning {
+    background: #fff3e0;
+    color: #f57c00;
+    border-left: 4px solid #ff9800;
+}
+
+.todo-card-traffic {
+    background: #f1f8e9;
+    color: #388e3c;
+    border-left: 4px solid #4caf50;
+}
+
+.todo-card-evaluation span,
+.todo-card-warning span,
+.todo-card-traffic span {
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .todo-card-extend-button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    
+    .todo-card-evaluation,
+    .todo-card-warning,
+    .todo-card-traffic {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
