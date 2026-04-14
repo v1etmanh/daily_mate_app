@@ -426,7 +426,7 @@ def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season) -
         nation_sql, nation_params = "", {}
 
     sql = f"""
-        SELECT d.id, d.title, d.nation, d.cook_time_minutes, d.cooking_method_id,
+        SELECT d.id, d.title, d.nation, d.cook_time_minutes, d.cooking_method_id,d.image_url,d.url,
                d.is_vegan, d.is_vegetarian, d.allergen_summary,
                d.taste_profile, d.season_suitability, d.total_weight_g,
                d.adj_hydration_score,   d.dish_hydration_score,
@@ -441,7 +441,7 @@ def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season) -
     """
     rows = db.execute(sql, nation_params).fetchall()
     cols = [
-        "id","title","nation","cook_time_minutes","cooking_method_id",
+        "id","title","nation","cook_time_minutes","cooking_method_id","image_url","url",
         "is_vegan","is_vegetarian","allergen_summary","taste_profile",
         "season_suitability","total_weight_g",
         "adj_hydration_score","dish_hydration_score",
@@ -611,6 +611,8 @@ def rank_and_explain(scores, dish_pool, boosts, demand, profile, top_k=10):
             "rank":            rank,
             "dish_id":         did,
             "title":           dish.get("title", ""),
+            "image_url":       dish.get("image_url", ""),
+            "url":             dish.get("url", ""),
             "nation":          dish.get("nation", ""),
             "final_score":     scores[did],
             "score_breakdown": {
@@ -919,7 +921,7 @@ def dish_detail(dish_id):
         except Exception:
             pass
     ingr = db.execute("""
-        SELECT i.id, i.name, i.name_en, i.category, di.quantity_g, di.is_main
+        SELECT i.id, i.name, i.name_en, i.category, di.quantity_g, di.is_main,di.image_url,di.url
         FROM dish_ingredient di JOIN ingredients i ON di.ingredient_id = i.id
         WHERE di.recipe_id = ?
         ORDER BY di.is_main DESC, di.quantity_g DESC

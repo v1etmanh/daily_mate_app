@@ -5,7 +5,8 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Modal,
+  Modal,Linking ,
+  Image,
   Slider
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -152,6 +153,22 @@ const DishDetailScreen = ({ route, navigation }) => {
             {dish.serving_suggestion || "Ăn nóng để phát huy tác dụng giữ ấm và tăng cường hương vị."}
           </Text>
         </View>
+       {dish.image_url ? (
+  <View style={styles.imageContainer}>
+    <Image
+      source={{ uri: dish.image_url }}
+      style={styles.dishImage}
+      resizeMode="contain"
+      onError={(e) => console.log('Image error:', e.nativeEvent.error)}
+    />
+  </View>
+) : null}
+ <View style={styles.section}>
+          <Text style={styles.sectionTitle}>CÁCH NẤU</Text>
+          <Text style={styles.servingSuggestion} onPress={() => Linking.openURL(dish.url || "https://www.google.com")}>
+            {dish.url || "Ăn nóng để phát huy tác dụng giữ ấm và tăng cường hương vị."}
+          </Text>
+        </View>
 
         <View style={styles.feedbackSection}>
           <Text style={styles.feedbackQuestion}>Bạn có muốn ăn món này không?</Text>
@@ -208,6 +225,7 @@ const DishDetailScreen = ({ route, navigation }) => {
                 </TouchableOpacity>
               ))}
             </View>
+            
             
             <View style={styles.modalButtons}>
               <TouchableOpacity 
@@ -287,6 +305,24 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 2,
   },
+  imageContainer: {
+    backgroundColor: 'white',
+    padding: 8,
+    borderRadius: 8,
+    marginBottom: 12,
+    elevation: 1,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    overflow: 'hidden',
+  },
+  dishImage: {
+  width: '100%',
+  height: 220,
+  borderRadius: 8,
+  resizeMode: 'contain',
+},
   sectionTitle: {
     fontSize: 16,
     fontWeight: 'bold',
