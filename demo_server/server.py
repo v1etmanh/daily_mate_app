@@ -552,7 +552,6 @@ def compute_dish_boost(recipe_id, selected_set, boost_strategy, db) -> float:
     if boost_strategy == "strict":
         return round(coverage, 4) if coverage >= 0.5 else 0.0
     return round(coverage, 4)
-
 def score_dish(dish, demand, soft_mult, taste_weight, trad_compat,
                dish_avail, ingredient_boost) -> float:
     DIMS = [
@@ -562,7 +561,17 @@ def score_dish(dish, demand, soft_mult, taste_weight, trad_compat,
         ("warming_food_need",     "adj_warming_score",     "dish_warming_score"),
         ("cooling_food_need",     "adj_cooling_score",     "dish_cooling_score"),
     ]
-    raw_score = sum(demand.get(d,0) * _dv(dish,a,r) * soft_mult for d,a,r in DIMS)
+
+    # FIX 1: chuẩn hoá raw_score — chia cho tổng demand thay vì để là tổng thô
+    demand_sum = sum(demand.get(d, 0) for d, _, _ in DIMS)
+    if demand_sum > 0:
+        raw_score = sum(
+            demand.get(d, 0) * _dv(dish, a, r) * soft_mult
+            for d, a, r in DIMS
+        ) / demand_sum          # → luôn trong [0, 1]
+    else:
+        raw_score = 0.0
+
     season = _get_current_season()
     try:
         sm = json.loads(dish.get("season_suitability") or "{}")
@@ -570,14 +579,23 @@ def score_dish(dish, demand, soft_mult, taste_weight, trad_compat,
     except Exception:
         season_s = 0.6
 
-    taste_b   = compute_taste_bonus(dish, taste_weight)
-    loc_bonus = trad_compat * season_s * dish_avail
+    # FIX 2: chuẩn hoá taste_bonus — dùng trung bình có trọng số thay vì tổng
+    taste_keys = list(taste_weight.keys())
+    weight_sum = sum(taste_weight.values()) or 1.0
+    try:
+        tp = json.loads(dish.get("taste_profile") or "{}")
+    except Exception:
+        tp = {}
+    taste_b = sum(taste_weight.get(t, 0) * tp.get(t, 0) for t in taste_keys) / weight_sum
+    # → luôn trong [0, 1]
 
-    # FIX: weight normalize về 1.0 dù có boost hay không
-    if ingredient_boost == 0:
-        final = 0.65*raw_score + 0.15*taste_b + 0.10*loc_bonus + 0.10*0.0
-    else:
-        final = 0.65*raw_score + 0.15*taste_b + 0.10*loc_bonus + 0.10*ingredient_boost
+    loc_bonus = trad_compat * season_s * dish_avail  # đã trong [0, 1]
+
+    boost = ingredient_boost if ingredient_boost > 0 else 0.0
+    final = (0.65 * raw_score
+           + 0.15 * taste_b
+           + 0.10 * loc_bonus
+           + 0.10 * boost)
 
     return max(0.0, min(1.0, round(final, 6)))
 
