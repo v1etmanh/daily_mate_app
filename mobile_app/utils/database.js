@@ -52,6 +52,17 @@ export async function initDB() {
   console.log('[DB] Firebase Firestore ready. deviceId:', _deviceId);
 }
 
+// ─── Timeout helper — Firestore call không được block >5s ─────────────────────
+function withTimeout(promise, ms = 5000, fallback = null) {
+  return Promise.race([
+    promise,
+    new Promise(resolve => setTimeout(() => {
+      console.warn('[DB] Firestore timeout — trả fallback');
+      resolve(fallback);
+    }, ms)),
+  ]);
+}
+
 // ─── PROFILE ──────────────────────────────────────────────────────────────────
 export async function saveProfile(data) {
   const id = await getDeviceId();
@@ -60,8 +71,8 @@ export async function saveProfile(data) {
 
 export async function loadProfile() {
   const id = await getDeviceId();
-  const snap = await getDoc(profileRef(id));
-  return snap.exists() ? { id: 1, ...snap.data() } : null;
+  const snap = await withTimeout(getDoc(profileRef(id)), 5000, null);
+  return snap && snap.exists() ? { id: 1, ...snap.data() } : null;
 }
 
 // ─── BODY METRICS ─────────────────────────────────────────────────────────────
@@ -74,8 +85,8 @@ export async function saveBodyMetrics(data) {
 export async function loadLatestMetrics() {
   const id = await getDeviceId();
   const q = query(metricsCol(id), orderBy('measured_at', 'desc'), limit(1));
-  const snap = await getDocs(q);
-  if (snap.empty) return null;
+  const snap = await withTimeout(getDocs(q), 5000, null);
+  if (!snap || snap.empty) return null;
   return { id: snap.docs[0].id, ...snap.docs[0].data() };
 }
 
@@ -103,7 +114,8 @@ export async function removeAllergy(allergyKey) {
 
 export async function loadAllergies() {
   const id = await getDeviceId();
-  const snap = await getDocs(allergiesCol(id));
+  const snap = await withTimeout(getDocs(allergiesCol(id)), 5000, null);
+  if (!snap) return [];
   return snap.docs.map(d => d.data());
 }
 
@@ -115,8 +127,8 @@ export async function setSetting(key, value) {
 
 export async function getSetting(key) {
   const id = await getDeviceId();
-  const snap = await getDoc(settingsRef(id, key));
-  return snap.exists() ? snap.data().value : null;
+  const snap = await withTimeout(getDoc(settingsRef(id, key)), 5000, null);
+  return snap && snap.exists() ? snap.data().value : null;
 }
 
 // ─── RECOMMENDATION SESSIONS ──────────────────────────────────────────────────
@@ -177,23 +189,39 @@ export async function loadFeedbackBySession(sessionId) {
 }
 
 // ─── WEATHER CACHE ────────────────────────────────────────────────────────────
+// Dùng AsyncStorage làm primary cache (instant, offline-safe)
+// Firestore chỉ dùng để sync nếu cần — không block pipeline chính
+
+const WEATHER_CACHE_PREFIX = 'weather_cache_';
+
 export async function getWeatherCache(gridKey) {
-  const snap = await getDoc(weatherRef(gridKey));
-  if (!snap.exists()) return null;
-  const data = snap.data();
-  if (new Date(data.expires_at) < new Date()) return null; // expired
-  return data;
+  try {
+    // Ưu tiên AsyncStorage — không cần network, không hang
+    const raw = await AsyncStorage.getItem(WEATHER_CACHE_PREFIX + gridKey);
+    if (raw) {
+      const data = JSON.parse(raw);
+      if (new Date(data.expires_at) > new Date()) return data;
+    }
+  } catch (e) {
+    console.warn('[WeatherCache] AsyncStorage read error:', e);
+  }
+  return null;
 }
 
-export async function setWeatherCache(gridKey, weatherVector, ttlMinutes = 30) {
+export async function setWeatherCache(gridKey, weatherData, ttlMinutes = 30) {
   const now = new Date();
   const expiresAt = new Date(now.getTime() + ttlMinutes * 60 * 1000);
-  await setDoc(weatherRef(gridKey), {
-    grid_key: gridKey,
-    weather_vector: weatherVector,
+  const payload = {
+    grid_key:   gridKey,
+    ...weatherData,
     fetched_at: now.toISOString(),
     expires_at: expiresAt.toISOString(),
-  });
+  };
+  try {
+    await AsyncStorage.setItem(WEATHER_CACHE_PREFIX + gridKey, JSON.stringify(payload));
+  } catch (e) {
+    console.warn('[WeatherCache] AsyncStorage write error:', e);
+  }
 }
 
 // ─── INGREDIENTS REF (read-only — seed từ server, dùng cho MarketBasket) ─────

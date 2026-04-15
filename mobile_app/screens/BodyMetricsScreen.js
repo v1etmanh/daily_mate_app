@@ -1,380 +1,232 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  Alert
+  View, Text, StyleSheet, ScrollView, TouchableOpacity,
+  TextInput, StatusBar, Alert, Dimensions,
 } from 'react-native';
-import { LineChart } from 'react-native-chart-kit';
 import { loadAllMetrics, saveBodyMetrics } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
+import { C, R, F, shadow } from '../theme';
 
-const BodyMetricsScreen = () => {
+const W = Dimensions.get('window').width;
+
+const BMI_INFO = (bmi) => {
+  if (!bmi) return { label: 'N/A', color: C.textLight, bg: C.bg };
+  const b = parseFloat(bmi);
+  if (b < 18.5) return { label: 'Thiếu cân',  color: C.teal,    bg: C.tealLight };
+  if (b < 25)   return { label: 'Bình thường', color: C.primary, bg: C.primaryLight };
+  if (b < 30)   return { label: 'Thừa cân',    color: C.amber,   bg: C.amberLight };
+  return             { label: 'Béo phì',      color: C.danger,  bg: '#FFE5E5' };
+};
+
+const BodyMetricsScreen = ({ navigation }) => {
   const [metrics, setMetrics] = useState([]);
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [note, setNote] = useState('');
-  const [chartData, setChartData] = useState(null);
-  
+  const [height, setHeight]   = useState('');
+  const [weight, setWeight]   = useState('');
+  const [note, setNote]       = useState('');
   const { latestMetrics, setLatestMetrics } = useAppStore();
 
-  useEffect(() => {
-    loadMetrics();
-  }, []);
+  useEffect(() => { loadMetrics(); }, []);
 
   const loadMetrics = async () => {
     try {
-      // Lấy toàn bộ metrics từ Firestore, sắp xếp desc theo measured_at
       const result = await loadAllMetrics();
-
       setMetrics(result);
-
       if (result.length > 0) {
         setLatestMetrics(result[0]);
-        setHeight(result[0].height_cm.toString());
-        setWeight(result[0].weight_kg.toString());
+        setHeight(String(result[0].height_cm));
+        setWeight(String(result[0].weight_kg));
       }
-
-      prepareChartData(result);
-    } catch (error) {
-      console.error('Error loading metrics:', error);
-    }
+    } catch (e) { console.error(e); }
   };
 
-  const prepareChartData = (metricsData) => {
-    // Take the last 7 entries or all if less than 7
-    const recentMetrics = metricsData.slice(0, 7).reverse(); // Reverse to have oldest first
-    
-    if (recentMetrics.length === 0) {
-      setChartData(null);
-      return;
-    }
-    
-    // Format data for the chart
-    const labels = recentMetrics.map(m => {
-      const date = new Date(m.measured_at);
-      return `${date.getDate()}/${date.getMonth()+1}`;
-    });
-    
-    const weights = recentMetrics.map(m => parseFloat(m.weight_kg));
-    
-    setChartData({
-      labels: labels,
-      datasets: [{
-        data: weights,
-        strokeWidth: 2
-      }]
-    });
+  const calcBMI = (h, w) => {
+    if (!h || !w) return null;
+    return (parseFloat(w) / ((parseFloat(h) / 100) ** 2)).toFixed(1);
   };
 
-  const calculateBMI = (heightCm, weightKg) => {
-    if (!heightCm || !weightKg) return null;
-    
-    const heightM = heightCm / 100;
-    return (weightKg / (heightM * heightM)).toFixed(1);
-  };
-
-  const saveNewMetrics = async () => {
-    if (!height || !weight) {
-      Alert.alert('Lỗi', 'Vui lòng nhập đầy đủ chiều cao và cân nặng');
-      return;
+  const handleSave = async () => {
+    const h = parseFloat(height), w = parseFloat(weight);
+    if (isNaN(h) || isNaN(w) || h <= 0 || w <= 0) {
+      Alert.alert('Lỗi', 'Chiều cao và cân nặng phải là số dương'); return;
     }
-    
-    const heightNum = parseFloat(height);
-    const weightNum = parseFloat(weight);
-    
-    if (isNaN(heightNum) || isNaN(weightNum) || heightNum <= 0 || weightNum <= 0) {
-      Alert.alert('Lỗi', 'Chiều cao và cân nặng phải là số dương');
-      return;
-    }
-    
     try {
-      const now = new Date().toISOString();
-
-      await saveBodyMetrics({
-        height_cm: heightNum,
-        weight_kg: weightNum,
-        measured_at: now,
-        note: note || '',
-      });
-
-      // Reload metrics
-      loadMetrics();
-
-      // Clear form
+      await saveBodyMetrics({ height_cm: h, weight_kg: w, measured_at: new Date().toISOString(), note: note || '' });
       setNote('');
-
-      Alert.alert('Thành công', 'Dữ liệu chỉ số đã được lưu');
-    } catch (error) {
-      console.error('Error saving metrics:', error);
-      Alert.alert('Lỗi', 'Không thể lưu dữ liệu chỉ số');
-    }
+      await loadMetrics();
+      Alert.alert('Đã lưu ✓', 'Chỉ số cơ thể đã được cập nhật.');
+    } catch (e) { Alert.alert('Lỗi', 'Không thể lưu dữ liệu'); }
   };
 
-  const getBMICategory = (bmiValue) => {
-    if (!bmiValue) return '';
-    const bmiNum = parseFloat(bmiValue);
-    if (bmiNum < 18.5) return { label: 'Thiếu cân', color: '#2196F3' };
-    if (bmiNum < 25)   return { label: 'Bình thường', color: '#4CAF50' };
-    if (bmiNum < 30)   return { label: 'Thừa cân', color: '#FFC107' };
-    return { label: 'Béo phì', color: '#F44336' };
-  };
-
-  const bmi = latestMetrics ? calculateBMI(latestMetrics.height_cm, latestMetrics.weight_kg) : null;
-  const bmiCategory = getBMICategory(bmi);
+  const bmi = calcBMI(latestMetrics?.height_cm, latestMetrics?.weight_kg);
+  const bmiInfo = BMI_INFO(bmi);
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Chỉ số cơ thể</Text>
-      </View>
-      
-      {/* Current Metrics */}
-      <View style={styles.currentMetrics}>
-        <Text style={styles.sectionTitle}>Hiện tại</Text>
-        <Text style={styles.metricItem}>Cân nặng: {latestMetrics ? `${latestMetrics.weight_kg} kg` : 'N/A'}</Text>
-        <Text style={styles.metricItem}>Chiều cao: {latestMetrics ? `${latestMetrics.height_cm} cm` : 'N/A'}</Text>
-        
-        {bmi ? (
-          <Text style={[styles.bmi, { color: getBMICategory(bmi)?.color || '#333' }]}>
-            BMI: {bmi} ({getBMICategory(bmi)?.label} ✓)
-          </Text>
-        ) : (
-          <Text style={styles.bmi}>BMI: N/A</Text>
-        )}
-      </View>
-      
-      {/* Add New Metrics Form */}
-      <View style={styles.addMetricsForm}>
-        <Text style={styles.sectionTitle}>+ Cập nhật chỉ số mới</Text>
-        
-        <View style={styles.inputGroup}>
-          <Text style={styles.inputLabel}>Chiều cao (cm)</Text>
-          <TextInput
-            style={styles.input}
-            value={height}
-            onChangeText={setHeight}
-            placeholder="Ví dụ: 165"
-            keyboardType="numeric"
-          />
-        </View>
-        
-        <View style={styles.inputGroup}>
-          <Text style={styles.inputLabel}>Cân nặng (kg)</Text>
-          <TextInput
-            style={styles.input}
-            value={weight}
-            onChangeText={setWeight}
-            placeholder="Ví dụ: 60"
-            keyboardType="numeric"
-          />
-        </View>
-        
-        <View style={styles.inputGroup}>
-          <Text style={styles.inputLabel}>Ghi chú (tuỳ chọn)</Text>
-          <TextInput
-            style={styles.input}
-            value={note}
-            onChangeText={setNote}
-            placeholder="Ví dụ: Sau khi tập thể dục"
-          />
-        </View>
-        
-        <TouchableOpacity style={styles.addButton} onPress={saveNewMetrics}>
-          <Text style={styles.addButtonText}>Lưu chỉ số</Text>
+    <View style={s.root}>
+      <StatusBar barStyle="dark-content" backgroundColor={C.bg} />
+      {/* Nav */}
+      <View style={s.nav}>
+        <TouchableOpacity style={s.back} onPress={() => navigation.goBack()}>
+          <Text style={s.backArrow}>‹</Text>
         </TouchableOpacity>
+        <Text style={s.navTitle}>Chỉ số cơ thể</Text>
+        <View style={{ width: 40 }} />
       </View>
-      
-      {/* Chart Section */}
-      {chartData && (
-        <View style={styles.chartSection}>
-          <Text style={styles.sectionTitle}>Lịch sử 7 ngày</Text>
-          <LineChart
-            data={chartData}
-            width={350}
-            height={220}
-            chartConfig={{
-              backgroundColor: '#ffffff',
-              backgroundGradientFrom: '#fbfbfb',
-              backgroundGradientTo: '#ffffff',
-              decimalPlaces: 1,
-              color: (opacity = 1) => `rgba(0, 122, 255, ${opacity})`,
-              labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-              style: {
-                borderRadius: 16
-              },
-              propsForDots: {
-                r: '4',
-                strokeWidth: '2',
-                stroke: '#007AFF'
-              }
-            }}
-            bezier
-            style={styles.chart}
-          />
+
+      <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled">
+
+        {/* BMI Hero Card */}
+        <View style={[s.bmiCard, { backgroundColor: bmiInfo.bg, borderColor: bmiInfo.color }]}>
+          <View style={s.bmiLeft}>
+            <Text style={s.bmiNum}>{bmi ?? '–'}</Text>
+            <Text style={s.bmiLabel}>BMI</Text>
+          </View>
+          <View style={s.bmiRight}>
+            <View style={[s.bmiStatusPill, { backgroundColor: bmiInfo.color }]}>
+              <Text style={s.bmiStatusText}>{bmiInfo.label}</Text>
+            </View>
+            <Text style={s.bmiSub}>
+              {latestMetrics?.weight_kg ? `${latestMetrics.weight_kg} kg` : '–'} ·{' '}
+              {latestMetrics?.height_cm ? `${latestMetrics.height_cm} cm` : '–'}
+            </Text>
+          </View>
         </View>
-      )}
-      
-      {/* Full History */}
-      <View style={styles.historySection}>
-        <Text style={styles.sectionTitle}>Lịch sử đầy đủ</Text>
-        {metrics.length > 0 ? (
-          metrics.map((metric, index) => {
-            const date = new Date(metric.measured_at);
-            const bmiValue = calculateBMI(metric.height_cm, metric.weight_kg);
-            return (
-              <View key={index} style={styles.historyItem}>
-                <View style={styles.historyDate}>
-                  <Text style={styles.historyDateText}>
-                    {date.toLocaleDateString('vi-VN')}{' '}
-                    <Text style={styles.historyTime}>
-                      {date.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
-                    </Text>
-                  </Text>
-                </View>
-                <View style={styles.historyValues}>
-                  <Text style={styles.historyValue}>{metric.weight_kg} kg</Text>
-                  <Text style={styles.historyValue}>BMI {bmiValue}</Text>
-                  {metric.note ? <Text style={styles.historyNote}>{metric.note}</Text> : null}
-                </View>
+
+        {/* Stats row */}
+        <View style={s.statsRow}>
+          {[
+            { label: 'Cân nặng', val: latestMetrics?.weight_kg, unit: 'kg', color: C.teal },
+            { label: 'Chiều cao', val: latestMetrics?.height_cm, unit: 'cm', color: C.primary },
+            { label: 'Lần đo', val: metrics.length, unit: 'lần', color: C.amber },
+          ].map(({ label, val, unit, color }) => (
+            <View key={label} style={[s.statCard, { borderTopColor: color }]}>
+              <Text style={[s.statNum, { color }]}>{val ?? '–'}</Text>
+              <Text style={s.statUnit}>{unit}</Text>
+              <Text style={s.statLabel}>{label}</Text>
+            </View>
+          ))}
+        </View>
+
+
+        {/* Form nhập liệu */}
+        <View style={s.formCard}>
+          <Text style={s.formTitle}>Cập nhật chỉ số</Text>
+
+          <View style={s.inputRow}>
+            <View style={s.inputGroup}>
+              <Text style={s.inputLabel}>Chiều cao</Text>
+              <View style={s.inputWrap}>
+                <TextInput
+                  style={s.input} value={height} onChangeText={setHeight}
+                  keyboardType="decimal-pad" placeholder="cm" placeholderTextColor={C.textLight}
+                />
+                <Text style={s.inputUnit}>cm</Text>
               </View>
-            );
-          })
-        ) : (
-          <Text style={styles.noHistoryText}>Chưa có dữ liệu</Text>
+            </View>
+            <View style={s.inputGroup}>
+              <Text style={s.inputLabel}>Cân nặng</Text>
+              <View style={s.inputWrap}>
+                <TextInput
+                  style={s.input} value={weight} onChangeText={setWeight}
+                  keyboardType="decimal-pad" placeholder="kg" placeholderTextColor={C.textLight}
+                />
+                <Text style={s.inputUnit}>kg</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={s.noteWrap}>
+            <TextInput
+              style={s.noteInput} value={note} onChangeText={setNote}
+              placeholder="Ghi chú (tuỳ chọn)" placeholderTextColor={C.textLight}
+              multiline maxLength={120}
+            />
+          </View>
+
+          <TouchableOpacity style={s.saveBtn} onPress={handleSave} activeOpacity={0.85}>
+            <Text style={s.saveBtnText}>Lưu chỉ số ✓</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Lịch sử gần đây */}
+        {metrics.length > 0 && (
+          <View style={s.historyCard}>
+            <Text style={s.formTitle}>Lịch sử đo</Text>
+            {metrics.slice(0, 6).map((m, i) => {
+              const d = new Date(m.measured_at);
+              const b = calcBMI(m.height_cm, m.weight_kg);
+              const bi = BMI_INFO(b);
+              return (
+                <View key={i} style={[s.histRow, i < metrics.slice(0, 6).length - 1 && s.histDivider]}>
+                  <View>
+                    <Text style={s.histDate}>{d.getDate()}/{d.getMonth()+1}/{d.getFullYear()}</Text>
+                    {m.note ? <Text style={s.histNote}>{m.note}</Text> : null}
+                  </View>
+                  <View style={s.histRight}>
+                    <Text style={s.histWeight}>{m.weight_kg} kg</Text>
+                    <View style={[s.histBmiPill, { backgroundColor: bi.bg }]}>
+                      <Text style={[s.histBmiText, { color: bi.color }]}>BMI {b}</Text>
+                    </View>
+                  </View>
+                </View>
+              );
+            })}
+          </View>
         )}
-      </View>
-    </ScrollView>
+
+        <View style={{ height: 40 }} />
+      </ScrollView>
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  header: {
-    backgroundColor: 'white',
-    padding: 16,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  currentMetrics: {
-    backgroundColor: 'white',
-    margin: 16,
-    padding: 16,
-    borderRadius: 8,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    color: '#333',
-  },
-  metricItem: {
-    fontSize: 16,
-    marginBottom: 8,
-    color: '#666',
-  },
-  bmi: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginTop: 8,
-  },
-  addMetricsForm: {
-    backgroundColor: 'white',
-    margin: 16,
-    padding: 16,
-    borderRadius: 8,
-  },
-  inputGroup: {
-    marginBottom: 16,
-  },
-  inputLabel: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: 8,
-    color: '#333',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-    backgroundColor: '#fafafa',
-  },
-  addButton: {
-    backgroundColor: '#007AFF',
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginTop: 8,
-  },
-  addButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  chartSection: {
-    backgroundColor: 'white',
-    margin: 16,
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  chart: {
-    marginVertical: 8,
-    borderRadius: 16,
-  },
-  historySection: {
-    backgroundColor: 'white',
-    margin: 16,
-    padding: 16,
-    borderRadius: 8,
-  },
-  historyItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-  },
-  historyDate: {},
-  historyDateText: {
-    fontSize: 14,
-    fontWeight: '500',
-    color: '#333',
-  },
-  historyTime: {
-    color: '#666',
-    fontWeight: 'normal',
-  },
-  historyValues: {
-    alignItems: 'flex-end',
-  },
-  historyValue: {
-    fontSize: 14,
-    color: '#333',
-  },
-  historyNote: {
-    fontSize: 12,
-    color: '#666',
-    fontStyle: 'italic',
-    marginTop: 4,
-  },
-  noHistoryText: {
-    fontSize: 14,
-    color: '#999',
-    fontStyle: 'italic',
-    textAlign: 'center',
-    padding: 20,
-  },
+const s = StyleSheet.create({
+  root:          { flex: 1, backgroundColor: C.bg },
+  nav:           { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+                   paddingHorizontal: 16, paddingVertical: 12, backgroundColor: C.surface,
+                   borderBottomWidth: 1, borderBottomColor: C.borderLight },
+  back:          { width: 40, height: 40, justifyContent: 'center' },
+  backArrow:     { fontSize: 28, color: C.primary, fontWeight: '300', lineHeight: 34 },
+  navTitle:      { fontSize: F.lg, fontWeight: '700', color: C.text },
+  scroll:        { padding: 16 },
+  bmiCard:       { borderRadius: R.lg, borderWidth: 1.5, padding: 20, flexDirection: 'row',
+                   alignItems: 'center', marginBottom: 14, ...shadow(1) },
+  bmiLeft:       { alignItems: 'center', marginRight: 20 },
+  bmiNum:        { fontSize: 48, fontWeight: '800', color: C.text, lineHeight: 52 },
+  bmiLabel:      { fontSize: F.sm, color: C.textLight, fontWeight: '600', letterSpacing: 1 },
+  bmiRight:      { flex: 1 },
+  bmiStatusPill: { alignSelf: 'flex-start', borderRadius: R.pill, paddingHorizontal: 12, paddingVertical: 5, marginBottom: 8 },
+  bmiStatusText: { fontSize: F.base, fontWeight: '700', color: '#fff' },
+  bmiSub:        { fontSize: F.base, color: C.textMid },
+  statsRow:      { flexDirection: 'row', gap: 10, marginBottom: 14 },
+  statCard:      { flex: 1, backgroundColor: C.surface, borderRadius: R.md, padding: 12,
+                   alignItems: 'center', borderTopWidth: 3, ...shadow(1) },
+  statNum:       { fontSize: F.xl, fontWeight: '800' },
+  statUnit:      { fontSize: F.xs, color: C.textLight, marginTop: 1 },
+  statLabel:     { fontSize: F.xs, color: C.textLight, marginTop: 4 },
+  formCard:      { backgroundColor: C.surface, borderRadius: R.lg, padding: 20, marginBottom: 14, ...shadow(1) },
+  formTitle:     { fontSize: F.lg, fontWeight: '700', color: C.text, marginBottom: 16 },
+  inputRow:      { flexDirection: 'row', gap: 12, marginBottom: 14 },
+  inputGroup:    { flex: 1 },
+  inputLabel:    { fontSize: F.sm, color: C.textMid, fontWeight: '600', marginBottom: 6 },
+  inputWrap:     { flexDirection: 'row', alignItems: 'center', backgroundColor: C.bg,
+                   borderRadius: R.md, borderWidth: 1.5, borderColor: C.border, paddingHorizontal: 12 },
+  input:         { flex: 1, fontSize: F.xl, fontWeight: '700', color: C.text, paddingVertical: 10 },
+  inputUnit:     { fontSize: F.sm, color: C.textLight, fontWeight: '600' },
+  noteWrap:      { backgroundColor: C.bg, borderRadius: R.md, borderWidth: 1.5,
+                   borderColor: C.border, paddingHorizontal: 12, marginBottom: 16 },
+  noteInput:     { fontSize: F.base, color: C.text, paddingVertical: 10, minHeight: 44 },
+  saveBtn:       { backgroundColor: C.primary, borderRadius: R.xl, paddingVertical: 15,
+                   alignItems: 'center', ...shadow(2) },
+  saveBtnText:   { fontSize: F.lg, fontWeight: '700', color: '#fff' },
+  historyCard:   { backgroundColor: C.surface, borderRadius: R.lg, padding: 20, ...shadow(1) },
+  histRow:       { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 12 },
+  histDivider:   { borderBottomWidth: 1, borderBottomColor: C.borderLight },
+  histDate:      { fontSize: F.base, fontWeight: '600', color: C.text },
+  histNote:      { fontSize: F.sm, color: C.textLight, marginTop: 2 },
+  histRight:     { alignItems: 'flex-end', gap: 4 },
+  histWeight:    { fontSize: F.lg, fontWeight: '700', color: C.text },
+  histBmiPill:   { borderRadius: R.pill, paddingHorizontal: 10, paddingVertical: 3 },
+  histBmiText:   { fontSize: F.xs, fontWeight: '700' },
 });
 
 export default BodyMetricsScreen;

@@ -16,11 +16,12 @@ const firebaseConfig = {
 };
 
 // Tránh init nhiều lần khi hot-reload
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+const isFirstInit = getApps().length === 0;
+const app = isFirstInit ? initializeApp(firebaseConfig) : getApp();
 
-// initializeFirestore chỉ được gọi 1 lần — các lần sau dùng getFirestore
+// initializeFirestore chỉ được gọi đúng 1 lần (lần đầu tiên)
 // experimentalForceLongPolling: true giúp hoạt động ổn định trên React Native / Expo
-export const firestore = getApps().length === 1
+export const firestore = isFirstInit
   ? initializeFirestore(app, {
       experimentalForceLongPolling: true,
     })

@@ -6,6 +6,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { api } from '../services/api';
 import { saveFeedback, loadSessions } from '../utils/database';
+import { C } from '../theme';
 
 const DishDetailScreen = ({ route, navigation }) => {
   const { dish } = route.params;
@@ -62,14 +63,13 @@ const DishDetailScreen = ({ route, navigation }) => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#f2f2f7' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}>
       <ScrollView style={styles.container}>
         {/* ✅ FIX: Back button thật */}
         <View style={styles.navBar}>
           <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
             <Text style={styles.backIcon}>‹</Text>
-          </TouchableOpacity>
-          <Text style={styles.navTitle} numberOfLines={1}>{dish.title}</Text>
+          </TouchableOpacity>          <Text style={styles.navTitle} numberOfLines={1}>{dish.title}</Text>
           <View style={{ width: 40 }} />
         </View>
 
@@ -101,18 +101,18 @@ const DishDetailScreen = ({ route, navigation }) => {
           {/* Điểm phù hợp — dùng dữ liệu thật từ score_breakdown */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>ĐIỂM PHÙ HỢP</Text>
-            <ScoreBar label="Tổng thể"  value={dish.final_score}      color="#007AFF" />
-            {breakdown.hydration > 0 && <ScoreBar label="Hydration"  value={breakdown.hydration} color="#5AC8FA" />}
-            {breakdown.warming   > 0 && <ScoreBar label="Giữ ấm"    value={breakdown.warming}   color="#FF9500" />}
-            {breakdown.cooling   > 0 && <ScoreBar label="Làm mát"   value={breakdown.cooling}   color="#34C759" />}
-            {breakdown.boost     > 0 && <ScoreBar label="Nguyên liệu" value={breakdown.boost}   color="#AF52DE" />}
+            <ScoreBar label="Tổng thể"  value={dish.final_score}      color={C.primary} />
+            {breakdown.hydration > 0 && <ScoreBar label="Hydration"  value={breakdown.hydration} color={C.teal} />}
+            {breakdown.warming   > 0 && <ScoreBar label="Giữ ấm"    value={breakdown.warming}   color={C.orange} />}
+            {breakdown.cooling   > 0 && <ScoreBar label="Làm mát"   value={breakdown.cooling}   color={C.success} />}
+            {breakdown.boost     > 0 && <ScoreBar label="Nguyên liệu" value={breakdown.boost}   color={C.primaryMid} />}
           </View>
 
           {/* Nguyên liệu — ✅ FIX: Load thật từ API */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>NGUYÊN LIỆU</Text>
             {loadingDetail ? (
-              <ActivityIndicator color="#007AFF" style={{ marginVertical: 12 }} />
+              <ActivityIndicator color={C.primary} style={{ marginVertical: 12 }} />
             ) : ingredients.length === 0 ? (
               <Text style={styles.noData}>Không có dữ liệu nguyên liệu</Text>
             ) : (
@@ -166,15 +166,15 @@ const DishDetailScreen = ({ route, navigation }) => {
           <View style={styles.feedbackSection}>
             <Text style={styles.feedbackQ}>Bạn có muốn ăn món này không?</Text>
             <View style={styles.feedbackRow}>
-              <TouchableOpacity style={[styles.fbBig, { backgroundColor: '#34C759' }]}
+              <TouchableOpacity style={[styles.fbBig, { backgroundColor: C.success }]}
                 onPress={() => handleFeedback('eaten')}>
                 <Text style={styles.fbBigText}>😋 Đã ăn</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.fbBig, { backgroundColor: '#FFCC00' }]}
+              <TouchableOpacity style={[styles.fbBig, { backgroundColor: C.amber }]}
                 onPress={() => setRatingModalVisible(true)}>
                 <Text style={[styles.fbBigText, { color: '#333' }]}>⭐ Đánh giá</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.fbBig, { backgroundColor: '#FF3B30' }]}
+              <TouchableOpacity style={[styles.fbBig, { backgroundColor: C.danger }]}
                 onPress={() => handleFeedback('skipped')}>
                 <Text style={styles.fbBigText}>✕ Bỏ qua</Text>
               </TouchableOpacity>

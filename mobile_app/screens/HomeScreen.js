@@ -8,6 +8,7 @@ import * as Location from 'expo-location';
 import { LinearGradient } from 'expo-linear-gradient';
 import { api } from '../services/api';
 import { useAppStore } from '../store/useAppStore';
+import { C, R, F, shadow } from '../theme';
 import {
   saveSession, saveDishesToSession, saveFeedback,
   loadSessions, loadDishesBySession,
@@ -15,6 +16,7 @@ import {
 } from '../utils/database';
 
 const HomeScreen = ({ navigation }) => {
+  const isLoadingRef = React.useRef(false);
   const [isLoading, setIsLoading]     = useState(false);
   const [weatherData, setWeatherData] = useState(null);
   const [cuisineScope, setCuisineScope] = useState('vietnam');
@@ -57,16 +59,21 @@ const HomeScreen = ({ navigation }) => {
   const fetchWeather = async (lat, lon) => {
     const gridKey = buildGridKey(lat, lon);
     const cached  = await getWeatherCache(gridKey);
-    if (cached) return cached.weather_vector ?? cached;
+    if (cached) {
+      // ✅ Set weatherData từ cache nếu có flat fields
+      const flatFromCache = cached.weather_vector ? cached : null;
+      if (flatFromCache && flatFromCache.temperature != null) setWeatherData(flatFromCache);
+      return cached.weather_vector ?? cached;
+    }
     try {
       const res = await api.get(`/api/weather?lat=${lat}&lon=${lon}`);
       const hour = new Date().getHours();
       await setWeatherCache(gridKey, res.data, hour >= 6 && hour < 22 ? 30 : 60);
-      setWeatherData(res.data);
+      setWeatherData(res.data); // ✅ res.data có đủ temperature, condition, humidity, wind_speed, aqi
       return res.data;
     } catch {
-      const fallback = { temperature: 30, condition: 'Không rõ', humidity: 70, wind_speed: 10, aqi: 85 };
-      setWeatherData(fallback);
+      const fallback = { temperature: 30, condition: 'Không rõ (offline)', humidity: 70, wind_speed: 10, aqi: 85 };
+      setWeatherData(fallback); // ✅ Luôn set weatherData dù lỗi
       return fallback;
     }
   };
@@ -112,6 +119,8 @@ const HomeScreen = ({ navigation }) => {
 
   // ─── Main load ───────────────────────────────────────────────────────────────
   const loadRecommendation = async () => {
+    if (isLoadingRef.current) return; // ✅ Guard chống double-call
+    isLoadingRef.current = true;
     setIsLoading(true);
     try {
       const gps = await getUserLocation();
@@ -170,6 +179,7 @@ const HomeScreen = ({ navigation }) => {
     } catch (e) {
       console.error('loadRecommendation:', e);
     } finally {
+      isLoadingRef.current = false;
       setIsLoading(false);
     }
   };
@@ -274,7 +284,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     // ✅ FIX: Chỉ dùng ScrollView, không dùng FlatList lồng nhau
     <ScrollView style={styles.container}
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="#007AFF" />}>
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={C.primary} />}>
 
       {/* Header */}
       <View style={styles.header}>
@@ -282,7 +292,7 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.province}>{location?.province || 'Đang xác định...'}</Text>
           <Text style={styles.date}>Hôm nay, {new Date().toLocaleDateString('vi-VN')}</Text>
         </View>
-        {isLoading && <ActivityIndicator color="#007AFF" />}
+        {isLoading && <ActivityIndicator color={C.primary} />}
       </View>
 
       {/* Weather Card */}
@@ -370,11 +380,11 @@ const HomeScreen = ({ navigation }) => {
 
 
 const styles = StyleSheet.create({
-  container:       { flex: 1, backgroundColor: '#f2f2f7' },
+  container:       { flex: 1, backgroundColor: C.bg },
   header:          { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
-                     paddingHorizontal: 16, paddingVertical: 14, backgroundColor: 'white' },
-  province:        { fontSize: 18, fontWeight: '700', color: '#111' },
-  date:            { fontSize: 13, color: '#888', marginTop: 2 },
+                     paddingHorizontal: 16, paddingVertical: 14, backgroundColor: C.surface },
+  province:        { fontSize: 18, fontWeight: '700', color: C.text },
+  date:            { fontSize: 13, color: C.textLight, marginTop: 2 },
   weatherCard:     { marginHorizontal: 16, marginTop: 12, padding: 20, borderRadius: 18, elevation: 3,
                      shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.15, shadowRadius: 6 },
   weatherCity:     { color: 'rgba(255,255,255,0.85)', fontSize: 14, fontWeight: '600' },
@@ -385,19 +395,19 @@ const styles = StyleSheet.create({
   scopeRow:        { flexDirection: 'row', marginHorizontal: 16, marginTop: 12,
                      backgroundColor: 'white', borderRadius: 25, padding: 4, elevation: 1 },
   scopeBtn:        { flex: 1, paddingVertical: 10, alignItems: 'center', borderRadius: 20 },
-  scopeBtnActive:  { backgroundColor: '#007AFF' },
-  scopeText:       { fontSize: 14, fontWeight: '500', color: '#555' },
+  scopeBtnActive:  { backgroundColor: C.primary },
+  scopeText:       { fontSize: 14, fontWeight: '500', color: C.textMid },
   scopeTextActive: { color: 'white' },
   basketCTA:       { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginTop: 12,
                      backgroundColor: 'white', borderRadius: 14, padding: 14, elevation: 2,
                      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.08, shadowRadius: 4 },
   basketIcon:      { fontSize: 22, marginRight: 10 },
-  basketTitle:     { fontSize: 14, fontWeight: '600', color: '#111' },
+  basketTitle:     { fontSize: 14, fontWeight: '600', color: C.text },
   basketSub:       { fontSize: 12, color: '#888', marginTop: 2 },
-  basketBadge:     { backgroundColor: '#007AFF', borderRadius: 10, paddingHorizontal: 7, paddingVertical: 2, marginRight: 6 },
+  basketBadge:     { backgroundColor: C.primary, borderRadius: 10, paddingHorizontal: 7, paddingVertical: 2, marginRight: 6 },
   basketBadgeText: { color: 'white', fontSize: 12, fontWeight: '600' },
   basketArrow:     { fontSize: 20, color: '#ccc', fontWeight: '300' },
-  sectionTitle:    { fontSize: 17, fontWeight: '700', marginHorizontal: 16, marginTop: 16, marginBottom: 10, color: '#111' },
+  sectionTitle:    { fontSize: 17, fontWeight: '700', marginHorizontal: 16, marginTop: 16, marginBottom: 10, color: C.text },
   hListContent:    { paddingLeft: 16, paddingRight: 8 },
   dishCard:        { width: 200, backgroundColor: 'white', borderRadius: 16, marginRight: 12,
                      elevation: 3, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 6, overflow: 'hidden' },
@@ -405,10 +415,10 @@ const styles = StyleSheet.create({
   cardImage:       { width: '100%', height: '100%' },
   imagePlaceholder:{ width: '100%', height: '100%', backgroundColor: '#f0f0f0', justifyContent: 'center', alignItems: 'center' },
   dishEmoji:       { fontSize: 40 },
-  rankBadge:       { position: 'absolute', top: 8, left: 8, backgroundColor: '#007AFF',
+  rankBadge:       { position: 'absolute', top: 8, left: 8, backgroundColor: C.primary,
                      borderRadius: 10, paddingHorizontal: 8, paddingVertical: 2 },
   rankText:        { color: 'white', fontSize: 11, fontWeight: '700' },
-  boostBadge:      { position: 'absolute', top: 8, right: 8, backgroundColor: '#FF9500',
+  boostBadge:      { position: 'absolute', top: 8, right: 8, backgroundColor: C.orange,
                      borderRadius: 10, paddingHorizontal: 6, paddingVertical: 2 },
   boostText:       { color: 'white', fontSize: 10, fontWeight: '600' },
   cardBody:        { padding: 12 },
@@ -420,8 +430,8 @@ const styles = StyleSheet.create({
   quickFeedback:   { flexDirection: 'row', gap: 6, marginTop: 10 },
   fbBtn:           { flex: 1, paddingVertical: 7, borderRadius: 8, alignItems: 'center' },
   fbText:          { color: 'white', fontSize: 12, fontWeight: '600' },
-  eatBtn:          { backgroundColor: '#34C759' },
-  skipBtn:         { backgroundColor: '#FF3B30' },
+  eatBtn:          { backgroundColor: C.success },
+  skipBtn:         { backgroundColor: C.danger },
   listItem:        { flexDirection: 'row', backgroundColor: 'white', marginHorizontal: 16,
                      marginBottom: 8, borderRadius: 12, elevation: 1, overflow: 'hidden',
                      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.06, shadowRadius: 3 },
