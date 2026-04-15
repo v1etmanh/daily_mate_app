@@ -5,9 +5,9 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Alert,
-  Picker
+  Alert
 } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import { getSetting, setSetting, clearAllHistory } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 
@@ -19,13 +19,11 @@ const SettingsScreen = () => {
   
   const { location, setLocation } = useAppStore();
 
-  useEffect(() => {
-    loadSettings();
-  }, []);
+  useEffect(() => { loadSettings(); }, []);
 
   const loadSettings = async () => {
     try {
-      const [defaultCuisine, maxCookTime, lang, unitSys, lat, lon, province] = await Promise.all([
+      const [defaultCuisine, maxCook, lang, unitSys, lat, lon, province] = await Promise.all([
         getSetting('default_cuisine'),
         getSetting('max_cook_time'),
         getSetting('language'),
@@ -34,12 +32,10 @@ const SettingsScreen = () => {
         getSetting('last_known_lon'),
         getSetting('last_known_province'),
       ]);
-
       setCuisinePreference(defaultCuisine || 'vietnam');
-      setMaxCookTime(maxCookTime || '60');
+      setMaxCookTime(maxCook || '60');
       setLanguage(lang || 'vi');
       setUnitSystem(unitSys || 'metric');
-
       if (lat && lon) {
         setLocation({ ...location, lat: parseFloat(lat), lon: parseFloat(lon), province: province || location.province });
       }
@@ -57,103 +53,56 @@ const SettingsScreen = () => {
     }
   };
 
-  const handleCuisineChange = async (value) => {
-    setCuisinePreference(value);
-    await saveSetting('default_cuisine', value);
+  const handleCuisineChange    = async (v) => { setCuisinePreference(v); await saveSetting('default_cuisine', v); };
+  const handleMaxCookTimeChange = async (v) => { setMaxCookTime(v);       await saveSetting('max_cook_time', v); };
+  const handleLanguageChange    = async (v) => { setLanguage(v);           await saveSetting('language', v); };
+  const handleUnitSystemChange  = async (v) => { setUnitSystem(v);         await saveSetting('unit_system', v); };
+
+  const syncIngredients = () => {
+    Alert.alert('Thông báo', 'Đang đồng bộ nguyên liệu...');
+    setTimeout(() => Alert.alert('Thành công', 'Nguyên liệu đã được cập nhật'), 1000);
   };
 
-  const handleMaxCookTimeChange = async (value) => {
-    setMaxCookTime(value);
-    await saveSetting('max_cook_time', value);
-  };
-
-  const handleLanguageChange = async (value) => {
-    setLanguage(value);
-    await saveSetting('language', value);
-  };
-
-  const handleUnitSystemChange = async (value) => {
-    setUnitSystem(value);
-    await saveSetting('unit_system', value);
-  };
-
-  const syncIngredients = async () => {
-    try {
-      // In a real implementation, this would call the API to sync ingredients
-      Alert.alert('Thông báo', 'Đang đồng bộ nguyên liệu...');
-      
-      // Simulate API call
-      setTimeout(() => {
-        Alert.alert('Thành công', 'Nguyên liệu đã được cập nhật');
-      }, 1000);
-    } catch (error) {
-      console.error('Error syncing ingredients:', error);
-      Alert.alert('Lỗi', 'Không thể đồng bộ nguyên liệu');
-    }
-  };
-
-  const clearHistory = async () => {
-    Alert.alert(
-      'Xác nhận',
-      'Bạn có chắc chắn muốn xóa toàn bộ lịch sử? Hành động này không thể hoàn tác.',
-      [
-        { text: 'Hủy', style: 'cancel' },
-        {
-          text: 'Xóa',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              await clearAllHistory();
-              Alert.alert('Thành công', 'Lịch sử đã được xóa');
-            } catch (error) {
-              console.error('Error clearing history:', error);
-              Alert.alert('Lỗi', 'Không thể xóa lịch sử');
-            }
+  const clearHistory = () => {
+    Alert.alert('Xác nhận', 'Bạn có chắc chắn muốn xóa toàn bộ lịch sử? Hành động này không thể hoàn tác.', [
+      { text: 'Hủy', style: 'cancel' },
+      {
+        text: 'Xóa', style: 'destructive',
+        onPress: async () => {
+          try {
+            await clearAllHistory();
+            Alert.alert('Thành công', 'Lịch sử đã được xóa');
+          } catch (error) {
+            Alert.alert('Lỗi', 'Không thể xóa lịch sử');
           }
         }
-      ]
-    );
+      }
+    ]);
   };
 
-  const exportData = async () => {
-    Alert.alert(
-      'Xuất dữ liệu',
-      'Tính năng xuất dữ liệu sẽ được triển khai trong phiên bản tới',
-      [{ text: 'OK' }]
-    );
-  };
+  const exportData = () => Alert.alert('Xuất dữ liệu', 'Tính năng sẽ có trong phiên bản tới', [{ text: 'OK' }]);
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>GỢI Ý MẶC ĐỊNH</Text>
-        
         <View style={styles.settingRow}>
           <Text style={styles.settingLabel}>Phạm vi ẩm thực</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={cuisinePreference}
-              onValueChange={handleCuisineChange}
-              style={styles.picker}
-            >
-              <Picker.Item label="Việt Nam" value="vietnam" />
-              <Picker.Item label="Toàn cầu" value="global" />
-              <Picker.Item label="Nhật Bản" value="japan" />
-              <Picker.Item label="Thái Lan" value="thailand" />
-              <Picker.Item label="Ý" value="italy" />
-              <Picker.Item label="Hàn Quốc" value="korea" />
+            <Picker selectedValue={cuisinePreference} onValueChange={handleCuisineChange} style={styles.picker}>
+              <Picker.Item label="Việt Nam"  value="vietnam" />
+              <Picker.Item label="Toàn cầu"  value="global" />
+              <Picker.Item label="Nhật Bản"  value="japan" />
+              <Picker.Item label="Thái Lan"  value="thailand" />
+              <Picker.Item label="Ý"          value="italy" />
+              <Picker.Item label="Hàn Quốc"  value="korea" />
             </Picker>
           </View>
         </View>
-        
         <View style={styles.settingRow}>
           <Text style={styles.settingLabel}>Thời gian nấu tối đa</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={maxCookTime}
-              onValueChange={handleMaxCookTimeChange}
-              style={styles.picker}
-            >
+            <Picker selectedValue={maxCookTime} onValueChange={handleMaxCookTimeChange} style={styles.picker}>
               <Picker.Item label="30 phút" value="30" />
               <Picker.Item label="45 phút" value="45" />
               <Picker.Item label="60 phút" value="60" />
@@ -165,30 +114,20 @@ const SettingsScreen = () => {
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>HIỂN THỊ</Text>
-        
         <View style={styles.settingRow}>
           <Text style={styles.settingLabel}>Ngôn ngữ</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={language}
-              onValueChange={handleLanguageChange}
-              style={styles.picker}
-            >
+            <Picker selectedValue={language} onValueChange={handleLanguageChange} style={styles.picker}>
               <Picker.Item label="Tiếng Việt" value="vi" />
-              <Picker.Item label="English" value="en" />
+              <Picker.Item label="English"     value="en" />
             </Picker>
           </View>
         </View>
-        
         <View style={styles.settingRow}>
           <Text style={styles.settingLabel}>Đơn vị</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={unitSystem}
-              onValueChange={handleUnitSystemChange}
-              style={styles.picker}
-            >
-              <Picker.Item label="Metric (kg, cm)" value="metric" />
+            <Picker selectedValue={unitSystem} onValueChange={handleUnitSystemChange} style={styles.picker}>
+              <Picker.Item label="Metric (kg, cm)"  value="metric" />
               <Picker.Item label="Imperial (lb, ft)" value="imperial" />
             </Picker>
           </View>
@@ -197,17 +136,14 @@ const SettingsScreen = () => {
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>DỮ LIỆU</Text>
-        
         <TouchableOpacity style={styles.buttonRow} onPress={syncIngredients}>
           <Text style={styles.buttonLabel}>Đồng bộ nguyên liệu</Text>
           <Text style={styles.buttonAction}>Làm mới</Text>
         </TouchableOpacity>
-        
         <TouchableOpacity style={styles.buttonRow} onPress={clearHistory}>
           <Text style={styles.buttonLabel}>Xóa lịch sử</Text>
           <Text style={styles.arrow}>→</Text>
         </TouchableOpacity>
-        
         <TouchableOpacity style={styles.buttonRow} onPress={exportData}>
           <Text style={styles.buttonLabel}>Xuất dữ liệu</Text>
           <Text style={styles.arrow}>→</Text>
@@ -223,81 +159,22 @@ const SettingsScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  section: {
-    backgroundColor: 'white',
-    marginTop: 16,
-    marginHorizontal: 16,
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  sectionTitle: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#666',
-    paddingHorizontal: 16,
-    paddingTop: 16,
-    paddingBottom: 8,
-  },
-  settingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-  },
-  buttonRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-  },
-  settingLabel: {
-    flex: 1,
-    fontSize: 16,
-  },
-  settingValue: {
-    fontSize: 16,
-    color: '#007AFF',
-  },
-  pickerContainer: {
-    width: '50%',
-  },
-  picker: {
-    height: 50,
-  },
-  buttonLabel: {
-    flex: 1,
-    fontSize: 16,
-  },
-  buttonAction: {
-    fontSize: 16,
-    color: '#007AFF',
-  },
-  arrow: {
-    fontSize: 18,
-    color: '#ccc',
-  },
-  footer: {
-    marginTop: 24,
-    alignItems: 'center',
-    paddingBottom: 24,
-  },
-  version: {
-    fontSize: 14,
-    color: '#666',
-  },
-  server: {
-    fontSize: 12,
-    color: '#999',
-    marginTop: 4,
-  },
+  container:       { flex: 1, backgroundColor: '#f5f5f5' },
+  section:         { backgroundColor: 'white', marginTop: 16, marginHorizontal: 16, borderRadius: 8, overflow: 'hidden' },
+  sectionTitle:    { fontSize: 14, fontWeight: '600', color: '#666', paddingHorizontal: 16, paddingTop: 16, paddingBottom: 8 },
+  settingRow:      { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 16,
+                     borderBottomWidth: 1, borderBottomColor: '#eee' },
+  buttonRow:       { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 16,
+                     borderBottomWidth: 1, borderBottomColor: '#eee' },
+  settingLabel:    { flex: 1, fontSize: 16 },
+  pickerContainer: { width: '50%' },
+  picker:          { height: 50 },
+  buttonLabel:     { flex: 1, fontSize: 16 },
+  buttonAction:    { fontSize: 16, color: '#007AFF' },
+  arrow:           { fontSize: 18, color: '#ccc' },
+  footer:          { marginTop: 24, alignItems: 'center', paddingBottom: 24 },
+  version:         { fontSize: 14, color: '#666' },
+  server:          { fontSize: 12, color: '#999', marginTop: 4 },
 });
 
 export default SettingsScreen;

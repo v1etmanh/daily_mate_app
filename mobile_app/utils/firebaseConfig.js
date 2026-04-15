@@ -1,13 +1,12 @@
 // utils/firebaseConfig.js
-// ⚠️  ĐIỀN CONFIG CỦA BẠN VÀO ĐÂY
-// Lấy tại: Firebase Console → Project Settings → Your apps → SDK setup
-// firebase JS SDK hoạt động với Expo Go — không cần native build
+// Firebase JS SDK v11+ — hoạt động với Expo Go & New Architecture
+// Lấy config tại: Firebase Console → Project Settings → Your apps → SDK setup
 
-import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, initializeFirestore, persistentLocalCache } from 'firebase/firestore';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, initializeFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-   apiKey: "AIzaSyCdBs-0aXwH3Y83FOYEMCva_v1bTdFXaAM",
+  apiKey: "AIzaSyCdBs-0aXwH3Y83FOYEMCva_v1bTdFXaAM",
   authDomain: "jpdweb-9d3d3.firebaseapp.com",
   projectId: "jpdweb-9d3d3",
   storageBucket: "jpdweb-9d3d3.firebasestorage.app",
@@ -16,15 +15,13 @@ const firebaseConfig = {
   measurementId: "G-EKPBVXN961"
 };
 
-
 // Tránh init nhiều lần khi hot-reload
-const isNew = getApps().length === 0;
-const app   = isNew ? initializeApp(firebaseConfig) : getApps()[0];
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
-// initializeFirestore chỉ gọi được 1 lần — getFirestore cho các lần sau
-export const firestore = isNew
+// initializeFirestore chỉ được gọi 1 lần — các lần sau dùng getFirestore
+// experimentalForceLongPolling: true giúp hoạt động ổn định trên React Native / Expo
+export const firestore = getApps().length === 1
   ? initializeFirestore(app, {
       experimentalForceLongPolling: true,
-      useFetchStreams: false,
     })
   : getFirestore(app);

@@ -1,518 +1,262 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  Modal,Linking ,
-  Image,
-  Slider
+  View, Text, StyleSheet, ScrollView, TouchableOpacity,
+  Modal, Linking, Image, ActivityIndicator, SafeAreaView,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { api } from '../services/api';
 import { saveFeedback, loadSessions } from '../utils/database';
-import { useAppStore } from '../store/useAppStore';
 
 const DishDetailScreen = ({ route, navigation }) => {
   const { dish } = route.params;
   const [ratingModalVisible, setRatingModalVisible] = useState(false);
-  const [selectedRating, setSelectedRating] = useState(0);
+  const [selectedRating, setSelectedRating]         = useState(0);
+  const [ingredients, setIngredients]               = useState([]);
+  const [loadingDetail, setLoadingDetail]           = useState(true);
+
+  useEffect(() => { loadDetail(); }, []);
+
+  // ✅ FIX: Load nguyên liệu thật từ API
+  const loadDetail = async () => {
+    try {
+      const dishId = dish.dish_id || dish.id;
+      if (!dishId) return;
+      const res = await api.get(`/api/v1/dishes/${dishId}`);
+      setIngredients(res.data.ingredients || []);
+    } catch (e) {
+      console.error('loadDetail:', e);
+    } finally {
+      setLoadingDetail(false);
+    }
+  };
 
   const handleFeedback = async (action, rating = null) => {
     try {
-      const now = new Date().toISOString();
-
-      // Lấy session gần nhất từ Firestore
       const sessions = await loadSessions(1);
       if (sessions.length > 0) {
         await saveFeedback({
-          session_id: sessions[0].id,
-          dish_id: dish.dish_id,
+          session_id:  sessions[0].id,
+          dish_id:     dish.dish_id || dish.id,
           action,
           rating,
-          feedback_at: now,
+          feedback_at: new Date().toISOString(),
         });
-        console.log(`Feedback saved for ${dish.dish_id}: ${action}, rating: ${rating}`);
       }
-
-      // Đóng modal nếu đã đánh giá
-      if (action === 'rated') {
-        setRatingModalVisible(false);
-      }
-    } catch (error) {
-      console.error('Error saving feedback:', error);
-    }
+      if (action === 'rated') setRatingModalVisible(false);
+    } catch (e) { console.error('handleFeedback:', e); }
   };
 
-  const renderStars = (rating) => {
-    let stars = [];
-    for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <Text key={i} style={[styles.star, i <= rating ? styles.filledStar : styles.emptyStar]}>
-          {i <= rating ? '★' : '☆'}
-        </Text>
-      );
-    }
-    return stars;
-  };
+  const ScoreBar = ({ label, value, color = '#4CAF50' }) => (
+    <View style={styles.barRow}>
+      <Text style={styles.barLabel}>{label}</Text>
+      <View style={styles.barTrack}>
+        <View style={[styles.barFill, { width: `${Math.min(100, Math.round((value || 0) * 100))}%`, backgroundColor: color }]} />
+      </View>
+      <Text style={styles.barVal}>{Math.round((value || 0) * 100)}%</Text>
+    </View>
+  );
+
+  const breakdown = dish.score_breakdown || {};
+  const mainIngredients = ingredients.filter(i => i.is_main);
+  const sideIngredients = ingredients.filter(i => !i.is_main);
+
 
   return (
-    <ScrollView style={styles.container}>
-      {/* Hero Image/Gradient Banner */}
-      <LinearGradient 
-        colors={['#7B241C', '#E74C3C']} 
-        style={styles.heroBanner}
-      >
-        <Text style={styles.dishEmoji}>🍜</Text>
-      </LinearGradient>
-
-      <View style={styles.content}>
-        <Text style={styles.title}>{dish.title}</Text>
-        <View style={styles.metadata}>
-          <Text style={styles.nation}>🇻🇳 Việt Nam</Text>
-          <Text style={styles.time}>⏱ {dish.cook_time_min} phút</Text>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f2f2f7' }}>
+      <ScrollView style={styles.container}>
+        {/* ✅ FIX: Back button thật */}
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+            <Text style={styles.backIcon}>‹</Text>
+          </TouchableOpacity>
+          <Text style={styles.navTitle} numberOfLines={1}>{dish.title}</Text>
+          <View style={{ width: 40 }} />
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>TẠI SAO ĐƯỢC GỢI Ý</Text>
-          {dish.explanation && dish.explanation.length > 0 ? (
-            dish.explanation.map((exp, index) => (
-              <Text key={index} style={styles.explanation}>{`• ${exp}`}</Text>
-            ))
-          ) : (
-            <Text style={styles.explanation}>Không có giải thích cụ thể cho món này.</Text>
-          )}
-        </View>
+        {/* Hero */}
+        {dish.image_url
+          ? <Image source={{ uri: dish.image_url }} style={styles.heroBanner} resizeMode="cover" />
+          : <LinearGradient colors={['#7B241C', '#E74C3C']} style={styles.heroBanner}>
+              <Text style={{ fontSize: 72 }}>🍜</Text>
+            </LinearGradient>
+        }
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>ĐIỂM PHÙ HỢP</Text>
-          <View style={styles.barContainer}>
-            <Text style={styles.barLabel}>Tổng thể</Text>
-            <View style={styles.progressBar}>
-              <View 
-                style={[
-                  styles.progressFill, 
-                  { width: `${(dish.final_score || 0.7) * 100}%` }
-                ]} 
-              />
-            </View>
-            <Text style={styles.barValue}>{Math.round((dish.final_score || 0.7) * 100)}%</Text>
+        <View style={styles.content}>
+          {/* Title + Meta */}
+          <Text style={styles.title}>{dish.title}</Text>
+          <View style={styles.metaRow}>
+            <View style={styles.chip}><Text style={styles.chipText}>🌏 {dish.nation || 'Việt Nam'}</Text></View>
+            <View style={styles.chip}><Text style={styles.chipText}>⏱ {dish.cook_time_min} phút</Text></View>
+            <View style={styles.chip}><Text style={styles.chipText}>★ {((dish.final_score || 0) * 100).toFixed(0)}%</Text></View>
           </View>
-          
-          <View style={styles.barContainer}>
-            <Text style={styles.barLabel}>Hydration</Text>
-            <View style={styles.progressBar}>
-              <View style={[styles.progressFill, { width: '74%' }]} />
-            </View>
-            <Text style={styles.barValue}>74%</Text>
-          </View>
-          
-          <View style={styles.barContainer}>
-            <Text style={styles.barLabel}>Nhiệt độ</Text>
-            <View style={styles.progressBar}>
-              <View style={[styles.progressFill, { width: '91%' }]} />
-            </View>
-            <Text style={styles.barValue}>91%</Text>
-          </View>
-          
-          <View style={styles.barContainer}>
-            <Text style={styles.barLabel}>Khẩu vị</Text>
-            <View style={styles.progressBar}>
-              <View style={[styles.progressFill, { width: '65%' }]} />
-            </View>
-            <Text style={styles.barValue}>65%</Text>
-          </View>
-          
-          {dish.ingredient_boost && dish.ingredient_boost > 0 && (
-            <View style={styles.barContainer}>
-              <Text style={styles.barLabel}>Nguyên liệu</Text>
-              <View style={styles.progressBar}>
-                <View style={[styles.progressFill, { width: `${(dish.ingredient_boost || 0) * 100}%` }]} />
-              </View>
-              <Text style={styles.barValue}>{Math.round((dish.ingredient_boost || 0) * 100)}%</Text>
-            </View>
-          )}
-        </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>NGUYÊN LIỆU CHÍNH</Text>
-          <View style={styles.ingredientsContainer}>
-            <TouchableOpacity style={styles.ingredientTag}><Text style={styles.ingredientText}>Thịt bò</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.ingredientTag}><Text style={styles.ingredientText}>Bún</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.ingredientTag}><Text style={styles.ingredientText}>Sả</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.ingredientTag}><Text style={styles.ingredientText}>Ớt</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.ingredientTag}><Text style={styles.ingredientText}>Mắm ruốc</Text></TouchableOpacity>
+          {/* Lý do gợi ý */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>TẠI SAO ĐƯỢC GỢI Ý</Text>
+            {(dish.explanation || []).map((exp, i) => (
+              <Text key={i} style={styles.explanationItem}>• {exp}</Text>
+            ))}
           </View>
-        </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>GỢI Ý PHỤC VỤ</Text>
-          <Text style={styles.servingSuggestion}>
-            {dish.serving_suggestion || "Ăn nóng để phát huy tác dụng giữ ấm và tăng cường hương vị."}
-          </Text>
-        </View>
-       {dish.image_url ? (
-  <View style={styles.imageContainer}>
-    <Image
-      source={{ uri: dish.image_url }}
-      style={styles.dishImage}
-      resizeMode="contain"
-      onError={(e) => console.log('Image error:', e.nativeEvent.error)}
-    />
-  </View>
-) : null}
- <View style={styles.section}>
-          <Text style={styles.sectionTitle}>CÁCH NẤU</Text>
-          <Text style={styles.servingSuggestion} onPress={() => Linking.openURL(dish.url || "https://www.google.com")}>
-            {dish.url || "Ăn nóng để phát huy tác dụng giữ ấm và tăng cường hương vị."}
-          </Text>
-        </View>
+          {/* Điểm phù hợp — dùng dữ liệu thật từ score_breakdown */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>ĐIỂM PHÙ HỢP</Text>
+            <ScoreBar label="Tổng thể"  value={dish.final_score}      color="#007AFF" />
+            {breakdown.hydration > 0 && <ScoreBar label="Hydration"  value={breakdown.hydration} color="#5AC8FA" />}
+            {breakdown.warming   > 0 && <ScoreBar label="Giữ ấm"    value={breakdown.warming}   color="#FF9500" />}
+            {breakdown.cooling   > 0 && <ScoreBar label="Làm mát"   value={breakdown.cooling}   color="#34C759" />}
+            {breakdown.boost     > 0 && <ScoreBar label="Nguyên liệu" value={breakdown.boost}   color="#AF52DE" />}
+          </View>
 
-        <View style={styles.feedbackSection}>
-          <Text style={styles.feedbackQuestion}>Bạn có muốn ăn món này không?</Text>
-          <View style={styles.feedbackButtons}>
-            <TouchableOpacity 
-              style={[styles.feedbackButton, styles.eatButton]}
-              onPress={() => handleFeedback('eaten')}
-            >
-              <Text style={styles.feedbackButtonText}>😋 Đã ăn</Text>
+          {/* Nguyên liệu — ✅ FIX: Load thật từ API */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>NGUYÊN LIỆU</Text>
+            {loadingDetail ? (
+              <ActivityIndicator color="#007AFF" style={{ marginVertical: 12 }} />
+            ) : ingredients.length === 0 ? (
+              <Text style={styles.noData}>Không có dữ liệu nguyên liệu</Text>
+            ) : (
+              <>
+                {mainIngredients.length > 0 && (
+                  <>
+                    <Text style={styles.ingGroupTitle}>Chính</Text>
+                    <View style={styles.ingGrid}>
+                      {mainIngredients.map(ing => (
+                        <View key={ing.id} style={styles.ingChip}>
+                          <Text style={styles.ingText}>{ing.name}</Text>
+                          {ing.quantity_g > 0 && <Text style={styles.ingQty}>{ing.quantity_g}g</Text>}
+                        </View>
+                      ))}
+                    </View>
+                  </>
+                )}
+                {sideIngredients.length > 0 && (
+                  <>
+                    <Text style={[styles.ingGroupTitle, { marginTop: 10 }]}>Gia vị & phụ</Text>
+                    <View style={styles.ingGrid}>
+                      {sideIngredients.map(ing => (
+                        <View key={ing.id} style={[styles.ingChip, styles.ingChipSide]}>
+                          <Text style={[styles.ingText, { color: '#888' }]}>{ing.name}</Text>
+                        </View>
+                      ))}
+                    </View>
+                  </>
+                )}
+              </>
+            )}
+          </View>
+
+          {/* Gợi ý phục vụ */}
+          {dish.serving_suggestion ? (
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>GỢI Ý PHỤC VỤ</Text>
+              <Text style={styles.servingText}>{dish.serving_suggestion}</Text>
+            </View>
+          ) : null}
+
+          {/* Xem công thức */}
+          {dish.url ? (
+            <TouchableOpacity style={styles.recipeBtn}
+              onPress={() => Linking.openURL(dish.url)}>
+              <Text style={styles.recipeBtnText}>📖 Xem công thức đầy đủ</Text>
             </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.feedbackButton, styles.rateButton]}
-              onPress={() => setRatingModalVisible(true)}
-            >
-              <Text style={styles.feedbackButtonText}>⭐ Đánh giá</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.feedbackButton, styles.skipButton]}
-              onPress={() => handleFeedback('skipped')}
-            >
-              <Text style={styles.feedbackButtonText}>✕ Bỏ qua</Text>
-            </TouchableOpacity>
+          ) : null}
+
+          {/* Feedback */}
+          <View style={styles.feedbackSection}>
+            <Text style={styles.feedbackQ}>Bạn có muốn ăn món này không?</Text>
+            <View style={styles.feedbackRow}>
+              <TouchableOpacity style={[styles.fbBig, { backgroundColor: '#34C759' }]}
+                onPress={() => handleFeedback('eaten')}>
+                <Text style={styles.fbBigText}>😋 Đã ăn</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.fbBig, { backgroundColor: '#FFCC00' }]}
+                onPress={() => setRatingModalVisible(true)}>
+                <Text style={[styles.fbBigText, { color: '#333' }]}>⭐ Đánh giá</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.fbBig, { backgroundColor: '#FF3B30' }]}
+                onPress={() => handleFeedback('skipped')}>
+                <Text style={styles.fbBigText}>✕ Bỏ qua</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
 
       {/* Rating Modal */}
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={ratingModalVisible}
-        onRequestClose={() => setRatingModalVisible(false)}
-      >
+      <Modal animationType="slide" transparent visible={ratingModalVisible}
+        onRequestClose={() => setRatingModalVisible(false)}>
         <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+          <View style={styles.modalCard}>
             <Text style={styles.modalTitle}>Bạn thích món này đến đâu?</Text>
-            
-            <View style={styles.starsContainer}>
-              {renderStars(selectedRating)}
-            </View>
-            
-            <View style={styles.ratingControls}>
-              {[1, 2, 3, 4, 5].map(num => (
-                <TouchableOpacity 
-                  key={num} 
-                  style={[styles.ratingButton, selectedRating === num && styles.selectedRatingButton]}
-                  onPress={() => setSelectedRating(num)}
-                >
-                  <Text style={[styles.ratingButtonText, selectedRating === num && styles.selectedRatingButtonText]}>
-                    {num}
-                  </Text>
+            <View style={{ flexDirection: 'row', marginBottom: 24 }}>
+              {[1,2,3,4,5].map(n => (
+                <TouchableOpacity key={n} onPress={() => setSelectedRating(n)} style={{ padding: 6 }}>
+                  <Text style={{ fontSize: 32, color: n <= selectedRating ? '#FFCC00' : '#ddd' }}>★</Text>
                 </TouchableOpacity>
               ))}
             </View>
-            
-            
-            <View style={styles.modalButtons}>
-              <TouchableOpacity 
-                style={styles.cancelButton}
-                onPress={() => setRatingModalVisible(false)}
-              >
-                <Text style={styles.cancelButtonText}>Hủy</Text>
+            <View style={{ flexDirection: 'row', gap: 10 }}>
+              <TouchableOpacity style={styles.modalCancel} onPress={() => setRatingModalVisible(false)}>
+                <Text style={{ color: '#666', fontWeight: '600' }}>Hủy</Text>
               </TouchableOpacity>
-              
-              <TouchableOpacity 
-                style={[styles.submitButton, !selectedRating && styles.disabledButton]}
-                onPress={() => handleFeedback('rated', selectedRating)}
-                disabled={!selectedRating}
-              >
-                <Text style={styles.submitButtonText}>Gửi đánh giá</Text>
+              <TouchableOpacity style={[styles.modalSubmit, !selectedRating && { opacity: 0.4 }]}
+                onPress={() => handleFeedback('rated', selectedRating)} disabled={!selectedRating}>
+                <Text style={{ color: 'white', fontWeight: '600' }}>Gửi</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
       </Modal>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  heroBanner: {
-    height: 200,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  dishEmoji: {
-    fontSize: 80,
-  },
-  content: {
-    flex: 1,
-    padding: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: -20,
-    marginBottom: 8,
-    backgroundColor: 'white',
-    padding: 8,
-    borderRadius: 8,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-  },
-  metadata: {
-    flexDirection: 'row',
-    marginBottom: 16,
-  },
-  nation: {
-    fontSize: 14,
-    color: '#666',
-    marginRight: 12,
-  },
-  time: {
-    fontSize: 14,
-    color: '#666',
-  },
-  section: {
-    backgroundColor: 'white',
-    padding: 16,
-    borderRadius: 8,
-    marginBottom: 12,
-    elevation: 1,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-  },
-  imageContainer: {
-    backgroundColor: 'white',
-    padding: 8,
-    borderRadius: 8,
-    marginBottom: 12,
-    elevation: 1,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    overflow: 'hidden',
-  },
-  dishImage: {
-  width: '100%',
-  height: 220,
-  borderRadius: 8,
-  resizeMode: 'contain',
-},
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    color: '#333',
-  },
-  explanation: {
-    fontSize: 14,
-    color: '#666',
-    lineHeight: 20,
-    marginBottom: 8,
-  },
-  barContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  barLabel: {
-    width: 80,
-    fontSize: 14,
-    color: '#333',
-  },
-  progressBar: {
-    flex: 1,
-    height: 8,
-    backgroundColor: '#e0e0e0',
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    backgroundColor: '#4CAF50',
-  },
-  barValue: {
-    width: 40,
-    textAlign: 'right',
-    fontSize: 14,
-    color: '#666',
-  },
-  ingredientsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  ingredientTag: {
-    backgroundColor: '#f0f7ff',
-    borderColor: '#007AFF',
-    borderWidth: 1,
-    borderRadius: 12,
-    paddingVertical: 4,
-    paddingHorizontal: 12,
-    marginRight: 8,
-    marginBottom: 8,
-  },
-  ingredientText: {
-    color: '#007AFF',
-    fontSize: 12,
-  },
-  servingSuggestion: {
-    fontSize: 14,
-    color: '#666',
-    fontStyle: 'italic',
-  },
-  feedbackSection: {
-    backgroundColor: 'white',
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-    elevation: 1,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-  },
-  feedbackQuestion: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    textAlign: 'center',
-  },
-  feedbackButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  feedbackButton: {
-    flex: 1,
-    padding: 12,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginHorizontal: 4,
-  },
-  eatButton: {
-    backgroundColor: '#4CD964',
-  },
-  rateButton: {
-    backgroundColor: '#FFCC00',
-  },
-  skipButton: {
-    backgroundColor: '#FF3B30',
-  },
-  feedbackButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 14,
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    padding: 24,
-    borderRadius: 12,
-    width: '80%',
-    alignItems: 'center',
-  },
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  starsContainer: {
-    flexDirection: 'row',
-    marginBottom: 20,
-  },
-  star: {
-    fontSize: 30,
-    marginHorizontal: 4,
-  },
-  filledStar: {
-    color: '#FFCC00',
-  },
-  emptyStar: {
-    color: '#ccc',
-  },
-  ratingControls: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    marginBottom: 20,
-  },
-  ratingButton: {
-    backgroundColor: '#f0f0f0',
-    borderRadius: 8,
-    padding: 8,
-    minWidth: 40,
-    alignItems: 'center',
-  },
-  selectedRatingButton: {
-    backgroundColor: '#007AFF',
-  },
-  ratingButtonText: {
-    fontSize: 16,
-    color: '#666',
-  },
-  selectedRatingButtonText: {
-    color: 'white',
-  },
-  modalButtons: {
-    flexDirection: 'row',
-    width: '100%',
-  },
-  cancelButton: {
-    flex: 1,
-    padding: 12,
-    borderRadius: 8,
-    backgroundColor: '#f0f0f0',
-    marginRight: 8,
-    alignItems: 'center',
-  },
-  submitButton: {
-    flex: 1,
-    padding: 12,
-    borderRadius: 8,
-    backgroundColor: '#007AFF',
-    marginLeft: 8,
-    alignItems: 'center',
-  },
-  disabledButton: {
-    backgroundColor: '#ccc',
-  },
-  cancelButtonText: {
-    color: '#666',
-    fontWeight: 'bold',
-  },
-  submitButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
+  container:      { flex: 1, backgroundColor: '#f2f2f7' },
+  navBar:         { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+                    paddingHorizontal: 12, paddingVertical: 10, backgroundColor: 'white',
+                    borderBottomWidth: 0.5, borderBottomColor: '#e0e0e0' },
+  backBtn:        { width: 40, height: 40, justifyContent: 'center', alignItems: 'center' },
+  backIcon:       { fontSize: 32, color: '#007AFF', lineHeight: 38, marginTop: -4 },
+  navTitle:       { flex: 1, fontSize: 16, fontWeight: '600', textAlign: 'center', color: '#111', marginHorizontal: 8 },
+  heroBanner:     { width: '100%', height: 220, justifyContent: 'center', alignItems: 'center' },
+  content:        { padding: 16 },
+  title:          { fontSize: 22, fontWeight: '700', color: '#111', marginBottom: 10 },
+  metaRow:        { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 4 },
+  chip:           { backgroundColor: '#f0f0f5', paddingHorizontal: 10, paddingVertical: 5, borderRadius: 20 },
+  chipText:       { fontSize: 12, color: '#444', fontWeight: '500' },
+  section:        { backgroundColor: 'white', borderRadius: 14, padding: 16, marginBottom: 12,
+                    elevation: 1, shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.06, shadowRadius: 3 },
+  sectionTitle:   { fontSize: 12, fontWeight: '700', color: '#999', letterSpacing: 0.5, marginBottom: 12 },
+  explanationItem:{ fontSize: 14, color: '#444', lineHeight: 22, marginBottom: 6 },
+  barRow:         { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
+  barLabel:       { width: 82, fontSize: 13, color: '#555' },
+  barTrack:       { flex: 1, height: 8, backgroundColor: '#eee', borderRadius: 4, overflow: 'hidden' },
+  barFill:        { height: '100%', borderRadius: 4 },
+  barVal:         { width: 38, textAlign: 'right', fontSize: 12, color: '#888' },
+  ingGroupTitle:  { fontSize: 12, fontWeight: '600', color: '#666', marginBottom: 8 },
+  ingGrid:        { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  ingChip:        { backgroundColor: '#e8f0ff', borderRadius: 20, paddingVertical: 5, paddingHorizontal: 12 },
+  ingChipSide:    { backgroundColor: '#f5f5f5' },
+  ingText:        { fontSize: 13, color: '#1a56e0', fontWeight: '500' },
+  ingQty:         { fontSize: 11, color: '#888', marginTop: 1 },
+  noData:         { fontSize: 14, color: '#aaa', fontStyle: 'italic' },
+  servingText:    { fontSize: 14, color: '#555', fontStyle: 'italic', lineHeight: 22 },
+  recipeBtn:      { backgroundColor: '#f0f6ff', borderRadius: 12, padding: 14, alignItems: 'center',
+                    marginBottom: 12, borderWidth: 1, borderColor: '#c7deff' },
+  recipeBtnText:  { fontSize: 15, color: '#007AFF', fontWeight: '600' },
+  feedbackSection:{ backgroundColor: 'white', borderRadius: 14, padding: 16, marginBottom: 12 },
+  feedbackQ:      { fontSize: 15, fontWeight: '600', color: '#111', textAlign: 'center', marginBottom: 14 },
+  feedbackRow:    { flexDirection: 'row', gap: 8 },
+  fbBig:          { flex: 1, paddingVertical: 12, borderRadius: 10, alignItems: 'center' },
+  fbBigText:      { color: 'white', fontWeight: '700', fontSize: 13 },
+  modalOverlay:   { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' },
+  modalCard:      { backgroundColor: 'white', borderRadius: 18, padding: 28, width: '80%', alignItems: 'center' },
+  modalTitle:     { fontSize: 17, fontWeight: '700', marginBottom: 20, textAlign: 'center', color: '#111' },
+  modalCancel:    { flex: 1, padding: 12, borderRadius: 10, backgroundColor: '#f0f0f0', alignItems: 'center' },
+  modalSubmit:    { flex: 1, padding: 12, borderRadius: 10, backgroundColor: '#007AFF', alignItems: 'center' },
 });
 
 export default DishDetailScreen;

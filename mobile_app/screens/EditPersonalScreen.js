@@ -6,9 +6,9 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
-  Picker,
   Alert
 } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import {
   loadProfile as loadProfileFromFirebase,
   saveProfile as saveProfileToFirebase,
@@ -75,10 +75,8 @@ const EditPersonalScreen = () => {
         updated_at: now,
       };
 
-      // saveProfileToFirebase dùng merge:true — tự xử lý cả create lẫn update
       await saveProfileToFirebase(profileData);
 
-      // Update the store
       const updatedProfile = { id: 1, ...profileData, created_at: now };
       setProfile(updatedProfile);
 
@@ -106,11 +104,7 @@ const EditPersonalScreen = () => {
         <View style={styles.inputGroup}>
           <Text style={styles.label}>Giới tính</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={gender}
-              onValueChange={setGender}
-              style={styles.picker}
-            >
+            <Picker selectedValue={gender} onValueChange={setGender} style={styles.picker}>
               <Picker.Item label="Nam" value="male" />
               <Picker.Item label="Nữ" value="female" />
               <Picker.Item label="Khác" value="other" />
@@ -121,11 +115,7 @@ const EditPersonalScreen = () => {
         <View style={styles.inputGroup}>
           <Text style={styles.label}>Chế độ ăn</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={dietType}
-              onValueChange={setDietType}
-              style={styles.picker}
-            >
+            <Picker selectedValue={dietType} onValueChange={setDietType} style={styles.picker}>
               <Picker.Item label="Ăn tất cả" value="omnivore" />
               <Picker.Item label="Chay" value="vegetarian" />
               <Picker.Item label="Thuần chay" value="vegan" />
@@ -137,11 +127,7 @@ const EditPersonalScreen = () => {
         <View style={styles.inputGroup}>
           <Text style={styles.label}>Mục tiêu</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={dietaryGoal}
-              onValueChange={setDietaryGoal}
-              style={styles.picker}
-            >
+            <Picker selectedValue={dietaryGoal} onValueChange={setDietaryGoal} style={styles.picker}>
               <Picker.Item label="Duy trì cân nặng" value="maintenance" />
               <Picker.Item label="Giảm cân" value="weight_loss" />
               <Picker.Item label="Tăng cơ" value="muscle_gain" />
@@ -153,11 +139,7 @@ const EditPersonalScreen = () => {
         <View style={styles.inputGroup}>
           <Text style={styles.label}>Mức độ hoạt động</Text>
           <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={activityLevel}
-              onValueChange={setActivityLevel}
-              style={styles.picker}
-            >
+            <Picker selectedValue={activityLevel} onValueChange={setActivityLevel} style={styles.picker}>
               <Picker.Item label="Ít vận động" value="sedentary" />
               <Picker.Item label="Nhẹ nhàng" value="lightly_active" />
               <Picker.Item label="Vừa phải" value="moderately_active" />
@@ -176,52 +158,18 @@ const EditPersonalScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  form: {
-    padding: 16,
-  },
-  inputGroup: {
-    marginBottom: 20,
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: '#333',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-    backgroundColor: 'white',
-  },
-  pickerContainer: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    backgroundColor: 'white',
-    overflow: 'hidden',
-  },
-  picker: {
-    height: 50,
-  },
-  saveButton: {
-    backgroundColor: '#007AFF',
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginTop: 16,
-  },
-  saveButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
+  container:        { flex: 1, backgroundColor: '#f5f5f5' },
+  form:             { padding: 16 },
+  inputGroup:       { marginBottom: 20 },
+  label:            { fontSize: 16, fontWeight: 'bold', marginBottom: 8, color: '#333' },
+  input:            { borderWidth: 1, borderColor: '#ddd', borderRadius: 8, padding: 12,
+                      fontSize: 16, backgroundColor: 'white' },
+  pickerContainer:  { borderWidth: 1, borderColor: '#ddd', borderRadius: 8,
+                      backgroundColor: 'white', overflow: 'hidden' },
+  picker:           { height: 50 },
+  saveButton:       { backgroundColor: '#007AFF', padding: 16, borderRadius: 8,
+                      alignItems: 'center', marginTop: 16 },
+  saveButtonText:   { color: 'white', fontSize: 16, fontWeight: 'bold' },
 });
 
 export default EditPersonalScreen;

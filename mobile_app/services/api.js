@@ -1,37 +1,27 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5001'; // Replace with actual API URL
+// 🔴 ĐỔI IP NÀY thành IP máy tính chạy server Flask
+// Windows: ipconfig → IPv4 Address
+// Mac/Linux: ifconfig → inet
+// Android Emulator: 10.0.2.2 (alias localhost của host)
+const API_BASE_URL = 'http://localhost:5001'; // Thay bằng IP máy tính của bạn nếu không dùng emulator
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  timeout: 12000,
+  headers: { 'Content-Type': 'application/json' },
 });
 
-// Request interceptor to add auth token if available
 api.interceptors.request.use(
-  (config) => {
-    // In a real app, you'd retrieve the token from secure storage
-    // const token = await getAuthToken();
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`;
-    // }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (config) => config,
+  (error) => Promise.reject(error)
 );
 
-// Response interceptor to handle errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error('API Error:', error.response || error.message);
+    const msg = error.response?.data?.detail || error.message;
+    console.error('[API Error]', error.config?.url, msg);
     return Promise.reject(error);
   }
 );
-
-export { api };
