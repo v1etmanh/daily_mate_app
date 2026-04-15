@@ -19,9 +19,9 @@ const HomeScreen = ({ navigation }) => {
   const [cuisineScope, setCuisineScope]               = useState('vietnam');
   const [marketBasketCTAVisible, setMarketBasketCTAVisible] = useState(true);
   const [refreshing, setRefreshing]                   = useState(false);
-  const [currentSessionId, setCurrentSessionId]       = useState(null);
 
-  const { profile, rankedDishes, setRankedDishes, location, setLocation, allergies } = useAppStore();
+  const { profile, rankedDishes, setRankedDishes, location, setLocation, allergies,
+          currentSessionId, setCurrentSessionId } = useAppStore();
 
   useEffect(() => { loadRecommendation(); }, []);
 

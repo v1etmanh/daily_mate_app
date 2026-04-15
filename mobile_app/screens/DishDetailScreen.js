@@ -10,7 +10,8 @@ import {
   Slider
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { db } from '../utils/database';
+import { saveFeedback, loadSessions } from '../utils/database';
+import { useAppStore } from '../store/useAppStore';
 
 const DishDetailScreen = ({ route, navigation }) => {
   const { dish } = route.params;
@@ -20,24 +21,21 @@ const DishDetailScreen = ({ route, navigation }) => {
   const handleFeedback = async (action, rating = null) => {
     try {
       const now = new Date().toISOString();
-      
-      // Find current session
-      const sessionResult = await db.getFirstAsync(
-        `SELECT id AS session_id FROM recommendation_sessions ORDER BY created_at DESC LIMIT 1`
-      );
-      
-      if (sessionResult) {
-        // Save feedback to local DB
-        await db.runAsync(
-          `INSERT INTO dish_feedback (session_id, dish_id, action, rating, feedback_at) 
-           VALUES (?, ?, ?, ?, ?)`,
-          [sessionResult.session_id, dish.dish_id, action, rating, now]
-        );
-        
+
+      // Lấy session gần nhất từ Firestore
+      const sessions = await loadSessions(1);
+      if (sessions.length > 0) {
+        await saveFeedback({
+          session_id: sessions[0].id,
+          dish_id: dish.dish_id,
+          action,
+          rating,
+          feedback_at: now,
+        });
         console.log(`Feedback saved for ${dish.dish_id}: ${action}, rating: ${rating}`);
       }
-      
-      // Close the modal if rating was submitted
+
+      // Đóng modal nếu đã đánh giá
       if (action === 'rated') {
         setRatingModalVisible(false);
       }

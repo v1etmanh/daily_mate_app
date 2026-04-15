@@ -9,7 +9,7 @@ import {
   Alert
 } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
-import { db } from '../utils/database';
+import { loadAllMetrics, saveBodyMetrics } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 
 const BodyMetricsScreen = () => {
@@ -27,21 +27,17 @@ const BodyMetricsScreen = () => {
 
   const loadMetrics = async () => {
     try {
-      // Get all metrics ordered by date
-      const result = await db.getAllAsync(
-        `SELECT * FROM body_metrics ORDER BY measured_at DESC`
-      );
-      
+      // Lấy toàn bộ metrics từ Firestore, sắp xếp desc theo measured_at
+      const result = await loadAllMetrics();
+
       setMetrics(result);
-      
-      // Get the latest metric for display
+
       if (result.length > 0) {
         setLatestMetrics(result[0]);
         setHeight(result[0].height_cm.toString());
         setWeight(result[0].weight_kg.toString());
       }
-      
-      // Prepare chart data
+
       prepareChartData(result);
     } catch (error) {
       console.error('Error loading metrics:', error);
@@ -97,19 +93,20 @@ const BodyMetricsScreen = () => {
     
     try {
       const now = new Date().toISOString();
-      
-      await db.runAsync(
-        `INSERT INTO body_metrics (height_cm, weight_kg, measured_at, note) 
-         VALUES (?, ?, ?, ?)`,
-        [heightNum, weightNum, now, note || '']
-      );
-      
+
+      await saveBodyMetrics({
+        height_cm: heightNum,
+        weight_kg: weightNum,
+        measured_at: now,
+        note: note || '',
+      });
+
       // Reload metrics
       loadMetrics();
-      
+
       // Clear form
       setNote('');
-      
+
       Alert.alert('Thành công', 'Dữ liệu chỉ số đã được lưu');
     } catch (error) {
       console.error('Error saving metrics:', error);
@@ -117,18 +114,17 @@ const BodyMetricsScreen = () => {
     }
   };
 
-  const bmi = latestMetrics ? calculateBMI(latestMetrics.height_cm, latestMetrics.weight_kg) : null;
-  const bmiCategory = getBMICategory(bmi);
-
   const getBMICategory = (bmiValue) => {
     if (!bmiValue) return '';
-    
     const bmiNum = parseFloat(bmiValue);
-    if (bmiNum < 18.5) return { label: 'Thiếu cân', color: '#2196F3' }; // Blue
-    if (bmiNum < 25) return { label: 'Bình thường', color: '#4CAF50' }; // Green
-    if (bmiNum < 30) return { label: 'Thừa cân', color: '#FFC107' }; // Amber
-    return { label: 'Béo phì', color: '#F44336' }; // Red
+    if (bmiNum < 18.5) return { label: 'Thiếu cân', color: '#2196F3' };
+    if (bmiNum < 25)   return { label: 'Bình thường', color: '#4CAF50' };
+    if (bmiNum < 30)   return { label: 'Thừa cân', color: '#FFC107' };
+    return { label: 'Béo phì', color: '#F44336' };
   };
+
+  const bmi = latestMetrics ? calculateBMI(latestMetrics.height_cm, latestMetrics.weight_kg) : null;
+  const bmiCategory = getBMICategory(bmi);
 
   return (
     <ScrollView style={styles.container}>

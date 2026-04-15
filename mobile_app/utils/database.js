@@ -220,6 +220,21 @@ export async function loadIngredientsByCategories(categoryKeys) {
   return results;
 }
 
+// ─── CLEAR ALL HISTORY (Firestore) ───────────────────────────────────────────
+export async function clearAllHistory() {
+  const id = await getDeviceId();
+  const sessions = await getDocs(sessionsCol(id));
+  const deletes = [];
+  for (const sessionDoc of sessions.docs) {
+    const dishSnap = await getDocs(dishesCol(id, sessionDoc.id));
+    dishSnap.docs.forEach(d => deletes.push(deleteDoc(d.ref)));
+    deletes.push(deleteDoc(sessionDoc.ref));
+  }
+  const feedbackSnap = await getDocs(feedbackCol(id));
+  feedbackSnap.docs.forEach(d => deletes.push(deleteDoc(d.ref)));
+  await Promise.all(deletes);
+}
+
 // ─── db object — chỉ còn dùng bởi useAppStore (load profile/metrics/location)
 export const db = {
   getAllAsync: async (sql) => {

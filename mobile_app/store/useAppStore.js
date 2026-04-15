@@ -15,6 +15,7 @@ export const useAppStore = create((set, get) => ({
 
   // Session hiện tại
   currentSession: null,
+  currentSessionId: null,
   rankedDishes: [],
 
   // UI state
@@ -25,14 +26,15 @@ export const useAppStore = create((set, get) => ({
   location: { lat: null, lon: null, province: '', food_region: '' },
 
   // Actions
-  setProfile:       (profile)   => set({ profile }),
-  setLatestMetrics: (metrics)   => set({ latestMetrics: metrics }),
-  setAllergies:     (allergies) => set({ allergies: [...allergies] }),
-  setCurrentSession:(session)   => set({ currentSession: session }),
-  setRankedDishes:  (dishes)    => set({ rankedDishes: [...dishes] }),
-  setLoading:       (loading)   => set({ isLoading: loading }),
-  setError:         (error)     => set({ error }),
-  setLocation:      (location)  => set({ location }),
+  setProfile:         (profile)   => set({ profile }),
+  setLatestMetrics:   (metrics)   => set({ latestMetrics: metrics }),
+  setAllergies:       (allergies) => set({ allergies: [...allergies] }),
+  setCurrentSession:  (session)   => set({ currentSession: session }),
+  setCurrentSessionId:(id)        => set({ currentSessionId: id }),
+  setRankedDishes:    (dishes)    => set({ rankedDishes: [...dishes] }),
+  setLoading:         (loading)   => set({ isLoading: loading }),
+  setError:           (error)     => set({ error }),
+  setLocation:        (location)  => set({ location }),
 
   // ── Load profile từ Firestore ──────────────────────────────────────────────
   loadProfile: async () => {

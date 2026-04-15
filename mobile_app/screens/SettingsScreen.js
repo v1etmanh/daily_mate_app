@@ -8,7 +8,7 @@ import {
   Alert,
   Picker
 } from 'react-native';
-import { db } from '../utils/database';
+import { getSetting, setSetting, clearAllHistory } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 
 const SettingsScreen = () => {
@@ -25,31 +25,23 @@ const SettingsScreen = () => {
 
   const loadSettings = async () => {
     try {
-      // Load all settings from the database
-      const settingsResult = await db.getAllAsync(
-        `SELECT key, value FROM settings_kv`
-      );
-      
-      const settingsMap = {};
-      settingsResult.forEach(setting => {
-        settingsMap[setting.key] = setting.value;
-      });
-      
-      // Update states with loaded values
-      setCuisinePreference(settingsMap['default_cuisine'] || 'vietnam');
-      setMaxCookTime(settingsMap['max_cook_time'] || '60');
-      setLanguage(settingsMap['language'] || 'vi');
-      setUnitSystem(settingsMap['unit_system'] || 'metric');
-      
-      // Update location if stored
-      if (settingsMap['last_known_lat'] && settingsMap['last_known_lon']) {
-        const updatedLocation = {
-          ...location,
-          lat: parseFloat(settingsMap['last_known_lat']),
-          lon: parseFloat(settingsMap['last_known_lon']),
-          province: settingsMap['last_known_province'] || location.province
-        };
-        setLocation(updatedLocation);
+      const [defaultCuisine, maxCookTime, lang, unitSys, lat, lon, province] = await Promise.all([
+        getSetting('default_cuisine'),
+        getSetting('max_cook_time'),
+        getSetting('language'),
+        getSetting('unit_system'),
+        getSetting('last_known_lat'),
+        getSetting('last_known_lon'),
+        getSetting('last_known_province'),
+      ]);
+
+      setCuisinePreference(defaultCuisine || 'vietnam');
+      setMaxCookTime(maxCookTime || '60');
+      setLanguage(lang || 'vi');
+      setUnitSystem(unitSys || 'metric');
+
+      if (lat && lon) {
+        setLocation({ ...location, lat: parseFloat(lat), lon: parseFloat(lon), province: province || location.province });
       }
     } catch (error) {
       console.error('Error loading settings:', error);
@@ -58,10 +50,7 @@ const SettingsScreen = () => {
 
   const saveSetting = async (key, value) => {
     try {
-      await db.runAsync(
-        `INSERT OR REPLACE INTO settings_kv (key, value) VALUES (?, ?)`,
-        [key, value]
-      );
+      await setSetting(key, String(value));
     } catch (error) {
       console.error('Error saving setting:', error);
       Alert.alert('Lỗi', 'Không thể lưu cài đặt');
@@ -114,11 +103,7 @@ const SettingsScreen = () => {
           style: 'destructive',
           onPress: async () => {
             try {
-              // Delete all recommendation sessions and related data
-              await db.runAsync(`DELETE FROM dish_feedback`);
-              await db.runAsync(`DELETE FROM recommended_dishes`);
-              await db.runAsync(`DELETE FROM recommendation_sessions`);
-              
+              await clearAllHistory();
               Alert.alert('Thành công', 'Lịch sử đã được xóa');
             } catch (error) {
               console.error('Error clearing history:', error);

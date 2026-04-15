@@ -9,7 +9,10 @@ import {
   Picker,
   Alert
 } from 'react-native';
-import { db } from '../utils/database';
+import {
+  loadProfile as loadProfileFromFirebase,
+  saveProfile as saveProfileToFirebase,
+} from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 
 const EditPersonalScreen = () => {
@@ -35,9 +38,7 @@ const EditPersonalScreen = () => {
 
   const loadProfileFromDB = async () => {
     try {
-      const result = await db.getFirstAsync(
-        `SELECT * FROM personal_profile WHERE id = 1`
-      );
+      const result = await loadProfileFromFirebase();
       if (result) {
         setAge(result.age.toString());
         setGender(result.gender);
@@ -65,37 +66,22 @@ const EditPersonalScreen = () => {
 
     try {
       const now = new Date().toISOString();
-      const profileExists = await db.getFirstAsync(
-        `SELECT 1 FROM personal_profile WHERE id = 1`
-      );
-
-      if (profileExists) {
-        await db.runAsync(`
-          UPDATE personal_profile 
-          SET age = ?, gender = ?, diet_type = ?, dietary_goal = ?, activity_level = ?, updated_at = ?
-          WHERE id = 1
-        `, [ageNum, gender, dietType, dietaryGoal, activityLevel, now]);
-      } else {
-        await db.runAsync(`
-          INSERT INTO personal_profile 
-          (id, age, gender, diet_type, dietary_goal, activity_level, created_at, updated_at)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        `, [1, ageNum, gender, dietType, dietaryGoal, activityLevel, now, now]);
-      }
-
-      // Update the store
-      const updatedProfile = {
-        id: 1,
+      const profileData = {
         age: ageNum,
         gender,
         diet_type: dietType,
         dietary_goal: dietaryGoal,
         activity_level: activityLevel,
-        created_at: now,
-        updated_at: now
+        updated_at: now,
       };
+
+      // saveProfileToFirebase dùng merge:true — tự xử lý cả create lẫn update
+      await saveProfileToFirebase(profileData);
+
+      // Update the store
+      const updatedProfile = { id: 1, ...profileData, created_at: now };
       setProfile(updatedProfile);
-      
+
       Alert.alert('Thành công', 'Thông tin cá nhân đã được cập nhật');
     } catch (error) {
       console.error('Error saving profile:', error);

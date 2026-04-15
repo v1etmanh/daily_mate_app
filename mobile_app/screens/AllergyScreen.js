@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert
 } from 'react-native';
-import { db } from '../utils/database';
+import { loadAllergies, addAllergy, removeAllergy } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 
 const AllergyScreen = () => {
@@ -30,17 +30,16 @@ const AllergyScreen = () => {
 
   const loadAllergiesFromDB = async () => {
     try {
-      const result = await db.getAllAsync(
-        `SELECT allergy_key FROM allergy_list`
-      );
-      
+      // loadAllergies() trả về [{ allergy_key, display_name, added_at }, ...]
+      const result = await loadAllergies();
+
       const selectedAllergyKeys = result.map(item => item.allergy_key);
-      
+
       setAllergies(prev => prev.map(allergy => ({
         ...allergy,
-        selected: selectedAllergyKeys.includes(allergy.key)
+        selected: selectedAllergyKeys.includes(allergy.key),
       })));
-      
+
       setStoreAllergies(selectedAllergyKeys);
     } catch (error) {
       console.error('Error loading allergies:', error);
@@ -53,20 +52,13 @@ const AllergyScreen = () => {
       if (allergyIndex === -1) return;
 
       const isSelected = !allergies[allergyIndex].selected;
-      const now = new Date().toISOString();
       
       if (isSelected) {
-        // Add to database
-        await db.runAsync(
-          `INSERT INTO allergy_list (allergy_key, display_name, added_at) VALUES (?, ?, ?)`,
-          [allergyKey, allergies[allergyIndex].display, now]
-        );
+        // Thêm vào Firestore
+        await addAllergy(allergyKey, allergies[allergyIndex].display);
       } else {
-        // Remove from database
-        await db.runAsync(
-          `DELETE FROM allergy_list WHERE allergy_key = ?`,
-          [allergyKey]
-        );
+        // Xóa khỏi Firestore
+        await removeAllergy(allergyKey);
       }
 
       // Update state
