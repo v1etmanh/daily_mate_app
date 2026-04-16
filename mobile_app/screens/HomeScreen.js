@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback,useEffect } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   RefreshControl, Image, Alert, ActivityIndicator,
@@ -17,12 +17,20 @@ import {
 
 const HomeScreen = ({ navigation }) => {
   const isLoadingRef = React.useRef(false);
-  const [isLoading, setIsLoading]     = useState(false);
-  const [weatherData, setWeatherData] = useState(null);
-  const [cuisineScope, setCuisineScope] = useState('vietnam');
-  const [refreshing, setRefreshing]   = useState(false);
+  const [isLoading, setIsLoading]         = useState(false);
+  const [weatherData, setWeatherData]     = useState(null);
+  const [cuisineScope, setCuisineScope]   = useState('vietnam');
+  const [dishTypeFilter, setDishTypeFilter] = useState('all'); // 'all' | 'soup' | 'main_dish'
+  const [refreshing, setRefreshing]       = useState(false);
   const [basketBadge, setBasketBadge] = useState(0);
-
+const isFirstRender = React.useRef(true);
+useEffect(() => {
+  if (isFirstRender.current) {
+    isFirstRender.current = false;
+    return; // ← bỏ qua lần mount đầu, tránh double-call với useFocusEffect
+  }
+  loadRecommendation();
+}, [cuisineScope, dishTypeFilter]); // ← re-fetch mỗi khi filter thay đổi
   const {
     profile, latestMetrics, rankedDishes, setRankedDishes,
     location, setLocation, allergies, currentSessionId,
@@ -160,9 +168,10 @@ const HomeScreen = ({ navigation }) => {
         const res = await api.post('/api/v1/recommend', {
           lat: currentLocation.lat, lon: currentLocation.lon,
           weather, personal,
-          cuisine_scope:   cuisineScope,
-          selected_nation: null,
-          market_basket:   basket,
+          cuisine_scope:    cuisineScope,
+          selected_nation:  null,
+          dish_type_filter: dishTypeFilter,
+          market_basket:    basket,
         });
         setRankedDishes(res.data.ranked_dishes || []);
         await persistSession(res.data, { ...currentLocation, cuisineScope, marketBasket });
@@ -322,8 +331,26 @@ const HomeScreen = ({ navigation }) => {
         ].map(({ key, label }) => (
           <TouchableOpacity key={key}
             style={[styles.scopeBtn, cuisineScope === key && styles.scopeBtnActive]}
-            onPress={() => { setCuisineScope(key); setTimeout(loadRecommendation, 200); }}>
+            onPress={() => setCuisineScope(key)}>
             <Text style={[styles.scopeText, cuisineScope === key && styles.scopeTextActive]}>{label}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      {/* Dish Type Filter */}
+      <View style={styles.dishTypeRow}>
+        {[
+          { key: 'all',       label: '🍽️ Tất cả' },
+          { key: 'soup',      label: '🥣 Canh / Súp' },
+          { key: 'main_dish', label: '🍖 Món mặn' },
+        ].map(({ key, label }) => (
+          <TouchableOpacity key={key}
+            style={[styles.dishTypeBtn, dishTypeFilter === key && styles.dishTypeBtnActive]}
+            onPress={() => setDishTypeFilter(key)}
+            >
+            <Text style={[styles.dishTypeText, dishTypeFilter === key && styles.dishTypeTextActive]}>
+              {label}
+            </Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -398,6 +425,12 @@ const styles = StyleSheet.create({
   scopeBtnActive:  { backgroundColor: C.primary },
   scopeText:       { fontSize: 14, fontWeight: '500', color: C.textMid },
   scopeTextActive: { color: 'white' },
+  dishTypeRow:     { flexDirection: 'row', marginHorizontal: 16, marginTop: 8,
+                     backgroundColor: 'white', borderRadius: 25, padding: 4, elevation: 1 },
+  dishTypeBtn:     { flex: 1, paddingVertical: 9, alignItems: 'center', borderRadius: 20 },
+  dishTypeBtnActive: { backgroundColor: '#E67E22' },
+  dishTypeText:    { fontSize: 12, fontWeight: '500', color: C.textMid },
+  dishTypeTextActive: { color: 'white', fontWeight: '700' },
   basketCTA:       { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginTop: 12,
                      backgroundColor: 'white', borderRadius: 14, padding: 14, elevation: 2,
                      shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.08, shadowRadius: 4 },

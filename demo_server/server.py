@@ -417,13 +417,22 @@ def _get_dish_ingredient_ids(recipe_ids: list, db) -> dict[int, set[int]]:
         result.setdefault(recipe_id, set()).add(ing_id)
     return result
 
-def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season) -> list[dict]:
+def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season,
+                  dish_type_filter: str = "all") -> list[dict]:
     if cuisine_scope == "vietnam":
         nation_sql, nation_params = "AND LOWER(d.nation) = 'vietnam'", {}
     elif cuisine_scope == "specific_nation" and selected_nation:
         nation_sql, nation_params = "AND d.nation = :nation", {"nation": selected_nation}
     else:
         nation_sql, nation_params = "", {}
+
+    # ── Dish type filter (soup / main_dish / all) ───────────────────────────
+    if dish_type_filter == "soup":
+        type_sql = "AND cm.method_name = 'nau_canh'"
+    elif dish_type_filter == "main_dish":
+        type_sql = "AND (cm.method_name IS NULL OR cm.method_name != 'nau_canh')"
+    else:
+        type_sql = ""
 
     sql = f"""
         SELECT d.id, d.title, d.nation, d.cook_time_minutes, d.cooking_method_id,d.image_url,d.url,
@@ -437,7 +446,9 @@ def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season) -
                d.adj_energy_total,      d.dish_energy_total,
                d.adj_sodium_total,      d.dish_sodium_total,
                d.adj_glycemic_load,     d.dish_glycemic_load
-        FROM dishes d WHERE 1=1 {nation_sql} LIMIT 2000
+        FROM dishes d
+        LEFT JOIN cooking_methods cm ON d.cooking_method_id = cm.method_id
+        WHERE 1=1 {nation_sql} {type_sql} LIMIT 2000
     """
     rows = db.execute(sql, nation_params).fetchall()
     cols = [
@@ -832,8 +843,9 @@ def recommend():
     body = request.get_json(force=True)
     db   = get_db()
 
-    cuisine_scope   = body.get("cuisine_scope", "vietnam")
-    selected_nation = body.get("selected_nation")
+    cuisine_scope     = body.get("cuisine_scope", "vietnam")
+    selected_nation   = body.get("selected_nation")
+    dish_type_filter  = body.get("dish_type_filter", "all")   # "soup" | "main_dish" | "all"
     basket = body.get("market_basket", {})
 # Nếu client gửi list thay vì dict → coi như skipped
     if isinstance(basket, list):
@@ -857,9 +869,12 @@ def recommend():
     profile["glycemic_control_need"] = demand["glycemic_control_need"]
 
     season    = _get_current_season()
-    dish_pool = filter_dishes(db, cuisine_scope, selected_nation, profile, season)
+    dish_pool = filter_dishes(db, cuisine_scope, selected_nation, profile, season, dish_type_filter)
     if not dish_pool:
-        dish_pool = filter_dishes(db, "global", None, profile, season)
+        # fallback: nới lỏng dish_type trước, sau đó nới cuisine
+        dish_pool = filter_dishes(db, cuisine_scope, selected_nation, profile, season, "all")
+    if not dish_pool:
+        dish_pool = filter_dishes(db, "global", None, profile, season, "all")
 
     task = resolve_taste_weight(pv, loc)
 
@@ -883,6 +898,7 @@ def recommend():
         "weather_vector":  wv,
         "demand_snapshot": demand,
         "cuisine_scope":   cuisine_scope,
+        "dish_type_filter": dish_type_filter,
         "basket_skipped":  is_skipped,
         "dish_pool_size":  len(dish_pool),
         "ranked_dishes":   ranked,
@@ -921,7 +937,7 @@ def dish_detail(dish_id):
         except Exception:
             pass
     ingr = db.execute("""
-        SELECT i.id, i.name, i.name_en, i.category, di.quantity_g, di.is_main,di.image_url,di.url
+        SELECT i.id, i.name, i.name_en, i.category, di.quantity_g, di.is_main
         FROM dish_ingredient di JOIN ingredients i ON di.ingredient_id = i.id
         WHERE di.recipe_id = ?
         ORDER BY di.is_main DESC, di.quantity_g DESC
