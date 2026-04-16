@@ -257,6 +257,68 @@ export async function loadIngredientsByCategories(categoryKeys) {
   return results;
 }
 
+// ─── CHALLENGE HISTORY ────────────────────────────────────────────────────────
+// Lưu local bằng AsyncStorage (offline-safe). Firestore sync optional.
+const CHALLENGE_PREFIX = 'challenge_history_';
+
+export async function saveChallengeHistory({ challenge_date, dish_id, dish_title }) {
+  const key = CHALLENGE_PREFIX + challenge_date;
+  const record = { challenge_date, dish_id, dish_title, completed: 0, completed_at: null };
+  await AsyncStorage.setItem(key, JSON.stringify(record));
+  return record;
+}
+
+export async function markChallengeCompleted(challenge_date) {
+  const key = CHALLENGE_PREFIX + challenge_date;
+  try {
+    const raw = await AsyncStorage.getItem(key);
+    const record = raw ? JSON.parse(raw) : { challenge_date, dish_id: '', dish_title: '', completed: 0 };
+    record.completed    = 1;
+    record.completed_at = new Date().toISOString();
+    await AsyncStorage.setItem(key, JSON.stringify(record));
+    return record;
+  } catch (e) {
+    console.warn('[ChallengeHistory] markCompleted error:', e);
+    return null;
+  }
+}
+
+export async function loadChallengeHistory(limitCount = 30) {
+  try {
+    const keys = await AsyncStorage.getAllKeys();
+    const challengeKeys = keys.filter(k => k.startsWith(CHALLENGE_PREFIX))
+      .sort().reverse().slice(0, limitCount);
+    if (!challengeKeys.length) return [];
+    const pairs = await AsyncStorage.multiGet(challengeKeys);
+    return pairs.map(([, v]) => v ? JSON.parse(v) : null).filter(Boolean);
+  } catch (e) {
+    console.warn('[ChallengeHistory] load error:', e);
+    return [];
+  }
+}
+
+export async function getChallengeDateRecord(challenge_date) {
+  try {
+    const raw = await AsyncStorage.getItem(CHALLENGE_PREFIX + challenge_date);
+    return raw ? JSON.parse(raw) : null;
+  } catch { return null; }
+}
+
+export async function computeStreak() {
+  const history = await loadChallengeHistory(60);
+  const completedSet = new Set(history.filter(r => r.completed).map(r => r.challenge_date));
+  let streak = 0;
+  const today = new Date();
+  // Streak tính từ hôm qua trở về (không penalty nếu hôm nay chưa làm)
+  for (let i = 1; i <= 60; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const dateStr = d.toISOString().slice(0, 10).replace(/-/g, '');
+    if (completedSet.has(dateStr)) { streak++; } else { break; }
+  }
+  return streak;
+}
+
 // ─── CLEAR ALL HISTORY (Firestore) ───────────────────────────────────────────
 export async function clearAllHistory() {
   const id = await getDeviceId();

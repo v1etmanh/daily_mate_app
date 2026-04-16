@@ -13,6 +13,7 @@ export const useAppStore = create((set, get) => ({
   error:            null,
   location:         { lat: null, lon: null, province: '', food_region: '' },
   maxPrepTime:      60,   // F02: thời gian nấu tối đa (phút). 999 = không giới hạn
+  costPreference:   2,    // F03: 1=Tiết kiệm | 2=Vừa phải | 3=Thoải mái
 
   // MarketBasket — giỏ nguyên liệu của phiên hiện tại
   marketBasket: {
@@ -31,6 +32,7 @@ export const useAppStore = create((set, get) => ({
   setError:            (error)     => set({ error }),
   setLocation:         (location)  => set({ location }),
   setMaxPrepTime:      (val)       => set({ maxPrepTime: Number(val) }),
+  setCostPreference:   (val)       => set({ costPreference: Number(val) }),  // F03
 
   setMarketBasket: (basket) => set({
     marketBasket: {
@@ -95,5 +97,15 @@ export const useAppStore = create((set, get) => ({
       const parsed = val ? parseInt(val, 10) : 60;
       set({ maxPrepTime: isNaN(parsed) ? 60 : parsed });
     } catch (e) { console.error('initializeMaxPrepTime:', e); }
+  },
+
+  // F03: load cost_preference từ settings_kv khi app khởi động
+  initializeCostPreference: async () => {
+    try {
+      const val = await getSetting('cost_preference');
+      console.log('initializeCostPreference:', val);
+      const parsed = val ? parseInt(val, 10) : 2;
+      set({ costPreference: isNaN(parsed) ? 2 : parsed });
+    } catch (e) { console.error('initializeCostPreference:', e); }
   },
 }));

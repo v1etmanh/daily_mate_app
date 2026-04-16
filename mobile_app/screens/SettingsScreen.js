@@ -11,21 +11,29 @@ import { Picker } from '@react-native-picker/picker';
 import { getSetting, setSetting, clearAllHistory } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 
+const COST_OPTIONS = [
+  { label: '🌿 Tiết kiệm', value: '1' },
+  { label: '💰 Vừa phải',  value: '2' },
+  { label: '💎 Thoải mái', value: '3' },
+];
+
 const SettingsScreen = () => {
   const [cuisinePreference, setCuisinePreference] = useState('vietnam');
-  const [maxCookTime, setMaxCookTime] = useState('60');
-  const [language, setLanguage] = useState('vi');
-  const [unitSystem, setUnitSystem] = useState('metric');
-  
-  const { location, setLocation } = useAppStore();
+  const [maxCookTime, setMaxCookTime]             = useState('60');
+  const [costPreference, setCostPreferenceLocal]  = useState('2');  // F03
+  const [language, setLanguage]                   = useState('vi');
+  const [unitSystem, setUnitSystem]               = useState('metric');
+
+  const { location, setLocation, setCostPreference: setStoreCostPref } = useAppStore();
 
   useEffect(() => { loadSettings(); }, []);
 
   const loadSettings = async () => {
     try {
-      const [defaultCuisine, maxCook, lang, unitSys, lat, lon, province] = await Promise.all([
+      const [defaultCuisine, maxCook, costPref, lang, unitSys, lat, lon, province] = await Promise.all([
         getSetting('default_cuisine'),
         getSetting('max_cook_time'),
+        getSetting('cost_preference'),   // F03
         getSetting('language'),
         getSetting('unit_system'),
         getSetting('last_known_lat'),
@@ -34,6 +42,7 @@ const SettingsScreen = () => {
       ]);
       setCuisinePreference(defaultCuisine || 'vietnam');
       setMaxCookTime(maxCook || '60');
+      setCostPreferenceLocal(costPref || '2');   // F03
       setLanguage(lang || 'vi');
       setUnitSystem(unitSys || 'metric');
       if (lat && lon) {
@@ -53,12 +62,18 @@ const SettingsScreen = () => {
     }
   };
 
-  const handleCuisineChange    = async (v) => { setCuisinePreference(v); await saveSetting('default_cuisine', v); };
-  const handleMaxCookTimeChange = async (v) => { setMaxCookTime(v);       await saveSetting('max_cook_time', v); };
-  const handleLanguageChange    = async (v) => { setLanguage(v);           await saveSetting('language', v); };
-  const handleUnitSystemChange  = async (v) => { setUnitSystem(v);         await saveSetting('unit_system', v); };
+  const handleCuisineChange     = async (v) => { setCuisinePreference(v); await saveSetting('default_cuisine', v); };
+  const handleMaxCookTimeChange  = async (v) => { setMaxCookTime(v);        await saveSetting('max_cook_time', v); };
+  const handleLanguageChange     = async (v) => { setLanguage(v);            await saveSetting('language', v); };
+  const handleUnitSystemChange   = async (v) => { setUnitSystem(v);          await saveSetting('unit_system', v); };
 
-  const syncIngredients = () => {
+  // F03: lưu cost_preference vào settings_kv + cập nhật store toàn app
+  const handleCostPreferenceChange = async (v) => {
+    setCostPreferenceLocal(v);
+    setStoreCostPref(Number(v));
+    await saveSetting('cost_preference', v);
+  };
+const syncIngredients = () => {
     Alert.alert('Thông báo', 'Đang đồng bộ nguyên liệu...');
     setTimeout(() => Alert.alert('Thành công', 'Nguyên liệu đã được cập nhật'), 1000);
   };
@@ -86,6 +101,7 @@ const SettingsScreen = () => {
     <ScrollView style={styles.container}>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>GỢI Ý MẶC ĐỊNH</Text>
+
         <View style={styles.settingRow}>
           <Text style={styles.settingLabel}>Phạm vi ẩm thực</Text>
           <View style={styles.pickerContainer}>
@@ -99,16 +115,29 @@ const SettingsScreen = () => {
             </Picker>
           </View>
         </View>
+
+        {/* F03: Mức chi phí nguyên liệu */}
+        <View style={styles.settingRow}>
+          <Text style={styles.settingLabel}>Mức chi phí</Text>
+          <View style={styles.pickerContainer}>
+            <Picker selectedValue={costPreference} onValueChange={handleCostPreferenceChange} style={styles.picker}>
+              {COST_OPTIONS.map(o => (
+                <Picker.Item key={o.value} label={o.label} value={o.value} />
+              ))}
+            </Picker>
+          </View>
+        </View>
+
         <View style={styles.settingRow}>
           <Text style={styles.settingLabel}>Thời gian nấu tối đa</Text>
           <View style={styles.pickerContainer}>
             <Picker selectedValue={maxCookTime} onValueChange={handleMaxCookTimeChange} style={styles.picker}>
-              <Picker.Item label="15 phút" value="15" />
-              <Picker.Item label="30 phút" value="30" />
-              <Picker.Item label="45 phút" value="45" />
-              <Picker.Item label="60 phút" value="60" />
-              <Picker.Item label="75 phút" value="75" />
-              <Picker.Item label="90 phút" value="90" />
+              <Picker.Item label="15 phút"  value="15" />
+              <Picker.Item label="30 phút"  value="30" />
+              <Picker.Item label="45 phút"  value="45" />
+              <Picker.Item label="60 phút"  value="60" />
+              <Picker.Item label="75 phút"  value="75" />
+              <Picker.Item label="90 phút"  value="90" />
               <Picker.Item label="115 phút" value="115" />
             </Picker>
           </View>
@@ -130,8 +159,8 @@ const SettingsScreen = () => {
           <Text style={styles.settingLabel}>Đơn vị</Text>
           <View style={styles.pickerContainer}>
             <Picker selectedValue={unitSystem} onValueChange={handleUnitSystemChange} style={styles.picker}>
-              <Picker.Item label="Metric (kg, cm)"  value="metric" />
-              <Picker.Item label="Imperial (lb, ft)" value="imperial" />
+              <Picker.Item label="Metric (kg, cm)"   value="metric" />
+              <Picker.Item label="Imperial (lb, ft)"  value="imperial" />
             </Picker>
           </View>
         </View>

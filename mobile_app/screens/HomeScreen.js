@@ -22,7 +22,8 @@ const HomeScreen = ({ navigation }) => {
   const [cuisineScope, setCuisineScope]   = useState('vietnam');
   const [dishTypeFilter, setDishTypeFilter] = useState('all'); // 'all' | 'soup' | 'main_dish'
   const [refreshing, setRefreshing]       = useState(false);
-  const [basketBadge, setBasketBadge] = useState(0);
+  const [basketBadge, setBasketBadge]     = useState(0);
+  const [challengeTitle, setChallengeTitle] = useState('');
 const isFirstRender = React.useRef(true);
 useEffect(() => {
   if (isFirstRender.current) {
@@ -34,7 +35,7 @@ useEffect(() => {
   const {
     profile, latestMetrics, rankedDishes, setRankedDishes,
     location, setLocation, allergies, currentSessionId,
-    setCurrentSessionId, marketBasket, maxPrepTime,
+    setCurrentSessionId, marketBasket, maxPrepTime,costPreference
   } = useAppStore();
 
   // Tự động re-fetch khi màn hình được focus lại (sau khi quay từ MarketBasket)
@@ -42,6 +43,12 @@ useEffect(() => {
     useCallback(() => {
       const count = marketBasket?.selectedIngredients?.length ?? 0;
       setBasketBadge(count);
+      // Fetch challenge title để hiển thị banner
+      const lat = location?.lat || 16.047;
+      const lon = location?.lon || 108.206;
+      api.get(`/api/v1/challenge?lat=${lat}&lon=${lon}`)
+        .then(r => setChallengeTitle(r.data?.challenge_dish?.title || ''))
+        .catch(() => {});
       // Re-fetch nếu basket vừa được cập nhật (không phải lần đầu)
       if (!marketBasket.isSkipped && count > 0 && rankedDishes.length > 0) {
         loadRecommendation();
@@ -154,6 +161,7 @@ useEffect(() => {
         taste_preference: profile?.taste_preference || [],
         allergies:        allergies || [],
         max_prep_time:    maxPrepTime ?? 60,   // F02
+        cost_preference: costPreference.toString() || '2',   // F03
       };
 
       // ✅ FIX: Truyền marketBasket vào API
@@ -358,6 +366,20 @@ useEffect(() => {
         ))}
       </View>
 
+      {/* Challenge Banner */}
+      {challengeTitle !== '' && (
+        <TouchableOpacity style={styles.challengeBanner}
+          onPress={() => navigation.navigate('CookingChallenge')}
+          activeOpacity={0.85}>
+          <Text style={styles.challengeIcon}>🏆</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.challengeLabel}>Thử thách hôm nay</Text>
+            <Text style={styles.challengeTitle} numberOfLines={1}>{challengeTitle}</Text>
+          </View>
+          <Text style={styles.challengeArrow}>›</Text>
+        </TouchableOpacity>
+      )}
+
       {/* Market Basket CTA */}
       <TouchableOpacity style={styles.basketCTA}
         onPress={() => navigation.navigate('MarketBasket')} activeOpacity={0.85}>
@@ -443,6 +465,12 @@ const styles = StyleSheet.create({
   basketBadge:     { backgroundColor: C.primary, borderRadius: 10, paddingHorizontal: 7, paddingVertical: 2, marginRight: 6 },
   basketBadgeText: { color: 'white', fontSize: 12, fontWeight: '600' },
   basketArrow:     { fontSize: 20, color: '#ccc', fontWeight: '300' },
+  challengeBanner: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginTop: 8,
+                     backgroundColor: '#FFF3E0', borderRadius: 14, padding: 12, borderLeftWidth: 4, borderLeftColor: '#FF7640' },
+  challengeIcon:   { fontSize: 22, marginRight: 10 },
+  challengeLabel:  { fontSize: 11, fontWeight: '700', color: '#BF5800', letterSpacing: 0.5 },
+  challengeTitle:  { fontSize: 14, fontWeight: '700', color: '#333', marginTop: 2 },
+  challengeArrow:  { fontSize: 20, color: '#FF7640', fontWeight: '700' },
   sectionTitle:    { fontSize: 17, fontWeight: '700', marginHorizontal: 16, marginTop: 16, marginBottom: 10, color: C.text },
   hListContent:    { paddingLeft: 16, paddingRight: 8 },
   dishCard:        { width: 200, backgroundColor: 'white', borderRadius: 16, marginRight: 12,

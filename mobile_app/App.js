@@ -17,6 +17,7 @@ import HistoryDetailScreen from './screens/HistoryDetailScreen';
 import EditPersonalScreen from './screens/EditPersonalScreen';
 import BodyMetricsScreen from './screens/BodyMetricsScreen';
 import AllergyScreen from './screens/AllergyScreen';
+import CookingChallengeScreen from './screens/CookingChallengeScreen';
 import OnboardingWelcome from './screens/onboarding/OnboardingWelcome';
 import OnboardingPersonal from './screens/onboarding/OnboardingPersonal';
 import OnboardingAllergy from './screens/onboarding/OnboardingAllergy';
@@ -88,7 +89,7 @@ const OnboardingStack = () => {
 };
 
 const App = () => {
-  const { profile, loadProfile, loadLatestMetrics, loadAllergies, initializeLocation,initializeMaxPrepTime } = useAppStore();
+  const { profile, loadProfile, loadLatestMetrics, loadAllergies, initializeLocation,initializeMaxPrepTime,initializeCostPreference } = useAppStore();
   const [appReady, setAppReady] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
 
@@ -107,7 +108,7 @@ const App = () => {
       await loadAllergies();
       await initializeLocation();
       await initializeMaxPrepTime();
-      
+      await initializeCostPreference();
       // Check if onboarding is completed
       const onboardingDone = await AsyncStorage.getItem('onboarding_done');
       setShowOnboarding(!onboardingDone);
@@ -139,6 +140,7 @@ const App = () => {
               <Stack.Screen name="EditPersonal" component={EditPersonalScreen} />
               <Stack.Screen name="BodyMetrics" component={BodyMetricsScreen} />
               <Stack.Screen name="Allergy" component={AllergyScreen} />
+              <Stack.Screen name="CookingChallenge" component={CookingChallengeScreen} />
             </>
           )}
         </Stack.Navigator>

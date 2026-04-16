@@ -549,6 +549,27 @@ def compute_soft_mult(dish, profile, current_season) -> float:
             mult *= 0.85
     except Exception:
         pass
+
+    # F03: cost_preference penalty
+    # cost_pref=1 (tiết kiệm): penalty món đắt (cost_level=3)
+    # cost_pref=2 (vừa phải):  penalty nhẹ món đắt
+    # cost_pref=3 (thoải mái): không penalty
+    # NULL cost_level → mặc định về 2, không bị penalty
+    cost_pref = profile.get("cost_preference", 2)
+    dish_cost = dish.get("cost_level") or 2   # NULL → 2
+
+    if cost_pref == 1:
+        if dish_cost == 3:
+            mult *= 0.4   # penalty mạnh món đắt
+        elif dish_cost == 2:
+            mult *= 0.85  # penalty nhẹ món trung bình
+        # dish_cost == 1 → không penalty
+    elif cost_pref == 2:
+        if dish_cost == 3:
+            mult *= 0.75  # penalty nhẹ món đắt
+        # dish_cost <= 2 → không penalty
+    # cost_pref == 3 → không penalty bất kỳ món nào
+
     return round(mult, 4)
 
 def compute_taste_bonus(dish, taste_weight) -> float:
@@ -855,6 +876,7 @@ def recommend():
     cuisine_scope     = body.get("cuisine_scope", "vietnam")
     selected_nation   = body.get("selected_nation")
     dish_type_filter  = body.get("dish_type_filter", "all")   # "soup" | "main_dish" | "all"
+    cost_preference   = int(body.get("cost_preference", 2))   # F03: 1|2|3
     basket = body.get("market_basket", {})
 # Nếu client gửi list thay vì dict → coi như skipped
     if isinstance(basket, list):
@@ -876,6 +898,7 @@ def recommend():
     profile = build_constraint_profile(pv, db)
     profile["sodium_control_need"]   = demand["sodium_control_need"]
     profile["glycemic_control_need"] = demand["glycemic_control_need"]
+    profile["cost_preference"]       = cost_preference   # F03
 
     season    = _get_current_season()
     dish_pool = filter_dishes(db, cuisine_scope, selected_nation, profile, season, dish_type_filter)
@@ -908,6 +931,7 @@ def recommend():
         "demand_snapshot": demand,
         "cuisine_scope":   cuisine_scope,
         "dish_type_filter": dish_type_filter,
+        "cost_preference": cost_preference,
         "basket_skipped":  is_skipped,
         "dish_pool_size":  len(dish_pool),
         "ranked_dishes":   ranked,
@@ -1020,6 +1044,83 @@ def weather_simulate():
         body.get("season", _get_current_season()),
     )
     return jsonify({"weather_vector": wv})
+
+@app.route("/api/v1/challenge")
+def get_challenge():
+    """
+    GET /api/v1/challenge?lat=16.047&lon=108.206
+    Trả món thử thách trong ngày. Seed theo ngày + vị trí → deterministic.
+    """
+    import hashlib, random as _random
+
+    lat  = float(request.args.get("lat", 16.047))
+    lon  = float(request.args.get("lon", 108.206))
+
+    today     = datetime.now().strftime("%Y%m%d")
+    seed_str  = f"{today}:{round(lat, 1)}:{round(lon, 1)}"
+    seed      = int(hashlib.md5(seed_str.encode()).hexdigest(), 16) % (2**32)
+    _random.seed(seed)
+
+    db     = get_db()
+    wv     = get_or_compute_weather(lat, lon, None)
+    loc    = resolve_location(lat, lon, db)
+    pv     = compute_personal_vector({})
+    demand = compute_demand(wv, pv, loc["climate_type"])
+    profile = build_constraint_profile(pv, db)
+    season  = _get_current_season()
+
+    dish_pool = filter_dishes(db, "vietnam", None, profile, season)
+    if not dish_pool:
+        dish_pool = filter_dishes(db, "global", None, profile, season)
+    if not dish_pool:
+        db.close()
+        return jsonify({"error": "no dishes available"}), 404
+
+    trad_compat = loc["traditional_compatibility"]
+    scores = {}
+    for dish in dish_pool:
+        soft  = compute_soft_mult(dish, profile, season)
+        avail = get_dish_availability(dish["id"], loc["food_region"], db)
+        scores[dish["id"]] = score_dish(dish, demand, soft, TASTE_DEFAULTS, trad_compat, avail, 0.0)
+
+    weights = [max(scores.get(d["id"], 0.01), 0.01) for d in dish_pool]
+    chosen  = _random.choices(dish_pool, weights=weights, k=1)[0]
+
+    top_dim = max(
+        [("hydration", demand["hydration_need"]),
+         ("warming",   demand["warming_food_need"]),
+         ("cooling",   demand["cooling_food_need"])],
+        key=lambda x: x[1]
+    )[0]
+    why_map = {
+        "hydration": f"Hôm nay nắng nóng, {chosen['title']} giúp bổ sung nước hiệu quả.",
+        "warming":   f"Thời tiết lạnh hôm nay, {chosen['title']} ấm bụng, rất phù hợp.",
+        "cooling":   f"Nhiệt độ cao, {chosen['title']} có tính mát giúp hạ nhiệt tốt.",
+    }
+    why_today = why_map.get(top_dim, f"{chosen['title']} phù hợp với thời tiết hôm nay.")
+
+    difficulty_map = {1: "easy", 2: "easy", 3: "medium"}
+    cook_t = chosen.get("cook_time_minutes") or 30
+    diff   = "easy" if cook_t <= 20 else ("medium" if cook_t <= 45 else "hard")
+
+    db.close()
+    return jsonify({
+        "challenge_dish": {
+            "dish_id":      chosen["id"],
+            "title":        chosen["title"],
+            "image_url":    chosen.get("image_url", ""),
+            "url":          chosen.get("url", ""),
+            "nation":       chosen.get("nation", ""),
+            "cook_time_min": cook_t,
+            "difficulty":   diff,
+            "why_today":    why_today,
+            "tips":         [],
+            "final_score":  round(scores.get(chosen["id"], 0.5), 4),
+        },
+        "challenge_date": today,
+        "streak":         0,
+    })
+
 
 @app.route("/api/v1/locations", methods=["GET"])
 def list_locations():
