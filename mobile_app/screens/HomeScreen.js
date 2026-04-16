@@ -13,6 +13,7 @@ import {
   saveSession, saveDishesToSession, saveFeedback,
   loadSessions, loadDishesBySession,
   getWeatherCache, setWeatherCache, setSetting,
+  getRecentDishIds,
 } from '../utils/database';
 
 const HomeScreen = ({ navigation }) => {
@@ -24,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
   const [refreshing, setRefreshing]       = useState(false);
   const [basketBadge, setBasketBadge]     = useState(0);
   const [challengeTitle, setChallengeTitle] = useState('');
+  const [visibleCount, setVisibleCount]   = useState(10); // F04: Load Next-10
 const isFirstRender = React.useRef(true);
 useEffect(() => {
   if (isFirstRender.current) {
@@ -137,6 +139,7 @@ useEffect(() => {
     if (isLoadingRef.current) return; // ✅ Guard chống double-call
     isLoadingRef.current = true;
     setIsLoading(true);
+    setVisibleCount(10); // F04: reset về 10 mỗi khi tải mới
     try {
       const gps = await getUserLocation();
       const currentLocation = gps || location || { lat: 16.047, lon: 108.206, province: 'Đà Nẵng' };
@@ -174,6 +177,9 @@ useEffect(() => {
           };
 
       try {
+        // F04: lấy danh sách dish đã gợi ý gần đây để anti-repetition penalty
+        const recentDishIds = await getRecentDishIds(3);
+
         const res = await api.post('/api/v1/recommend', {
           lat: currentLocation.lat, lon: currentLocation.lon,
           weather, personal,
@@ -181,8 +187,7 @@ useEffect(() => {
           selected_nation:  null,
           dish_type_filter: dishTypeFilter,
           market_basket:    basket,
-          
-
+          recent_dish_ids:  recentDishIds,   // F04
         });
         setRankedDishes(res.data.ranked_dishes || []);
         await persistSession(res.data, { ...currentLocation, cuisineScope, marketBasket });
@@ -408,11 +413,21 @@ useEffect(() => {
         </>
       )}
 
-      {/* Vertical List (4–10) */}
+      {/* Vertical List (rank 4 → visibleCount) */}
       {rankedDishes.length > 3 && (
         <View style={{ marginBottom: 24 }}>
           <Text style={[styles.sectionTitle, { marginTop: 8 }]}>Gợi ý khác</Text>
-          {rankedDishes.slice(3).map(renderListRow)}
+          {rankedDishes.slice(3, visibleCount).map(renderListRow)}
+
+          {/* F04: Nút "Xem thêm" — hiện rank 11-20 mà không gọi API lại */}
+          {visibleCount < rankedDishes.length && (
+            <TouchableOpacity
+              style={styles.loadMoreBtn}
+              onPress={() => setVisibleCount(rankedDishes.length)}
+              activeOpacity={0.8}>
+              <Text style={styles.loadMoreText}>Xem thêm gợi ý ↓</Text>
+            </TouchableOpacity>
+          )}
         </View>
       )}
 
@@ -513,6 +528,12 @@ const styles = StyleSheet.create({
   emptyIcon:       { fontSize: 48, marginBottom: 12 },
   emptyTitle:      { fontSize: 18, fontWeight: '600', color: '#333' },
   emptySub:        { fontSize: 14, color: '#888', marginTop: 4 },
+  // F04: Load Next-10 button
+  loadMoreBtn:     { marginHorizontal: 16, marginTop: 8, marginBottom: 4,
+                     paddingVertical: 13, borderRadius: 12, alignItems: 'center',
+                     backgroundColor: 'white', borderWidth: 1.5, borderColor: C.primary,
+                     elevation: 1 },
+  loadMoreText:    { fontSize: 14, fontWeight: '700', color: C.primary },
 });
 
 export default HomeScreen;

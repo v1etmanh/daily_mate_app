@@ -594,7 +594,8 @@ def compute_dish_boost(recipe_id, selected_set, boost_strategy, db) -> float:
         return round(coverage, 4) if coverage >= 0.5 else 0.0
     return round(coverage, 4)
 def score_dish(dish, demand, soft_mult, taste_weight, trad_compat,
-               dish_avail, ingredient_boost) -> float:
+               dish_avail, ingredient_boost,
+               recent_ids_ordered: list | None = None) -> float:
     DIMS = [
         ("hydration_need",        "adj_hydration_score",   "dish_hydration_score"),
         ("electrolyte_need",      "adj_hydration_score",   None),
@@ -638,10 +639,21 @@ def score_dish(dish, demand, soft_mult, taste_weight, trad_compat,
            + 0.10 * loc_bonus
            + 0.10 * boost)
 
+    # F04: Anti-repetition penalty
+    if recent_ids_ordered:
+        dish_id_str = str(dish.get("id", ""))
+        REPETITION_DECAY = {0: 0.5, 1: 0.65, 2: 0.8}
+        try:
+            pos = recent_ids_ordered.index(dish_id_str)
+            penalty = REPETITION_DECAY.get(pos, 0.85)
+            final *= penalty
+        except ValueError:
+            pass  # món không trong danh sách recent → không penalty
+
     return max(0.0, min(1.0, round(final, 6)))
 
 # ── STEP 09 — Rank + Explain ─────────────────────────────────────────────────
-def rank_and_explain(scores, dish_pool, boosts, demand, profile, top_k=10):
+def rank_and_explain(scores, dish_pool, boosts, demand, profile, top_k=20):
     sorted_ids = sorted(scores, key=lambda x: scores[x], reverse=True)
     dish_map   = {d["id"]: d for d in dish_pool}
     result = []
@@ -877,6 +889,8 @@ def recommend():
     selected_nation   = body.get("selected_nation")
     dish_type_filter  = body.get("dish_type_filter", "all")   # "soup" | "main_dish" | "all"
     cost_preference   = int(body.get("cost_preference", 2))   # F03: 1|2|3
+    # F04: Anti-repetition — danh sách dish_id (string) gần nhất, ordered gần → xa
+    recent_dish_ids_ordered = [str(x) for x in body.get("recent_dish_ids", [])]
     basket = body.get("market_basket", {})
 # Nếu client gửi list thay vì dict → coi như skipped
     if isinstance(basket, list):
@@ -916,7 +930,10 @@ def recommend():
         soft  = compute_soft_mult(dish, profile, season)
         avail = get_dish_availability(dish["id"], loc["food_region"], db)
         boost = compute_dish_boost(dish["id"], selected_ids, boost_strategy, db)
-        scores[dish["id"]] = score_dish(dish, demand, soft, task, trad_compat, avail, boost)
+        scores[dish["id"]] = score_dish(
+            dish, demand, soft, task, trad_compat, avail, boost,
+            recent_ids_ordered=recent_dish_ids_ordered  # F04
+        )
         boosts[dish["id"]] = boost
 
     ranked, fallback_ids = rank_and_explain(scores, dish_pool, boosts, demand, profile)
@@ -935,6 +952,7 @@ def recommend():
         "basket_skipped":  is_skipped,
         "dish_pool_size":  len(dish_pool),
         "ranked_dishes":   ranked,
+        "page_size":       10,   # F04: client hiển thị 10 đầu, "Xem thêm" → 20
         "fallback_ids":    fallback_ids,
         "generated_at":    t0.isoformat(),
     })

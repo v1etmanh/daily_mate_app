@@ -197,6 +197,42 @@ export async function loadFeedbackBySession(sessionId) {
   return snap.docs.map(d => ({ id: d.id, ...d.data() }));
 }
 
+/**
+ * F04 — Anti-repetition: lấy danh sách dish_id đã xuất hiện trong n session gần nhất.
+ * Trả về mảng dish_id (string), ordered gần nhất → xa nhất (tối đa 30 dishes).
+ * @param {number} nSessions - số session gần nhất cần lookback (mặc định 3)
+ */
+export async function getRecentDishIds(nSessions = 3) {
+  try {
+    const id = await getDeviceId();
+    // Lấy n session gần nhất
+    const q = query(sessionsCol(id), orderBy('created_at', 'desc'), limit(nSessions));
+    const sessSnap = await withTimeout(getDocs(q), 5000, null);
+    if (!sessSnap || sessSnap.empty) return [];
+
+    // Với mỗi session, lấy dishes đã được gợi ý (ordered by rank)
+    const allDishIds = [];
+    const seenIds = new Set();
+    for (const sessionDoc of sessSnap.docs) {
+      const dishQ = query(dishesCol(id, sessionDoc.id), orderBy('rank', 'asc'));
+      const dishSnap = await withTimeout(getDocs(dishQ), 4000, null);
+      if (!dishSnap) continue;
+      for (const d of dishSnap.docs) {
+        const dishId = String(d.data().dish_id || '');
+        if (dishId && !seenIds.has(dishId)) {
+          seenIds.add(dishId);
+          allDishIds.push(dishId);
+        }
+      }
+    }
+    // Trả tối đa 30 dish_id, ordered gần nhất → xa nhất
+    return allDishIds.slice(0, 30);
+  } catch (e) {
+    console.warn('[DB] getRecentDishIds error:', e);
+    return [];
+  }
+}
+
 // ─── WEATHER CACHE ────────────────────────────────────────────────────────────
 // Dùng AsyncStorage làm primary cache (instant, offline-safe)
 // Firestore chỉ dùng để sync nếu cần — không block pipeline chính
