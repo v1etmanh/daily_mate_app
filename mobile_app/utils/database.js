@@ -121,11 +121,20 @@ export async function loadAllergies() {
 
 // ─── SETTINGS KV ──────────────────────────────────────────────────────────────
 export async function setSetting(key, value) {
+  // 1. Lưu local ngay lập tức (không chờ network)
+  console.log(`[DB] setSetting ${key} = ${value}`);
+  await AsyncStorage.setItem(`setting_${key}`, String(value));
+  // 2. Sync lên Firestore async (không block UI)
   const id = await getDeviceId();
-  await setDoc(settingsRef(id, key), { key, value: String(value) });
+  setDoc(settingsRef(id, key), { key, value: String(value) }).catch(e =>
+    console.warn('[DB] setSetting Firestore sync failed:', e.code)
+  );
 }
 
 export async function getSetting(key) {
+   const local = await AsyncStorage.getItem(`setting_${key}`);
+  if (local !== null) return local;
+  // 2. Fallback lên Firestore
   const id = await getDeviceId();
   const snap = await withTimeout(getDoc(settingsRef(id, key)), 5000, null);
   return snap && snap.exists() ? snap.data().value : null;

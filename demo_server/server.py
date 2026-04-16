@@ -315,7 +315,6 @@ def compute_personal_vector(p: dict) -> dict:
     for t in raw_prefs:
         if t in taste_weight:
             taste_weight[t] = min(1.0, taste_weight[t] + 0.3)
-
     return {
         "BMI": bmi, "bmr": round(bmr, 2),
         "activity_level_mult":  mult,

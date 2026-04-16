@@ -103,10 +103,13 @@ const SettingsScreen = () => {
           <Text style={styles.settingLabel}>Thời gian nấu tối đa</Text>
           <View style={styles.pickerContainer}>
             <Picker selectedValue={maxCookTime} onValueChange={handleMaxCookTimeChange} style={styles.picker}>
+              <Picker.Item label="15 phút" value="15" />
               <Picker.Item label="30 phút" value="30" />
               <Picker.Item label="45 phút" value="45" />
               <Picker.Item label="60 phút" value="60" />
+              <Picker.Item label="75 phút" value="75" />
               <Picker.Item label="90 phút" value="90" />
+              <Picker.Item label="115 phút" value="115" />
             </Picker>
           </View>
         </View>

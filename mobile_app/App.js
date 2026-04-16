@@ -88,7 +88,7 @@ const OnboardingStack = () => {
 };
 
 const App = () => {
-  const { profile, loadProfile, loadLatestMetrics, loadAllergies, initializeLocation } = useAppStore();
+  const { profile, loadProfile, loadLatestMetrics, loadAllergies, initializeLocation,initializeMaxPrepTime } = useAppStore();
   const [appReady, setAppReady] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
 
@@ -106,6 +106,7 @@ const App = () => {
       await loadLatestMetrics();
       await loadAllergies();
       await initializeLocation();
+      await initializeMaxPrepTime();
       
       // Check if onboarding is completed
       const onboardingDone = await AsyncStorage.getItem('onboarding_done');

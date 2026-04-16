@@ -173,6 +173,8 @@ useEffect(() => {
           selected_nation:  null,
           dish_type_filter: dishTypeFilter,
           market_basket:    basket,
+          
+
         });
         setRankedDishes(res.data.ranked_dishes || []);
         await persistSession(res.data, { ...currentLocation, cuisineScope, marketBasket });

@@ -91,6 +91,7 @@ export const useAppStore = create((set, get) => ({
   initializeMaxPrepTime: async () => {
     try {
       const val = await getSetting('max_cook_time');
+      console.log('initializeMaxPrepTime:', val);
       const parsed = val ? parseInt(val, 10) : 60;
       set({ maxPrepTime: isNaN(parsed) ? 60 : parsed });
     } catch (e) { console.error('initializeMaxPrepTime:', e); }
