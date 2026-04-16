@@ -323,8 +323,9 @@ def compute_personal_vector(p: dict) -> dict:
         "disease_flags":        disease_flags,
         "taste_weight":         taste_weight,
         "has_taste_preference": len(raw_prefs) > 0,
-        "diet_type":  p.get("diet_type", "omnivore"),
-        "allergies":  p.get("allergies", []),
+        "diet_type":     p.get("diet_type", "omnivore"),
+        "allergies":     p.get("allergies", []),
+        "max_prep_time": int(p.get("max_prep_time", 60)),   # F02
     }
 
 # ── STEP 04 — Demand ─────────────────────────────────────────────────────────
@@ -399,7 +400,7 @@ def build_constraint_profile(pv: dict, db) -> dict:
         "sodium_limit_mg":        600.0 if df.get("hypertension") else 1500.0,
         "glycemic_load_limit":    10.0  if df.get("diabetes")     else 25.0,
         "calorie_target":         round(pv["energy_need"] * 0.35, 0),
-        "max_prep_time":          60,
+        "max_prep_time":          pv.get("max_prep_time", 60),   # F02: từ personal payload
     }
 
 # ── STEP 06 — Filter ─────────────────────────────────────────────────────────
@@ -419,6 +420,9 @@ def _get_dish_ingredient_ids(recipe_ids: list, db) -> dict[int, set[int]]:
 
 def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season,
                   dish_type_filter: str = "all") -> list[dict]:
+    # F10: hard time ceiling = max_prep_time + 10 phút (999 = không giới hạn)
+    max_time    = profile.get("max_prep_time", 60)
+    hard_ceiling = None if max_time >= 999 else max_time + 10
     if cuisine_scope == "vietnam":
         nation_sql, nation_params = "AND LOWER(d.nation) = 'vietnam'", {}
     elif cuisine_scope == "specific_nation" and selected_nation:
@@ -472,6 +476,12 @@ def filter_dishes(db, cuisine_scope, selected_nation, profile, current_season,
 
     passed = []
     for d in dishes:
+        # F10: hard ceiling — loại cứng món vượt quá max_prep_time + 10p
+        if hard_ceiling is not None:
+            ct = d.get("cook_time_minutes") or 0
+            if ct > hard_ceiling:
+                continue
+
         if allergy_ing_ids and (dish_ingredient_map.get(d["id"], set()) & allergy_ing_ids):
             continue
 

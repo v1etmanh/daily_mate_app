@@ -12,6 +12,7 @@ export const useAppStore = create((set, get) => ({
   isLoading:        false,
   error:            null,
   location:         { lat: null, lon: null, province: '', food_region: '' },
+  maxPrepTime:      60,   // F02: thời gian nấu tối đa (phút). 999 = không giới hạn
 
   // MarketBasket — giỏ nguyên liệu của phiên hiện tại
   marketBasket: {
@@ -29,6 +30,7 @@ export const useAppStore = create((set, get) => ({
   setLoading:          (loading)   => set({ isLoading: loading }),
   setError:            (error)     => set({ error }),
   setLocation:         (location)  => set({ location }),
+  setMaxPrepTime:      (val)       => set({ maxPrepTime: Number(val) }),
 
   setMarketBasket: (basket) => set({
     marketBasket: {
@@ -83,5 +85,14 @@ export const useAppStore = create((set, get) => ({
       set({ location });
       return location;
     } catch (e) { console.error('initializeLocation:', e); return { lat: null, lon: null, province: '', food_region: '' }; }
+  },
+
+  // F02: load max_prep_time từ settings_kv khi app khởi động
+  initializeMaxPrepTime: async () => {
+    try {
+      const val = await getSetting('max_cook_time');
+      const parsed = val ? parseInt(val, 10) : 60;
+      set({ maxPrepTime: isNaN(parsed) ? 60 : parsed });
+    } catch (e) { console.error('initializeMaxPrepTime:', e); }
   },
 }));

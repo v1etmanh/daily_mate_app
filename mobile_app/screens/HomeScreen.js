@@ -34,7 +34,7 @@ useEffect(() => {
   const {
     profile, latestMetrics, rankedDishes, setRankedDishes,
     location, setLocation, allergies, currentSessionId,
-    setCurrentSessionId, marketBasket,
+    setCurrentSessionId, marketBasket, maxPrepTime,
   } = useAppStore();
 
   // Tự động re-fetch khi màn hình được focus lại (sau khi quay từ MarketBasket)
@@ -153,6 +153,7 @@ useEffect(() => {
         health_condition: profile?.health_condition || [],
         taste_preference: profile?.taste_preference || [],
         allergies:        allergies || [],
+        max_prep_time:    maxPrepTime ?? 60,   // F02
       };
 
       // ✅ FIX: Truyền marketBasket vào API
