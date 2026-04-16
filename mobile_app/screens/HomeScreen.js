@@ -18,6 +18,9 @@ import {
 
 const HomeScreen = ({ navigation }) => {
   const isLoadingRef = React.useRef(false);
+  // Refs để useFocusEffect đọc giá trị mới nhất mà KHÔNG cần them vào deps
+  const rankedDishesLengthRef = React.useRef(0);
+  const prevBasketCountRef    = React.useRef(-1);
   const [isLoading, setIsLoading]         = useState(false);
   const [weatherData, setWeatherData]     = useState(null);
   const [cuisineScope, setCuisineScope]   = useState('vietnam');
@@ -40,24 +43,39 @@ useEffect(() => {
     setCurrentSessionId, marketBasket, maxPrepTime,costPreference
   } = useAppStore();
 
+  // Sync ref với rankedDishes để useFocusEffect đọc được giá trị mới nhất
+  useEffect(() => {
+    rankedDishesLengthRef.current = rankedDishes.length;
+  }, [rankedDishes.length]);
+
+  // ─── Badge + re-fetch khi basket thay đổi ─────────────────────────────────
+  // Tách ra khỏi useFocusEffect để tránh re-register loop
+  useEffect(() => {
+    const count = marketBasket?.selectedIngredients?.length ?? 0;
+    setBasketBadge(count);
+    // Re-fetch chỉ khi count THỰC SỰ thay đổi (không phải lần mount đầu)
+    if (prevBasketCountRef.current !== -1 && prevBasketCountRef.current !== count) {
+      loadRecommendation();
+    }
+    prevBasketCountRef.current = count;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [marketBasket?.selectedIngredients?.length, marketBasket?.isSkipped]);
+
   // Tự động re-fetch khi màn hình được focus lại (sau khi quay từ MarketBasket)
+  // Dùng [] deps để callback không bị re-register mỗi khi store update → tránh infinite loop
   useFocusEffect(
     useCallback(() => {
-      const count = marketBasket?.selectedIngredients?.length ?? 0;
-      setBasketBadge(count);
-      // Fetch challenge title để hiển thị banner
       const lat = location?.lat || 16.047;
       const lon = location?.lon || 108.206;
       api.get(`/api/v1/challenge?lat=${lat}&lon=${lon}`)
         .then(r => setChallengeTitle(r.data?.challenge_dish?.title || ''))
         .catch(() => {});
-      // Re-fetch nếu basket vừa được cập nhật (không phải lần đầu)
-      if (!marketBasket.isSkipped && count > 0 && rankedDishes.length > 0) {
-        loadRecommendation();
-      } else if (rankedDishes.length === 0) {
+      // Chỉ load khi chưa có data (dùng ref để đọc giá trị hiện tại, không cần deps)
+      if (rankedDishesLengthRef.current === 0) {
         loadRecommendation();
       }
-    }, [marketBasket])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) // ← [] ổn định, không re-register khi store update
   );
 
   // ─── Location ────────────────────────────────────────────────────────────────

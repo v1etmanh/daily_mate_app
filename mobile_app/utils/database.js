@@ -205,9 +205,9 @@ export async function loadFeedbackBySession(sessionId) {
 export async function getRecentDishIds(nSessions = 3) {
   try {
     const id = await getDeviceId();
-    // Lấy n session gần nhất
+    // Lấy n session gần nhất — timeout ngắn để không block pipeline
     const q = query(sessionsCol(id), orderBy('created_at', 'desc'), limit(nSessions));
-    const sessSnap = await withTimeout(getDocs(q), 5000, null);
+    const sessSnap = await withTimeout(getDocs(q), 2500, null);
     if (!sessSnap || sessSnap.empty) return [];
 
     // Với mỗi session, lấy dishes đã được gợi ý (ordered by rank)
@@ -215,7 +215,7 @@ export async function getRecentDishIds(nSessions = 3) {
     const seenIds = new Set();
     for (const sessionDoc of sessSnap.docs) {
       const dishQ = query(dishesCol(id, sessionDoc.id), orderBy('rank', 'asc'));
-      const dishSnap = await withTimeout(getDocs(dishQ), 4000, null);
+      const dishSnap = await withTimeout(getDocs(dishQ), 2000, null);
       if (!dishSnap) continue;
       for (const d of dishSnap.docs) {
         const dishId = String(d.data().dish_id || '');
