@@ -1,66 +1,200 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import {
-  View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar, ActivityIndicator,
+  View, Text, StyleSheet, ScrollView, TouchableOpacity, StatusBar,
+  Modal, TextInput, FlatList, KeyboardAvoidingView, Platform,
+  ActivityIndicator, useWindowDimensions,
 } from 'react-native';
-import { loadIngredientCategories, loadIngredientsByCategories } from '../utils/database';
 import { useAppStore } from '../store/useAppStore';
 import { C, R, F, shadow } from '../theme';
 
-const CATEGORY_META = {
-  vegetable:  { display: 'Rau củ',     emoji: '🥦' },
-  fruit:      { display: 'Trái cây',   emoji: '🍎' },
-  protein:    { display: 'Đạm',        emoji: '🍖' },
-  grain:      { display: 'Tinh bột',   emoji: '🌾' },
-  dairy:      { display: 'Sữa & Trứng',emoji: '🥛' },
-  spice:      { display: 'Gia vị',     emoji: '🧄' },
-  fat:        { display: 'Dầu mỡ',    emoji: '🫙' },
-  condiment:  { display: 'Nước chấm',  emoji: '🍶' },
+// ── Helper ────────────────────────────────────────────────────────────────────
+const chunk = (arr, size) => {
+  const res = [];
+  for (let i = 0; i < arr.length; i += size) res.push(arr.slice(i, i + size));
+  return res;
 };
 
-const MarketBasketScreen = ({ navigation }) => {
-  const [categories, setCategories]         = useState([]);
-  const [selectedCats, setSelectedCats]     = useState([]);
-  const [ingredients, setIngredients]       = useState([]);
-  const [selectedIds, setSelectedIds]       = useState([]);
-  const [loading, setLoading]               = useState(true);
-  const [step, setStep]                     = useState(1);
+// ── Category metadata ─────────────────────────────────────────────────────────
+const CAT_META = {
+  vegetable:           { display: 'Rau củ',            emoji: '🥦' },
+  fruit:               { display: 'Trái cây',           emoji: '🍎' },
+  protein:             { display: 'Đạm',                emoji: '🍖' },
+  grain:               { display: 'Tinh bột',           emoji: '🌾' },
+  dairy:               { display: 'Sữa & Trứng',        emoji: '🥛' },
+  spice:               { display: 'Gia vị',             emoji: '🧄' },
+  fat:                 { display: 'Dầu mỡ',             emoji: '🫙' },
+  condiment:           { display: 'Nước chấm',          emoji: '🍶' },
+  meat:                { display: 'Thịt',               emoji: '🥩' },
+  seafood:             { display: 'Hải sản',            emoji: '🦐' },
+  herb_spice:          { display: 'Thảo mộc & Gia vị',  emoji: '🌿' },
+  beverage:            { display: 'Đồ uống',            emoji: '🥤' },
+  egg:                 { display: 'Trứng',              emoji: '🥚' },
+  legume:              { display: 'Đậu các loại',       emoji: '🫘' },
+  nut_seed:            { display: 'Hạt',                emoji: '🥜' },
+  processed:           { display: 'Đã chế biến',        emoji: '🥫' },
+  processed_meat:      { display: 'Thịt chế biến',      emoji: '🌭' },
+  fat_oil:             { display: 'Dầu mỡ',             emoji: '🫙' },
+  greens:              { display: 'Rau xanh',           emoji: '🥬' },
+  grains:              { display: 'Ngũ cốc',            emoji: '🌾' },
+  aquatic_vegetables:  { display: 'Rau thủy sinh',      emoji: '🌊' },
+  halophytes:          { display: 'Rau mặn',            emoji: '🌿' },
+  leafy_greens:        { display: 'Rau lá',             emoji: '🥬' },
+  marine_invertebrates:{ display: 'Hải sản không xương',emoji: '🦑' },
+  dairy_poultry:       { display: 'Gia cầm & Sữa',      emoji: '🍗' },
+  other:               { display: 'Khác',               emoji: '🫙' },
+};
+const getCatMeta = (key) =>
+  CAT_META[key] || { display: key.replace(/_/g, ' '), emoji: '🥬' };
 
-  const { setMarketBasket } = useAppStore();
+// ── IngredientSearchModal ─────────────────────────────────────────────────────
+const IngredientSearchModal = ({
+  visible, category, ingredients, selectedIds, onToggle, onClose,
+}) => {
+  const [query, setQuery] = useState('');
+  const inputRef = useRef(null);
+  const meta = getCatMeta(category);
 
-  useEffect(() => { loadCats(); }, []);
-
-  const loadCats = async () => {
-    try {
-      const result = await loadIngredientCategories();
-      setCategories(result.map(r => ({
-        key: r.category,
-        ...CATEGORY_META[r.category] || { display: r.category, emoji: '🥬' },
-      })));
-    } catch (e) { console.error(e); }
-    finally { setLoading(false); }
-  };
-
-  const toggleCat = async (key) => {
-    const next = selectedCats.includes(key)
-      ? selectedCats.filter(c => c !== key)
-      : [...selectedCats, key];
-    setSelectedCats(next);
-    if (next.length > 0) {
-      setStep(2);
-      try {
-        const res = await loadIngredientsByCategories(next);
-        setIngredients(res);
-      } catch (e) { console.error(e); }
-    } else {
-      setStep(1);
-      setIngredients([]);
-    }
-  };
-
-  const toggleId = (id) => {
-    setSelectedIds(prev =>
-      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+  const filtered = useMemo(() => {
+    if (!query.trim()) return ingredients;
+    const q = query.toLowerCase().trim();
+    return ingredients.filter(
+      i =>
+        (i.name || '').toLowerCase().includes(q) ||
+        (i.name_en || '').toLowerCase().includes(q),
     );
+  }, [query, ingredients]);
+
+  const selectedInCat = useMemo(
+    () => ingredients.filter(i => selectedIds.includes(i.id)).length,
+    [ingredients, selectedIds],
+  );
+
+  const renderItem = useCallback(
+    ({ item }) => {
+      const sel = selectedIds.includes(item.id);
+      return (
+        <TouchableOpacity
+          style={[ms.item, sel && ms.itemActive]}
+          onPress={() => onToggle(item.id)}
+          activeOpacity={0.7}
+        >
+          <View style={{ flex: 1 }}>
+            <Text style={[ms.itemName, sel && ms.itemNameActive]}>{item.name}</Text>
+            {item.name_en ? <Text style={ms.itemSub}>{item.name_en}</Text> : null}
+          </View>
+          <View style={[ms.checkbox, sel && ms.checkboxActive]}>
+            {sel && <Text style={ms.checkmark}>✓</Text>}
+          </View>
+        </TouchableOpacity>
+      );
+    },
+    [selectedIds, onToggle],
+  );
+
+  return (
+    <Modal
+      visible={visible}
+      animationType="slide"
+      presentationStyle="pageSheet"
+      onRequestClose={onClose}
+    >
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <View style={ms.root}>
+          <View style={ms.header}>
+            <TouchableOpacity style={ms.closeBtn} onPress={onClose}>
+              <Text style={ms.closeTxt}>✕</Text>
+            </TouchableOpacity>
+            <View style={{ flex: 1, alignItems: 'center' }}>
+              <Text style={ms.headerTitle}>{meta.emoji} {meta.display}</Text>
+              <Text style={ms.headerSub}>
+                {ingredients.length} nguyên liệu · {selectedInCat} đã chọn
+              </Text>
+            </View>
+            <TouchableOpacity style={ms.doneBtn} onPress={onClose}>
+              <Text style={ms.doneTxt}>Xong</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={ms.searchWrap}>
+            <Text style={ms.searchIcon}>🔍</Text>
+            <TextInput
+              ref={inputRef}
+              style={ms.searchInput}
+              placeholder="Tìm nguyên liệu..."
+              placeholderTextColor={C.textLight}
+              value={query}
+              onChangeText={setQuery}
+              autoFocus
+              returnKeyType="done"
+            />
+            {query.length > 0 && (
+              <TouchableOpacity onPress={() => setQuery('')}>
+                <Text style={ms.clearBtn}>✕</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+
+          <Text style={ms.resultCount}>
+            {query
+              ? `${filtered.length} kết quả`
+              : `Tất cả ${filtered.length} nguyên liệu`}
+          </Text>
+
+          <FlatList
+            data={filtered}
+            keyExtractor={i => String(i.id)}
+            renderItem={renderItem}
+            keyboardShouldPersistTaps="handled"
+            contentContainerStyle={{ paddingBottom: 40 }}
+            showsVerticalScrollIndicator={false}
+          />
+        </View>
+      </KeyboardAvoidingView>
+    </Modal>
+  );
+};
+
+// ── MarketBasketScreen ────────────────────────────────────────────────────────
+const MarketBasketScreen = ({ navigation }) => {
+  // useWindowDimensions để lấy chiều cao thực tế màn hình
+  // → root có height tường minh → ScrollView bị bounded → scroll hoạt động
+  const { height: screenHeight } = useWindowDimensions();
+
+  const { allIngredients, setMarketBasket } = useAppStore();
+  const [selectedCats, setSelectedCats] = useState([]);
+  const [selectedIds,  setSelectedIds]  = useState([]);
+  const [modalCat,     setModalCat]     = useState(null);
+
+  const categories = useMemo(() => {
+    const catSet = new Set();
+    allIngredients.forEach(i => { if (i.category) catSet.add(i.category); });
+    return Array.from(catSet).sort().map(k => ({ key: k, ...getCatMeta(k) }));
+  }, [allIngredients]);
+
+  // Chunk 2 cột — tránh flexWrap bên trong ScrollView
+  const categoryRows = useMemo(() => chunk(categories, 2), [categories]);
+
+  const byCategory = useMemo(() => {
+    return allIngredients.reduce((acc, i) => {
+      if (i.category) (acc[i.category] = acc[i.category] || []).push(i);
+      return acc;
+    }, {});
+  }, [allIngredients]);
+
+  const isLoading = allIngredients.length === 0;
+
+  const toggleId = useCallback(id => {
+    setSelectedIds(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id],
+    );
+  }, []);
+
+  const openModal = catKey => {
+    if (!selectedCats.includes(catKey)) setSelectedCats(prev => [...prev, catKey]);
+    setModalCat(catKey);
   };
 
   const handleApply = () => {
@@ -77,13 +211,11 @@ const MarketBasketScreen = ({ navigation }) => {
     navigation.goBack();
   };
 
-  const grouped = ingredients.reduce((acc, i) => {
-    (acc[i.category] = acc[i.category] || []).push(i);
-    return acc;
-  }, {});
+  const countInCat = catKey =>
+    (byCategory[catKey] || []).filter(i => selectedIds.includes(i.id)).length;
 
   return (
-    <View style={s.root}>
+    <View style={[s.root, { height: screenHeight }]}>
       <StatusBar barStyle="dark-content" backgroundColor={C.bg} />
 
       {/* Nav */}
@@ -97,131 +229,251 @@ const MarketBasketScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Step indicators */}
-      <View style={s.stepBar}>
-        {[1, 2].map(n => (
-          <View key={n} style={[s.stepDot, step >= n && s.stepDotActive]}>
-            <Text style={[s.stepNum, step >= n && s.stepNumActive]}>{n}</Text>
-          </View>
-        ))}
-        <View style={[s.stepLine, step >= 2 && s.stepLineActive]} />
-        <Text style={s.stepHint}>
-          {step === 1 ? 'Chọn nhóm nguyên liệu' : `Chọn nguyên liệu (${selectedIds.length} đã chọn)`}
+      {/* Info bar */}
+      <View style={s.infoBar}>
+        <Text style={s.infoTxt}>
+          Chọn nhóm rồi bấm vào để tìm nguyên liệu cụ thể
         </Text>
+        {selectedIds.length > 0 && (
+          <View style={s.badge}>
+            <Text style={s.badgeTxt}>{selectedIds.length}</Text>
+          </View>
+        )}
       </View>
 
-      <ScrollView contentContainerStyle={s.scroll}>
-        {loading ? (
-          <ActivityIndicator color={C.primary} style={{ marginTop: 40 }} />
-        ) : (
-          <>
-            {/* Step 1: Categories */}
-            <Text style={s.sectionTitle}>Nhóm nguyên liệu</Text>
-            <View style={s.catGrid}>
-              {categories.map(cat => {
-                const active = selectedCats.includes(cat.key);
-                return (
-                  <TouchableOpacity key={cat.key}
-                    style={[s.catCard, active && s.catCardActive]}
-                    onPress={() => toggleCat(cat.key)} activeOpacity={0.8}>
-                    <Text style={s.catEmoji}>{cat.emoji}</Text>
-                    <Text style={[s.catText, active && s.catTextActive]}>{cat.display}</Text>
-                    {active && <View style={s.catCheck}><Text style={{ color: '#fff', fontSize: 11 }}>✓</Text></View>}
-                  </TouchableOpacity>
-                );
-              })}
+      {/*
+        scrollArea: flex:1 → lấp đầy khoảng trống giữa infoBar và footer.
+        Đây là điểm mấu chốt: ScrollView có parent bounded → scroll hoạt động.
+      */}
+      <View style={s.scrollArea}>
+        <ScrollView
+          contentContainerStyle={s.scroll}
+          showsVerticalScrollIndicator={false}
+        >
+          {isLoading ? (
+            <View style={s.loadWrap}>
+              <ActivityIndicator color={C.primary} size="large" />
+              <Text style={s.loadTxt}>Đang tải danh sách nguyên liệu...</Text>
             </View>
+          ) : (
+            <>
+              <Text style={s.sectionTitle}>
+                Nhóm nguyên liệu ({categories.length})
+              </Text>
 
-            {/* Step 2: Ingredients by group */}
-            {step === 2 && Object.entries(grouped).map(([catKey, ingList]) => {
-              const meta = CATEGORY_META[catKey] || { display: catKey, emoji: '🥬' };
-              return (
-                <View key={catKey} style={s.ingSection}>
-                  <Text style={s.ingGroupTitle}>{meta.emoji} {meta.display} ({ingList.length})</Text>
-                  <View style={s.ingGrid}>
-                    {ingList.map(ing => {
-                      const sel = selectedIds.includes(ing.id);
-                      return (
-                        <TouchableOpacity key={ing.id}
-                          style={[s.ingChip, sel && s.ingChipActive]}
-                          onPress={() => toggleId(ing.id)} activeOpacity={0.75}>
-                          <Text style={[s.ingChipText, sel && s.ingChipTextActive]}>{ing.name}</Text>
-                          {sel && <Text style={{ color: C.primaryDark, fontSize: 11, marginLeft: 3 }}>✓</Text>}
-                        </TouchableOpacity>
-                      );
-                    })}
-                  </View>
+              {categoryRows.map((row, rowIdx) => (
+                <View key={rowIdx} style={s.catRow}>
+                  {row.map(cat => {
+                    const cnt    = countInCat(cat.key);
+                    const total  = (byCategory[cat.key] || []).length;
+                    const active = selectedCats.includes(cat.key);
+                    return (
+                      <TouchableOpacity
+                        key={cat.key}
+                        style={[s.catCard, active && s.catCardActive]}
+                        onPress={() => openModal(cat.key)}
+                        activeOpacity={0.8}
+                      >
+                        <Text style={s.catEmoji}>{cat.emoji}</Text>
+                        <Text style={[s.catText, active && s.catTextActive]}>
+                          {cat.display}
+                        </Text>
+                        <Text style={s.catCount}>{total} loại</Text>
+                        {cnt > 0 && (
+                          <View style={s.catBadge}>
+                            <Text style={s.catBadgeTxt}>{cnt}</Text>
+                          </View>
+                        )}
+                      </TouchableOpacity>
+                    );
+                  })}
+                  {row.length === 1 && <View style={s.catCardPlaceholder} />}
                 </View>
-              );
-            })}
-          </>
-        )}
-        <View style={{ height: 100 }} />
-      </ScrollView>
+              ))}
 
-      {/* Footer CTA */}
+              {selectedIds.length > 0 && (
+                <View style={s.summaryBox}>
+                  <Text style={s.summaryTitle}>
+                    ✅ Đã chọn {selectedIds.length} nguyên liệu
+                  </Text>
+                  <Text style={s.summarySub}>
+                    {selectedCats
+                      .filter(c => countInCat(c) > 0)
+                      .map(c =>
+                        `${getCatMeta(c).emoji} ${countInCat(c)} ${getCatMeta(c).display}`,
+                      )
+                      .join('  ·  ')}
+                  </Text>
+                </View>
+              )}
+            </>
+          )}
+          <View style={{ height: 20 }} />
+        </ScrollView>
+      </View>
+
+      {/* Footer — KHÔNG position:absolute, là phần tử cuối của flex column */}
       <View style={s.footer}>
-        <Text style={s.footerCount}>
-          {selectedIds.length > 0 ? `Đã chọn ${selectedIds.length} nguyên liệu` : 'Chưa chọn nguyên liệu nào'}
-        </Text>
-        <TouchableOpacity style={[s.applyBtn, selectedIds.length === 0 && s.applyBtnDisabled]}
-          onPress={handleApply} activeOpacity={0.85}>
+        <TouchableOpacity
+          style={[s.applyBtn, selectedIds.length === 0 && s.applyBtnDisabled]}
+          onPress={handleApply}
+          activeOpacity={0.85}
+        >
           <Text style={s.applyBtnText}>
-            {selectedIds.length > 0 ? `Áp dụng ${selectedIds.length} nguyên liệu →` : 'Áp dụng →'}
+            {selectedIds.length > 0
+              ? `Áp dụng ${selectedIds.length} nguyên liệu →`
+              : 'Tiếp tục không chọn nguyên liệu'}
           </Text>
         </TouchableOpacity>
       </View>
+
+      {modalCat && (
+        <IngredientSearchModal
+          visible={!!modalCat}
+          category={modalCat}
+          ingredients={byCategory[modalCat] || []}
+          selectedIds={selectedIds}
+          onToggle={toggleId}
+          onClose={() => setModalCat(null)}
+        />
+      )}
     </View>
   );
 };
 
+// ── Styles ────────────────────────────────────────────────────────────────────
 const s = StyleSheet.create({
-  root:            { flex: 1, backgroundColor: C.bg },
-  nav:             { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-                     paddingHorizontal: 16, paddingVertical: 12, backgroundColor: C.surface,
-                     borderBottomWidth: 1, borderBottomColor: C.borderLight },
-  back:            { width: 40, height: 40, justifyContent: 'center' },
-  backArrow:       { fontSize: 28, color: C.primary, fontWeight: '300', lineHeight: 34 },
-  navTitle:        { fontSize: F.lg, fontWeight: '700', color: C.text },
-  skipLink:        { fontSize: F.base, color: C.textLight, fontWeight: '500' },
-  stepBar:         { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20,
-                     paddingVertical: 14, backgroundColor: C.surface, gap: 8,
-                     borderBottomWidth: 1, borderBottomColor: C.borderLight },
-  stepDot:         { width: 26, height: 26, borderRadius: 13, backgroundColor: C.border,
-                     justifyContent: 'center', alignItems: 'center' },
-  stepDotActive:   { backgroundColor: C.primary },
-  stepNum:         { fontSize: F.sm, fontWeight: '700', color: C.textLight },
-  stepNumActive:   { color: '#fff' },
-  stepLine:        { width: 16, height: 2, backgroundColor: C.border },
-  stepLineActive:  { backgroundColor: C.primary },
-  stepHint:        { fontSize: F.sm, color: C.textMid, flex: 1 },
-  scroll:          { padding: 16 },
-  sectionTitle:    { fontSize: F.base, fontWeight: '700', color: C.text, marginBottom: 12 },
-  catGrid:         { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 24 },
-  catCard:         { width: '47%', backgroundColor: C.surface, borderRadius: R.lg, padding: 16,
-                     alignItems: 'center', borderWidth: 1.5, borderColor: C.border, ...shadow(1), position: 'relative' },
-  catCardActive:   { borderColor: C.primary, backgroundColor: C.primaryLight },
-  catEmoji:        { fontSize: 26, marginBottom: 6 },
-  catText:         { fontSize: F.sm, fontWeight: '600', color: C.textMid, textAlign: 'center' },
-  catTextActive:   { color: C.primaryDark },
-  catCheck:        { position: 'absolute', top: 8, right: 8, width: 18, height: 18,
-                     borderRadius: 9, backgroundColor: C.primary, justifyContent: 'center', alignItems: 'center' },
-  ingSection:      { marginBottom: 20 },
-  ingGroupTitle:   { fontSize: F.base, fontWeight: '700', color: C.text, marginBottom: 10 },
-  ingGrid:         { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  ingChip:         { flexDirection: 'row', alignItems: 'center', backgroundColor: C.surface,
-                     borderRadius: R.pill, paddingVertical: 7, paddingHorizontal: 14,
-                     borderWidth: 1.5, borderColor: C.border },
-  ingChipActive:   { backgroundColor: C.primaryLight, borderColor: C.primary },
-  ingChipText:     { fontSize: F.sm, color: C.textMid, fontWeight: '500' },
-  ingChipTextActive:{ color: C.primaryDark, fontWeight: '700' },
-  footer:          { position: 'absolute', bottom: 0, left: 0, right: 0,
-                     backgroundColor: C.surface, paddingHorizontal: 16, paddingVertical: 14,
-                     borderTopWidth: 1, borderTopColor: C.borderLight, ...shadow(3) },
-  footerCount:     { fontSize: F.sm, color: C.textMid, marginBottom: 10, textAlign: 'center' },
-  applyBtn:        { backgroundColor: C.primary, borderRadius: R.xl, paddingVertical: 15, alignItems: 'center' },
-  applyBtnDisabled:{ backgroundColor: C.border },
-  applyBtnText:    { fontSize: F.lg, fontWeight: '700', color: '#fff' },
+  root:              {
+                       flexDirection: 'column',
+                       backgroundColor: C.bg,
+                       overflow: 'hidden',
+                       // height inject inline từ useWindowDimensions
+                     },
+
+  nav:               {
+                       flexDirection: 'row', alignItems: 'center',
+                       justifyContent: 'space-between',
+                       paddingHorizontal: 16, paddingVertical: 12,
+                       backgroundColor: C.surface,
+                       borderBottomWidth: 1, borderBottomColor: C.borderLight,
+                     },
+  back:              { width: 40, height: 40, justifyContent: 'center' },
+  backArrow:         { fontSize: 28, color: C.primary, fontWeight: '300', lineHeight: 34 },
+  navTitle:          { fontSize: F.lg, fontWeight: '700', color: C.text },
+  skipLink:          { fontSize: F.base, color: C.textLight, fontWeight: '500' },
+
+  infoBar:           {
+                       flexDirection: 'row', alignItems: 'center',
+                       paddingHorizontal: 16, paddingVertical: 10,
+                       backgroundColor: C.primaryLight,
+                       borderBottomWidth: 1, borderBottomColor: C.borderLight,
+                     },
+  infoTxt:           { flex: 1, fontSize: F.sm, color: C.primaryDark },
+  badge:             {
+                       backgroundColor: C.primary, borderRadius: R.pill,
+                       paddingHorizontal: 8, paddingVertical: 2, marginLeft: 8,
+                     },
+  badgeTxt:          { fontSize: F.xs, color: '#fff', fontWeight: '700' },
+
+  scrollArea:        { flex: 1 },           // bounded → ScrollView scroll được
+  scroll:            { padding: 16 },
+
+  loadWrap:          { alignItems: 'center', paddingTop: 60, gap: 12 },
+  loadTxt:           { fontSize: F.sm, color: C.textLight },
+  sectionTitle:      { fontSize: F.base, fontWeight: '700', color: C.text, marginBottom: 14 },
+
+  catRow:            { flexDirection: 'row', gap: 12, marginBottom: 12 },
+  catCard:           {
+                       flex: 1,
+                       backgroundColor: C.surface,
+                       borderRadius: R.lg, padding: 16,
+                       alignItems: 'center',
+                       borderWidth: 1.5, borderColor: C.border,
+                       ...shadow(1),
+                       position: 'relative',
+                       minHeight: 100, justifyContent: 'center',
+                     },
+  catCardActive:     { borderColor: C.primary, backgroundColor: C.primaryLight },
+  catCardPlaceholder:{ flex: 1 },
+  catEmoji:          { fontSize: 28, marginBottom: 6 },
+  catText:           { fontSize: F.sm, fontWeight: '700', color: C.textMid, textAlign: 'center' },
+  catTextActive:     { color: C.primaryDark },
+  catCount:          { fontSize: F.xs, color: C.textLight, marginTop: 3 },
+  catBadge:          {
+                       position: 'absolute', top: 8, right: 8,
+                       minWidth: 22, height: 22, borderRadius: 11,
+                       backgroundColor: C.primary,
+                       justifyContent: 'center', alignItems: 'center', paddingHorizontal: 5,
+                     },
+  catBadgeTxt:       { fontSize: F.xs, color: '#fff', fontWeight: '800' },
+
+  summaryBox:        {
+                       backgroundColor: C.surface, borderRadius: R.lg, padding: 16,
+                       borderLeftWidth: 4, borderLeftColor: C.primary, marginTop: 4,
+                       ...shadow(1),
+                     },
+  summaryTitle:      { fontSize: F.base, fontWeight: '700', color: C.text, marginBottom: 6 },
+  summarySub:        { fontSize: F.sm, color: C.textMid, lineHeight: 20 },
+
+  // Footer KHÔNG còn position:'absolute'
+  footer:            {
+                       backgroundColor: C.surface,
+                       paddingHorizontal: 16, paddingVertical: 14,
+                       borderTopWidth: 1, borderTopColor: C.borderLight,
+                       ...shadow(4),
+                     },
+  applyBtn:          {
+                       backgroundColor: C.primary, borderRadius: R.xl,
+                       paddingVertical: 15, alignItems: 'center',
+                     },
+  applyBtnDisabled:  { backgroundColor: C.border },
+  applyBtnText:      { fontSize: F.base, fontWeight: '700', color: '#fff' },
+});
+
+// ── Modal Styles ──────────────────────────────────────────────────────────────
+const ms = StyleSheet.create({
+  root:           { flex: 1, backgroundColor: C.bg },
+  header:         {
+                    flexDirection: 'row', alignItems: 'center',
+                    paddingHorizontal: 12, paddingVertical: 14,
+                    backgroundColor: C.surface,
+                    borderBottomWidth: 1, borderBottomColor: C.borderLight,
+                  },
+  closeBtn:       { width: 36, height: 36, justifyContent: 'center', alignItems: 'center' },
+  closeTxt:       { fontSize: F.base, color: C.textLight },
+  headerTitle:    { fontSize: F.lg, fontWeight: '700', color: C.text },
+  headerSub:      { fontSize: F.xs, color: C.textLight, marginTop: 2 },
+  doneBtn:        {
+                    paddingHorizontal: 12, paddingVertical: 6,
+                    backgroundColor: C.primary, borderRadius: R.pill,
+                  },
+  doneTxt:        { fontSize: F.sm, fontWeight: '700', color: '#fff' },
+  searchWrap:     {
+                    flexDirection: 'row', alignItems: 'center', margin: 12,
+                    backgroundColor: C.surface, borderRadius: R.lg, paddingHorizontal: 12,
+                    borderWidth: 1.5, borderColor: C.border,
+                  },
+  searchIcon:     { fontSize: 16, marginRight: 8 },
+  searchInput:    { flex: 1, fontSize: F.base, color: C.text, paddingVertical: 11 },
+  clearBtn:       { fontSize: F.sm, color: C.textLight, paddingLeft: 8 },
+  resultCount:    { fontSize: F.xs, color: C.textLight, marginHorizontal: 16, marginBottom: 8 },
+  item:           {
+                    flexDirection: 'row', alignItems: 'center',
+                    paddingVertical: 13, paddingHorizontal: 16,
+                    backgroundColor: C.surface,
+                    borderBottomWidth: 1, borderBottomColor: C.borderLight,
+                  },
+  itemActive:     { backgroundColor: C.primaryLight },
+  itemName:       { fontSize: F.base, color: C.text, fontWeight: '500' },
+  itemNameActive: { color: C.primaryDark, fontWeight: '700' },
+  itemSub:        { fontSize: F.xs, color: C.textLight, marginTop: 2 },
+  checkbox:       {
+                    width: 24, height: 24, borderRadius: 12,
+                    borderWidth: 2, borderColor: C.border,
+                    justifyContent: 'center', alignItems: 'center',
+                  },
+  checkboxActive: { backgroundColor: C.primary, borderColor: C.primary },
+  checkmark:      { fontSize: 13, color: '#fff', fontWeight: '700' },
 });
 
 export default MarketBasketScreen;

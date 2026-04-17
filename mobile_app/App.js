@@ -89,7 +89,7 @@ const OnboardingStack = () => {
 };
 
 const App = () => {
-  const { profile, loadProfile, loadLatestMetrics, loadAllergies, initializeLocation,initializeMaxPrepTime,initializeCostPreference } = useAppStore();
+  const { profile, loadProfile, loadLatestMetrics, loadAllergies, initializeLocation,initializeMaxPrepTime,initializeCostPreference, initializeIngredients } = useAppStore();
   const [appReady, setAppReady] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
 
@@ -109,6 +109,7 @@ const App = () => {
       await initializeLocation();
       await initializeMaxPrepTime();
       await initializeCostPreference();
+      initializeIngredients(); // non-blocking — load ingredients song song
       // Check if onboarding is completed
       const onboardingDone = await AsyncStorage.getItem('onboarding_done');
       setShowOnboarding(!onboardingDone);

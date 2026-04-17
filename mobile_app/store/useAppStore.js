@@ -1,6 +1,6 @@
 // store/useAppStore.js
 import { create } from 'zustand';
-import { loadProfile, loadLatestMetrics, loadAllergies, getSetting } from '../utils/database';
+import { loadProfile, loadLatestMetrics, loadAllergies, getSetting, loadAllIngredients } from '../utils/database';
 
 export const useAppStore = create((set, get) => ({
   profile:          null,
@@ -14,6 +14,7 @@ export const useAppStore = create((set, get) => ({
   location:         { lat: null, lon: null, province: '', food_region: '' },
   maxPrepTime:      60,   // F02: thời gian nấu tối đa (phút). 999 = không giới hạn
   costPreference:   2,    // F03: 1=Tiết kiệm | 2=Vừa phải | 3=Thoải mái
+  allIngredients:   [],   // Cache toàn bộ ingredients (1100+) — load 1 lần khi app khởi động
 
   // MarketBasket — giỏ nguyên liệu của phiên hiện tại
   marketBasket: {
@@ -33,6 +34,7 @@ export const useAppStore = create((set, get) => ({
   setLocation:         (location)  => set({ location }),
   setMaxPrepTime:      (val)       => set({ maxPrepTime: Number(val) }),
   setCostPreference:   (val)       => set({ costPreference: Number(val) }),  // F03
+  setAllIngredients:   (list)      => set({ allIngredients: list }),
 
   setMarketBasket: (basket) => set({
     marketBasket: {
@@ -107,5 +109,14 @@ export const useAppStore = create((set, get) => ({
       const parsed = val ? parseInt(val, 10) : 2;
       set({ costPreference: isNaN(parsed) ? 2 : parsed });
     } catch (e) { console.error('initializeCostPreference:', e); }
+  },
+
+  // Load tất cả ingredients vào memory — gọi 1 lần khi app start
+  initializeIngredients: async () => {
+    try {
+      const list = await loadAllIngredients();
+      set({ allIngredients: list });
+      console.log('[Store] allIngredients loaded:', list.length);
+    } catch (e) { console.error('initializeIngredients:', e); }
   },
 }));
