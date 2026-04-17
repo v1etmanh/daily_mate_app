@@ -121,14 +121,16 @@ export async function loadAllergies() {
 
 // ─── SETTINGS KV ──────────────────────────────────────────────────────────────
 export async function setSetting(key, value) {
-  // 1. Lưu local ngay lập tức (không chờ network)
-  console.log(`[DB] setSetting ${key} = ${value}`);
   await AsyncStorage.setItem(`setting_${key}`, String(value));
-  // 2. Sync lên Firestore async (không block UI)
-  const id = await getDeviceId();
-  setDoc(settingsRef(id, key), { key, value: String(value) }).catch(e =>
-    console.warn('[DB] setSetting Firestore sync failed:', e.code)
-  );
+  
+  try {
+    const id = await getDeviceId();
+    await setDoc(settingsRef(id, key), { key, value: String(value) });
+    console.log('[DB] setSetting Firestore OK:', key);
+  } catch (e) {
+    // In toàn bộ error, không chỉ e.code
+    console.warn('[DB] setSetting Firestore FAILED:', JSON.stringify(e), e.message);
+  }
 }
 
 export async function getSetting(key) {
@@ -205,17 +207,19 @@ export async function loadFeedbackBySession(sessionId) {
 export async function getRecentDishIds(nSessions = 3) {
   try {
     const id = await getDeviceId();
-    // Lấy n session gần nhất — timeout ngắn để không block pipeline
     const q = query(sessionsCol(id), orderBy('created_at', 'desc'), limit(nSessions));
-    const sessSnap = await withTimeout(getDocs(q), 2500, null);
+    
+    // Tăng từ 2500 → 6000
+    const sessSnap = await withTimeout(getDocs(q), 6000, null);
     if (!sessSnap || sessSnap.empty) return [];
 
-    // Với mỗi session, lấy dishes đã được gợi ý (ordered by rank)
     const allDishIds = [];
     const seenIds = new Set();
     for (const sessionDoc of sessSnap.docs) {
       const dishQ = query(dishesCol(id, sessionDoc.id), orderBy('rank', 'asc'));
-      const dishSnap = await withTimeout(getDocs(dishQ), 2000, null);
+      
+      // Tăng từ 2000 → 5000
+      const dishSnap = await withTimeout(getDocs(dishQ), 5000, null);
       if (!dishSnap) continue;
       for (const d of dishSnap.docs) {
         const dishId = String(d.data().dish_id || '');
@@ -225,14 +229,12 @@ export async function getRecentDishIds(nSessions = 3) {
         }
       }
     }
-    // Trả tối đa 30 dish_id, ordered gần nhất → xa nhất
     return allDishIds.slice(0, 30);
   } catch (e) {
     console.warn('[DB] getRecentDishIds error:', e);
     return [];
   }
 }
-
 // ─── WEATHER CACHE ────────────────────────────────────────────────────────────
 // Dùng AsyncStorage làm primary cache (instant, offline-safe)
 // Firestore chỉ dùng để sync nếu cần — không block pipeline chính
