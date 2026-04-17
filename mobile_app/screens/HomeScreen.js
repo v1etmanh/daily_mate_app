@@ -1,4 +1,4 @@
-import React, { useState, useCallback,useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   RefreshControl, Image, Alert, ActivityIndicator,
@@ -16,69 +16,68 @@ import {
   getRecentDishIds,
 } from '../utils/database';
 
+// ── DoodlePad tokens ────────────────────────────────────────────────────────
+const DP = {
+  primary:    '#60A5FA',
+  primaryDk:  '#3B82F6',
+  secondary:  '#4ADE80',
+  tertiary:   '#FBBF24',
+  error:      '#F87171',
+  base:       '#FFFFF0',
+  surface:    '#FFFFFF',
+  textPri:    '#1E1E1E',
+  textSec:    '#6B7280',
+  border:     '#E5E7EB',
+  radiusMd:   16,
+  radiusLg:   24,
+  radiusFull: 9999,
+};
+const dpSm = { shadowColor:'#000', shadowOffset:{width:0,height:1}, shadowOpacity:0.06, shadowRadius:3, elevation:1 };
+const dpMd = { shadowColor:'#000', shadowOffset:{width:0,height:3}, shadowOpacity:0.08, shadowRadius:8, elevation:3 };
+
 const HomeScreen = ({ navigation }) => {
   const isLoadingRef = React.useRef(false);
-  // Refs để useFocusEffect đọc giá trị mới nhất mà KHÔNG cần them vào deps
   const rankedDishesLengthRef = React.useRef(0);
   const prevBasketCountRef    = React.useRef(-1);
   const [isLoading, setIsLoading]         = useState(false);
   const [weatherData, setWeatherData]     = useState(null);
   const [cuisineScope, setCuisineScope]   = useState('vietnam');
-  const [dishTypeFilter, setDishTypeFilter] = useState('all'); // 'all' | 'soup' | 'main_dish'
+  const [dishTypeFilter, setDishTypeFilter] = useState('all');
   const [refreshing, setRefreshing]       = useState(false);
   const [basketBadge, setBasketBadge]     = useState(0);
   const [challengeTitle, setChallengeTitle] = useState('');
-  const [visibleCount, setVisibleCount]   = useState(10); // F04: Load Next-10
-const isFirstRender = React.useRef(true);
-useEffect(() => {
-  if (isFirstRender.current) {
-    isFirstRender.current = false;
-    return; // ← bỏ qua lần mount đầu, tránh double-call với useFocusEffect
-  }
-  loadRecommendation();
-}, [cuisineScope, dishTypeFilter]); // ← re-fetch mỗi khi filter thay đổi
+  const [visibleCount, setVisibleCount]   = useState(10);
+  const isFirstRender = React.useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) { isFirstRender.current = false; return; }
+    loadRecommendation();
+  }, [cuisineScope, dishTypeFilter]);
+
   const {
     profile, latestMetrics, rankedDishes, setRankedDishes,
     location, setLocation, allergies, currentSessionId,
-    setCurrentSessionId, marketBasket, maxPrepTime,costPreference
+    setCurrentSessionId, marketBasket, maxPrepTime, costPreference
   } = useAppStore();
 
-  // Sync ref với rankedDishes để useFocusEffect đọc được giá trị mới nhất
-  useEffect(() => {
-    rankedDishesLengthRef.current = rankedDishes.length;
-  }, [rankedDishes.length]);
+  useEffect(() => { rankedDishesLengthRef.current = rankedDishes.length; }, [rankedDishes.length]);
 
-  // ─── Badge + re-fetch khi basket thay đổi ─────────────────────────────────
-  // Tách ra khỏi useFocusEffect để tránh re-register loop
   useEffect(() => {
     const count = marketBasket?.selectedIngredients?.length ?? 0;
     setBasketBadge(count);
-    // Re-fetch chỉ khi count THỰC SỰ thay đổi (không phải lần mount đầu)
-    if (prevBasketCountRef.current !== -1 && prevBasketCountRef.current !== count) {
-      loadRecommendation();
-    }
+    if (prevBasketCountRef.current !== -1 && prevBasketCountRef.current !== count) loadRecommendation();
     prevBasketCountRef.current = count;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [marketBasket?.selectedIngredients?.length, marketBasket?.isSkipped]);
 
-  // Tự động re-fetch khi màn hình được focus lại (sau khi quay từ MarketBasket)
-  // Dùng [] deps để callback không bị re-register mỗi khi store update → tránh infinite loop
-  useFocusEffect(
-    useCallback(() => {
-      const lat = location?.lat || 16.047;
-      const lon = location?.lon || 108.206;
-      api.get(`/api/v1/challenge?lat=${lat}&lon=${lon}`)
-        .then(r => setChallengeTitle(r.data?.challenge_dish?.title || ''))
-        .catch(() => {});
-      // Chỉ load khi chưa có data (dùng ref để đọc giá trị hiện tại, không cần deps)
-      if (rankedDishesLengthRef.current === 0) {
-        loadRecommendation();
-      }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []) // ← [] ổn định, không re-register khi store update
-  );
+  useFocusEffect(useCallback(() => {
+    const lat = location?.lat || 16.047;
+    const lon = location?.lon || 108.206;
+    api.get(`/api/v1/challenge?lat=${lat}&lon=${lon}`)
+      .then(r => setChallengeTitle(r.data?.challenge_dish?.title || ''))
+      .catch(() => {});
+    if (rankedDishesLengthRef.current === 0) loadRecommendation();
+  }, []));
 
-  // ─── Location ────────────────────────────────────────────────────────────────
   const getUserLocation = async () => {
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
@@ -88,27 +87,24 @@ useEffect(() => {
     } catch { return null; }
   };
 
-  const buildGridKey = (lat, lon) =>
-    `${Math.round(lat * 10) / 10}:${Math.round(lon * 10) / 10}`;
+  const buildGridKey = (lat, lon) => `${Math.round(lat*10)/10}:${Math.round(lon*10)/10}`;
 
   const fetchWeather = async (lat, lon) => {
     const gridKey = buildGridKey(lat, lon);
     const cached  = await getWeatherCache(gridKey);
     if (cached) {
-      // ✅ Set weatherData từ cache nếu có flat fields
-      const flatFromCache = cached.weather_vector ? cached : null;
-      if (flatFromCache && flatFromCache.temperature != null) setWeatherData(flatFromCache);
+      if (cached.temperature != null) setWeatherData(cached);
       return cached.weather_vector ?? cached;
     }
     try {
       const res = await api.get(`/api/weather?lat=${lat}&lon=${lon}`);
       const hour = new Date().getHours();
       await setWeatherCache(gridKey, res.data, hour >= 6 && hour < 22 ? 30 : 60);
-      setWeatherData(res.data); // ✅ res.data có đủ temperature, condition, humidity, wind_speed, aqi
+      setWeatherData(res.data);
       return res.data;
     } catch {
       const fallback = { temperature: 30, condition: 'Không rõ (offline)', humidity: 70, wind_speed: 10, aqi: 85 };
-      setWeatherData(fallback); // ✅ Luôn set weatherData dù lỗi
+      setWeatherData(fallback);
       return fallback;
     }
   };
@@ -124,40 +120,28 @@ useEffect(() => {
   const persistSession = async (result, params) => {
     try {
       const sid = await saveSession({
-        created_at:     new Date().toISOString(),
-        lat:            params.lat,
-        lon:            params.lon,
-        province:       params.province || '',
-        food_region:    params.food_region || '',
-        cuisine_scope:  params.cuisineScope,
-        basket_skipped: params.marketBasket.isSkipped ? 1 : 0,
+        created_at: new Date().toISOString(), lat: params.lat, lon: params.lon,
+        province: params.province || '', food_region: params.food_region || '',
+        cuisine_scope: params.cuisineScope, basket_skipped: params.marketBasket.isSkipped ? 1 : 0,
       });
       setCurrentSessionId(sid);
       if (result.ranked_dishes?.length) {
         await saveDishesToSession(sid, result.ranked_dishes.map(d => ({
-          dish_id:          d.dish_id,
-          rank:             d.rank,
-          final_score:      d.final_score,
-          ingredient_boost: d.ingredient_boost || 0,
-          title:            d.title,
-          nation:           d.nation || '',
-          cook_time_min:    d.cook_time_min || 0,
-          explanation:      d.explanation || [],
-          image_url:        d.image_url || '',
-          url:              d.url || '',
-          score_breakdown:  d.score_breakdown || {},
+          dish_id: d.dish_id, rank: d.rank, final_score: d.final_score,
+          ingredient_boost: d.ingredient_boost || 0, title: d.title,
+          nation: d.nation || '', cook_time_min: d.cook_time_min || 0,
+          explanation: d.explanation || [], image_url: d.image_url || '',
+          url: d.url || '', score_breakdown: d.score_breakdown || {},
         })));
       }
     } catch (e) { console.error('persistSession:', e); }
   };
 
-
-  // ─── Main load ───────────────────────────────────────────────────────────────
   const loadRecommendation = async () => {
-    if (isLoadingRef.current) return; // ✅ Guard chống double-call
+    if (isLoadingRef.current) return;
     isLoadingRef.current = true;
     setIsLoading(true);
-    setVisibleCount(10); // F04: reset về 10 mỗi khi tải mới
+    setVisibleCount(10);
     try {
       const gps = await getUserLocation();
       const currentLocation = gps || location || { lat: 16.047, lon: 108.206, province: 'Đà Nẵng' };
@@ -166,65 +150,36 @@ useEffect(() => {
         await setSetting('last_known_lat', String(gps.lat));
         await setSetting('last_known_lon', String(gps.lon));
       }
-
       const weather = await fetchWeather(currentLocation.lat, currentLocation.lon);
-
-      // ✅ FIX: Gửi đầy đủ personal payload bao gồm height/weight/health
       const personal = {
-        age:              profile?.age || 25,
-        gender:           profile?.gender || 'female',
-        height:           latestMetrics?.height_cm || 160,
-        weight:           latestMetrics?.weight_kg || 55,
-        diet_type:        profile?.diet_type || 'omnivore',
-        dietary_goal:     profile?.dietary_goal || 'maintenance',
-        activity_level:   profile?.activity_level || 'moderately_active',
-        health_condition: profile?.health_condition || [],
-        taste_preference: profile?.taste_preference || [],
-        allergies:        allergies || [],
-        max_prep_time:    maxPrepTime ?? 60,   // F02
-        cost_preference: costPreference.toString() || '2',   // F03
+        age: profile?.age || 25, gender: profile?.gender || 'female',
+        height: latestMetrics?.height_cm || 160, weight: latestMetrics?.weight_kg || 55,
+        diet_type: profile?.diet_type || 'omnivore', dietary_goal: profile?.dietary_goal || 'maintenance',
+        activity_level: profile?.activity_level || 'moderately_active',
+        health_condition: profile?.health_condition || [], taste_preference: profile?.taste_preference || [],
+        allergies: allergies || [], max_prep_time: maxPrepTime ?? 60, cost_preference: costPreference.toString() || '2',
       };
-
-      // ✅ FIX: Truyền marketBasket vào API
       const basket = marketBasket.isSkipped
         ? { is_skipped: true, selected_ingredient_ids: [], boost_strategy: 'none' }
-        : {
-            is_skipped: false,
-            selected_ingredient_ids: marketBasket.selectedIngredients,
-            boost_strategy: marketBasket.boostStrategy,
-          };
-
+        : { is_skipped: false, selected_ingredient_ids: marketBasket.selectedIngredients, boost_strategy: marketBasket.boostStrategy };
       try {
-        // F04: lấy danh sách dish đã gợi ý gần đây để anti-repetition penalty
         const recentDishIds = await getRecentDishIds(3);
-
         const res = await api.post('/api/v1/recommend', {
           lat: currentLocation.lat, lon: currentLocation.lon,
-          weather, personal,
-          cuisine_scope:    cuisineScope,
-          selected_nation:  null,
-          dish_type_filter: dishTypeFilter,
-          market_basket:    basket,
-          recent_dish_ids:  recentDishIds,   // F04
+          weather, personal, cuisine_scope: cuisineScope,
+          selected_nation: null, dish_type_filter: dishTypeFilter,
+          market_basket: basket, recent_dish_ids: recentDishIds,
         });
         setRankedDishes(res.data.ranked_dishes || []);
         await persistSession(res.data, { ...currentLocation, cuisineScope, marketBasket });
       } catch (apiErr) {
         console.error('recommend API:', apiErr);
         const fallback = await loadFallbackDishes();
-        if (fallback.length) {
-          setRankedDishes(fallback);
-          Alert.alert('Offline', 'Không thể kết nối server — đang hiển thị gợi ý cũ.');
-        } else {
-          Alert.alert('Lỗi kết nối', 'Kiểm tra IP server trong services/api.js và đảm bảo server đang chạy.');
-        }
+        if (fallback.length) { setRankedDishes(fallback); Alert.alert('Offline', 'Đang hiển thị gợi ý cũ.'); }
+        else Alert.alert('Lỗi kết nối', 'Kiểm tra IP server.');
       }
-    } catch (e) {
-      console.error('loadRecommendation:', e);
-    } finally {
-      isLoadingRef.current = false;
-      setIsLoading(false);
-    }
+    } catch (e) { console.error('loadRecommendation:', e); }
+    finally { isLoadingRef.current = false; setIsLoading(false); }
   };
 
   const onRefresh = async () => { setRefreshing(true); await loadRecommendation(); setRefreshing(false); };
@@ -237,7 +192,7 @@ useEffect(() => {
   };
 
   const getWeatherGradient = (temperature, condition) => {
-    if (!temperature) return ['#2C3E50', '#3498DB'];
+    if (!temperature) return ['#1E3A5F', '#2E86C1'];
     const cond = condition?.toLowerCase() || '';
     if (cond.includes('rain') || cond.includes('mưa')) return ['#1F3A4C', '#2C5364'];
     if (temperature < 20) return ['#1E3A5F', '#2E86C1'];
@@ -246,39 +201,33 @@ useEffect(() => {
     return ['#7B241C', '#E74C3C'];
   };
 
-
-  // ─── Dish Card (Horizontal) ───────────────────────────────────────────────
+  // ── DoodlePad Dish Card (horizontal top-3) ─────────────────────────────
   const renderDishCardH = (item) => (
-    <TouchableOpacity key={item.dish_id || item.rank}
-      style={styles.dishCard}
-      onPress={() => navigation.navigate('DishDetail', { dish: item })}
-      activeOpacity={0.85}>
+    <TouchableOpacity key={item.dish_id || item.rank} style={styles.dishCard}
+      onPress={() => navigation.navigate('DishDetail', { dish: item })} activeOpacity={0.85}>
       <View style={styles.cardImageWrap}>
         {item.image_url
           ? <Image source={{ uri: item.image_url }} style={styles.cardImage} resizeMode="cover" />
-          : <View style={styles.imagePlaceholder}><Text style={styles.dishEmoji}>🍜</Text></View>
-        }
+          : <View style={styles.imagePlaceholder}><Text style={styles.dishEmoji}>🍜</Text></View>}
         <View style={styles.rankBadge}><Text style={styles.rankText}>#{item.rank}</Text></View>
         {item.ingredient_boost > 0 && (
-          <View style={styles.boostBadge}><Text style={styles.boostText}>🛒 {Math.round(item.ingredient_boost * 100)}%</Text></View>
+          <View style={styles.boostBadge}><Text style={styles.boostText}>🛒 {Math.round(item.ingredient_boost*100)}%</Text></View>
         )}
       </View>
       <View style={styles.cardBody}>
         <Text style={styles.dishTitle} numberOfLines={2}>{item.title}</Text>
         <View style={styles.cardMeta}>
           <Text style={styles.metaChip}>⏱ {item.cook_time_min}p</Text>
-          <Text style={styles.metaChip}>★ {(item.final_score * 100).toFixed(0)}%</Text>
+          <Text style={styles.metaChip}>★ {(item.final_score*100).toFixed(0)}%</Text>
         </View>
         {item.explanation?.length > 0 && (
           <Text style={styles.cardHint} numberOfLines={2}>{item.explanation[0]}</Text>
         )}
         <View style={styles.quickFeedback}>
-          <TouchableOpacity style={[styles.fbBtn, styles.eatBtn]}
-            onPress={() => handleQuickFeedback(item.dish_id, 'eaten')}>
+          <TouchableOpacity style={[styles.fbBtn, styles.eatBtn]} onPress={() => handleQuickFeedback(item.dish_id,'eaten')}>
             <Text style={styles.fbText}>😋 Ăn</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.fbBtn, styles.skipBtn]}
-            onPress={() => handleQuickFeedback(item.dish_id, 'skipped')}>
+          <TouchableOpacity style={[styles.fbBtn, styles.skipBtn]} onPress={() => handleQuickFeedback(item.dish_id,'skipped')}>
             <Text style={styles.fbText}>✕ Bỏ</Text>
           </TouchableOpacity>
         </View>
@@ -286,59 +235,50 @@ useEffect(() => {
     </TouchableOpacity>
   );
 
-  // ─── List Row (Vertical) ──────────────────────────────────────────────────
+  // ── DoodlePad List Row (rank 4+) ────────────────────────────────────────
   const renderListRow = (item) => (
-    <TouchableOpacity key={item.dish_id || item.rank}
-      style={styles.listItem}
-      onPress={() => navigation.navigate('DishDetail', { dish: item })}
-      activeOpacity={0.85}>
+    <TouchableOpacity key={item.dish_id || item.rank} style={styles.listItem}
+      onPress={() => navigation.navigate('DishDetail', { dish: item })} activeOpacity={0.85}>
       <View style={styles.listImageWrap}>
         {item.image_url
           ? <Image source={{ uri: item.image_url }} style={styles.listImage} resizeMode="cover" />
-          : <View style={styles.listImageFallback}><Text style={{ fontSize: 22 }}>🍜</Text></View>
-        }
+          : <View style={styles.listImageFallback}><Text style={{ fontSize: 22 }}>🍜</Text></View>}
       </View>
       <View style={styles.listContent}>
         <Text style={styles.listTitle} numberOfLines={1}>{item.title}</Text>
         <View style={styles.listMetaRow}>
           <Text style={styles.listMeta}>⏱ {item.cook_time_min}p</Text>
-          <Text style={styles.listMeta}>★ {(item.final_score * 100).toFixed(0)}%</Text>
+          <Text style={styles.listMeta}>★ {(item.final_score*100).toFixed(0)}%</Text>
           <Text style={styles.listMeta}>{item.nation || 'Việt Nam'}</Text>
         </View>
-        {item.explanation?.[0] && (
-          <Text style={styles.listHint} numberOfLines={1}>{item.explanation[0]}</Text>
-        )}
+        {item.explanation?.[0] && <Text style={styles.listHint} numberOfLines={1}>{item.explanation[0]}</Text>}
       </View>
       <View style={styles.listActions}>
-        <TouchableOpacity style={[styles.miniFb, styles.eatBtn]}
-          onPress={() => handleQuickFeedback(item.dish_id, 'eaten')}>
+        <TouchableOpacity style={[styles.miniFb, styles.eatBtn]} onPress={() => handleQuickFeedback(item.dish_id,'eaten')}>
           <Text style={{ fontSize: 14 }}>😋</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.miniFb, styles.skipBtn]}
-          onPress={() => handleQuickFeedback(item.dish_id, 'skipped')}>
-          <Text style={{ color: 'white', fontWeight: '600', fontSize: 12 }}>✕</Text>
+        <TouchableOpacity style={[styles.miniFb, styles.skipBtn]} onPress={() => handleQuickFeedback(item.dish_id,'skipped')}>
+          <Text style={{ color:'white', fontWeight:'600', fontSize:12 }}>✕</Text>
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );
 
-
-  // ─── JSX ──────────────────────────────────────────────────────────────────
+  // ── JSX ─────────────────────────────────────────────────────────────────
   return (
-    // ✅ FIX: Chỉ dùng ScrollView, không dùng FlatList lồng nhau
     <ScrollView style={styles.container}
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={C.primary} />}>
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={DP.primary} />}>
 
-      {/* Header */}
+      {/* ── Header ── */}
       <View style={styles.header}>
         <View>
           <Text style={styles.province}>{location?.province || 'Đang xác định...'}</Text>
           <Text style={styles.date}>Hôm nay, {new Date().toLocaleDateString('vi-VN')}</Text>
         </View>
-        {isLoading && <ActivityIndicator color={C.primary} />}
+        {isLoading && <ActivityIndicator color={DP.primary} />}
       </View>
 
-      {/* Weather Card */}
+      {/* ── Weather Card (gradient, unchanged logic) ── */}
       <LinearGradient colors={getWeatherGradient(weatherData?.temperature, weatherData?.condition)}
         style={styles.weatherCard}>
         <Text style={styles.weatherCity}>{location?.province || 'Vị trí'}</Text>
@@ -352,48 +292,33 @@ useEffect(() => {
               <Text style={styles.weatherDetail}>🌫️ AQI {Math.round(weatherData.aqi)}</Text>
             </View>
           </>
-        ) : (
-          <ActivityIndicator color="white" style={{ marginVertical: 20 }} />
-        )}
+        ) : <ActivityIndicator color="white" style={{ marginVertical: 20 }} />}
       </LinearGradient>
 
-      {/* Cuisine Scope */}
+      {/* ── Cuisine Scope — DoodlePad pill toggle ── */}
       <View style={styles.scopeRow}>
-        {[
-          { key: 'vietnam', label: '🇻🇳 Việt Nam' },
-          { key: 'global',  label: '🌍 Toàn cầu' },
-        ].map(({ key, label }) => (
-          <TouchableOpacity key={key}
-            style={[styles.scopeBtn, cuisineScope === key && styles.scopeBtnActive]}
+        {[{ key:'vietnam', label:'🇻🇳 Việt Nam' }, { key:'global', label:'🌍 Toàn cầu' }].map(({ key, label }) => (
+          <TouchableOpacity key={key} style={[styles.scopeBtn, cuisineScope===key && styles.scopeBtnActive]}
             onPress={() => setCuisineScope(key)}>
-            <Text style={[styles.scopeText, cuisineScope === key && styles.scopeTextActive]}>{label}</Text>
+            <Text style={[styles.scopeText, cuisineScope===key && styles.scopeTextActive]}>{label}</Text>
           </TouchableOpacity>
         ))}
       </View>
 
-      {/* Dish Type Filter */}
+      {/* ── Dish Type Filter — DoodlePad pill toggle ── */}
       <View style={styles.dishTypeRow}>
-        {[
-          { key: 'all',       label: '🍽️ Tất cả' },
-          { key: 'soup',      label: '🥣 Canh / Súp' },
-          { key: 'main_dish', label: '🍖 Món mặn' },
-        ].map(({ key, label }) => (
-          <TouchableOpacity key={key}
-            style={[styles.dishTypeBtn, dishTypeFilter === key && styles.dishTypeBtnActive]}
-            onPress={() => setDishTypeFilter(key)}
-            >
-            <Text style={[styles.dishTypeText, dishTypeFilter === key && styles.dishTypeTextActive]}>
-              {label}
-            </Text>
+        {[{ key:'all', label:'🍽️ Tất cả' }, { key:'soup', label:'🥣 Canh' }, { key:'main_dish', label:'🍖 Món mặn' }].map(({ key, label }) => (
+          <TouchableOpacity key={key} style={[styles.dishTypeBtn, dishTypeFilter===key && styles.dishTypeBtnActive]}
+            onPress={() => setDishTypeFilter(key)}>
+            <Text style={[styles.dishTypeText, dishTypeFilter===key && styles.dishTypeTextActive]}>{label}</Text>
           </TouchableOpacity>
         ))}
       </View>
 
-      {/* Challenge Banner */}
+      {/* ── Challenge Banner — DoodlePad card with dashed left border ── */}
       {challengeTitle !== '' && (
         <TouchableOpacity style={styles.challengeBanner}
-          onPress={() => navigation.navigate('CookingChallenge')}
-          activeOpacity={0.85}>
+          onPress={() => navigation.navigate('CookingChallenge')} activeOpacity={0.85}>
           <Text style={styles.challengeIcon}>🏆</Text>
           <View style={{ flex: 1 }}>
             <Text style={styles.challengeLabel}>Thử thách hôm nay</Text>
@@ -403,7 +328,7 @@ useEffect(() => {
         </TouchableOpacity>
       )}
 
-      {/* Market Basket CTA */}
+      {/* ── Market Basket CTA — DoodlePad card ── */}
       <TouchableOpacity style={styles.basketCTA}
         onPress={() => navigation.navigate('MarketBasket')} activeOpacity={0.85}>
         <Text style={styles.basketIcon}>🛒</Text>
@@ -419,37 +344,30 @@ useEffect(() => {
         <Text style={styles.basketArrow}>›</Text>
       </TouchableOpacity>
 
-      {/* Horizontal Cards (top 3) */}
+      {/* ── Horizontal Cards top-3 ── */}
       {rankedDishes.length > 0 && (
         <>
-          <Text style={styles.sectionTitle}>Gợi ý cho bạn hôm nay</Text>
-          {/* ✅ FIX: ScrollView horizontal thay vì FlatList lồng ScrollView */}
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.hListContent}>
+          <Text style={styles.sectionTitle}>✨ Gợi ý cho bạn hôm nay</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.hListContent}>
             {rankedDishes.slice(0, 3).map(renderDishCardH)}
           </ScrollView>
         </>
       )}
 
-      {/* Vertical List (rank 4 → visibleCount) */}
+      {/* ── Vertical List rank 4+ ── */}
       {rankedDishes.length > 3 && (
         <View style={{ marginBottom: 24 }}>
           <Text style={[styles.sectionTitle, { marginTop: 8 }]}>Gợi ý khác</Text>
           {rankedDishes.slice(3, visibleCount).map(renderListRow)}
-
-          {/* F04: Nút "Xem thêm" — hiện rank 11-20 mà không gọi API lại */}
           {visibleCount < rankedDishes.length && (
-            <TouchableOpacity
-              style={styles.loadMoreBtn}
-              onPress={() => setVisibleCount(rankedDishes.length)}
-              activeOpacity={0.8}>
+            <TouchableOpacity style={styles.loadMoreBtn} onPress={() => setVisibleCount(rankedDishes.length)} activeOpacity={0.8}>
               <Text style={styles.loadMoreText}>Xem thêm gợi ý ↓</Text>
             </TouchableOpacity>
           )}
         </View>
       )}
 
-      {/* Empty state */}
+      {/* ── Empty state ── */}
       {!isLoading && rankedDishes.length === 0 && (
         <View style={styles.emptyState}>
           <Text style={styles.emptyIcon}>🍽️</Text>
@@ -457,101 +375,128 @@ useEffect(() => {
           <Text style={styles.emptySub}>Kéo xuống để tải gợi ý</Text>
         </View>
       )}
-
       <View style={{ height: 32 }} />
     </ScrollView>
   );
 };
 
-
 const styles = StyleSheet.create({
-  container:       { flex: 1, backgroundColor: C.bg },
-  header:          { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
-                     paddingHorizontal: 16, paddingVertical: 14, backgroundColor: C.surface },
-  province:        { fontSize: 18, fontWeight: '700', color: C.text },
-  date:            { fontSize: 13, color: C.textLight, marginTop: 2 },
-  weatherCard:     { marginHorizontal: 16, marginTop: 12, padding: 20, borderRadius: 18, elevation: 3,
-                     shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.15, shadowRadius: 6 },
-  weatherCity:     { color: 'rgba(255,255,255,0.85)', fontSize: 14, fontWeight: '600' },
-  weatherTemp:     { fontSize: 52, fontWeight: '700', color: 'white', marginTop: 4 },
-  weatherCond:     { fontSize: 16, color: 'rgba(255,255,255,0.9)', marginTop: -4 },
-  weatherDetails:  { flexDirection: 'row', justifyContent: 'space-around', marginTop: 16 },
-  weatherDetail:   { color: 'rgba(255,255,255,0.85)', fontSize: 13 },
-  scopeRow:        { flexDirection: 'row', marginHorizontal: 16, marginTop: 12,
-                     backgroundColor: 'white', borderRadius: 25, padding: 4, elevation: 1 },
-  scopeBtn:        { flex: 1, paddingVertical: 10, alignItems: 'center', borderRadius: 20 },
-  scopeBtnActive:  { backgroundColor: C.primary },
-  scopeText:       { fontSize: 14, fontWeight: '500', color: C.textMid },
-  scopeTextActive: { color: 'white' },
-  dishTypeRow:     { flexDirection: 'row', marginHorizontal: 16, marginTop: 8,
-                     backgroundColor: 'white', borderRadius: 25, padding: 4, elevation: 1 },
-  dishTypeBtn:     { flex: 1, paddingVertical: 9, alignItems: 'center', borderRadius: 20 },
-  dishTypeBtnActive: { backgroundColor: '#E67E22' },
-  dishTypeText:    { fontSize: 12, fontWeight: '500', color: C.textMid },
-  dishTypeTextActive: { color: 'white', fontWeight: '700' },
-  basketCTA:       { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginTop: 12,
-                     backgroundColor: 'white', borderRadius: 14, padding: 14, elevation: 2,
-                     shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.08, shadowRadius: 4 },
-  basketIcon:      { fontSize: 22, marginRight: 10 },
-  basketTitle:     { fontSize: 14, fontWeight: '600', color: C.text },
-  basketSub:       { fontSize: 12, color: '#888', marginTop: 2 },
-  basketBadge:     { backgroundColor: C.primary, borderRadius: 10, paddingHorizontal: 7, paddingVertical: 2, marginRight: 6 },
-  basketBadgeText: { color: 'white', fontSize: 12, fontWeight: '600' },
-  basketArrow:     { fontSize: 20, color: '#ccc', fontWeight: '300' },
-  challengeBanner: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 16, marginTop: 8,
-                     backgroundColor: '#FFF3E0', borderRadius: 14, padding: 12, borderLeftWidth: 4, borderLeftColor: '#FF7640' },
-  challengeIcon:   { fontSize: 22, marginRight: 10 },
-  challengeLabel:  { fontSize: 11, fontWeight: '700', color: '#BF5800', letterSpacing: 0.5 },
-  challengeTitle:  { fontSize: 14, fontWeight: '700', color: '#333', marginTop: 2 },
-  challengeArrow:  { fontSize: 20, color: '#FF7640', fontWeight: '700' },
-  sectionTitle:    { fontSize: 17, fontWeight: '700', marginHorizontal: 16, marginTop: 16, marginBottom: 10, color: C.text },
-  hListContent:    { paddingLeft: 16, paddingRight: 8 },
-  dishCard:        { width: 200, backgroundColor: 'white', borderRadius: 16, marginRight: 12,
-                     elevation: 3, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 6, overflow: 'hidden' },
-  cardImageWrap:   { position: 'relative', height: 120 },
-  cardImage:       { width: '100%', height: '100%' },
-  imagePlaceholder:{ width: '100%', height: '100%', backgroundColor: '#f0f0f0', justifyContent: 'center', alignItems: 'center' },
-  dishEmoji:       { fontSize: 40 },
-  rankBadge:       { position: 'absolute', top: 8, left: 8, backgroundColor: C.primary,
-                     borderRadius: 10, paddingHorizontal: 8, paddingVertical: 2 },
-  rankText:        { color: 'white', fontSize: 11, fontWeight: '700' },
-  boostBadge:      { position: 'absolute', top: 8, right: 8, backgroundColor: C.orange,
-                     borderRadius: 10, paddingHorizontal: 6, paddingVertical: 2 },
-  boostText:       { color: 'white', fontSize: 10, fontWeight: '600' },
-  cardBody:        { padding: 12 },
-  dishTitle:       { fontSize: 14, fontWeight: '700', color: '#111', lineHeight: 20 },
-  cardMeta:        { flexDirection: 'row', marginTop: 6, gap: 6 },
-  metaChip:        { fontSize: 11, color: '#888', backgroundColor: '#f5f5f5', paddingHorizontal: 6,
-                     paddingVertical: 2, borderRadius: 8 },
-  cardHint:        { fontSize: 11, color: '#888', marginTop: 6, lineHeight: 16 },
-  quickFeedback:   { flexDirection: 'row', gap: 6, marginTop: 10 },
-  fbBtn:           { flex: 1, paddingVertical: 7, borderRadius: 8, alignItems: 'center' },
-  fbText:          { color: 'white', fontSize: 12, fontWeight: '600' },
-  eatBtn:          { backgroundColor: C.success },
-  skipBtn:         { backgroundColor: C.danger },
-  listItem:        { flexDirection: 'row', backgroundColor: 'white', marginHorizontal: 16,
-                     marginBottom: 8, borderRadius: 12, elevation: 1, overflow: 'hidden',
-                     shadowColor: '#000', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 0.06, shadowRadius: 3 },
-  listImageWrap:   { width: 76, height: 76 },
-  listImage:       { width: '100%', height: '100%' },
-  listImageFallback: { width: '100%', height: '100%', backgroundColor: '#f5f5f5', justifyContent: 'center', alignItems: 'center' },
-  listContent:     { flex: 1, padding: 10, justifyContent: 'center' },
-  listTitle:       { fontSize: 14, fontWeight: '700', color: '#111' },
-  listMetaRow:     { flexDirection: 'row', marginTop: 4, gap: 8 },
-  listMeta:        { fontSize: 11, color: '#888' },
-  listHint:        { fontSize: 11, color: '#aaa', marginTop: 3 },
-  listActions:     { width: 52, justifyContent: 'center', alignItems: 'center', gap: 6, padding: 8 },
-  miniFb:          { width: 32, height: 32, borderRadius: 16, justifyContent: 'center', alignItems: 'center' },
-  emptyState:      { alignItems: 'center', paddingVertical: 60 },
-  emptyIcon:       { fontSize: 48, marginBottom: 12 },
-  emptyTitle:      { fontSize: 18, fontWeight: '600', color: '#333' },
-  emptySub:        { fontSize: 14, color: '#888', marginTop: 4 },
-  // F04: Load Next-10 button
-  loadMoreBtn:     { marginHorizontal: 16, marginTop: 8, marginBottom: 4,
-                     paddingVertical: 13, borderRadius: 12, alignItems: 'center',
-                     backgroundColor: 'white', borderWidth: 1.5, borderColor: C.primary,
-                     elevation: 1 },
-  loadMoreText:    { fontSize: 14, fontWeight: '700', color: C.primary },
+  // ── Root ──
+  container:         { flex: 1, backgroundColor: DP.base },
+
+  // ── Header ──
+  header:            { flexDirection:'row', justifyContent:'space-between', alignItems:'center',
+                       paddingHorizontal:16, paddingVertical:14, backgroundColor: DP.surface,
+                       borderBottomWidth: 2, borderBottomColor: DP.border, borderStyle:'dashed' },
+  province:          { fontSize: 20, fontWeight:'700', color: DP.textPri, fontFamily:'Patrick Hand' },
+  date:              { fontSize: 14, color: DP.textSec, marginTop: 2 },
+
+  // ── Weather ──
+  weatherCard:       { marginHorizontal:16, marginTop:12, padding:20, borderRadius: DP.radiusLg,
+                       ...dpMd },
+  weatherCity:       { color:'rgba(255,255,255,0.85)', fontSize:14, fontWeight:'600' },
+  weatherTemp:       { fontSize:52, fontWeight:'700', color:'white', marginTop:4 },
+  weatherCond:       { fontSize:16, color:'rgba(255,255,255,0.9)', marginTop:-4 },
+  weatherDetails:    { flexDirection:'row', justifyContent:'space-around', marginTop:16 },
+  weatherDetail:     { color:'rgba(255,255,255,0.85)', fontSize:13 },
+
+  // ── Scope Toggle (DoodlePad pill) ──
+  scopeRow:          { flexDirection:'row', marginHorizontal:16, marginTop:12,
+                       backgroundColor: DP.surface, borderRadius: DP.radiusFull, padding:4,
+                       borderWidth:2, borderColor: DP.border, borderStyle:'dashed', ...dpSm },
+  scopeBtn:          { flex:1, paddingVertical:10, alignItems:'center', borderRadius: DP.radiusFull },
+  scopeBtnActive:    { backgroundColor: DP.primary },
+  scopeText:         { fontSize:14, fontWeight:'600', color: DP.textSec },
+  scopeTextActive:   { color:'white' },
+
+  // ── Dish Type Toggle ──
+  dishTypeRow:       { flexDirection:'row', marginHorizontal:16, marginTop:8,
+                       backgroundColor: DP.surface, borderRadius: DP.radiusFull, padding:4,
+                       borderWidth:2, borderColor: DP.border, borderStyle:'dashed', ...dpSm },
+  dishTypeBtn:       { flex:1, paddingVertical:9, alignItems:'center', borderRadius: DP.radiusFull },
+  dishTypeBtnActive: { backgroundColor: DP.tertiary },
+  dishTypeText:      { fontSize:12, fontWeight:'600', color: DP.textSec },
+  dishTypeTextActive:{ color:'white', fontWeight:'700' },
+
+  // ── Challenge Banner ──
+  challengeBanner:   { flexDirection:'row', alignItems:'center', marginHorizontal:16, marginTop:8,
+                       backgroundColor:'#FFFBEB', borderRadius: DP.radiusLg, padding:14,
+                       borderWidth:2, borderColor: DP.tertiary, borderStyle:'dashed' },
+  challengeIcon:     { fontSize:22, marginRight:10 },
+  challengeLabel:    { fontSize:11, fontWeight:'700', color:'#92400E', letterSpacing:0.5 },
+  challengeTitle:    { fontSize:14, fontWeight:'700', color: DP.textPri, marginTop:2 },
+  challengeArrow:    { fontSize:22, color: DP.tertiary, fontWeight:'700' },
+
+  // ── Basket CTA ──
+  basketCTA:         { flexDirection:'row', alignItems:'center', marginHorizontal:16, marginTop:8,
+                       backgroundColor: DP.surface, borderRadius: DP.radiusLg, padding:14,
+                       borderWidth:2, borderColor: DP.border, borderStyle:'dashed', ...dpSm },
+  basketIcon:        { fontSize:22, marginRight:10 },
+  basketTitle:       { fontSize:14, fontWeight:'700', color: DP.textPri },
+  basketSub:         { fontSize:12, color: DP.textSec, marginTop:2 },
+  basketBadge:       { backgroundColor: DP.primary, borderRadius: DP.radiusFull,
+                       paddingHorizontal:8, paddingVertical:3, marginRight:6 },
+  basketBadgeText:   { color:'white', fontSize:12, fontWeight:'700' },
+  basketArrow:       { fontSize:20, color: DP.border, fontWeight:'300' },
+
+  // ── Section title ──
+  sectionTitle:      { fontSize:17, fontWeight:'700', marginHorizontal:16, marginTop:16, marginBottom:10,
+                       color: DP.textPri },
+
+  // ── Horizontal dish card ──
+  hListContent:      { paddingLeft:16, paddingRight:8 },
+  dishCard:          { width:204, backgroundColor: DP.surface, borderRadius: DP.radiusLg, marginRight:12,
+                       borderWidth:2, borderColor: DP.border, borderStyle:'dashed', overflow:'hidden', ...dpMd },
+  cardImageWrap:     { position:'relative', height:120 },
+  cardImage:         { width:'100%', height:'100%' },
+  imagePlaceholder:  { width:'100%', height:'100%', backgroundColor:'#F3F4F6',
+                       justifyContent:'center', alignItems:'center' },
+  dishEmoji:         { fontSize:40 },
+  rankBadge:         { position:'absolute', top:8, left:8, backgroundColor: DP.primary,
+                       borderRadius: DP.radiusFull, paddingHorizontal:8, paddingVertical:3 },
+  rankText:          { color:'white', fontSize:11, fontWeight:'700' },
+  boostBadge:        { position:'absolute', top:8, right:8, backgroundColor: DP.tertiary,
+                       borderRadius: DP.radiusFull, paddingHorizontal:6, paddingVertical:2 },
+  boostText:         { color:'white', fontSize:10, fontWeight:'600' },
+  cardBody:          { padding:12 },
+  dishTitle:         { fontSize:14, fontWeight:'700', color: DP.textPri, lineHeight:20 },
+  cardMeta:          { flexDirection:'row', marginTop:6, gap:6 },
+  metaChip:          { fontSize:11, color: DP.textSec, backgroundColor:'#F3F4F6',
+                       paddingHorizontal:8, paddingVertical:3, borderRadius: DP.radiusFull },
+  cardHint:          { fontSize:11, color: DP.textSec, marginTop:6, lineHeight:16 },
+  quickFeedback:     { flexDirection:'row', gap:6, marginTop:10 },
+  fbBtn:             { flex:1, paddingVertical:8, borderRadius: DP.radiusMd, alignItems:'center' },
+  fbText:            { color:'white', fontSize:12, fontWeight:'700' },
+  eatBtn:            { backgroundColor: DP.secondary },
+  skipBtn:           { backgroundColor: DP.error },
+
+  // ── List row ──
+  listItem:          { flexDirection:'row', backgroundColor: DP.surface, marginHorizontal:16,
+                       marginBottom:8, borderRadius: DP.radiusMd, borderWidth:1.5,
+                       borderColor: DP.border, borderStyle:'dashed', overflow:'hidden', ...dpSm },
+  listImageWrap:     { width:76, height:76 },
+  listImage:         { width:'100%', height:'100%' },
+  listImageFallback: { width:'100%', height:'100%', backgroundColor:'#F3F4F6',
+                       justifyContent:'center', alignItems:'center' },
+  listContent:       { flex:1, padding:10, justifyContent:'center' },
+  listTitle:         { fontSize:14, fontWeight:'700', color: DP.textPri },
+  listMetaRow:       { flexDirection:'row', marginTop:4, gap:8 },
+  listMeta:          { fontSize:11, color: DP.textSec },
+  listHint:          { fontSize:11, color:'#9CA3AF', marginTop:3 },
+  listActions:       { width:52, justifyContent:'center', alignItems:'center', gap:6, padding:8 },
+  miniFb:            { width:34, height:34, borderRadius: DP.radiusFull, justifyContent:'center', alignItems:'center' },
+
+  // ── Load more ──
+  loadMoreBtn:       { marginHorizontal:16, marginTop:8, paddingVertical:13, borderRadius: DP.radiusLg,
+                       alignItems:'center', backgroundColor: DP.surface,
+                       borderWidth:2, borderColor: DP.primary, borderStyle:'dashed', ...dpSm },
+  loadMoreText:      { fontSize:14, fontWeight:'700', color: DP.primary },
+
+  // ── Empty state ──
+  emptyState:        { alignItems:'center', paddingVertical:60 },
+  emptyIcon:         { fontSize:52, marginBottom:12 },
+  emptyTitle:        { fontSize:18, fontWeight:'700', color: DP.textPri },
+  emptySub:          { fontSize:14, color: DP.textSec, marginTop:4 },
 });
 
 export default HomeScreen;
