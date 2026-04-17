@@ -295,6 +295,16 @@ export async function loadIngredientsByCategories(categoryKeys) {
   return results;
 }
 
+// Load toàn bộ ingredients_ref — dùng cho tìm kiếm ingredient cụ thể
+let _ingredientCache = null;
+export async function loadAllIngredients() {
+  if (_ingredientCache) return _ingredientCache;
+  const snap = await getDocs(ingredientsCol());
+  _ingredientCache = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    .sort((a, b) => (a.name || '').localeCompare(b.name || '', 'vi'));
+  return _ingredientCache;
+}
+
 // ─── CHALLENGE HISTORY ────────────────────────────────────────────────────────
 // Lưu local bằng AsyncStorage (offline-safe). Firestore sync optional.
 const CHALLENGE_PREFIX = 'challenge_history_';
