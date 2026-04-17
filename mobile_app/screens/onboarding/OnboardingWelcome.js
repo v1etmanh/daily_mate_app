@@ -1,116 +1,238 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Dimensions } from 'react-native';
-import { C, R, F, shadow } from '../../theme';
+import {
+  View, Text, StyleSheet, TouchableOpacity,
+  StatusBar, Dimensions,
+} from 'react-native';
 
 const { width } = Dimensions.get('window');
 
-const Leaf = ({ size = 40, color, rotate = '0deg', x = 0, y = 0 }) => (
+/* ─── DoodlePad Design Tokens ─── */
+const DP = {
+  primary:      '#60A5FA',
+  primaryLight: '#EFF6FF',
+  primaryDark:  '#3B82F6',
+  secondary:    '#4ADE80',
+  tertiary:     '#FBBF24',
+  bg:           '#FFFFF0',
+  surface:      '#FFFFFF',
+  border:       '#E5E7EB',
+  text:         '#1F2937',
+  textMid:      '#6B7280',
+  textLight:    '#9CA3AF',
+};
+
+/* ─── Decorative Blob ─── */
+const Blob = ({ size, color, x, y, rotate = '0deg', opacity = 0.5 }) => (
   <View style={{
     position: 'absolute', left: x, top: y,
-    width: size, height: size * 1.4,
-    borderRadius: size / 2, backgroundColor: color,
-    transform: [{ rotate }], opacity: 0.85,
+    width: size, height: size * 1.35,
+    borderRadius: size / 2,
+    backgroundColor: color,
+    transform: [{ rotate }],
+    opacity,
   }} />
+);
+
+/* ─── Feature Pill ─── */
+const FeaturePill = ({ icon, label }) => (
+  <View style={s.pill}>
+    <Text style={s.pillIcon}>{icon}</Text>
+    <Text style={s.pillLabel}>{label}</Text>
+  </View>
+);
+
+/* ─── Floating Chip ─── */
+const FloatChip = ({ icon, label, style }) => (
+  <View style={[s.floatChip, style]}>
+    <Text style={s.floatChipText}>{icon} {label}</Text>
+  </View>
 );
 
 const OnboardingWelcome = ({ navigation }) => {
   return (
     <View style={s.root}>
-      <StatusBar barStyle="dark-content" backgroundColor={C.bg} />
+      <StatusBar barStyle="dark-content" backgroundColor={DP.bg} />
 
-      {/* Illustration area */}
-      <View style={s.illustrationWrap}>
-        <View style={s.circle3} />
-        <View style={s.circle2} />
-        <View style={s.circle1} />
-        <Leaf size={48} color={C.primary}       rotate="-20deg" x={60}  y={20} />
-        <Leaf size={32} color={C.primaryLight}  rotate="30deg"  x={190} y={60} />
-        <Leaf size={24} color={C.orange}        rotate="-50deg" x={40}  y={110} />
-        <Leaf size={36} color={C.teal}          rotate="15deg"  x={220} y={20} />
-        {/* Bowl icon */}
-        <View style={s.bowlWrap}>
-          <View style={s.bowlBase} />
-          <View style={s.bowlTop} />
+      {/* ── Hero ── */}
+      <View style={s.hero}>
+        <Blob size={160} color={DP.primary}   x={-40}         y={-50}  rotate="-15deg" opacity={0.15} />
+        <Blob size={120} color={DP.secondary} x={width - 95}  y={-25}  rotate="25deg"  opacity={0.18} />
+        <Blob size={75}  color={DP.tertiary}  x={width - 65}  y={115}  rotate="-30deg" opacity={0.25} />
+        <Blob size={55}  color={DP.primary}   x={8}           y={140}  rotate="40deg"  opacity={0.15} />
+
+        {/* Stars */}
+        <Text style={[s.star, { left: 28, top: 28, fontSize: 16 }]}>⭐</Text>
+        <Text style={[s.star, { right: 44, top: 48, fontSize: 22 }]}>⭐</Text>
+        <Text style={[s.star, { right: 24, top: 130, fontSize: 13 }]}>✨</Text>
+        <Text style={[s.star, { left: 52, top: 155, fontSize: 12 }]}>✨</Text>
+
+        {/* Centre bowl card */}
+        <View style={s.bowlCard}>
           <Text style={s.bowlEmoji}>🍜</Text>
+          <View style={s.bowlBadge}>
+            <Text style={s.bowlBadgeText}>🌿 Healthy</Text>
+          </View>
         </View>
+
+        {/* Floating info chips */}
+        <FloatChip icon="🌤" label="Thời tiết" style={{ left: 14, bottom: 26 }} />
+        <FloatChip icon="💪" label="Cá nhân hoá" style={{ right: 14, bottom: 50 }} />
       </View>
 
-      {/* Content */}
+      {/* ── Content ── */}
       <View style={s.content}>
-        <View style={s.badge}>
-          <Text style={s.badgeText}>🌿 Ăn đúng · Sống khoẻ</Text>
+        {/* Progress */}
+        <View style={s.progressRow}>
+          <View style={s.dotActive} />
+          <View style={s.dot} />
+          <View style={s.dot} />
+          <Text style={s.stepLabel}>Bước 1 / 3</Text>
         </View>
-        <Text style={s.title}>Daily Mate</Text>
+
+        <Text style={s.title}>Daily Mate 🎉</Text>
         <Text style={s.subtitle}>
-          Gợi ý món ăn thông minh theo thời tiết,{'\n'}sức khoẻ và khẩu vị của bạn
+          Gợi ý món ăn thông minh theo thời tiết,{'\n'}sức khoẻ và khẩu vị của bạn.
         </Text>
 
-        {/* Feature pills */}
-        <View style={s.pills}>
-          {[
-            { icon: '🌤', label: 'Theo thời tiết' },
-            { icon: '💪', label: 'Cá nhân hoá' },
-            { icon: '🛒', label: 'Tận dụng nguyên liệu' },
-          ].map(({ icon, label }) => (
-            <View key={label} style={s.pill}>
-              <Text style={s.pillIcon}>{icon}</Text>
-              <Text style={s.pillLabel}>{label}</Text>
-            </View>
-          ))}
+        <View style={s.pillsRow}>
+          <FeaturePill icon="🌤" label="Theo thời tiết" />
+          <FeaturePill icon="💪" label="Cá nhân hoá" />
+          <FeaturePill icon="🛒" label="Tận dụng nguyên liệu" />
         </View>
       </View>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <View style={s.bottom}>
-        <TouchableOpacity style={s.btn}
+        <TouchableOpacity
+          style={s.btn}
           onPress={() => navigation.navigate('OnboardingPersonal')}
-          activeOpacity={0.88}>
-          <Text style={s.btnText}>Bắt đầu ngay</Text>
-          <Text style={s.btnArrow}>→</Text>
+          activeOpacity={0.85}
+        >
+          <Text style={s.btnText}>Bắt đầu ngay ✨</Text>
         </TouchableOpacity>
-        <Text style={s.skip}>Mất khoảng 1 phút để thiết lập</Text>
+        <Text style={s.hint}>Mất khoảng 1 phút để thiết lập</Text>
       </View>
     </View>
   );
 };
 
 const s = StyleSheet.create({
-  root:           { flex: 1, backgroundColor: C.bg },
-  illustrationWrap: { height: 260, backgroundColor: C.primaryLight, overflow: 'hidden',
-                      alignItems: 'center', justifyContent: 'center' },
-  circle1:        { position: 'absolute', width: 220, height: 220, borderRadius: 110,
-                    backgroundColor: C.primary, opacity: 0.12 },
-  circle2:        { position: 'absolute', width: 160, height: 160, borderRadius: 80,
-                    backgroundColor: C.primary, opacity: 0.18 },
-  circle3:        { position: 'absolute', width: 300, height: 300, borderRadius: 150,
-                    backgroundColor: C.primaryLight, opacity: 0.6,
-                    top: -60, right: -60 },
-  bowlWrap:       { alignItems: 'center', justifyContent: 'center', zIndex: 10 },
-  bowlBase:       { width: 100, height: 52, borderRadius: 50, backgroundColor: C.surface,
-                    ...shadow(2), position: 'absolute', bottom: -8 },
-  bowlTop:        { width: 100, height: 52, borderTopLeftRadius: 50, borderTopRightRadius: 50,
-                    backgroundColor: C.surface, ...shadow(1), marginBottom: 4 },
-  bowlEmoji:      { fontSize: 52, position: 'absolute', top: -30 },
-  content:        { flex: 1, padding: 28, paddingTop: 32 },
-  badge:          { alignSelf: 'flex-start', backgroundColor: C.primaryLight,
-                    borderRadius: R.pill, paddingHorizontal: 14, paddingVertical: 6,
-                    marginBottom: 16, borderWidth: 1, borderColor: C.border },
-  badgeText:      { fontSize: F.sm, color: C.primaryDark, fontWeight: '600' },
-  title:          { fontSize: 40, fontWeight: '800', color: C.text, letterSpacing: -0.5 },
-  subtitle:       { fontSize: F.lg, color: C.textMid, lineHeight: 26, marginTop: 10 },
-  pills:          { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 24 },
-  pill:           { flexDirection: 'row', alignItems: 'center', backgroundColor: C.surface,
-                    borderRadius: R.pill, paddingHorizontal: 12, paddingVertical: 8,
-                    ...shadow(1), gap: 6 },
-  pillIcon:       { fontSize: 15 },
-  pillLabel:      { fontSize: F.sm, color: C.textMid, fontWeight: '500' },
-  bottom:         { padding: 28, paddingTop: 0 },
-  btn:            { backgroundColor: C.primary, borderRadius: R.xl, paddingVertical: 17,
-                    flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
-                    gap: 8, ...shadow(2) },
-  btnText:        { fontSize: F.lg, fontWeight: '700', color: '#fff', letterSpacing: 0.2 },
-  btnArrow:       { fontSize: F.xl, color: '#fff', fontWeight: '300' },
-  skip:           { textAlign: 'center', fontSize: F.sm, color: C.textLight, marginTop: 12 },
+  root:      { flex: 1, backgroundColor: DP.bg },
+
+  /* Hero */
+  hero: {
+    height: 265,
+    backgroundColor: DP.primaryLight,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  star: { position: 'absolute' },
+  bowlCard: {
+    width: 112,
+    height: 112,
+    borderRadius: 24,
+    backgroundColor: DP.surface,
+    borderWidth: 2,
+    borderStyle: 'dashed',
+    borderColor: DP.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 6,
+    shadowColor: DP.primary,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.28,
+    shadowRadius: 10,
+  },
+  bowlEmoji: { fontSize: 52 },
+  bowlBadge: {
+    position: 'absolute',
+    bottom: -12,
+    backgroundColor: DP.tertiary,
+    borderRadius: 9999,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+  },
+  bowlBadgeText: { fontSize: 12, fontWeight: '700', color: '#78350F' },
+  floatChip: {
+    position: 'absolute',
+    backgroundColor: DP.surface,
+    borderRadius: 9999,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderWidth: 1.5,
+    borderStyle: 'dashed',
+    borderColor: DP.primary,
+    elevation: 3,
+    shadowColor: 'rgba(0,0,0,0.08)',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 4,
+  },
+  floatChipText: { fontSize: 13, fontWeight: '600', color: DP.primary },
+
+  /* Content */
+  content:  { flex: 1, paddingHorizontal: 24, paddingTop: 28 },
+  progressRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    marginBottom: 20,
+  },
+  dotActive: { width: 22, height: 8, borderRadius: 4, backgroundColor: DP.primary },
+  dot:       { width: 8,  height: 8, borderRadius: 4, backgroundColor: DP.border },
+  stepLabel: { fontSize: 13, color: DP.textLight, fontWeight: '600', marginLeft: 6 },
+
+  title: {
+    fontSize: 38,
+    fontWeight: '800',
+    color: DP.text,
+    letterSpacing: -0.5,
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 17,
+    color: DP.textMid,
+    lineHeight: 26,
+    marginBottom: 24,
+  },
+  pillsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  pill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: DP.surface,
+    borderRadius: 9999,
+    paddingHorizontal: 14,
+    paddingVertical: 9,
+    borderWidth: 1.5,
+    borderStyle: 'dashed',
+    borderColor: DP.border,
+    elevation: 2,
+    shadowColor: 'rgba(0,0,0,0.06)',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 1,
+    shadowRadius: 3,
+  },
+  pillIcon:  { fontSize: 16 },
+  pillLabel: { fontSize: 14, color: DP.textMid, fontWeight: '600' },
+
+  /* CTA */
+  bottom: { paddingHorizontal: 24, paddingBottom: 36, paddingTop: 8 },
+  btn: {
+    backgroundColor: DP.primary,
+    borderRadius: 16,
+    paddingVertical: 17,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 4,
+    shadowColor: DP.primary,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.38,
+    shadowRadius: 10,
+  },
+  btnText: { fontSize: 18, fontWeight: '700', color: '#FFFFFF', letterSpacing: 0.3 },
+  hint:    { textAlign: 'center', fontSize: 14, color: DP.textLight, marginTop: 12, fontWeight: '500' },
 });
 
 export default OnboardingWelcome;
