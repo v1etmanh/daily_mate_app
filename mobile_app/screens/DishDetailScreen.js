@@ -54,16 +54,15 @@ const DishDetailScreen = ({ route, navigation }) => {
   return (
     <View style={{ flex:1, backgroundColor:'#FFFFF0' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-      <ScrollView style={s.container} showsVerticalScrollIndicator={false}>
-        {/* Nav */}
-        <View style={s.navBar}>
-          <TouchableOpacity style={s.backBtn} onPress={() => navigation.goBack()}>
-            <Text style={s.backIcon}>←</Text>
-          </TouchableOpacity>
-          <Text style={s.navTitle} numberOfLines={1}>{dish.title}</Text>
-          <View style={{ width:44 }} />
-        </View>
-
+      {/* Nav — cố định ngoài ScrollView */}
+      <View style={s.navBar}>
+        <TouchableOpacity style={s.backBtn} onPress={() => navigation.goBack()}>
+          <Text style={s.backIcon}>←</Text>
+        </TouchableOpacity>
+        <Text style={s.navTitle} numberOfLines={1}>{dish.title}</Text>
+        <View style={{ width:44 }} />
+      </View>
+      <ScrollView style={s.container} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom:40 }}>
         {/* Hero */}
         {dish.image_url
           ? <Image source={{ uri:dish.image_url }} style={s.heroBanner} resizeMode="cover" />

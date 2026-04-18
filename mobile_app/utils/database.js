@@ -49,18 +49,32 @@ function weatherRef(gridKey)       { return doc(firestore, 'weather_cache', grid
 // ─── initDB  (không cần tạo table, Firestore tự tạo) ─────────────────────────
 export async function initDB() {
   await getDeviceId(); // đảm bảo deviceId tồn tại
-  console.log('[DB] Firebase Firestore ready. deviceId:', _deviceId);
+  if (__DEV__) console.log('[DB] Firebase Firestore ready. deviceId:', _deviceId);
 }
 
 // ─── Timeout helper — Firestore call không được block >5s ─────────────────────
-function withTimeout(promise, ms = 5000, fallback = null) {
+// FIX (Logic): reject thay vì resolve để caller phân biệt được timeout vs data null thật.
+function withTimeout(promise, ms = 5000) {
   return Promise.race([
     promise,
-    new Promise(resolve => setTimeout(() => {
-      console.warn('[DB] Firestore timeout — trả fallback');
-      resolve(fallback);
-    }, ms)),
+    new Promise((_, reject) =>
+      setTimeout(() => {
+        const err = new Error('[DB] Firestore timeout');
+        err.isTimeout = true;
+        reject(err);
+      }, ms)
+    ),
   ]);
+}
+
+// Wrapper cho những nơi cần graceful fallback thay vì throw.
+async function withTimeoutFallback(promise, ms = 5000, fallback = null) {
+  try {
+    return await withTimeout(promise, ms);
+  } catch (e) {
+    console.warn('[DB] withTimeoutFallback:', e.message);
+    return fallback;
+  }
 }
 
 // ─── PROFILE ──────────────────────────────────────────────────────────────────
@@ -71,7 +85,7 @@ export async function saveProfile(data) {
 
 export async function loadProfile() {
   const id = await getDeviceId();
-  const snap = await withTimeout(getDoc(profileRef(id)), 5000, null);
+  const snap = await withTimeoutFallback(getDoc(profileRef(id)), 5000, null);
   return snap && snap.exists() ? { id: 1, ...snap.data() } : null;
 }
 
@@ -85,14 +99,15 @@ export async function saveBodyMetrics(data) {
 export async function loadLatestMetrics() {
   const id = await getDeviceId();
   const q = query(metricsCol(id), orderBy('measured_at', 'desc'), limit(1));
-  const snap = await withTimeout(getDocs(q), 5000, null);
+  const snap = await withTimeoutFallback(getDocs(q), 5000, null);
   if (!snap || snap.empty) return null;
   return { id: snap.docs[0].id, ...snap.docs[0].data() };
 }
 
-export async function loadAllMetrics() {
+// FIX (Hiệu suất): thêm limit(100) tránh fetch không giới hạn khi user dùng lâu dài.
+export async function loadAllMetrics(limitCount = 100) {
   const id = await getDeviceId();
-  const q = query(metricsCol(id), orderBy('measured_at', 'desc'));
+  const q = query(metricsCol(id), orderBy('measured_at', 'desc'), limit(limitCount));
   const snap = await getDocs(q);
   return snap.docs.map(d => ({ id: d.id, ...d.data() }));
 }
@@ -114,7 +129,7 @@ export async function removeAllergy(allergyKey) {
 
 export async function loadAllergies() {
   const id = await getDeviceId();
-  const snap = await withTimeout(getDocs(allergiesCol(id)), 5000, null);
+  const snap = await withTimeoutFallback(getDocs(allergiesCol(id)), 5000, null);
   if (!snap) return [];
   return snap.docs.map(d => d.data());
 }
@@ -138,7 +153,7 @@ export async function getSetting(key) {
   if (local !== null) return local;
   // 2. Fallback lên Firestore
   const id = await getDeviceId();
-  const snap = await withTimeout(getDoc(settingsRef(id, key)), 5000, null);
+  const snap = await withTimeoutFallback(getDoc(settingsRef(id, key)), 5000, null);
   return snap && snap.exists() ? snap.data().value : null;
 }
 
@@ -204,22 +219,29 @@ export async function loadFeedbackBySession(sessionId) {
  * Trả về mảng dish_id (string), ordered gần nhất → xa nhất (tối đa 30 dishes).
  * @param {number} nSessions - số session gần nhất cần lookback (mặc định 3)
  */
+/**
+ * F04 — Anti-repetition: lấy danh sách dish_id đã xuất hiện trong n session gần nhất.
+ * FIX (Hiệu suất): Promise.all để fetch dishes song song thay vì await tuần tự —
+ * giảm từ ~1500ms → ~500ms với 3 sessions (mỗi Firestore round-trip ~200–500ms).
+ */
 export async function getRecentDishIds(nSessions = 3) {
   try {
     const id = await getDeviceId();
     const q = query(sessionsCol(id), orderBy('created_at', 'desc'), limit(nSessions));
-    
-    // Tăng từ 2500 → 6000
-    const sessSnap = await withTimeout(getDocs(q), 6000, null);
+    const sessSnap = await withTimeoutFallback(getDocs(q), 6000, null);
     if (!sessSnap || sessSnap.empty) return [];
 
-    const allDishIds = [];
+    // Fetch tất cả dishes song song
+    const dishSnaps = await Promise.all(
+      sessSnap.docs.map(sessionDoc => {
+        const dishQ = query(dishesCol(id, sessionDoc.id), orderBy('rank', 'asc'));
+        return withTimeoutFallback(getDocs(dishQ), 5000, null);
+      })
+    );
+
     const seenIds = new Set();
-    for (const sessionDoc of sessSnap.docs) {
-      const dishQ = query(dishesCol(id, sessionDoc.id), orderBy('rank', 'asc'));
-      
-      // Tăng từ 2000 → 5000
-      const dishSnap = await withTimeout(getDocs(dishQ), 5000, null);
+    const allDishIds = [];
+    for (const dishSnap of dishSnaps) {
       if (!dishSnap) continue;
       for (const d of dishSnap.docs) {
         const dishId = String(d.data().dish_id || '');
@@ -295,13 +317,26 @@ export async function loadIngredientsByCategories(categoryKeys) {
   return results;
 }
 
-// Load toàn bộ ingredients_ref — dùng cho tìm kiếm ingredient cụ thể
+// FIX (Hiệu suất): TTL-based cache invalidation cho _ingredientCache.
+// Cache sống tối đa 30 phút. Gọi invalidateIngredientCache() khi data thay đổi server-side.
+const INGREDIENT_CACHE_TTL_MS = 30 * 60 * 1000;
 let _ingredientCache = null;
+let _ingredientCacheAt = 0;
+
+export function invalidateIngredientCache() {
+  _ingredientCache = null;
+  _ingredientCacheAt = 0;
+}
+
 export async function loadAllIngredients() {
-  if (_ingredientCache) return _ingredientCache;
+  const now = Date.now();
+  if (_ingredientCache && now - _ingredientCacheAt < INGREDIENT_CACHE_TTL_MS) {
+    return _ingredientCache;
+  }
   const snap = await getDocs(ingredientsCol());
   _ingredientCache = snap.docs.map(d => ({ id: d.id, ...d.data() }))
     .sort((a, b) => (a.name || '').localeCompare(b.name || '', 'vi'));
+  _ingredientCacheAt = now;
   return _ingredientCache;
 }
 
@@ -309,8 +344,15 @@ export async function loadAllIngredients() {
 // Lưu local bằng AsyncStorage (offline-safe). Firestore sync optional.
 const CHALLENGE_PREFIX = 'challenge_history_';
 
+// FIX (Logic): atomic check-and-set — chỉ ghi record nếu chưa tồn tại,
+// tránh race condition khi useFocusEffect gọi 2 lần trước khi check hoàn thành.
 export async function saveChallengeHistory({ challenge_date, dish_id, dish_title }) {
   const key = CHALLENGE_PREFIX + challenge_date;
+  const existing = await AsyncStorage.getItem(key);
+  if (existing) {
+    // Record đã tồn tại — không ghi đè, trả lại record cũ
+    return JSON.parse(existing);
+  }
   const record = { challenge_date, dish_id, dish_title, completed: 0, completed_at: null };
   await AsyncStorage.setItem(key, JSON.stringify(record));
   return record;
@@ -352,33 +394,49 @@ export async function getChallengeDateRecord(challenge_date) {
   } catch { return null; }
 }
 
+// FIX (Logic): kiểm tra hôm nay trước (i=0), không bỏ qua ngày hiện tại.
+// Tránh streak = 0 khi user vừa hoàn thành challenge hôm nay nhưng chưa làm hôm qua.
 export async function computeStreak() {
   const history = await loadChallengeHistory(60);
   const completedSet = new Set(history.filter(r => r.completed).map(r => r.challenge_date));
   let streak = 0;
   const today = new Date();
-  // Streak tính từ hôm qua trở về (không penalty nếu hôm nay chưa làm)
-  for (let i = 1; i <= 60; i++) {
+  for (let i = 0; i <= 60; i++) {
     const d = new Date(today);
     d.setDate(d.getDate() - i);
     const dateStr = d.toISOString().slice(0, 10).replace(/-/g, '');
-    if (completedSet.has(dateStr)) { streak++; } else { break; }
+    if (completedSet.has(dateStr)) {
+      streak++;
+    } else {
+      // Hôm nay chưa làm thì không phạt — tiếp tục kiểm tra từ hôm qua
+      if (i === 0) continue;
+      break;
+    }
   }
   return streak;
 }
 
 // ─── CLEAR ALL HISTORY (Firestore) ───────────────────────────────────────────
+// FIX (Hiệu suất): fetch tất cả dishes song song, tránh N+1 problem.
+// Với 20 session × 10 dishes, giảm từ ~200 Firestore calls nối đuôi → parallel batch.
 export async function clearAllHistory() {
   const id = await getDeviceId();
   const sessions = await getDocs(sessionsCol(id));
+
+  // Fetch dishes của mọi session song song
+  const allDishSnaps = await Promise.all(
+    sessions.docs.map(sessionDoc => getDocs(dishesCol(id, sessionDoc.id)))
+  );
+
   const deletes = [];
-  for (const sessionDoc of sessions.docs) {
-    const dishSnap = await getDocs(dishesCol(id, sessionDoc.id));
-    dishSnap.docs.forEach(d => deletes.push(deleteDoc(d.ref)));
+  sessions.docs.forEach((sessionDoc, idx) => {
+    allDishSnaps[idx].docs.forEach(d => deletes.push(deleteDoc(d.ref)));
     deletes.push(deleteDoc(sessionDoc.ref));
-  }
+  });
+
   const feedbackSnap = await getDocs(feedbackCol(id));
   feedbackSnap.docs.forEach(d => deletes.push(deleteDoc(d.ref)));
+
   await Promise.all(deletes);
 }
 

@@ -73,50 +73,57 @@ export const useAppStore = create((set, get) => ({
     } catch (e) { console.error('loadAllergies:', e); return []; }
   },
 
-  initializeLocation: async () => {
+  // FIX (Hiệu suất): gộp 3 initializeX thành 1 hàm, dùng Promise.all để lấy
+  // tất cả settings song song — tiết kiệm ít nhất 2 AsyncStorage round-trip khi app start.
+  // FIX (Logic): xóa console.log nhạy cảm, wrap __DEV__ nếu cần debug.
+  initializeSettings: async () => {
     try {
-      const [lat, lon, province] = await Promise.all([
+      const [lat, lon, province, cookTime, costPref] = await Promise.all([
         getSetting('last_known_lat'),
         getSetting('last_known_lon'),
         getSetting('last_known_province'),
+        getSetting('max_cook_time'),
+        getSetting('cost_preference'),
       ]);
+
       const location = {
         lat:         lat      ? parseFloat(lat) : null,
         lon:         lon      ? parseFloat(lon) : null,
         province:    province ?? '',
         food_region: '',
       };
-      set({ location });
-      return location;
-    } catch (e) { console.error('initializeLocation:', e); return { lat: null, lon: null, province: '', food_region: '' }; }
+
+      const parsedCookTime = cookTime ? parseInt(cookTime, 10) : 60;
+      const parsedCostPref = costPref ? parseInt(costPref, 10) : 2;
+
+      set({
+        location,
+        maxPrepTime:    isNaN(parsedCookTime) ? 60 : parsedCookTime,
+        costPreference: isNaN(parsedCostPref) ? 2  : parsedCostPref,
+      });
+
+      if (__DEV__) {
+        console.log('[Store] initializeSettings:', { location, parsedCookTime, parsedCostPref });
+      }
+
+      return { location, maxPrepTime: parsedCookTime, costPreference: parsedCostPref };
+    } catch (e) {
+      console.error('initializeSettings:', e);
+      return null;
+    }
   },
 
-  // F02: load max_prep_time từ settings_kv khi app khởi động
-  initializeMaxPrepTime: async () => {
-    try {
-      const val = await getSetting('max_cook_time');
-      console.log('initializeMaxPrepTime:', val);
-      const parsed = val ? parseInt(val, 10) : 60;
-      set({ maxPrepTime: isNaN(parsed) ? 60 : parsed });
-    } catch (e) { console.error('initializeMaxPrepTime:', e); }
-  },
-
-  // F03: load cost_preference từ settings_kv khi app khởi động
-  initializeCostPreference: async () => {
-    try {
-      const val = await getSetting('cost_preference');
-      console.log('initializeCostPreference:', val);
-      const parsed = val ? parseInt(val, 10) : 2;
-      set({ costPreference: isNaN(parsed) ? 2 : parsed });
-    } catch (e) { console.error('initializeCostPreference:', e); }
-  },
+  // Giữ lại các hàm cũ để tương thích ngược — delegate sang initializeSettings
+  initializeLocation:      async () => get().initializeSettings(),
+  initializeMaxPrepTime:   async () => get().initializeSettings(),
+  initializeCostPreference: async () => get().initializeSettings(),
 
   // Load tất cả ingredients vào memory — gọi 1 lần khi app start
   initializeIngredients: async () => {
     try {
       const list = await loadAllIngredients();
       set({ allIngredients: list });
-      console.log('[Store] allIngredients loaded:', list.length);
+      if (__DEV__) console.log('[Store] allIngredients loaded:', list.length);
     } catch (e) { console.error('initializeIngredients:', e); }
   },
 }));

@@ -82,9 +82,9 @@ export default function CookingChallengeScreen({ navigation }) {
   const dateLabel = `${today.toLocaleDateString('vi-VN', { weekday:'long' })}, ${today.getDate()}/${today.getMonth()+1}`;
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <View style={{ flex:1, backgroundColor:'#FFFFF0' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-      {/* Header */}
+      {/* Header — cố định ngoài ScrollView */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
           <Text style={styles.backText}>←</Text>
@@ -94,7 +94,7 @@ export default function CookingChallengeScreen({ navigation }) {
           <Text style={styles.headerDate}>{dateLabel}</Text>
         </View>
       </View>
-
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom:40 }}>
       {/* Hero Image */}
       <View style={styles.heroWrap}>
         {challenge.image_url
@@ -162,7 +162,8 @@ export default function CookingChallengeScreen({ navigation }) {
         )}
       </View>
       <View style={{ height:40 }} />
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 

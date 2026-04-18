@@ -60,3 +60,16 @@ guidelines/
 3. **DB migration trước** — chạy `db_migrations/v3_migrations.sql` trước khi sửa server.
 4. **Đọc spec feature** trước khi code — mỗi file F0X có: bối cảnh, thay đổi server, thay đổi client, test cases.
 5. **Screens affected** — xem folder `screens_affected/` để biết file `.js` nào cần sửa.
+
+
+Based on my analysis of the mobile application screens, I have identified several screens that do not have proper scrolling functionality. Here are the screens that could cause the user interface to feel stuck:
+
+Screens Without Scrolling Support
+1. SettingsScreen.js
+This screen lacks a ScrollView component, which means if the content exceeds the screen height, it won't be scrollable. The screen has multiple sections (default suggestions, display, data) that could potentially cause content overflow.
+
+2. DishDetailScreen.js
+This screen has content sections (hero image, dish details, ingredients, scores, etc.) that might exceed the screen height, especially on smaller devices. Although it does have a ScrollView wrapping the content, if there are issues with the layout, it could feel unresponsive.
+
+3. CookingChallengeScreen.js
+This screen contains multiple content sections (header, hero image, dish card, reasons, tips, streak banner, and CTA buttons) which could exceed the screen height. It does use a ScrollView, but could still feel unresponsive if the layout isn't properly configured.
