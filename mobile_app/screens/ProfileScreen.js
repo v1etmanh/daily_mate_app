@@ -103,7 +103,7 @@ const ProfileScreen = ({ navigation }) => {
               onPress={() => navigation.getParent()?.navigate('Allergy')} />
             <View style={s.divider} />
             
-           <MenuItem icon="👅" label="Khẩu vị của tôi"
+           <MenuItem icon="👅" label="Khẩu vị của tôi   qdsad"
   onPress={() => navigation.getParent()?.navigate('TasteProfile')} />
           </View>
         </View>

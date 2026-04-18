@@ -22,7 +22,7 @@ import TasteProfileScreen from './screens/TasteProfileScreen';
 import OnboardingWelcome from './screens/onboarding/OnboardingWelcome';
 import OnboardingPersonal from './screens/onboarding/OnboardingPersonal';
 import OnboardingAllergy from './screens/onboarding/OnboardingAllergy';
-import OnboardingProfileScreen from './screens/onboarding/OnboardingProfile';
+import OnboardingProfileScreen from './screens/onboarding/OnBoardTast';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
