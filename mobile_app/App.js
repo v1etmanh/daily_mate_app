@@ -18,9 +18,11 @@ import EditPersonalScreen from './screens/EditPersonalScreen';
 import BodyMetricsScreen from './screens/BodyMetricsScreen';
 import AllergyScreen from './screens/AllergyScreen';
 import CookingChallengeScreen from './screens/CookingChallengeScreen';
+import TasteProfileScreen from './screens/TasteProfileScreen';
 import OnboardingWelcome from './screens/onboarding/OnboardingWelcome';
 import OnboardingPersonal from './screens/onboarding/OnboardingPersonal';
 import OnboardingAllergy from './screens/onboarding/OnboardingAllergy';
+import OnboardingProfileScreen from './screens/onboarding/OnboardingProfile';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -84,6 +86,7 @@ const OnboardingStack = () => {
       <Stack.Screen name="OnboardingWelcome" component={OnboardingWelcome} />
       <Stack.Screen name="OnboardingPersonal" component={OnboardingPersonal} />
       <Stack.Screen name="OnboardingAllergy" component={OnboardingAllergy} />
+      <Stack.Screen name="TasteProfile" component={OnboardingProfileScreen} />
     </Stack.Navigator>
   );
 };
@@ -142,6 +145,7 @@ const App = () => {
               <Stack.Screen name="BodyMetrics" component={BodyMetricsScreen} />
               <Stack.Screen name="Allergy" component={AllergyScreen} />
               <Stack.Screen name="CookingChallenge" component={CookingChallengeScreen} />
+              <Stack.Screen name="TasteProfile" component={TasteProfileScreen} />
             </>
           )}
         </Stack.Navigator>

@@ -43,7 +43,7 @@ const MenuItem = ({ icon, label, sub, onPress, danger }) => (
 );
 
 const ProfileScreen = ({ navigation }) => {
-  const { profile, latestMetrics } = useAppStore();
+  const { profile, latestMetrics, tasteProfile } = useAppStore();
 
   let bmi = null, bmiColor = DP.primary, bmiLabel = 'N/A';
   if (latestMetrics?.height_cm && latestMetrics?.weight_kg) {
@@ -92,15 +92,19 @@ const ProfileScreen = ({ navigation }) => {
           <View style={s.menuCard}>
             <MenuItem icon="👤" label="Thông tin cá nhân"
               sub={profile ? `${profile.age} tuổi · ${DIET_LABEL[profile.diet_type]||''}` : 'Chưa có dữ liệu'}
-              onPress={() => navigation.navigate('EditPersonal')} />
+              onPress={() => navigation.getParent()?.navigate('EditPersonal')} />
             <View style={s.divider} />
             <MenuItem icon="⚖️" label="Chỉ số cơ thể"
               sub={latestMetrics ? `${latestMetrics.weight_kg} kg · BMI ${bmi}` : 'Chưa có dữ liệu'}
-              onPress={() => navigation.navigate('BodyMetrics')} />
+              onPress={() => navigation.getParent()?.navigate('BodyMetrics')} />
             <View style={s.divider} />
             <MenuItem icon="⚠️" label="Dị ứng & Chế độ ăn"
               sub="Quản lý thực phẩm cần tránh"
-              onPress={() => navigation.navigate('Allergy')} />
+              onPress={() => navigation.getParent()?.navigate('Allergy')} />
+            <View style={s.divider} />
+            
+           <MenuItem icon="👅" label="Khẩu vị của tôi"
+  onPress={() => navigation.getParent()?.navigate('TasteProfile')} />
           </View>
         </View>
         <View style={{ height:32 }} />

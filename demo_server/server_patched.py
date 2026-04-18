@@ -729,7 +729,6 @@ def rank_and_explain(scores, dish_pool, boosts, demand, profile, top_k=20,
             "serving_suggestion": _serving_hint(dish),
             "explanation":        explanation_obj,     # F06: dict thay vì list[str]
         })
-    
     return result, sorted_ids[top_k:top_k+5]
 
 def _serving_hint(dish) -> str:
@@ -988,18 +987,7 @@ def recommend():
         boosts[dish["id"]] = boost
 
     # F06: truyền thêm context cho explanation engine
-    # Lấy temperature cho explanation engine
-    weather_body = body.get("weather")
-    if isinstance(weather_body, dict) and "temperature" in weather_body:
-        _temperature = float(weather_body["temperature"])
-    else:
-        # Đọc từ DB cache (đã được fetch/lưu bởi get_or_compute_weather)
-        _key, _, _ = _grid_key(lat, lon)
-        _cache_row = db.execute(
-            "SELECT temperature FROM weather_cache WHERE grid_key = ?", (_key,)
-        ).fetchone()
-        _temperature = float(_cache_row["temperature"]) if _cache_row and _cache_row["temperature"] else None
-    print(f"DEBUG: temperature for explanation: {_temperature}")
+    _temperature = body.get("weather", {}).get("temperature") if isinstance(body.get("weather"), dict) else None
     ranked, fallback_ids = rank_and_explain(
         scores, dish_pool, boosts, demand, profile,
         loc=loc,

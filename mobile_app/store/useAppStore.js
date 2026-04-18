@@ -16,6 +16,12 @@ export const useAppStore = create((set, get) => ({
   costPreference:   2,    // F03: 1=Tiết kiệm | 2=Vừa phải | 3=Thoải mái
   allIngredients:   [],   // Cache toàn bộ ingredients (1100+) — load 1 lần khi app khởi động
 
+  // F08 — Taste Profile
+  tasteProfile:        null,   // { sweet, sour, salty, bitter, umami, spicy, astringent }
+  hometownProvinceId:  null,   // int | null
+  tasteMode:           'hometown', // 'manual' | 'hometown'
+  provinces:           [],     // cache 63 tỉnh từ Firestore
+
   // MarketBasket — giỏ nguyên liệu của phiên hiện tại
   marketBasket: {
     selectedIngredients: [],  // Array<number> ingredient_id
@@ -35,6 +41,12 @@ export const useAppStore = create((set, get) => ({
   setMaxPrepTime:      (val)       => set({ maxPrepTime: Number(val) }),
   setCostPreference:   (val)       => set({ costPreference: Number(val) }),  // F03
   setAllIngredients:   (list)      => set({ allIngredients: list }),
+
+  // F08 — Taste Profile setters
+  setTasteProfile:     (profile)   => set({ tasteProfile: profile }),
+  setHometown:         (id)        => set({ hometownProvinceId: id }),
+  setTasteMode:        (mode)      => set({ tasteMode: mode }),
+  setProvinces:        (list)      => set({ provinces: list }),
 
   setMarketBasket: (basket) => set({
     marketBasket: {
