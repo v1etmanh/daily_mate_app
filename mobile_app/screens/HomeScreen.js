@@ -14,6 +14,7 @@ import {
   loadSessions, loadDishesBySession,
   getWeatherCache, setWeatherCache, setSetting,
   getRecentDishIds,
+  saveRecentDishesCache, loadRecentDishesCache,
 } from '../utils/database';
 
 // ── DoodlePad tokens ────────────────────────────────────────────────────────
@@ -47,11 +48,14 @@ const HomeScreen = ({ navigation }) => {
   const [basketBadge, setBasketBadge]     = useState(0);
   const [challengeTitle, setChallengeTitle] = useState('');
   const [visibleCount, setVisibleCount]   = useState(10);
+  // isDirty: filter đã thay đổi kể từ lần search cuối — nhắc user bấm nút tìm lại
+  const [isDirty, setIsDirty]             = useState(false);
   const isFirstRender = React.useRef(true);
 
+  // Khi filter thay đổi: KHÔNG gọi API nữa, chỉ đánh dấu dirty để nhắc user
   useEffect(() => {
     if (isFirstRender.current) { isFirstRender.current = false; return; }
-    loadRecommendation();
+    setIsDirty(true);
   }, [cuisineScope, dishTypeFilter]);
 
   const {
@@ -75,7 +79,12 @@ const HomeScreen = ({ navigation }) => {
     api.get(`/api/v1/challenge?lat=${lat}&lon=${lon}`)
       .then(r => setChallengeTitle(r.data?.challenge_dish?.title || ''))
       .catch(() => {});
-    if (rankedDishesLengthRef.current === 0) loadRecommendation();
+    // Nếu store trống, load từ cache AsyncStorage — KHÔNG gọi API
+    if (rankedDishesLengthRef.current === 0) {
+      loadRecentDishesCache().then(cached => {
+        if (cached.length > 0) setRankedDishes(cached);
+      });
+    }
   }, []));
 
   const getUserLocation = async () => {
@@ -171,6 +180,9 @@ const HomeScreen = ({ navigation }) => {
           market_basket: basket, recent_dish_ids: recentDishIds,
         });
         setRankedDishes(res.data.ranked_dishes || []);
+        setIsDirty(false);
+        // Lưu kết quả vào cache để hiển thị lần sau khi mở app
+        await saveRecentDishesCache(res.data.ranked_dishes || []);
         await persistSession(res.data, { ...currentLocation, cuisineScope, marketBasket });
       } catch (apiErr) {
         console.error('recommend API:', apiErr);
@@ -315,6 +327,22 @@ const HomeScreen = ({ navigation }) => {
         ))}
       </View>
 
+      {/* ── Search Button ── */}
+      <TouchableOpacity
+        style={[styles.searchBtn, isDirty && styles.searchBtnDirty, isLoading && styles.searchBtnDisabled]}
+        onPress={loadRecommendation}
+        disabled={isLoading}
+        activeOpacity={0.82}>
+        {isLoading
+          ? <ActivityIndicator color="white" size="small" />
+          : <>
+              <Text style={styles.searchBtnIcon}>{isDirty ? '✨' : '🔍'}</Text>
+              <Text style={styles.searchBtnText}>
+                {isDirty ? 'Tìm lại với bộ lọc mới' : 'Tìm món cho tôi'}
+              </Text>
+            </>}
+      </TouchableOpacity>
+
       {/* ── Challenge Banner — DoodlePad card with dashed left border ── */}
       {challengeTitle !== '' && (
         <TouchableOpacity style={styles.challengeBanner}
@@ -417,6 +445,16 @@ const styles = StyleSheet.create({
   dishTypeBtnActive: { backgroundColor: DP.tertiary },
   dishTypeText:      { fontSize:12, fontWeight:'600', color: DP.textSec },
   dishTypeTextActive:{ color:'white', fontWeight:'700' },
+
+  // ── Search Button ──
+  searchBtn:         { flexDirection:'row', alignItems:'center', justifyContent:'center',
+                       marginHorizontal:16, marginTop:10, paddingVertical:14,
+                       backgroundColor: DP.primary, borderRadius: DP.radiusLg,
+                       gap: 8, ...dpMd },
+  searchBtnDirty:    { backgroundColor: DP.tertiary },
+  searchBtnDisabled: { opacity: 0.6 },
+  searchBtnIcon:     { fontSize: 18 },
+  searchBtnText:     { color:'white', fontSize:15, fontWeight:'700', fontFamily:'Patrick Hand' },
 
   // ── Challenge Banner ──
   challengeBanner:   { flexDirection:'row', alignItems:'center', marginHorizontal:16, marginTop:8,

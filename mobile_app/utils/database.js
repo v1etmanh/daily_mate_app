@@ -440,6 +440,24 @@ export async function clearAllHistory() {
   await Promise.all(deletes);
 }
 
+// ─── RECENT DISHES CACHE (AsyncStorage — không cần network) ──────────────────
+// Dùng để hiển thị dishes cuối cùng khi user mở app mà không cần gọi API.
+// Chỉ lưu danh sách dishes đã recommend thành công gần nhất.
+const RECENT_DISHES_CACHE_KEY = 'recent_dishes_cache_v1';
+
+export async function saveRecentDishesCache(dishes) {
+  try {
+    await AsyncStorage.setItem(RECENT_DISHES_CACHE_KEY, JSON.stringify(dishes));
+  } catch (e) { console.warn('[DB] saveRecentDishesCache:', e); }
+}
+
+export async function loadRecentDishesCache() {
+  try {
+    const raw = await AsyncStorage.getItem(RECENT_DISHES_CACHE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) { console.warn('[DB] loadRecentDishesCache:', e); return []; }
+}
+
 // ─── db object — chỉ còn dùng bởi useAppStore (load profile/metrics/location)
 export const db = {
   getAllAsync: async (sql) => {
