@@ -7,7 +7,7 @@ import axios from 'axios';
 // Android Emulator: 10.0.2.2 trỏ về localhost máy host
 // Thiết bị thật / Expo Go: đổi thành IP LAN (vd: 'http://192.168.1.5:5001')
 // Tìm IP: Windows → `ipconfig` | Mac → `ifconfig`
-const API_BASE_URL = 'http://192.168.1.19:5001';
+const API_BASE_URL = 'http://192.168.30.246:5001';
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

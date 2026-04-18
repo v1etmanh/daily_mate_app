@@ -15,16 +15,25 @@ const DishDetailScreen = ({ route, navigation }) => {
   const [loadingDetail, setLoadingDetail]           = useState(true);
 
   useEffect(() => { loadDetail(); }, []);
-
+const explanationList = []
   const loadDetail = async () => {
     try {
       const dishId = dish.dish_id || dish.id;
       if (!dishId) return;
       const res = await api.get(`/api/v1/dishes/${dishId}`);
       setIngredients(res.data.ingredients || []);
+      
     } catch (e) { console.error('loadDetail:', e); }
     finally { setLoadingDetail(false); }
   };
+const explanationConfig = [
+  { key: "weather_reason", label: "🌦️ Thời tiết" },
+  { key: "dish_match", label: "🍽️ Phù hợp món" },
+  { key: "nutrition_note", label: "🥗 Dinh dưỡng" },
+  { key: "ingredient_note", label: "🧄 Nguyên liệu" },
+  { key: "seasonal_note", label: "🌱 Mùa vụ" },
+   { key: "tags", label: "🏷️ Tags" },
+]
 
   const handleFeedback = async (action, rating = null) => {
     try {
@@ -85,10 +94,19 @@ const DishDetailScreen = ({ route, navigation }) => {
 
           {/* Lý do gợi ý */}
           <View style={s.section}>
-            <Text style={s.sectionTitle}>🌟 Tại sao được gợi ý</Text>
-            {(dish.explanation||[]).map((exp,i) => (
-              <Text key={i} style={s.explanationItem}>• {exp}</Text>
-            ))}
+         <Text style={s.sectionTitle}>🌟 Tại sao được gợi ý</Text>
+
+{explanationConfig.map(({ key, label }) => {
+  const value = dish?.explanation?.[key]
+  if (!value) return null
+
+  return (
+    <Text key={key} style={s.explanationItem}>
+      • {label}: {value}
+    </Text>
+  )
+})}
+
           </View>
 
           {/* Score */}

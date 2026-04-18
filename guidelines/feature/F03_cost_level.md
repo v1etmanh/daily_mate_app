@@ -11,20 +11,7 @@ Mỗi món ăn có chi phí nguyên liệu khác nhau. Người dùng muốn ch�
 
 ```sql
 -- Xem db_migrations/v3_migrations.sql
-ALTER TABLE dishes ADD COLUMN cost_level INTEGER DEFAULT 2;
--- 1 = Rẻ (< 30k/serving)
--- 2 = Vừa (30k-80k/serving)  
--- 3 = Cao (> 80k/serving)
-```
-
-**Labeling**: Cần script riêng để label `cost_level` dựa trên:
-- `dish_energy_total` (proxy cho lượng nguyên liệu)
-- Ingredients có `category = 'protein'` và `source_type = 'aquatic_coast'` → likely đắt
-- Có thể dùng rule-based: bò/hải sản → cao; rau/đậu hũ → rẻ
-
-Script label: `data_engine/scripts/label_cost_level.py` (tạo mới)
-
----
+  dishes have column cost_level  value ∈ {1, 2, 3}
 
 ## Server: Thêm soft penalty theo cost_level
 
@@ -40,14 +27,6 @@ Script label: `data_engine/scripts/label_cost_level.py` (tạo mới)
 cost_pref = body.get("cost_preference", 2)
 dish_cost = dish.get("cost_level", 2)
 
-# Hard exclude nếu cost_level > cost_pref + 1
-if dish_cost > cost_pref + 1:
-    return 0.0  # loại cứng
-
-# Soft penalty nếu cost_level > cost_pref
-if dish_cost > cost_pref:
-    mult *= 0.7  # giảm điểm 30%
-```
 
 ---
 

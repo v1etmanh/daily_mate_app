@@ -9,7 +9,7 @@
 ### 🔴 Server + DB (implement backend trước)
 | ID | Feature | File spec | Priority | Depends on |
 |---|---|---|---|---|
-| F01 | Dish type filter (canh/mặn) | `feature/F01` | HIGH | DB: `dishes.dish_type` |
+| F01 | Dish type filter (canh/mặn) | `feature/F01` | HIGH | DB:
 | F02 | Cooking time preference | `feature/F02` | HIGH | Settings |
 | F03 | Cost level penalty | `feature/F03` | HIGH | DB: `dishes.cost_level` |
 | F10 | Hard cook_time filter (+10 min) | `feature/F10` | HIGH | F02 |
