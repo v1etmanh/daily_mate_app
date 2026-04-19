@@ -28,18 +28,15 @@ const PickerRow = ({ icon, bg, label, selectedValue, onValueChange, children }) 
     <View style={[st.iconBox, { backgroundColor: bg }]}>
       <Text style={st.iconEmoji}>{icon}</Text>
     </View>
-    <View style={st.rowInner}>
-      <Text style={st.rowLabel}>{label}</Text>
-      <View style={st.pickerWrap}>
-        <Picker selectedValue={selectedValue} onValueChange={onValueChange}
-          style={st.picker} dropdownIconColor="#60A5FA" itemStyle={st.pickerItem}>
-          {children}
-        </Picker>
-      </View>
+    <Text style={st.rowLabel}>{label}</Text>  {/* flex:1 riêng */}
+    <View style={st.pickerWrap}>
+      <Picker selectedValue={selectedValue} onValueChange={onValueChange}
+        style={st.picker} dropdownIconColor="#60A5FA">
+        {children}
+      </Picker>
     </View>
   </View>
 );
-
 // ─── Action row ──────────────────────────────────────────────────────────────
 const ActionRow = ({ icon, bg, label, actionLabel, onPress, danger, last }) => (
   <TouchableOpacity
@@ -49,7 +46,7 @@ const ActionRow = ({ icon, bg, label, actionLabel, onPress, danger, last }) => (
     <View style={[st.iconBox, { backgroundColor: bg }]}>
       <Text style={st.iconEmoji}>{icon}</Text>
     </View>
-    <Text style={st.rowLabel}>{label}</Text>
+    <Text style={[st.rowLabel, { flex: 1 }]}>{label}</Text>
     <View style={[st.actionBadge, danger && st.actionBadgeDanger]}>
       <Text style={[st.actionBadgeText, danger && st.actionBadgeTextDanger]}>{actionLabel}</Text>
     </View>
@@ -206,9 +203,11 @@ const st = StyleSheet.create({
                          justifyContent: 'center', marginRight: 12 },
   iconEmoji:           { fontSize: 18 },
   rowInner:            { flex: 1 },
-  rowLabel:            { fontSize: 16, color: '#1E1E1E', fontWeight: '600', fontFamily: 'Nunito' },
-  pickerWrap:          { marginLeft: -8 },
-  picker:              { height: 44, color: '#60A5FA' },
+  rowLabel: { fontSize: 16, color: '#1E1E1E', fontWeight: '600',
+             fontFamily: 'Nunito', flex: 1 },
+  pickerWrap: { width: 130 }, 
+  picker:     { height: 44, width: 130, color: '#60A5FA' },
+
   pickerItem:          { fontSize: 15, color: '#60A5FA' },
   actionBadge:         { backgroundColor: '#EFF6FF', borderRadius: 9999,
                          paddingHorizontal: 12, paddingVertical: 5 },
