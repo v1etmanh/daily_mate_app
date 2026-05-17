@@ -2,11 +2,12 @@
   "expo": {
     "name": "Daily Mate",
     "slug": "daily-mate",
+    "scheme": "dailymate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -19,16 +20,37 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.USE_EXACT_ALARM"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.anonymous.dailymate"
+      "package": "com.vietmanh.dailymate",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "dailymate"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
+      "expo-notifications",
       [
         "expo-build-properties",
         {
@@ -40,12 +62,15 @@
           }
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-secure-store",
+      "expo-web-browser"
     ],
     "extra": {
       "eas": {
-        "projectId": "2e67f84e-0626-48c0-bb89-7f62232b648e"
+        "projectId": "131e9657-e462-4ad8-8a95-083990f87e3a"
       }
-    }
+    },
+    "owner": "v1etmanh"
   }
 }

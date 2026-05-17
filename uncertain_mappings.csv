@@ -1,0 +1,66 @@
+pattern_id,raw_name,wrong_name,wrong_en,row_count,dish_examples,verdict,reason,row_ids
+38,đậu,đậu que,green beans,17,"Canh rong xà lách thịt bằm đậu hũ (rong lục ulva) | Đậu hấp trứng, thịt băm",UNCERTAIN,"Đậu quá chung chung, có thể là đậu hũ","19122,22064,29040,30957,31541,33256,33744,34486,36526,41509,42344,43118,45115,53962,61378,62379,63136"
+62,Hành tỏi băm,tỏi,garlic,13,Cá hú kho thịt ba rọi và thơm | Mực Xào Nấm Rau Củ,UNCERTAIN,"Hành tỏi băm gồm cả hành, không chỉ tỏi","22329,24576,24825,24915,25037,25188,26718,26725,26799,28459,29986,47098,53555"
+68,hành tỏi băm,tỏi,garlic,12,Mướp Khía Xào Nấm Bào Ngư Chay | Canh Rau Má Tép Đất,UNCERTAIN,Hành tỏi băm chứa cả hành và tỏi,"21646,22950,23103,24428,27060,40432,48378,50805,50867,51159,54451,61209"
+80,Hành tỏi,tỏi,garlic,11,Cá tầm kho tộ với quả cọ | Tôm (sắt) rang thịt,UNCERTAIN,Hành tỏi bao gồm cả hành tím và tỏi,"24586,25408,25869,27647,28444,42424,42950,43867,44108,47216,61835"
+95,ớt cay,ớt xanh,green chili,9,Cá nục tròn kho chuối xanh và củ cải khô | Cá mím nấu chua,UNCERTAIN,Ớt cay có thể là ớt đỏ hoặc xanh,"9593,10730,10782,11195,15053,16188,17356,17520,17543"
+99,nấm,nấm mèo,wood ear mushroom,9,Salad khế rau củ | Súp cua biển 🦀 bí ngòi nấm,UNCERTAIN,"Nấm có rất nhiều loại, không chỉ nấm mèo","23628,25807,26662,28794,31523,34159,44367,44599,62894"
+131,cải,bông cải,broccoli,7,Xương heo hầm rau củ | Lẩu nấm rau củ quả chay,UNCERTAIN,"Cải có nhiều loại, không nhất thiết là bông cải","23448,30941,32622,34575,36984,41906,42971"
+248,trắng,hộp đậu trắng,canned white beans,4,Cơm chiên thịt quay cá mặn | SP.0776 - Cơm Trộn Tôm Cay,UNCERTAIN,"Trắng quá chung chung, không rõ là đậu","26183,26907,40071,40697"
+290,tôm tươi,tôm sú,shrimp,3,Mì xào tôm kiểu Thái | Gỏi Miến Hải Sản,UNCERTAIN,"Tôm tươi nói chung, không chắc là tôm sú","6492,17037,20301"
+296,thịt bò xay,thịt vai bò,beef shoulder,3,Tacos bò băm | Pizza bò ngô,UNCERTAIN,"Thịt xay có thể làm từ nhiều phần, không chỉ vai","7947,14631,15099"
+298,t,tỏi,garlic,3,Mít non kho rau răm và chao | Cá Giò Kho Cải Chua,UNCERTAIN,"T có thể là tỏi hoặc tiêu, không rõ","7972,9669,57972"
+365,dầu,dầu ô liu,olive oil,3,Cá liệt kho | Cá chìa vôi nướng muối ớt,UNCERTAIN,Dầu nói chung không nhất thiết là dầu ô liu,"26622,29229,46797"
+375,Dầu,dầu ô liu,olive oil,3,Cá hộp ba cô gái | KHOAI TÂY CUỘN TÔM - st mẹ Bún,UNCERTAIN,Dầu nói chung không nhất thiết là dầu ô liu,"29086,32817,39757"
+433,nõn tôm,tôm thẻ loại to,shrimp,2,Hủ Tíu Xào Tôm | Hủ Tiếu Xào Nõn Tôm Trứng Cút,UNCERTAIN,"Nõn tôm là tôm bóc vỏ, chưa chắc là tôm thẻ","8013,14099"
+493,cá khô,cá kình,fish,2,Cá khô nướng chấm mắm me | Cơm rang cá mặn,UNCERTAIN,Cá khô có thể làm từ nhiều loại cá,"15027,18546"
+508,Hành lá rau răm thì là,thì là,dill,2,Cá song nấu canh chua | Cá trôi sốt cà chua,UNCERTAIN,"Raw chứa nhiều loại rau, mapping chỉ giữ một","17332,17512"
+514,ớt sừng củ tỏi,hành tỏi ớt,garlic chili mix,2,Cá chim sốt mắm tỏi | Cá sòng chiên mắm tỏi,UNCERTAIN,Raw thiếu hành so với mapping,"18498,28151"
+516,Tỏi ớt gừng,hành tỏi ớt,garlic chili mix,2,Gỏi gân bò cóc non | Khô cá đù chiên giấm gừng 🧄🌶️,UNCERTAIN,Raw thiếu hành so với mapping,"19050,24675"
+533,Tỏi hanh timơt,tỏi,garlic,2,Cá Chốt Kho Tiêu | Cá phèn (cá hồng) kho tiêu,UNCERTAIN,"Raw chứa hành tím và ớt, mapping chỉ có tỏi","21758,27790"
+535,Gừng hành tỏi gia vị,tỏi,garlic,2,Cá trắm đen sốt cà | Cá thu vẩy sốt cà chua,UNCERTAIN,"Raw chứa nhiều thứ, mapping chỉ giữ tỏi","22374,61755"
+537,hành lá ngò rí,hành lá,green onion,2,Cháo CÁ DÒ | Cháo CÁ KHOAI,UNCERTAIN,Raw có thêm ngò rí so với mapping,"22532,22653"
+550,Gia vịmì chính hạt nêmnước mắm,nước mắm,fish sauce,2,Thịt công xào sả ớt | Gan heo xào tỏi ớt,UNCERTAIN,"Raw là hỗn hợp gia vị, mapping chỉ giữ một","23899,45630"
+568,Hành tỏi phi,tỏi,garlic,2,"Mì Bò Viên | Hủ Tíu Ức Gà, Nấm & Rau Củ",UNCERTAIN,"Hành tỏi phi chứa hành, mapping chỉ giữ tỏi","25546,39860"
+583,Chanh ớt,ớt,chili pepper,2,Cháo cá lóc rau đắng | Bún riêu cua nhà nấu,UNCERTAIN,Raw có thêm chanh so với mapping,"26329,41927"
+850,củ,khoai môn,taro,1,Canh củ nấu cá và rau cần,UNCERTAIN,"Củ là từ gọi chung, không chắc là khoai môn",8388
+1006,bò cắt mỏng,bắp bò,beef shank,1,Lẩu thịt rau củ,UNCERTAIN,Bò thái mỏng có thể là bắp hoặc thăn,11609
+1011,hành giã,hành tỏi,garlic and onion,1,Bò Kho Xốt Vang,UNCERTAIN,"Hành giã chỉ là hành, mapping thêm tỏi",11683
+1013,tỏi ớt bằm,hành tỏi ớt,garlic chili mix,1,Mực Hấp Cuốn Bánh Tráng Rau Muống,UNCERTAIN,Raw thiếu hành so với mapping,11744
+1026,Mè rang đậu phộng rang,đậu phộng,peanut,1,Gỏi Lưỡi Heo,UNCERTAIN,"Raw gồm cả mè và lạc, mapping thiếu mè",12178
+1031,rau răm hành lá,rau răm,vietnamese coriander,1,Canh xương bò nấu rau muống bắp chuối,UNCERTAIN,"Raw gồm cả hành lá, mapping thiếu",12283
+1038,Rau nêm hành lá ngò rí,rau ngò rí,coriander leaves,1,TRỨNG GÀ NON xào nấm,UNCERTAIN,Raw có thêm hành lá so với mapping,12460
+1046,Tỏi ớt chanh,chanh ớt rau thơm,lime chili herbs,1,"Bún cá ngừ, chả cá",UNCERTAIN,Mapping chứa rau thơm không có trong raw,12628
+1055,chả cá không bắt buộc,chả cá lóc,fish cake,1,"Bánh đa tôm, mọc, chả cá",UNCERTAIN,Chả cá nói chung khác chả cá lóc,12994
+1076,vuông thịt bò,thịt vai bò,beef shoulder,1,Canh dưa cải nấu thịt bò,UNCERTAIN,Vuông bò có thể từ nhiều phần thịt,13432
+1081,Chanh ớt tuỳ ý,chanh ớt rau thơm,lime chili herbs,1,Bún chả cá Đà Nẵng chay,UNCERTAIN,Mapping chứa rau thơm không có trong raw,13511
+1093,mộc nhĩ mũ nấm hương,nấm hương,shiitake mushroom,1,Chả trứng hấp thịt và chao,UNCERTAIN,Raw gồm mộc nhĩ và nấm hương,13745
+1096,Thịt bò thái mỏng,bắp bò,beef shank,1,Mì ý bò sốt tiêu đen,UNCERTAIN,Thái mỏng có thể không phải bắp bò,13806
+1250,ba chỉ nhỏ,ba chỉ bò,beef belly,1,"Bento box 16: cơm nắm furikake, mì xào nấm, thịt nướng",UNCERTAIN,Ba chỉ nhỏ không rõ là heo hay bò,17109
+1451,hành cắt lát,lát,galangal,1,Dưa Rau Muống,UNCERTAIN,Hành cắt lát khác lát (đơn vị/hình dáng),21625
+1499,ớp cá p,cá ngừ,tuna,1,🍍Cá ngừ kho thơm🍍,UNCERTAIN,Ớp cá p quá mơ hồ,22391
+1502,hành củ tỏi băm nhỏ,tỏi,garlic,1,Thịt nướng ngũ vị,UNCERTAIN,Hỗn hợp gồm cả hành và tỏi,22479
+1510,Gừng tỏi,tỏi,garlic,1,Canh cải xanh nấu cá lóc,UNCERTAIN,Hỗn hợp gồm cả gừng và tỏi,22639
+1512,Gừng chanh ớt tỏi,ớt,chili pepper,1,Cá diêu hồng rán,UNCERTAIN,Hỗn hợp nhiều loại gia vị,22660
+1514,Cần tỏi tây gia vị,tỏi,garlic,1,Mực mai xào hành tây,UNCERTAIN,Gồm cần tây và tỏi tây,22669
+1515,Sà lách cà chua,cà chua,tomato,1,Gà nướng lót rau mầm,UNCERTAIN,Gồm xà lách và cà chua,22703
+1521,Hành răm thìa là,rau răm,vietnamese coriander,1,Canh củ cá rô đồng,UNCERTAIN,Hỗn hợp nhiều loại rau thơm,22757
+1523,Sa tế hành mùi tàu gia vị,ngò gai,culantro,1,Bánh canh chả cua siêu tốc,UNCERTAIN,Hỗn hợp sa tế và rau thơm,22768
+1527,bề bề cua ghẹ bóc sẵn,cua,crab,1,Nem bơ hải sản,UNCERTAIN,Hỗn hợp hải sản nhiều loại,22790
+1530,sườn cây,sườn bò,beef ribs,1,Canh rau ngót nấu sườn cây,UNCERTAIN,"Sườn cây thường là heo, không nhất thiết là bò",22818
+1535,Hành răm thìa là gừng,gừng,ginger,1,Canh củ rau cải cúc (tần ô),UNCERTAIN,Hỗn hợp nhiều gia vị gồm cả gừng,22885
+1536,Gia vịmì chính hạt nêmđườngbột canhớt tươi chanh vừng rang,chanh,lime,1,Gỏi rau càng cua thịt bò,UNCERTAIN,Hỗn hợp quá nhiều loại gia vị,22890
+1537,hành tây củ tỏi ớt sừng,ớt,chili pepper,1,Chả viên thịt bò khoai tây,UNCERTAIN,Hỗn hợp rau củ có ớt,22897
+1541,Gừng sả hành ngò,sả,lemongrass,1,Bò nạm hầm củ quả,UNCERTAIN,Hỗn hợp nhiều loại có cả sả,22943
+1561,hành củ tỏi cây xả miếng gừng,tỏi,garlic,1,Cá nục hấp,UNCERTAIN,Hỗn hợp nhiều gia vị có tỏi,23444
+1569,Nước cốt chanh ớt tỏi,ớt,chili pepper,1,Ngồng cải hoa vàng trộn thịt bò,UNCERTAIN,Hỗn hợp gia vị có ớt,23492
+1585,potato starch corn starch,bột ngô,cornstarch,1,Chả huế/chả chiên/giò bò,UNCERTAIN,Hỗn hợp tinh bột khoai và ngô,23701
+1908,Nước phở chay,chay,vegetarian,1,🌱 Phở Chay Nấm Đậu Phụ (Vegan),UNCERTAIN,Nước phở chay không phải nguyên liệu 'chay',28018
+2638,nhỏ,bắp cải,cabbage,1,Cơm bò bolgogi,UNCERTAIN,Từ 'nhỏ' quá mơ hồ để xác định,39546
+2725,tương ớt Hàn Quốc,ớt,chili pepper,1,Mực khô xào cay Hàn Quốc (진미채 볶음),UNCERTAIN,Tương ớt làm từ thành phần chính là ớt,40802
+2881,thịt ba chỉ xắt lát mỏng,lát,galangal,1,Cải xanh xào thịt,UNCERTAIN,Lát chỉ là cách thái thịt,42990
+2966,Thịt xay,thịt bò,beef,1,Mì thịt bò,UNCERTAIN,Thịt xay có thể là heo,44229
+3369,cắt lát t,lát,galangal,1,Cá Nục Hấp Cuốn Rau Muống và Phở Sắn,UNCERTAIN,Cắt lát là cách chế biến,49630
+3666,t cắt lát,lát,galangal,1,Mì gói ăn với mực và rau muống siu ngonnnn,UNCERTAIN,Nguyên liệu bị mất chữ (t cắt lát),54541
+3671,t đỏ,ớt,chili pepper,1,Cá chuồn kho mít non,UNCERTAIN,"T đỏ quá vắn tắt, có thể là ớt",54622
+3927,vị rang thơm,đậu phộng,peanut,1,Bún Sườn Bò Tơ,UNCERTAIN,Vị rang thơm không rõ là đậu phộng,63936

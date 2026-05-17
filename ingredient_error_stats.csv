@@ -1,0 +1,296 @@
+rank,wrong_name,pattern_count,row_count,pct_of_total,cumulative_pct,example_raw_names,example_dishes
+1,nước,78,453,14.08%,14.08%,nước tương | Nước tương | nước hầm xương | Nước chấm | nước màu,Tôm rim bơ tỏi | Cơm Chiên Gà Rau Củ | Miến xào tôm thịt
+2,nước dừa,16,236,7.34%,21.42%,nước | Nước | nước cốt dừa | nước màu dừa | dừa,"Hải sản Phú Quý hấp: mực ống, cua gạo, cua mặt trăng và nhum tươi | Mỳ trộn tôm thịt sốt cà | Bánh Xèo Bò Trứng"
+3,Bột (chung),20,175,5.44%,26.86%,bột nghệ | bột canh | bột ngũ vị hương | bột cà ri | Bột nghệ,Bí ngòi nhồi thịt bò bỏ lò | SP.0823 - Cá Basa Nướng Muối Sả Nghệ | Mực Trứng Hấp Gừng
+4,Mè (Vừng),18,138,4.29%,31.15%,dầu mè | Dầu mè | Dầu mè thơm | dầu mè đen | thìa cafe dầu mè đen,Mì Đuôi Heo Hầm Ngũ Trân | Mì Nấu Rau Muống Tóp Mỡ | Cà tím cuộn đậu hũ hấp (món chay)
+5,nước mắm,43,91,2.83%,33.98%,mắm nêm | mắm ruốc | Mắm nêm | mắm tôm | mắm ruốc Huế,Tim Heo Luộc Chấm Mắm Nêm | Cá chìa vôi nướng muối ớt | Bún Bò Quảng Nam
+6,rau thơm,11,81,2.52%,36.49%,thơm | Thơm | trai thơm | vẹm xanh | Vẹm xanh,"Canh Chua Chả Cá Hố, Rau Sam, Bông Giờ | Salad ớt chuông thịt bò | Cá Đổng Nấu Ngót"
+7,ớt,14,81,2.52%,39.01%,tương ớt | Tương ớt | Tỏi ớt | mắm tỏi ớt | Tỏi gừng ớt,Tôm rim bơ tỏi | Đậu bắp hấp sốt thịt bằm | Gỏi chả+heo quay
+8,hành lá,45,71,2.21%,41.22%,hành khô | thịt má heo | Hành lá hành tím | Hành khô | hành phi,Canh măng mực | Lẩu tôm bầu | Cá ngừ kho củ cải khô
+9,cải thảo,19,68,2.11%,43.33%,cải trắng | củ cải trắng | bắp cải trắng | cải đắng | Củ cải trắng cà rốt,Bún rau củ chay | Gỏi Cuốn Thịt Xá Xíu & Hoa Sen Cạn | HỦ TIẾU đuôi heo
+10,hành tím,12,65,2.02%,45.35%,Hành phi | hành phi | Hành tím tỏi | Tỏi hành tím | củ Hành tây tím,Gỏi Ức Gà Rau Tiến Vua | Súp Sò Điệp Bong Bóng Cá | Gỏi bắp cải rau má
+11,tỏi,34,65,2.02%,47.37%,bột tỏi | Hành tím tỏi | Hành tỏi khô | Tỏi ớt | hành tỏi băm nhỏ,Phi Lê Cá Lóc Áo Bột Chiên Giòn | BÒ viên | [Món Chay] Rau câu sợi xào sò điệp chay
+12,cần tây,22,62,1.93%,49.30%,rau cần | Rau cần | rau cần nước | cần nước | Cần nước,"Bánh đa Quỳnh Côi xào giò, rau cần nước | Canh Cải Thảo Nấu Thịt Bằm | Canh Khoai Tây Nấu Rau Cần, Cà Chua, Thì Là"
+13,tôm thẻ loại to,28,59,1.83%,51.13%,tôm càng xanh | tôm nõn | tôm bóc nõn | tôm nhỏ | tôm đất,Canh khoai tây cà rốt nấu tôm càng xanh | Lẩu ghẹ hải sản chua ngọt | Củ niễng xào tôm nõn
+14,lá,32,54,1.68%,52.81%,mực lá | hanh lá | lá kim | lá cà ri | hẹ lá,Phở sắn chiên giòn sốt mực xào rau củ chua ngọt | Mực Sốt Thái | Nấm rơm kho nước tương
+15,bã củ cà rốt,1,38,1.18%,53.99%,củ cà rốt,Chả giò hải sản sốt mayo | Mực xào rau củ xốt chua cay
+16,măng,14,38,1.18%,55.18%,măng tây | măng tây rừng | cá măng phi lê nắng | cá măng | chả cá măng,"Nui Tóc Tiên Nấu Chả Tôm Quết & Măng Tây | Steak bò sốt phomai | 🌱 Salad Su Hào, Nấm & Măng Tây Rừng Sốt Hành Tăm"
+17,dứa,19,36,1.12%,56.29%,lá dứa | nước lá dứa | Lá dứa | khô cá dứa một nắng | khô cá dứa chiên,Xôi cua | Tàu hủ nước đường làm bằng rau câu dẻo | Rau câu giòn lá dứa
+18,lá me,3,33,1.03%,57.32%,me | Me | lá me đất,Canh chua chả cá chiên | Canh chua cá bông lau | Lẩu đầu cá hồi nấu măng chua
+19,cơm,23,33,1.03%,58.35%,cơm mẻ | Mắm cá cơm | cá cơm than | cá cơm khô | rau dền cơm,Khế chua nấu dấm cá trắm | Giò heo giả cầy | CÁ TAI TƯỢNG chiên xù
+20,Trứng gà,10,32,0.99%,59.34%,mì trứng | lòng trắng trứng | Lòng trắng trứng | Mì trứng | ường trắng,Mì trứng xào rau | Mì trứng xào tôm nõn | Bánh qui nấm
+21,cua,12,31,0.96%,60.30%,rau càng cua | Rau càng cua | thanh cua | rổ rau càng cua | rau Càng Cua,Rau càng cua trộn bò trứng | Gỏi rau càng cua thịt bò | Nộm rau càng cua
+22,thịt bê,1,30,0.93%,61.24%,thịt bò,Thịt Bò Xào Cà Chua Dưa Leo | Trứng Chiên Thịt Bò
+23,chanh,16,30,0.93%,62.17%,lá chanh | Lá chanh | Chanh dây | nước cốt chanh dây | chanh dây,Chà bông cá thu | Bún riêu hải sản | Tôm rang chao lá chanh
+24,chay,6,28,0.87%,63.04%,dầu hào chay | Dầu hào chay | chay khô | Sa tế chay | hat nêm chay,Nộm rong sụn nấm đùi gà (món chay) | Đậu hũ non sốt nấm kim châm (món chay) | Bí Nụ Xào Nấm Hoàng Kim Chay
+25,su su,12,27,0.84%,63.88%,su hào | củ su hào | Su hào | su hào lớn hoặc đu đủ xanh chưa chín | kim chi su hào hoặc kim chi cải thảo kim chi củ cải vv,Thịt HEO kho sệt | Món canh với các loại củ và thịt xay | Canh Củ Dền Su Hào Nấu Thịt Heo
+26,gạo,12,26,0.81%,64.69%,giấm gạo | Bánh tráng gạo | mì gạo | Giấm gạo | thính gạo rang,Bún Riêu Cua Đồng Giò Heo | Cá Nục Nấu Ngót | Cuốn Bún Đậu Hủ Chấm Mắm Tôm
+27,tôm viên,7,24,0.75%,65.43%,tôm biển | nõn tôm biển | tôm | tôm biển nõn | tôm biển hoang dã hoặc tôm gì cũng được,Tôm nõn rim mắm | Dưa gang trộn tôm bóc nõn | Mì Quảng Xào Tôm Thịt Eat Clean
+28,dầu giấm,3,24,0.75%,66.18%,giấm | Giấm | giấm ăn,Cơm sốt tôm chua ngọt 칠리새우덮밥 | Salad thanh cua dưa leo lạnh | Lẩu đầu cá hồi nấu măng chua
+29,ô liu,2,23,0.71%,66.89%,dầu olive | dầu Olive,Bí Đỏ Um Bò Bằm | Salad Thanh Cua Dâu Tây Sốt Sữa Chua Thì Là | Trứng Chiên Dưa Leo Tôm Áp Chảo
+30,bắp ngọt,5,23,0.71%,67.61%,bắp non | Bắp non | ngô bao tử | bắp khô | Bắp bao tử,Sườn Heo Hầm Bắp Non | Cá dấm trắng chiên giòn sốt chua ngọt | Rau Củ Xào Ngũ Sắc
+31,khoai môn,8,23,0.71%,68.32%,khoai sọ | củ khoai sọ | dưa môn | ngó môn | khoai môn,Súp kem khoai sọ thịt heo 🥓mộc nhĩ | Súp kem thịt gà khoai sọ + sandwich 🍞 | Canh cua rau rút khoai sọ
+32,rau sống,17,22,0.68%,69.01%,rau củ hỗn hợp | Rau củ hỗn hợp | Rau củ | rau sắng | Rau củ hỗn hợp chén mắm,Nem bơ hải sản | SP.0796 - Súp Tóc Tiên Thịt Viên | Rau củ thuỷ tinh sốt thịt bằm
+33,cà tím,20,22,0.68%,69.69%,cà rôt | cà ri dầu | cu cà rôt | cà ra to | cà ra,Mì Ý Spaghetti Xốt Nấm Chay | Bánh Mandu Hấp Nhân Tôm Thịt | Cà Ri Đùi Ếch Chôm Chôm
+34,xương gà,10,21,0.65%,70.35%,gà | xương ống | Xương ống | Gà | Thịt gà lóc xương,Lẩu gà nấu nấm | Mì Quảng tôm gà trứng | Mì Chũ cá chiên giòn
+35,nấm mèo,15,21,0.65%,71.00%,đầu hành | Nấm | Boaro | Cải mèo | ầu hành boaro,🌱 Canh Nấm Mỡ Đậu Hủ Lá É (Vegan) | Cá kho rau răm (vị hơi nhạt) | Rau Củ Luộc Chấm Nước Mắm Dằm Trứng Lòng Đào
+36,nấm kim châm,8,20,0.62%,71.62%,nấm lộc nhung khô | nấm lộc nhung | Nấm lộc nhung khô | bông kim châm | tay nấm nhung hươu khô,Miến Xào Nấm Lộc Nhung Chay | NẤM lộc nhung xào bí nụ | Củ sen kho nấm lộc nhung (món chay)
+37,táo,8,20,0.62%,72.24%,dấm táo | táo đỏ | táo tàu | Táo tàu | Giấm táo,Thịt Chiên Giòn Sốt Chua Ngọt Hàn Quốc (Tangsuyuk) | Salad Tôm Xào Tỏi Rau Quả Sốt Mù Tạt | Chè bắp nấm tuyết
+38,thịt bò,17,19,0.59%,72.83%,phô mai con bò cười | thịt xay rang | vỏ bò bía | bò lát chay | Lá bò bía,"Soup nấm, bí đỏ, phô mai | Hàu Nướng Phô Mai Con Bò Cười | Mì trộn bò xào"
+39,quế,8,18,0.56%,73.39%,húng quế | Húng quế | rau quế | nguyệt quế | húng quế khô Phụng dùng loại rắc,Gỏi Xoài Khô Cá Sặc | Gỏi Củ Cải Tôm Càng Nướng | Mì lá tươi nấu bò
+40,hành tỏi,8,18,0.56%,73.95%,Gừng hành tỏi | hành khô | Hành phi | hành phi | Gừng hành khô tỏi,"Canh cá rô phi nấu nấm, cải xoong | Phi lê cá diêu hồng sốt cà chua | Canh củ nấu cá và rau cần"
+41,thịt heo,6,17,0.53%,74.48%,tim heo | Xương heo | Tim heo | tiết heo | tim heo kg,Tim Heo Luộc Chấm Mắm Nêm | Tim Heo Xào Đậu Que Cà Rốt | Món rau cải nấu với xương heo
+42,lá lốt,6,16,0.50%,74.98%,Rau ăn kèm | rau ăn kèm | rau ăn kèm các loại | Các loại rau ăn kèm | Phần rau ăn kèm,Mực Trứng Hấp Gừng | Bún cá nấu thơm (dứa) | Lẩu cá chay
+43,đậu phộng,12,15,0.47%,75.44%,bơ đậu phộng | cá lạc | ngò rí trang trí | Vừng rang lạc rang | cá lạc phi lê,SP.0912 - Ba Rọi Heo Hồng Xíu | Bò Bía Chay | Cá lạc kho nghệ tươi
+44,gia vị,7,14,0.44%,75.88%,Hành khô gia vị | sấu | Tỏi băm gia vị | Hành mùi gia vị | mì gói không lấy các gói gia vị,"Rau muống xào mướp, giá đỗ | Canh rau ngót nấu cá | Canh Sấu Nấu Mộc Và Thịt Bò"
+45,húng láng,7,14,0.44%,76.31%,húng lủi | rau húng lủi | cây hung lui | Húng Lủi | Rau húng lủi,Salad Cá Trích Xông Khói | Rau Diếp Cuốn Phi Lê Bò Áp Chảo & Kim Chi Chấm Sốt Ssamjang Hàn Quốc | Gỏi Đu Đủ Xanh Tôm Thịt
+46,thịt vịt,2,13,0.40%,76.72%,thịt xay | rau câu chân vịt khô,Nui sao nấu hẹ thịt băm | Canh cà chua thịt xay tép khô | Chè rau câu chân vịt
+47,cá hồng,5,13,0.40%,77.12%,cá điêu hồng | cá điêu hồng kg | Gia vị chiên cá | cá điêu hồng khoảng khoanh | Cá điêu hồng,Cá điêu hồng kho bầu | Lẩu gà và cá điêu hồng chua ngọt...🍅🌶🌽 | Phi Lê Cá Điêu Hồng Chiên Giòn Chấm Mắm Ngò
+48,dưa chua,3,12,0.37%,77.49%,dưa chuột | sấu | Dưa chuột,Nộm giò rau củ | Salad tôm bóc nõn - #healthy | Cá thu nấu dưa cải chua
+49,bánh mì,3,12,0.37%,77.87%,mì | Mì | Mì Udon dẹp sợi bánh canh VN là ngon nhất ạ,"Mì gói xào rau muống tóp mỡ | Mì Ý sốt kem, thịt băm, củ dền | Mì ý sốt cà chua nhân thịt"
+50,hành tây,6,12,0.37%,78.24%,hành khô | Hành tây hành lá rau răm | cần tây hành Tây | hành khô vài cái đầu hành | Hành khô,Canh măng mực | Mực xào su hào | Mì Quảng gà cá tôm
+51,bò viên,2,12,0.37%,78.61%,Bò | bò,Bò Xào Cải Xoăn Kale | Xà Lách Trộn Thịt Bò | Lẩu cá diêu hồng
+52,nấm đùi gà,4,11,0.34%,78.96%,đùi gà | má đùi gà | má đui ga | Oyster,Nấm ngọc tẩm xào thịt gà | Đu đủ kho thịt | NẤM nhồi thịt gà hấp
+53,bột ngô,4,11,0.34%,79.30%,bôt ngot | ngô | Ngô | Bôt ngot,Chả giò hải sản | Tôm rim thịt | Sandwich nấm chay
+54,súp,9,11,0.34%,79.64%,Súp lơ | Súp Lơ | Súp lơ lấy phần vừa ăn thui nha | súp lơ xanh | súp lơ,Cá hồi nướng sốt Teriyaki | Bánh mực cho bé | Rau Củ Quả Hầm Kem (Chay)
+55,bánh,3,10,0.31%,79.95%,bánh canh | bia giúp bánh giòn hơn | Quét mặt bánh,Bánh canh cua thịt gà | Bánh canh cua giò heo | Bánh xèo nấm chay
+56,đậu hũ trứng,5,10,0.31%,80.26%,đậu hũ trắng | tàu hũ trắng | ậu phụ trắng | đậu phụ chiên | ậu hũ trắng,Đậu hũ chiên nước mắm | Chả đậu hũ bắp nấm rong biển dọn tủ | Tôm hấp tàu hũ trắng sauce nước tương
+57,bắp cải,6,10,0.31%,80.57%,sấu | Rau ăn kèm bắp chuối bào giá rau cải con rau húng lũi hoặc rau thơm xà lách | Rau ăn kèm cải con giá bắp chuối | Giá đỗ bắp cải tim luộc | Rau sống xà lách cải con húng lủi giá cây bắp chuối diếp cá lá hẹ quê,Cá mím nấu chua | Canh chua đầu cá hồng | Mì QUẢNG sườn-tôm
+58,tương ớt,7,10,0.31%,80.88%,tương hột | tương hôt | hột tương | tương lạt | tương ăn phở,Cá Hú Kho Tương Hột Nấm Hương | Phi lê cá điêu hồng chưng tương | Đậu hủ kho tương
+59,dầu bơ,5,10,0.31%,81.19%,Dầu thực vật | dầu thực vật | Dầu nên chọn dầu oliu | dầu thực vật để chiên | Dầu thực vật để chiên,Nui Xào Tôm Súp Lơ | Cua Lột Chiên Bột | Mì Bò Stroganoff - Beef Stroganoff Pasta
+60,nước tương,6,10,0.31%,81.50%,tương đen | tương đậu | Nước sốt tương dầu hành | muông canh tương hôt | Tương đen,"Mì trộn rau củ | Sườn bò, bò viên hầm ăn với bánh mì | Thịt Luộc Bossam (보쌈) - Ẩm thực Hàn Quốc"
+61,mỡ,7,10,0.31%,81.82%,Mỡ hành | mỡ hành | Xà lách mỡ | Xà lách mỡ Iceberg | bắp xà lách mỡ,Bánh tráng trộn cá viên chiên | Bánh tráng trộn thịt băm | Bánh Canh Bột Xắt Cá Lóc
+62,bánh phở,6,9,0.28%,82.10%,bánh đa Quỳnh Côi | Bánh đa mì gạo phở khô | bánh đa | bánh đa đỏ | Bánh đa gạo lứt tuỳ ăn nhiều ít,"Bánh đa Quỳnh Côi xào giò, rau cần nước | Bánh đa cá rô | Bánh đa rau ngót chả rong biển"
+63,Cá chày,8,9,0.28%,82.37%,bóng cá chay | Khô cá mặn chay không bắt buộc | cá diêu hồng chay gr | cá mặn chay nhỏ không bắt buộc | cá mối,Gỏi bóng cá chay trộn gỏi dưa leo siêu dễ làm | Bóng cá chay rim mè rang | Canh Rau Cải Cúc Nấu Đơn Giản
+64,rau răm,8,9,0.28%,82.65%,Rau | t sừng rau răm | Hành lá rau răm thì là | Hành lá răm thì là | hành poro băm,"Ức gà áp chảo vị chanh cùng rau củ | Mì, hủ tiếu giò heo | Măng le kho nước tương rau răm"
+65,mỳ hải sản,3,8,0.25%,82.90%,nấm hải sản | Nấm hải sản | mỳ ăn liền,Miến om hải sản | Bạch tuộc xào nấm | Mì (bún) gạo lứt hải sản chua cay
+66,dưa,5,8,0.25%,83.15%,nươc côt dưa | lá dưa | trai dưa tươi | nươc dưa tươi hoăc nươc loc | nươc dưa tươi co thê thêm nươc dưa,"Bánh Trung Thu Rau Câu Nhân Flan | Xôi lá cẩm thịt xá xíu | Chè bắp,khoai môn,nấm tuyết và lá cẩm"
+67,ớt xanh,4,8,0.25%,83.40%,ớt xanh đỏ | ớt xay | chả bì ớt xiêm xanh | ớt xắt,Cá Chim Hấp Nước Tương Kiểu Hongkong | Đậu hũ và tàu hũ ky cuộn rim sả ớt (món chay) | Bún BÒ xào Nam bộ
+68,mật ong,7,8,0.25%,83.65%,lá mắc mật | Mật dừa nước | mật ong siro phong | khoai lang mật à Lạt | lá móc mật,Thịt nướng lá mắc mật | Heo Quay Da Giòn Lá Mắc Mật | SP.0995 - Bò Bía Mặn
+69,râu bắp ngô,1,7,0.22%,83.87%,bắp ngô,Cơm Chiên Gà Rau Củ | Nem thịt dọn tủ
+70,đậu trắng,2,7,0.22%,84.08%,đậu hủ trắng | ầu trắng hành boaro,"Bún Gạo Lứt Nước Lèo Cà Chua Nấm Hương Chay | Đậu Hủ Kho Thịt Băm, Nấm Hương Sốt Nước Tương | Đậu hũ và tàu hũ ky cuộn rim sả ớt (món chay)"
+71,ba chỉ bò,3,7,0.22%,84.30%,ba chỉ | ba chỉ liền dải | ba chỉ chia miếng,Thịt ba chỉ nướng NCKD | Bento box 13: Bánh bao thịt kho Đài Loan | Thịt kho Đông Pha
+72,Tôm muối,3,7,0.22%,84.52%,Mắm tôm | Mẻ mắm tôm | Mắm tôm pha,Đọt Su Su Luộc Chấm Mắm Tôm | Đậu hũ chiên chấm mắm tôm | Lẩu riêu cua lông/ cà ra
+73,cá sòng,2,7,0.22%,84.74%,cá mó | Cá mó,Cá Mó Chiên Xả Tỏi Ớt | Cá mó chiên muối tôm (NCKD) | Cá Mó Chiên Sả
+74,ức gà,3,7,0.22%,84.95%,thịt lợn | thịt sườn | thịt bò phần sườn,Heo kho tiêu | Thịt lợn rang dứa (trái thơm) | Thịt sườn kho nước dừa
+75,bánh tráng,5,7,0.22%,85.17%,bánh đa | bánh đa nắm | Bánh phở tráng chảo từ phụ phẩm làm mì căn hoặc phở tươi phở khô | Nước trộn bánh tráng | lá rong biển vài bánh tráng,"Mì Quảng tôm trứng | Mì Quảng tôm cua nấu bằng mì Chũ | Bánh đa tôm, mọc, chả cá"
+76,đậu xanh,6,7,0.22%,85.39%,giá đậu xanh | Bã đậu | bã đậu | Vỏ bánh đậu xanh cuốn chả giò Tìm mua dễ dàng tại các cửa hàng tạp hoá Giá giao động kbịch Mua bịch là đủ | miến đậu xanh bún tàu,Canh Chua Tôm Măng Trúc | Mì Cay Nongshim Nấm & Thịt Trai (Vẹm Đen) | Bánh tôm đậu nành
+77,nấm hương,6,7,0.22%,85.61%,hành hương | nấm mỡ nấm đông cô | thịt bắp giò | nụ inh hương | mộc nhĩ tai nấm hương khô,🌱 Đậu Hủ Chiên Sốt Tương Dầu Hành Chay (Vegan) | Bánh xèo cá kình | Canh gà phi lê nấu cải bẹ và nấm mỡ
+78,cà chua,7,7,0.22%,85.83%,Cà chua bi hành tây | tomato sauce | Xốt cà chua | Rau cải quả cà chua rau thì là hành ngò gai của tùng gia đình vài lát gừng | ồ chua củ cải cà rốt ngâm chua ngọt,Steak bò sốt phomai | Nui lứt xào bò và nấm kim châm | Nui sò xốt nấm cà chua
+79,bánh chả,2,6,0.19%,86.01%,bánh canh | Bánh canh,"Bánh canh hẹ nấu cá | Bánh canh xào nấm đùi gà, cà chua, phô mai | Bánh Canh Cá Lóc"
+80,nước cốt,2,6,0.19%,86.20%,Nước sốt | Nươc Loc,Cá dìa hấp mùng tơi | Nấm chiên chay | Giò Heo Tiềm Thuốc Bắc
+81,hành tăm (củ nén),3,6,0.19%,86.38%,hành băm | hành ta | Hanh timơt,Cá dìa hấp mùng tơi | Thịt kho cơm dừa cho bé | Chả Cốm Trứng (Phiên Bản Không Thịt)
+82,hành tỏi ớt,3,6,0.19%,86.57%,mắm tỏi ớt | Tỏi ớt | nước cốt hành tỏi xay,Gỏi Rau Má Tôm Đất | Gỏi Thịt Bò Hoa Chuối | Thịt heo xào húng Thái “Pad Krapow Moo” 🌿
+83,mồng tơi,3,6,0.19%,86.76%,măng tươi | Măng tươi | t tươi,Thịt gà xào măng | Canh Giò Heo Nấu Măng | Lẩu nấm lá é
+84,cam,3,6,0.19%,86.94%,cá cam | Cá cam | lát cam thảo,Cá cam kho tộ | Mì lá cuốn cá cam nướng | Canh chua cá cam
+85,ngò gai,5,6,0.19%,87.13%,Rau ôm ngò gai | ngò già lấy cả gốc | mùi ta | Gia vi ngò | ngỗ ngò om,Canh bí đỏ thịt viên | Canh bí đỏ thịt xay gà xé | Cá Chim Hấp Nước Tương Kiểu Hongkong
+86,bạc hà,5,6,0.19%,87.32%,lá húng quế bạc hà | Rau thơm như húng bạc hà húng Hà Nội rau mùi ta | Rau húng hà nội hoặc húng bạc hà | Rau thơm rau húng quế Vietnamese mint and basil | Rau thơm húng lủi mùi bạc hà,Phở khô trộn nấm đông cô (món chay) | Salad xoài rau xanh dầu dấm | Gỏi sứa xoài xanh rau húng
+87,ram tôm,6,6,0.19%,87.50%,tôm trứng rang | mì tôm | tôm sắt bóc nõn rim mắm | Tôm thịt nạc rang | Sốt tôm rim,Rau tầm bóp nấu tôm trứng | Mì gói nấu tôm trứng | Mỳ trộn tôm thịt sốt cà
+88,rau má,1,5,0.16%,87.66%,Rau ôm,Canh chua thịt bò đậu hũ | Mì lá tươi nấu bò
+89,cá hú,1,5,0.16%,87.81%,cá,Canh rau ngót nấu cá | Cá hấp nấm
+90,Tôm khô,2,5,0.16%,87.97%,tôm | vỏ tôm này tết mình làm tôm khô nên mình giữ lại vỏ tôm cho ngọt nước,Trứng chiên tép khô hải sản | Tôm Khô Sấy Nồi Chiên Không Dầu | Bánh canh ghẹ chả cá
+91,bột ngò,2,5,0.16%,88.13%,ngò | Ngò,Món canh bí đỏ nấu tôm eatclean | Chả cá thác lác nhồi khổ qua | Dưa gang trộn tôm bóc nõn
+92,chuối,2,5,0.16%,88.28%,bắp chuối bào | bông chuối,"Bún bò gân chả bì đơn giản | Gỏi hoa chuối tôm thịt | Salad bông chuối, cải mầm ngọt, và cá hồi"
+93,bột gạo,3,5,0.16%,88.44%,Thính gạo | bột hồng cúc bột gạo men đỏ | thính gạo rang,Chạo nấm chay | Da heo luộc trộn thính | JAMBON thịt nguội
+94,dầu vừng,3,5,0.16%,88.59%,vừng | xíu vừng | Bi đo nâu chin nghiên nhuyên tao mau vang,"Thịt chiên vừng | Thịt xay rim cà chua | Gỏi măng tây, thịt bò"
+95,rau mè,2,5,0.16%,88.75%,mè | Mè,Salad thanh cua dưa leo lạnh | Thịt heo normandy và phô mai | Cơm nắm ruốc cá hồi
+96,tép,3,5,0.16%,88.90%,mắm tép | tép tỏi | Mắm tép hoặc chai mắm nêm,Thịt chưng mắm tép | Mắm tép chưng thịt | Thịt bê xào lá lốt
+97,hẹ,3,5,0.16%,89.06%,Hành phi | hành khô | hành poro băm nhỏ,Bún Nấm Cá Thác Lác Khổ Qua | Bánh Canh Gà Nấm Hẹ | Thịt heo nướng lá lốt cuốn kèm lá mơ lông
+98,gừng,4,5,0.16%,89.21%,Lá gừng | gừng củ riềng củ hành khô | Gừng riềng | mứt gừng,Nấm Kho Lá Gừng Chay | Nấm Hấp Lá Gừng Chay | Cá trôi kho dưa
+99,bún,5,5,0.16%,89.37%,bột rau câu agar | mì gạo | củ ngải bún | Bún hoặc phở | Xà lách gr,Rau câu nhãn | Mì gạo nấu thịt viên | Bún cá lóc hương vị Khmer
+100,cà rốt,5,5,0.16%,89.52%,đậu que cà rốt | rau củ hỗn hợp ngô đậu hà lan cà rốt | Bắp mỹ cà rốt | Xà lách cà rốt bắp cải tím | khoai tây củ cà rốt,Đậu hũ hấp rau củ | Súp gà nấm | Soup tôm bong bóng cá
+101,quả việt quất,1,4,0.12%,89.65%,quất,"Salad Thịt Bằm Trứng | Nộm thịt heo, giá đỗ, rau răm"
+102,cá hường,1,4,0.12%,89.77%,ường cát,Đọt Su Su Luộc Chấm Mắm Tôm | Gỏi xơ mít trộn tôm và tai heo
+103,lá gừng,2,4,0.12%,89.90%,lát gừng | mấy lát gừng,Cá thu chiên không tanh | Óc Heo Chiên Trứng | Canh Cá Dưa Chua Tứ Xuyên nhái Hảo La Má La
+104,cá diêu hồng,2,4,0.12%,90.02%,cá hồng | Cá phèn hồng,Cá Hồng một nắng sốt chua ngọt | Bún cá hồng chấm | Cá phèn um muối ớt
+105,hộp cá ngừ,2,4,0.12%,90.15%,Cá ngừ | hộp cá sốt cà,Cá ngừ đại dương áp chảo | Cơm chộn rong biển nhân cá ngừ | CÀ đắng om cá hộp
+106,đậu nành,2,4,0.12%,90.27%,whipping | Cooking cream,"Rau câu nén vàng | Bánh trung thu rau câu | Mì Ý Xốt Kem Cheese với Bacon, Nấm Mối và Bông Cải Xanh"
+107,rau om,3,4,0.12%,90.39%,Rau ngò | rau ngò | Rau thơm các loại nhất định phải có rau kinh giới và rau ngổ ngò,Súp Sò Điệp Bong Bóng Cá | Gỏi nấm tuyết | Miến Xào Nấm Lộc Nhung Chay
+108,Trứng cua,3,4,0.12%,90.52%,gạch cua đồng | gạch cua | Màu gạch tôm,Sủi cảo xíu mại cua | Bún Riêu Cua Bắp Bò | Lẩu Riêu Cua Đồng Bắp Bò Ngày Quốc Khánh 2/9
+109,thịt gà,3,4,0.12%,90.64%,Nước luộc gà | bột gà Chicken Powder | Hột gà,Gà nấu nấm và mì lá tươi | Eatclean / Cháo Yến Mạch Thịt Bằm Nấm + Trứng Lòng Đào | Mì Nấu Rau Muống Tóp Mỡ
+110,bột tỏi,3,4,0.12%,90.77%,Bột | băm nhỏ Tỏi | t tươi,Bánh BÒ nướng chảo | Há Cảo Nhân Tôm Thịt | Cá Chim Hấp
+111,sả,3,4,0.12%,90.89%,Riềng sả gừng bột nghệ | sả củ tỏi | ca chi vang va ca ngân,Cá song (mú) nấu kiểu chả cá Lã Vọng | Cá song nướng riềng mẻ | Khô bò ướt mềm ngon
+112,rau muống,3,4,0.12%,91.02%,khoai | Khoai muống | rau nhút,"Cháo khoai lang cá hồi | Tôm Nướng Sa Tế, Ba Rọi Heo và Rau Củ Nướng | Canh khoai muống nấu nấm"
+113,rau ngò rí,4,4,0.12%,91.14%,Hành lá ngò rí | rau ngò ôm | ngò ôm | ngò tây trang trí,Xíu Mại Trứng Cút Da Heo | Canh Chua Cá Đuối | Canh tôm bông so đũa
+114,củ nghệ,4,4,0.12%,91.27%,củ gừng to | cá nục nướng than hoa Nghệ An con | Mì mình xài mì nghệ cọng to | mật mía Nghệ An,Thịt má heo kho nghệ rất ngon mà không ngấy | Cá nục Nghệ An nướng than hoa sốt cà chua Thanh Hoá | Mì Nghệ Xào Thịt Trai (Vẹm Đen)
+115,salad,4,4,0.12%,91.39%,Xốt salad | Gia vị trộn salad | Nước sốt salad | lê hoặc táo hoa quả biến tấu theo sở thích ưu tiên chọn quả có vị không quá ngọt như vải nhãn mít sầu riêng Mình hay dùng lê táo nho và quả bơ cho các loại salad,"Salad cải kale rau mầm | 💚 Salad Nui Ống, Nấm, Cà Chua, Olive & Fêta Healthy (Vegetarian) | Salad bò cải mầm"
+116,mướp,4,4,0.12%,91.51%,kg khổ hoa mướp đắng | Mướp đắng | mướp đắng to | mướp đắng,Lẩu chả cá thác lác khổ qua | Somtum Mực - Gỏi đu đủ mắm Thái + Mực | Đậu hũ xào mướp đắng
+117,khoai mỡ,4,4,0.12%,91.64%,Khoai sọ gram khoảng củ nhỡ | củ khoai sọ sót lại | khoai tím | củ khoai sọ,Canh xương khoai sọ rau muống | Gân bò hầm khoai sọ | Khoai Tím Nấu Chả Mọc Tôm
+118,nui,4,4,0.12%,91.76%,sốt cà pasta của | pasta hoặc mì trứng tuỳ ý | Mỳ lấy lượng vừa ăn | sốt xào nui mì,Mý Ý Thịt Viên Sốt Cà Chuẩn Từ Đầu Bếp Trưởng Vùng Sicily Ý | Mì Bò Stroganoff - Beef Stroganoff Pasta | Mỳ Ý Hải sản sốt cà chua
+119,đậu,4,4,0.12%,91.89%,t trái bỏ hạt | dầu hạt lanh | đỗ trọng | ngô tách hạt,"Tàu hủ và thịt sốt sa tế | Salad Rau Diếp Xoăn, Bắp Cải Tím & Ức Gà Áp Chảo | Đuôi Heo Hầm Sâm Ngọc Linh"
+120,nước dùng,4,4,0.12%,92.01%,nước tương nhật tôi dùng hiệu kikkoman | Nước tương dùng kèm | Nước tương dầu hào không có không dùng dầu hào cũng được | Nước đá dùng khi xay,Thịt Kho Đài Loan | Tô Cơm Trộn Cá Ngừ (Tuna Rice Bowl) | Nấm đùi gà xào bơ tỏi
+121,dừa,1,3,0.09%,92.10%,dầu dừa,Pancake rau bina | Đậu hũ chấm mắm tôm với lá tía tô và kinh giới
+122,dầu hạt nho,1,3,0.09%,92.20%,dầu hạt lanh,"Salad Rau Diếp Xoăn, Bắp Cải Tím & Ức Gà Áp Chảo | Cá Đuối Luộc Súp Bouillon Kèm Đậu Hà Lan Cà Rốt"
+123,nghêu,1,3,0.09%,92.29%,gao,Cháo tim heo hạt sen | Cháo chân bò hầm đậu xanh
+124,hoa chuối,1,3,0.09%,92.38%,chuối,Cá kho riềng | 💚 Bánh Mì Sandwich Chuối & Phô Mai Bò Cười 😜
+125,bí xanh,2,3,0.09%,92.48%,bí non | nươc côt tra xanh,Bí non xào tôm nõn | Mì rau củ xào bò băm | Chè trôi nước 4 màu tự nhiên từ rau củ quả
+126,rau húng chó,2,3,0.09%,92.57%,rau húng lủi | rau Húng lủi,Gỏi Đu Đủ Xanh Tôm Thịt | Gỏi trái cóc tôm thịt | Gỏi Bưởi Hồng Cơm Dừa Tôm Thịt
+127,tàu hũ ky,2,3,0.09%,92.66%,tàu hủ | tàu hũ chiên,Cá rô phi chiên giòn(món chay) | Tàu hủ và thịt sốt sa tế | Canh nấm kim châm rau thì là
+128,sữa chua,2,3,0.09%,92.76%,sữa | sữa chua dầu ăn,Tôm phô mai bỏ lò | Hoàn thánh cá hồi sốt kem hạnh nhân | Bánh canh phồng tôm kim chi
+129,nấm,2,3,0.09%,92.85%,Hoàn thánh nhân nấm | mọc thịt mình thường mua thịt xay trộn gia vị và mộc nhĩ nấm hương viên sẵn để ngăn đá để tiện nấu,Hoàn thánh cá hồi sốt kem hạnh nhân | Hoàn thánh tôm thịt sốt tỏi tương | Mì nấu mọc thịt
+130,mỳ chính,2,3,0.09%,92.94%,mỳ | Phần mỳ,Mì tôm | Lẩu tôm bầu | Mỳ Ý sốt kem nấm phiên bản dành cho em bé
+131,cá rô,2,3,0.09%,93.04%,cu ca rôt | cá rô to khoanh cá basa,"Bánh canh cá cờ, đậu hủ từ cơm nguội, bột gạo, bột năng | Măng tây,cà rốt và bông cải xanh xào thịt bò | Món cá kho ăn cơm với nộm (gỏi) rau muống 👏"
+132,cải xoăn,2,3,0.09%,93.13%,cải diếp xoăn endive | xà lách xoăn Friseline,"Thuyền Taco Gà & Rau Quả | Salad Rau Diếp Xoăn, Bắp Cải Tím & Ức Gà Áp Chảo | Salad Friseline Trộn Cá Cơm Muối"
+133,tôm sú,3,3,0.09%,93.22%,tôm sắt biển | tôm he | tôm đồng,Bún hải sản đơn giản | Tôm nõn rim tiêu | Tôm trứng rang lá chanh
+134,sốt chua ngọt,3,3,0.09%,93.32%,sốt kho đa dụng | sốt lẩu chua hải sản | Cà rốt ngâm chua ngọt,Cá Hú Kho Tiêu (Siêu Hao Cơm) | Lẩu cá diêu hồng chua cay dịp 30.4 | Bánh Mì Chay Kẹp Rau Củ Đơn Giản
+135,nấm bào ngư,3,3,0.09%,93.41%,ường nâu | nấm mỡ nâu | nấm mỡ trắng,Nấm Rơm khô rim mặn với tiêu xanh | Bò Wellington | Nui Sốt Kem Nấm Thì Là & Cá Hồi Gravlax
+136,nạm bò,3,3,0.09%,93.50%,Bò băm | bò xay | Bò xay,Nui Nơ Sốt Bò Cà Chua Bỏ Lò | Bánh Mì Bò Phô Mai | Canh Cà Chua Bò Rau Răm
+137,bột hành,3,3,0.09%,93.60%,củ hành | Bột thính | bột tỏi bột hành,Khoai môn bọc thịt chiên giòn | Nem thính chay từ nấm đùi gà | Mực tẩm bột chiên giòn đơn giản
+138,cá trê,3,3,0.09%,93.69%,khô cá trèn | cá trèn | catfish,"Khô Cá Trèn, Cá Chốt Chiên Chấm Mắm Me | Cá Trèn Kho Tiêu | Cháo catfish(cá bông lau)"
+139,mơ,3,3,0.09%,93.78%,đậu làng Mơ | Rau cải mơ non | Lá mơ lông,Đậu làng Mơ rim thịt băm | Lẩu bò nhúng mẻ | Lá mơ lông cuốn đậu hũ
+140,nạc heo,3,3,0.09%,93.88%,thịt bò nạc | thịt gà nạc | thịt nạc dê,Soup Bò hầm rau củ | Canh Yellow Squash thịt gà | Cháo thịt dê đậu xanh
+141,gạo nếp,3,3,0.09%,93.97%,bắp nếp | bắp Ngô nếp tách hạt giã dập | Lá nếp,Bắp Nếp Hầm Sườn Heo | Chả tôm thịt rong biển | Bánh bò nướng chảo nhân dừa
+142,me,3,3,0.09%,94.06%,me rang | Khuôn rau câu silicon me bông conkhuôn nho va lơn | Me trăng răc lên banh,Bóng cá chay chiên giòn mè rang | Rau câu bắp 2 lớp | Bánh Mì Nhân Gà Nấm
+143,cải,3,3,0.09%,94.16%,rau củ quả cắt sẵn ở siêu thị | Rau củ | Rau,Súp chay rau củ | Bánh mì khô kẹp phomai lăn rau củ | Bánh bao gà nấm nguyên cám 🐥🍄
+144,trái cherry,3,3,0.09%,94.25%,Cà chua cherry | cà chua cherry cà chua thường hoặc cà chua bi | cà chua cherry đủ màu,Eat Clean với ức gà chiên bằng nồi chiên không dầu - bún gạo lức - rau luộc | Salad tôm bóc nõn - #healthy | Nấm Mỡ Xào Cà Chua Bi (Vegan)
+145,thì là,3,3,0.09%,94.34%,Bún thường ngoài chợ bán theo ký người tầm nửa ký là vừa còn bún khô thì vắt cho người | hắc xì dầukhông có thì cho nhiều nước tương chút là được | cốt tomyum thật ra cái này là thói quen của mình không có không ảnh hưởng mọi người ạ cái lọ tomyum mình có để hình ở bài mì udon rồi mọi người cần thì xem ở đấy nhé,Bún rau củ chay | Mỳ xào thịt xay | Đậu bắp xào chả cá
+146,thịt vai bò,1,2,0.06%,94.40%,thịt bò phile,Vòng nguyệt quế (salad xà lách xoong trộn bò) | Bún thịt bò trụng
+147,rau ngót,1,2,0.06%,94.47%,Rau bồ ngót Nhật,"Canh bồ ngót Nhật và tôm mực | Canh tôm, bồ ngót Nhật, cà rốt"
+148,cá mối,1,2,0.06%,94.53%,Cá mó,Cá Mó Chiên Sả | Cá Mó Chiên Giòn - 25 phút
+149,rau bồng,1,2,0.06%,94.59%,rau bồ ngót,Canh Rau Ngót Nấu Mọc | Canh Rau Bồ Ngót Nấu Giò Sống
+150,hạt mùi,1,2,0.06%,94.65%,mùi,Bún hải sản | Súp gà nấm bổ dưỡng
+151,lá nori,1,2,0.06%,94.72%,ngo ri,Đậu hủ chiên giòn sốt cay(món chay) | Cá hồi xốt chanh dây
+152,măng tây,1,2,0.06%,94.78%,ngò tây,Măng tây xào bò | Măng tây cà chua xào thịt
+153,củ đậu,2,2,0.06%,94.84%,Phở sắn | ậu cove,Cá Nục Hấp Cuốn Rau Muống và Phở Sắn | Bánh xèo rau củ
+154,dưa lưới,2,2,0.06%,94.90%,dưa hường | dưa hồng gram,Canh dưa hường nấu nấm kim châm | Canh dưa hồng nấu tôm
+155,bột gà,2,2,0.06%,94.96%,Hột gà | hột gà,SP.0995 - Bò Bía Mặn | SP.0969 - Hột Gà Chiên Thịt Heo Bằm
+156,cải ngọt,2,2,0.06%,95.03%,cải hồng | cải vàng ngâm chua ngọt,🌱 Bún Đậu Hủ Nước Tương Trộn Rau Củ | Gỏi Cuốn Ức Gà & Rau Củ Ngũ Sắc
+157,chanh trà,2,2,0.06%,95.09%,Chanh ớt | chanh ớt,"Bánh canh xương sụn chả cá | Mì Quảng gà, heo"
+158,tim heo,2,2,0.06%,95.15%,tim gan cật heo | Hanh lahanh tim băm nho,"Mì Trứng Trộn Sốt Nấm Hương | Tim heo xào bông cải xanh,su su và bắp cải"
+159,khoai tây,2,2,0.06%,95.21%,tinh bột khoai tây | Bột khoai tây,Thịt chiên xù chấm sốt chua ngọt | Thịt chiên ăn cùng sốt chua ngọt
+160,Thịt băm,2,2,0.06%,95.28%,nhân khổ qua | toi bằm,Canh bắp cải nấu thịt mộc nhĩ | Bún thịt nướng xiên que
+161,rau cải đắng,2,2,0.06%,95.34%,rau cải ngọt | Rau xà lách các loại rau thơm và rau cải đắng,Gỏi gà rau cải ngọt | Phở cuốn thịt bò
+162,bơ,2,2,0.06%,95.40%,lạt | dầu ăn đủ để chiên tôi dùng dầu trái bơ,Nấm đùi gà xào bơ tỏi | Cá Tuyết Haddock Tẩm Bột Khô Áp Chảo
+163,huyết heo,2,2,0.06%,95.46%,thit heo | huyết vịt lớn,"Bánh xèo tôm thịt,nấm bào ngư ăn kèm rau cải xanh và rau sống | Nui giò heo"
+164,bánh phồng tôm,2,2,0.06%,95.52%,tôm | Tôm,Súp bánh phồng tôm nấu sườn | Tôm chiên phồng
+165,dầu ăn,2,2,0.06%,95.59%,Hành củ dầu ăn hoặc mỡ | mỡ heo nước dầu ăn,Rau bắp cải xào | CUA đồng kho mặn
+166,Cá tuyết muối,2,2,0.06%,95.65%,thịt cá mặn | cá mặn,SP.0787 - Tàu Hũ Non Chưng Thịt Xay & Cá Mặn | Cơm chiên thịt quay cá mặn
+167,cá tầm,2,2,0.06%,95.71%,cá sủ tầm kg | cá mặn tầm gr,Cá sủ nấu măng chua | Gỏi xoài cá mặn
+168,bao tử heo,2,2,0.06%,95.77%,dạ dày cá basa | dạ dày cá ba sa khoảng gram,Dạ cá basa khìa nước dừa | Dạ dày cá ba sa nướng
+169,giò heo,2,2,0.06%,95.83%,cáy còng đỏ ba khía | t tươi,Canh mùng tơi rau đay nấu cáy còng đỏ (ba khía) | Canh Chuối Chát Nấu Giò Heo
+170,đùi gà,2,2,0.06%,95.90%,cá đùi gà | cá đùi gà nắng,Cá đùi gà chiên giòn | Cá đùi gà kho keo
+171,bánh pizza,2,2,0.06%,95.96%,Gia vị pizza hương thảo lá xô thơm húng tây khô | hộp cà chua cô đặc hoặc sốt cà chua cho pizza,Pizza đế mỏng kiểu Florence (vị nấm) | Pizza Cá Ngừ Hộp & Mozzarella Tươi
+172,kem,2,2,0.06%,96.02%,lon cream soda | Phân ăn kem,"Bò sốt vang, cream soda | Chè trôi nước 4 màu tự nhiên từ rau củ quả"
+173,giò,2,2,0.06%,96.08%,Nước luộc chân giò thảo mộc | chả giò,Mỳ chân giò / mỳ bò thảo mộc | Bún thịt nướng chả giò
+174,cá rô phi,2,2,0.06%,96.15%,cá rô | ca rô khoang gr,Cá rô chiên giòn | Bún cá rô chả cá
+175,sữa,2,2,0.06%,96.21%,mực ghim sữa Phú Yên | mực ống nhỏ mực sữa,Mực Ghim Sữa Nướng Sả Ớt | Mực ống (mực sữa) xào cần tỏi
+176,chà bông,2,2,0.06%,96.27%,Nguyên liệu trộn thịt | ruốc ngon,Chà bông heo Đài Loan 🇹🇼 | Muối sả ruốc thịt ăn liền cho ngày mưa 🤤
+177,củ canh,2,2,0.06%,96.33%,muông canh dâu ăn | muông canh đương,"Bánh canh cá cờ, đậu hủ từ cơm nguội, bột gạo, bột năng | Đậu hủ kho tương hột (món chay)"
+178,bột gừng,1,1,0.03%,96.36%,cắt lát Gừng,Cá Chim Hấp
+179,thịt nạc dăm,1,1,0.03%,96.39%,thịt nạc đùi,JAMBON thịt nguội
+180,nạc thăn,1,1,0.03%,96.43%,thịt diềm thăn bò,Thịt bò xào bông cải
+181,kho cá,1,1,0.03%,96.46%,khô cá lóc,Gỏi Xòai Xanh trộn khô cá lóc
+182,Thịt ba chỉ,1,1,0.03%,96.49%,thịt đùi,Heo quay giòn bì kiểu 3: không xăm bì hoặc ngâm giấm
+183,bột nếp,1,1,0.03%,96.52%,bột bắp,Bánh trôi nước nhân thịt gà nấm và đậu xanh
+184,gấc,1,1,0.03%,96.55%,nước cốt kẹo,Xôi thỏi vàng cá koi
+185,rau tần ô,1,1,0.03%,96.58%,lá rau tần dày,Canh Chua Đầu Cá Mú Đen
+186,cải thìa,1,1,0.03%,96.61%,Rau cải thảo,Miến xào rau nấm thanh nhẹ
+187,khế,1,1,0.03%,96.64%,Trái giác,Cá Nâu Kho Trái Giác Miền Tây
+188,chả cá lóc,1,1,0.03%,96.67%,chả cá thu cá măng,Canh Khổ Qua Dồn Chả Cá
+189,cá tra,1,1,0.03%,96.71%,cá trác,Cá trác kho dưa môn
+190,mực,1,1,0.03%,96.74%,Nấm trùng thảo,Mướp hương xào nấm trùng thảo
+191,chả huế,1,1,0.03%,96.77%,Chả quế,SP.0995 - Bò Bía Mặn
+192,lá bắp cải,1,1,0.03%,96.80%,Lá bắp cải hành lá,"Cải bắp cuộn tôm, thịt"
+193,tỏi gừng,1,1,0.03%,96.83%,Tỏi ớt chanh gừng,Nạm bò luộc
+194,xà lách tím,1,1,0.03%,96.86%,xà lách ta,Rau sống sốt chanh dây
+195,Bong bóng cá,1,1,0.03%,96.89%,bao tử cá basa,Bao tử CÁ BASA khìa nước dừa
+196,bún hoành thánh,1,1,0.03%,96.92%,wonton noodles lá mì,"Wonton, seafood noodles, crispy chicken (hoành thánh, mì hải sản, gà giòn)"
+197,trứng cá,1,1,0.03%,96.95%,trứng cua,Sủi cảo xíu mại cua
+198,dầu hẹ,1,1,0.03%,96.98%,dầu mè,"Canh Hẹ, Đậu Hũ Trứng Nấu Nấm Rơm"
+199,dầu hào,1,1,0.03%,97.02%,Dầu oliu dầu hào,Bạch tuộc xào nấm
+200,nấm rơm,1,1,0.03%,97.05%,nấm mỡ,Lẩu thịt rau củ
+201,hải sản,1,1,0.03%,97.08%,phomai hải sản,Viên hải sản chiên kèm ớt chuông xào hành tây
+202,khoai từ,1,1,0.03%,97.11%,khoai tím,Khoai Tím Nấu Chả Mọc Tôm
+203,rau basil,1,1,0.03%,97.14%,lá é trắng,Canh Cá Dìa Nấu Lá É
+204,rau cải ngồng,1,1,0.03%,97.17%,ngồng su hào,Ngồng su hào xào thịt bò
+205,thịt nguội,1,1,0.03%,97.20%,thịt luộc,Salad thịt luộc vét tủ lạnh
+206,heo quay,1,1,0.03%,97.23%,thịt nướng,Bánh phở cuốn thịt nướng
+207,nước mẻ,1,1,0.03%,97.26%,nước ấm,Sườn Heo Nướng Tảng
+208,mắm ruốc,1,1,0.03%,97.30%,con ruốc,Canh rau tần ô nấu con ruốc
+209,riềng,1,1,0.03%,97.33%,riềng sả,Cá trứng kho
+210,tim bò,1,1,0.03%,97.36%,thit bo,Phở Cuốn Bò Xào
+211,rau mùi,1,1,0.03%,97.39%,Rau mùi tàu,Đậu phụ om cà chua
+212,nước cốt chanh,1,1,0.03%,97.42%,tắc vắt nước cốt,"Canh Chua Chả Cá Hố, Rau Sam, Bông Giờ"
+213,mỡ heo,1,1,0.03%,97.45%,mỡ hành,Bún thịt nướng đậu hũ
+214,cá hộp,1,1,0.03%,97.48%,cá hấp,Bánh tráng cuốn cá hấp
+215,bột cà ri,1,1,0.03%,97.51%,Cà rối,Tôm cuốn lá cải xốt xì dầu
+216,củ cải,1,1,0.03%,97.54%,ường củ cải,Chè xoài bột báng thạch rau câu
+217,chùm ngây,1,1,0.03%,97.58%,mì chùm ngây,Mì chùm ngây trộn thịt chả
+218,su hào,1,1,0.03%,97.61%,lá su hào,Canh Lá Su Hào Thịt Băm Viên
+219,giá hẹ,1,1,0.03%,97.64%,giá sạch,Cá bớp nấu canh chua
+220,thịt chay,1,1,0.03%,97.67%,thịt xay,Canh rau đay nấu tôm thịt
+221,cá bè,1,1,0.03%,97.70%,cá ông cụ,Cá ông cụ chiên sốt chua ngọt
+222,nấm tràm,1,1,0.03%,97.73%,nấm trà tân,Bánh Xèo Nấm
+223,bề bề,1,1,0.03%,97.76%,Tôm tuỳ ý,Tôm xào bơ tỏi
+224,ớt sừng,1,1,0.03%,97.79%,ớt ngò,Tôm và nghêu hấp sả
+225,chuối sáp,1,1,0.03%,97.82%,chuôi chát,Cá Chốt Om Măng Chua Khế Chuối Chát
+226,chà chua,1,1,0.03%,97.86%,canh chua,Bún tôm nấu chua
+227,trứng vịt,1,1,0.03%,97.89%,vịt,VỊT tiềm nấm hương & bắp non
+228,cá lóc,1,1,0.03%,97.92%,cá diêu hồng hoặc cá lóc,CÁ diêu hồng hấp với củ sắn
+229,tía tô,1,1,0.03%,97.95%,dầu tía tô,Đậu phụ rim
+230,cá chuồn,1,1,0.03%,97.98%,cá én nắng,Cơm rang cá én 1 nắng
+231,cá dứa,1,1,0.03%,98.01%,sốt kho cá,Khô cá DỨA kho thơm
+232,sườn heo,1,1,0.03%,98.04%,sườn lát,Giò heo cuộn chiên giòn (món chay)
+233,đậu hũ,1,1,0.03%,98.07%,hũ đậu ngâm đóng hộp,Taco thịt bò và taco tôm cá với salsa xoài
+234,đậu bắp,1,1,0.03%,98.10%,đậu bắp rau cần tây,Lá hoành thánh chiên kèm rau củ xào
+235,sắn,1,1,0.03%,98.13%,phở sắn,Phở sắn chiên giòn sốt mực xào rau củ chua ngọt
+236,rau câu,1,1,0.03%,98.17%,rau cân,Canh cá nâu nấu ngót
+237,súp chay,1,1,0.03%,98.20%,súp,Bún Nưa Nấu Tôm & Rong Biển
+238,cá chỉ vàng,1,1,0.03%,98.23%,cá chai khô đã rút xương,Cá chai khô rim mắm đường
+239,nhãn,1,1,0.03%,98.26%,đọt nhãn lồng,SP.0783 - Canh Đọt Nhãn Lồng Nấu Chả Cá
+240,lá mì,1,1,0.03%,98.29%,Mì chũ rau củ vắt,Mì Chũ Xào Bò
+241,tim gà,1,1,0.03%,98.32%,lòng gà tim gan mề,Nấm xào tim gan mề gà
+242,mùi tây,1,1,0.03%,98.35%,kicap,Râu mực xào lá quế
+243,rau tạp,1,1,0.03%,98.38%,củ cà rốt củ khoai tây củ hành tây,Cơm cà ri bò kiểu Nhật
+244,cá ngạnh,1,1,0.03%,98.41%,cá trèn,Cá trèn chiên giòn
+245,bí ngòi vàng,1,1,0.03%,98.45%,cá rô bí,Cá Rô Bí Kho Tiêu
+246,khoai lang,1,1,0.03%,98.48%,khoai sáp vàng đã gọt sạch,Thịt heo quay kho chao
+247,cọ,1,1,0.03%,98.51%,Kẹp gắp kéo cắt cọ quét,Thịt Nướng Hàn Quốc
+248,hạt điều,1,1,0.03%,98.54%,Dầu điều có thể thay dầu ăn,Thịt ba rọi xá xíu
+249,thịt viên,1,1,0.03%,98.57%,chả mực hoặc mực viên,Súp nấm hương rau củ thịt nguội
+250,tôm,1,1,0.03%,98.60%,tôm chay,Bún gạo lức xào bò tôm mực (CHAY)
+251,cá ba sa,1,1,0.03%,98.63%,Sa,Bún Bò Huế(Xương Bò)
+252,mít non,1,1,0.03%,98.66%,mít,Thạch rau câu mít :
+253,đậu đen,1,1,0.03%,98.69%,Bơ đậu phộng tương đen,Cuốn đậu hũ eatclean
+254,cá hồi,1,1,0.03%,98.73%,Gia vị ướp cá,Lườn Cá Hồi Teriyaki Nướng Cuốn Tỏi & Tía Tô
+255,lươn,1,1,0.03%,98.76%,lươn ca hôi,Lườn cá hồi kho hành ớt
+256,chè vải,1,1,0.03%,98.79%,vải,Rau câu vải nước dừa
+257,cá trôi,1,1,0.03%,98.82%,cá trô biển,Bún cá cuốn
+258,gạo lứt,1,1,0.03%,98.85%,mì lứt hoặc mì rau củ,Mì lứt tôm sốt bơ lạnh 🍤🥑🧄
+259,bột gia vị,1,1,0.03%,98.88%,Thịt kho trứng,Xôi Thịt Kho Trứng
+260,nem bưởi,1,1,0.03%,98.91%,Bưởi,Gỏi bưởi tôm thịt
+261,mía,1,1,0.03%,98.94%,sò mía,"Lẩu Thái Hải Sản, Bò, Gà"
+262,cá,1,1,0.03%,98.97%,nâm bao ngư,"Bánh canh chay sườn chay gà,đậu hủ và nấm bào ngư"
+263,cánh gà,1,1,0.03%,99.01%,thịt nạc gà hoặc ức đùi cánh lườn gì cũng được,Thịt Gà Kho Rau Răm
+264,dầu ô liu,1,1,0.03%,99.04%,Olive,"Pizza Thịt Nguội, Phô Mai và Olive"
+265,bầu,1,1,0.03%,99.07%,rau bầu đất,Canh Rau Bầu Đất Nấu Tôm
+266,chân nấm,1,1,0.03%,99.10%,Chân giò hầm nấm,Chân giò hầm nấm ăn kèm bánh mỳ
+267,vỏ bánh,1,1,0.03%,99.13%,Bánh mỳ nhiều vỏ mỏng ruột,Chân giò hầm nấm ăn kèm bánh mỳ
+268,ổi,1,1,0.03%,99.16%,Lá ổi,Nem thịt thính gạo
+269,bí đỏ,1,1,0.03%,99.19%,bí non,"Bí non, ớt chuông xào tim heo"
+270,hàu,1,1,0.03%,99.22%,Gia vị oyster nước tương gừng tỏi,Thịt gà xào ớt chuông
+271,xương heo,1,1,0.03%,99.25%,ương quy,Giò Heo Tiềm Thuốc Bắc
+272,xốt thịt xá xíu,1,1,0.03%,99.29%,thit xa xiu,Mì trứng xào mực và thịt xá xíu
+273,đậu hà lan,1,1,0.03%,99.32%,đâu hanh la,"Cá mú hấp hành,gừng,xì dầu và dầu hào"
+274,xíu mại,1,1,0.03%,99.35%,xiu muôi,Rau Câu Chữ Tài Lộc Và Thỏi Vàng Cho Ngày Vía Thần Tài
+275,bột xù,1,1,0.03%,99.38%,bôt chiên gion,Cá cơm chiên giòn xóc mắm tỏi
+276,trái lựu,1,1,0.03%,99.41%,lardon cắt hạt lựu,"Pizza Lardon, Nấm Mỡ Full 3 Loại Phô Mai"
+277,chao,1,1,0.03%,99.44%,chen gao,Cháo đậu đỏ ăn kèm cá nục kho
+278,bông bí,1,1,0.03%,99.47%,bông so đũa,Lẩu cá thác lác
+279,lê,1,1,0.03%,99.50%,ức gà phi lê ka,Mì gà trộn cay cùng với bắp cải và nấm
+280,trà xanh,1,1,0.03%,99.53%,trà túi lọc,Cá TRẮM kho dưa cải
+281,xúp mì,1,1,0.03%,99.56%,noodle,Lẩu thịt rau củ
+282,lát,1,1,0.03%,99.60%,lát hoài sơn,Đuôi Heo Hầm Sâm Ngọc Linh
+283,hộp nấm,1,1,0.03%,99.63%,hộp gr ậu hũ non,Canh Nấm Bào Ngư Chay
+284,cá viên,1,1,0.03%,99.66%,ường phèn viên nhỏ,Bún cá cam
+285,thịt ngan,1,1,0.03%,99.69%,Ngán,Canh ngán rau muống
+286,rong biển,1,1,0.03%,99.72%,Salicorne rau ngón biển,Mì Ý Xào Tôm & Rau Ngón Biển
+287,dầu sate,1,1,0.03%,99.75%,xìa dầu,Nấm Hải Sản Kho Sa Tế
+288,mì gói,1,1,0.03%,99.78%,Mỳ ý gói,Mỳ ý tôm sốt kem
+289,cá chai,1,1,0.03%,99.81%,Bông so đũa,Lẩu cá tầm măng chua
+290,hạt óc chó,1,1,0.03%,99.84%,óc,Óc heo hầm ngải cứu
+291,Hành ngò,1,1,0.03%,99.88%,rau thơm các loại húng lủi húng quế húng cay diếp cá tía tô kinh giới lá sung lá cóc,Nấm Đùi Gà Trộn Thính
+292,nước thịt kho,1,1,0.03%,99.91%,nước chấm thịt quay,Thịt Heo Quay Kho Sa Tế Nước Dừa
+293,sung,1,1,0.03%,99.94%,Thính gạo,Chạo nấm chay
+294,tiêu xanh nhánh,1,1,0.03%,99.97%,tiêu đen,Nấm đùi gà om xốt tiêu đen
+295,cá liệt,1,1,0.03%,100.00%,cá bánh đường,Cá Bánh Đường Nướng Sả

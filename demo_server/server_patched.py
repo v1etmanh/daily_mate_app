@@ -5,9 +5,7 @@ from pathlib import Path
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from advice_engine import build_explanation, legacy_explain_list
-
-
-DB_PATH = Path(r"D:\dream_project\daily_mate_code\daily_mate_all\database\recipe.db")
+DB_PATH = Path(os.environ.get("DB_PATH", r"D:\dream_project\daily_mate_code\daily_mate_all\demo_server\recipe.db"))
 app = Flask(__name__)
 CORS(app)
 

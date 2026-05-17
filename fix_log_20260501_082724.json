@@ -1,0 +1,6549 @@
+{
+  "timestamp": "2026-05-01T08:27:24.154259",
+  "dry_run": true,
+  "plan": [
+    {
+      "raw_name": "nước tương",
+      "correct_ingredient_id": 11828,
+      "row_ids": [
+        20933,
+        20946,
+        20979,
+        21145,
+        21436,
+        21481,
+        21523,
+        21563,
+        21594,
+        21633,
+        21660,
+        21889,
+        22557,
+        22830,
+        22946,
+        22969,
+        23058,
+        23109,
+        23340,
+        23767,
+        23946,
+        23974,
+        24441,
+        24457,
+        25075,
+        25378,
+        26849,
+        27123,
+        27344,
+        27819,
+        27934,
+        28296,
+        28342,
+        28535,
+        28639,
+        28721,
+        29072,
+        29165,
+        29254,
+        29492,
+        29798,
+        29823,
+        29864,
+        30098,
+        30153,
+        30167,
+        30256,
+        30345,
+        30486,
+        30504,
+        31057,
+        31077,
+        31125,
+        31155,
+        31204,
+        31307,
+        31394,
+        31455,
+        31474,
+        31548,
+        31595,
+        31645,
+        31660,
+        31716,
+        31751,
+        32091,
+        32244,
+        32322,
+        32779,
+        32850,
+        32884,
+        33065,
+        33073,
+        33154,
+        33195,
+        33255,
+        33273,
+        33431,
+        33493,
+        33689,
+        33734,
+        33930,
+        33967,
+        34029,
+        34808,
+        35270,
+        35387,
+        35480,
+        35501,
+        35512,
+        35595,
+        35695,
+        35871,
+        36815,
+        36938,
+        37019,
+        37318,
+        37381,
+        37389,
+        37512,
+        37602,
+        37634,
+        37650,
+        37813,
+        38014,
+        38086,
+        38094,
+        38315,
+        38461,
+        38618,
+        38867,
+        39037,
+        39210,
+        39238,
+        39365,
+        39385,
+        39528,
+        39551,
+        40264,
+        40634,
+        40798,
+        40804,
+        41348,
+        41388,
+        42077,
+        42149,
+        42186,
+        42263,
+        42314,
+        42436,
+        42526,
+        42665,
+        42807,
+        44709,
+        46158,
+        46466,
+        46490,
+        46549,
+        46979,
+        47339,
+        47430,
+        47501,
+        47574,
+        47821,
+        47909,
+        47917,
+        48032,
+        50083,
+        51067,
+        51112,
+        51196,
+        51242,
+        51511,
+        52871,
+        52901,
+        53196,
+        53232,
+        53550,
+        53567,
+        53625,
+        53726,
+        53815,
+        53831,
+        53843,
+        54126,
+        54302,
+        54576,
+        58495,
+        60229,
+        60892,
+        60907,
+        60913,
+        60932,
+        60998,
+        61008,
+        61077,
+        61621,
+        61652,
+        61768,
+        62028,
+        62177,
+        62185,
+        62275,
+        62319,
+        62418,
+        62441,
+        62590,
+        62876,
+        62900,
+        62925,
+        63040,
+        63274,
+        63379,
+        63486,
+        63517,
+        63664,
+        63721,
+        63765,
+        63843,
+        63915,
+        63951,
+        64100,
+        64130
+      ],
+      "row_count": 203
+    },
+    {
+      "raw_name": "nước",
+      "correct_ingredient_id": 6101,
+      "row_ids": [
+        20864,
+        21031,
+        21399,
+        21462,
+        21583,
+        21615,
+        21623,
+        21904,
+        22086,
+        24361,
+        25143,
+        25247,
+        25265,
+        25454,
+        25828,
+        26414,
+        26438,
+        26995,
+        27269,
+        27379,
+        27531,
+        27685,
+        27886,
+        28019,
+        28038,
+        28280,
+        28496,
+        29059,
+        29169,
+        29250,
+        29537,
+        29554,
+        30002,
+        30039,
+        30725,
+        30773,
+        31137,
+        31168,
+        31295,
+        31696,
+        31923,
+        32260,
+        32366,
+        32547,
+        32555,
+        32565,
+        32898,
+        33037,
+        33823,
+        33858,
+        33873,
+        34084,
+        34300,
+        34363,
+        34741,
+        34774,
+        34811,
+        34943,
+        35007,
+        35018,
+        35130,
+        35191,
+        35416,
+        35573,
+        35744,
+        36079,
+        36194,
+        36242,
+        36823,
+        36877,
+        37462,
+        37654,
+        38524,
+        38753,
+        38841,
+        38909,
+        39322,
+        39353,
+        39371,
+        39772,
+        39844,
+        39931,
+        40595,
+        40604,
+        40992,
+        41084,
+        41269,
+        41273,
+        41833,
+        42097,
+        42123,
+        42439,
+        42466,
+        42499,
+        42669,
+        42974,
+        43164,
+        43459,
+        44275,
+        44583,
+        44600,
+        44672,
+        45047,
+        45366,
+        45472,
+        45486,
+        45535,
+        45639,
+        45784,
+        46256,
+        46302,
+        46433,
+        46808,
+        47364,
+        47715,
+        47830,
+        48184,
+        49307,
+        49964,
+        50917,
+        51610,
+        52921,
+        52972,
+        53313,
+        53360,
+        53792,
+        53959,
+        54032,
+        54104,
+        54351,
+        61097,
+        61102,
+        61411,
+        61476,
+        61669,
+        61881,
+        62019,
+        62486,
+        62550,
+        62605,
+        62947,
+        63124,
+        63296,
+        63447,
+        63748,
+        63780,
+        63862,
+        63886,
+        64152,
+        64418
+      ],
+      "row_count": 150
+    },
+    {
+      "raw_name": "Nước tương",
+      "correct_ingredient_id": 11828,
+      "row_ids": [
+        23047,
+        24514,
+        24617,
+        24965,
+        25243,
+        25316,
+        25438,
+        25916,
+        26024,
+        26239,
+        26318,
+        26352,
+        26642,
+        27423,
+        27450,
+        27466,
+        27471,
+        27480,
+        27863,
+        27929,
+        28089,
+        28250,
+        28287,
+        28805,
+        29089,
+        29962,
+        30329,
+        30639,
+        31528,
+        31601,
+        31702,
+        31746,
+        31823,
+        31833,
+        32022,
+        32253,
+        32558,
+        32660,
+        33054,
+        33548,
+        33712,
+        33856,
+        34095,
+        34164,
+        34373,
+        34437,
+        34451,
+        34495,
+        34856,
+        35102,
+        35690,
+        36043,
+        36313,
+        36564,
+        36631,
+        36705,
+        36727,
+        36840,
+        36953,
+        37179,
+        37416,
+        37489,
+        37578,
+        37595,
+        38145,
+        38354,
+        39641,
+        39981,
+        41776,
+        42403,
+        42534,
+        43124,
+        43268,
+        44235,
+        45291,
+        45651,
+        46835,
+        47063,
+        47260,
+        50953,
+        51444,
+        51487,
+        53846,
+        60956,
+        61352,
+        61846,
+        62399,
+        63901,
+        64006,
+        64588,
+        64646
+      ],
+      "row_count": 91
+    }
+  ],
+  "skipped": [
+    {
+      "raw_name": "dầu mè",
+      "row_count": 80,
+      "reason": "Không tìm thấy trong SYNONYM_DICT"
+    },
+    {
+      "raw_name": "thơm",
+      "row_count": 54,
+      "reason": "Không tìm thấy trong SYNONYM_DICT"
+    },
+    {
+      "raw_name": "bột nghệ",
+      "row_count": 41,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ cà rốt",
+      "row_count": 38,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương ớt",
+      "row_count": 37,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột canh",
+      "row_count": 33,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải trắng",
+      "row_count": 31,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước",
+      "row_count": 31,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt bò",
+      "row_count": 30,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành phi",
+      "row_count": 27,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa",
+      "row_count": 27,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu mè",
+      "row_count": 27,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành phi",
+      "row_count": 26,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "me",
+      "row_count": 26,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măng tây",
+      "row_count": 25,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau cần",
+      "row_count": 24,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tương ớt",
+      "row_count": 22,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu olive",
+      "row_count": 20,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm biển",
+      "row_count": 17,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột ngũ vị hương",
+      "row_count": 17,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ cải trắng",
+      "row_count": 16,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp non",
+      "row_count": 16,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giấm",
+      "row_count": 16,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai sọ",
+      "row_count": 15,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột cà ri",
+      "row_count": 15,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột nghệ",
+      "row_count": 14,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm nêm",
+      "row_count": 14,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước hầm xương",
+      "row_count": 13,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột gà",
+      "row_count": 13,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước chấm",
+      "row_count": 13,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu hào chay",
+      "row_count": 13,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt xay",
+      "row_count": 12,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào",
+      "row_count": 12,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau càng cua",
+      "row_count": 12,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột hành",
+      "row_count": 12,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì trứng",
+      "row_count": 11,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau ăn kèm",
+      "row_count": 11,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm ruốc",
+      "row_count": 11,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực lá",
+      "row_count": 11,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thơm",
+      "row_count": 11,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dưa chuột",
+      "row_count": 10,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì",
+      "row_count": 10,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá dứa",
+      "row_count": 10,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm càng xanh",
+      "row_count": 9,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giấm gạo",
+      "row_count": 9,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột tỏi",
+      "row_count": 9,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "húng quế",
+      "row_count": 9,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm nõn",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lòng trắng trứng",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước màu",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm nêm",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đùi gà",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước màu",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tim heo",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh canh",
+      "row_count": 8,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau cần",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm lộc nhung khô",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp ngô",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô gia vị",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu hào chay",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Giấm",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành hoa",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước màu dừa",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dấm táo",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô",
+      "row_count": 7,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đậu hủ trắng",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau cần nước",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đậu hũ trắng",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm bóc nõn",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bò",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá chanh",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá điêu hồng",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước trộn gỏi",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bò",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau càng cua",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước lá dứa",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dừa",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Me",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá chanh",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "trai thơm",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu mè thơm",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bôt ngot",
+      "row_count": 6,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tôm",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ba chỉ",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm nhỏ",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm lộc nhung",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lòng trắng trứng",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh canh",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau ôm",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm hải sản",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sấu",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước sốt",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gừng hành tỏi",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "húng lủi",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hanh lá",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "gà",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tôm",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xương ống",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá mó",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thìa cafe bột canh",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tím tỏi",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cơm mẻ",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành hoa",
+      "row_count": 5,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cần nước",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp cải trắng",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt má heo",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt lợn",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa Quỳnh Côi",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương hột",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành băm",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm đất",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi ớt",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá hành tím",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ su hào",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "táo đỏ",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm càng",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp chuối bào",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu mè đen",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá điêu hồng kg",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xương heo",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước màu hàng",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tỏi ớt",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "quất",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường cát",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thìa cafe dầu mè đen",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đầu hành",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá dứa",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước hàng",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "táo tàu",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh tráng gạo",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nươc côt dưa",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tỏi khô",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm ruốc Huế",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu thực vật",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương đen",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau húng lủi",
+      "row_count": 4,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tỏi ớt",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ớt xanh đỏ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bắp non",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lát gừng",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thính gạo",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măng tươi",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước đá",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành phi",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ớt xay",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu dừa",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành phi",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tỏi ớt",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vừng",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bơ đậu phộng",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu hạt lanh",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước hầm xương",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi ớt",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá kim",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mè",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu Olive",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá hồng",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "phô mai con bò cười",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cam",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau củ hỗn hợp",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm ruốc Huế",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nghệ tươi hoặc bột nghệ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thanh cua",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột rau câu dẻo",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xương ống",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá cà ri",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tép",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "gao",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương tamari",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành hoa hành khô",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương Nhật",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm cá cơm",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tỏi băm nhỏ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột mì",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cơm than",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột nếp",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hẹ lá",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá ngừ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước cốt dừa",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chuối",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu mè thơm",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "whipping",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương cho bé",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước chấm chua ngọt",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá hẹ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột hành",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ hỗn hợp",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mỡ hành",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Súp lơ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tím tép tỏi",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương HQ",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu thực vật",
+      "row_count": 3,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm càng xanh",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành phi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt bò phile",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành phi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm hải sản",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tím tỏi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau bồ ngót Nhật",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Măng tươi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá mó",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t tươi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bóng cá chay",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau ngò",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cần nước",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá ớt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ khoai sọ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bí non",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "gạch cua đồng",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá hành củ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm lộc nhung khô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi ớt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi hành tím",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau bồ ngót",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tôm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành ngò",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành lá hành củ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt sườn",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô hành lá",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau cần nước",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau ôm ngò gai",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương bần",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tép",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành baro",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mì trứng",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chay khô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau húng lủi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải đắng",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá húng quế bạc hà",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tàu hủ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nõn tôm biển",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mỡ hành",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "miến tỏi đen",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột ngũ vị hương",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì gạo",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột rau câu",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương dầu hào",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước luộc gà",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Húng quế",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá gừng",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vẹm xanh",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm ruốc",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Chanh dây",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước màu dừa nước hàng",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh canh bột gạo",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá cam",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà rôt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Giấm gạo",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giá đậu xanh",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá lạc",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt chanh dây",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Sa tế chay",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chanh dây",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngồng tỏi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Pha nước trộn",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm ruốc huế",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tím tỏi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rổ rau càng cua",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành hương",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hat nêm chay",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau quế",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tây hành lá",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi gừng ớt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chanh ớt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi hành băm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thính gạo rang",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cần",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm ruốc chà Huế",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô hành hoa",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tỏi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cơm khô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Boaro",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sữa",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước chấm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hat nêm chay",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gà",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi hành tím",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi hành sả",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá mắc mật",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nươc côt hoa đâu biêc",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chanh leo",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Riềng sả gừng bột nghệ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương Nhật",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hoàn thánh nhân nấm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá tỏi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tim heo",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá ngò rí",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mùi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa hoặc sữa",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương maggi",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu mè đen",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mè",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi ớt băm nhuyễn",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Ngô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tỏi bằm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ml",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá basil khô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mỳ",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Vẹm xanh",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tỏi ớt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương đậu",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cu ca rôt",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngo ri",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải diếp xoăn endive",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá mó",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành baro",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ri dầu",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sấu",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bông kim châm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương đen",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò tây",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gừng hành tỏi khô",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngô bao tử",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau dền cơm",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Su hào",
+      "row_count": 2,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ Hành tây tím",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cải mèo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cắt lát Gừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "băm nhỏ Tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm đất nhỏ hoặc tép đồng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khoai muống",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm sắt biển",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt nạc đùi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột hồng cúc bột gạo men đỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt hành tỏi xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt diềm thăn bò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sả củ tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò rí trang trí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt kho đa dụng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò già lấy cả gốc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khô cá lóc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khô cá mặn chay không bắt buộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cooking cream",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước màu thốt nốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt đùi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột bắp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt kẹo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá rau tần dày",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau cải thảo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Pha mắm tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường nâu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước hầm xương rau củ dashi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Trái giác",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bò băm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành phi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Phở sắn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tép",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tép tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả cá thu cá măng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt chanh tắc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm cá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm cá linh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ hành",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá trác",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dưa môn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm trùng thảo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá diêu hồng chay gr",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "má đùi gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dưa hường",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Chả quế",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hột gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mật dừa nước",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ầu hành boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm Cá Trèn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tím ớt đỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "gạch cua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả bì ớt xiêm xanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải hồng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá ngò rí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá bắp cải hành lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Chanh ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá Basil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dụm heo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ốc bươu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi ớt chanh gừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tím hành lá cắt nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tàu hũ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tim gan cật heo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t sừng rau răm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tinh bột khoai tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xà lách ta",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm mỡ nấm đông cô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột rau câu agar",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bò xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bao tử cá basa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước sốt tương dầu hành",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ậu phụ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau rocket hoặc spinach",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "wonton noodles lá mì",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tay nấm nhung hươu khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hột gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "trứng cua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh đa mì gạo phở khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu mè",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm he",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm trứng rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu oliu dầu hào",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá thìa là",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tây hành lá rau răm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tím tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm cá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mấy lát gừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tắc hoặc trái chanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm mỡ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tàu hũ chiên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "phomai hải sản",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt bò phần sườn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột thính",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xíu vừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt lẩu chua hải sản",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai tím",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá é trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Củ cải trắng cà rốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngồng su hào",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt xay rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa nắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "súp lơ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước hầm xương gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm dì Cẩn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hạt mít",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt luộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá phèn hồng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước hầm xương gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm cá linh xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm mỡ nâu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá rau răm thì là",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gừng hành khô tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm lộc nhung",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bột khoai tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "to hành baro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ gừng to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "trứng chiên thịt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nhân khổ qua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thính gạo rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá mặn chay nhỏ không bắt buộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Củ nén củ hành tím",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mùi ta",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm lộc nhung khô không bắt buộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau cải ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá răm thì là",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đậu que cà rốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành poro băm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giấm ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi băm gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt nướng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "má đui ga",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột tỏi bột hành",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước ấm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước trộn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "con ruốc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "riềng sả",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt bắp giò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ớt xắt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành poro băm nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau nhút",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tỏi phi hoặc hành phi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành poro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lạt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thit bo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương hôt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau mùi tàu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tắc vắt nước cốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm mỡ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mỡ hành",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ cải trắng củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành poro băm nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sấu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ cải trắng vừa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khô cá trèn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Củ cải trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh canh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành baro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm bé",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau Húng lủi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá hấp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chanh ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm đồng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đậu làng Mơ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm khô loại",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá mối",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dưa chuột",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà rối",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường củ cải",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thit heo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cai trăng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt bò nạc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà rốt ngâm chua ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì gạo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngó môn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Màu gạch tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì chùm ngây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá su hào",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giá sạch",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau sắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá ông cụ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm trà tân",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bò xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dưa hồng gram",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ hành khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đậu phụ chiên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t chin su",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá trèn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nụ inh hương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm tuỳ ý",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ớt ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá me đất",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chuôi chát",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm chua Huế",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hộp cá sốt cà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai môn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "canh chua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tỏi củ hành khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khóm hành tím",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mộc nhĩ tai nấm hương khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gừng hành tỏi ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm rảo tằm hoặc tép",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măng tây rừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mật ong siro phong",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm sắt bóc nõn rim mắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vị hành tỏi hành lá ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành củ hành lá rau răm thìa là gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mỳ gạo lứt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vịt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau nêm hành lá ngò rí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dĩa rau đi kèm ngò gai giá kinh giới bắp chuối hành lá ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bột gà Chicken Powder",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thì là hành lá dill green onion",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tỏi hành răm thìa là gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá diêu hồng hoặc cá lóc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sữa chua dầu ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu tía tô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa ml",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành củ hành lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá én nắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá măng phi lê nắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khô cá dứa một nắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khô cá dứa chiên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá dưa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Miến gạo hoặc miến giong",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khô cá dứa một nắng g",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá dứa baby nắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt kho cá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá Dứa một nắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tépTỏi hành lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà chua bi hành tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau nêm rau thì là hành lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước lá dứa lá nếp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành mùi gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá mùi tỏi gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành răm thìa là củ tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vịmì chính nước mắmhạt tiêuớt tươi xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau củ hỗn hợp ngô đậu hà lan cà rốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tỏi nước hàng gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "gừng củ riềng củ hành khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gừng hành tỏi hành lá rau răm thìa là",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm ăn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hột tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hoa chuôi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vỏ bò bía",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tím gừng lá chanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "huyết vịt lớn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau Càng Cua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp nếp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "trai dưa tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành ngò bột nêmtiêu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "miến tỏi đen hoặc miến thường",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thanh cua surimi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bò lát chay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau ăn kèm bắp chuối bào giá rau cải con rau húng lũi hoặc rau thơm xà lách",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước ngọt có ga",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dưa leo ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sườn lát",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương ít mặn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hũ đậu ngâm đóng hộp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cu cà rôt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải trắng lớn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào lớn hoặc đu đủ xanh chưa chín",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành hoa ko cần thiết",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cần tàu cắt khúc cm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xà lách mỡ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Vừng rang lạc rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "riềng củ hành củ tỏi miếng nghệ nhỏ lá lốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành củ dầu ăn hoặc mỡ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau cần nước lấy phần cọng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đậu bắp rau cần tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau câu chân vịt khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau ăn kèm cải con giá bắp chuối",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bắp mỹ cà rốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nấm đông cô bột bắp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tiết heo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ra to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mẻ mắm tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ra",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tomato sauce",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tàu hũ ky lá khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "catfish",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tim heo kg",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "phở sắn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thanh cua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải trắng nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm sắt biển",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải bẹ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm sắt bóc nõn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ hỗn hợp chén mắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá bò bía",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tóc tiên to bằng quả trứng gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm tít tươi sống",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau cân",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xốt cà chua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt gà nạc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vi ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "súp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Oyster",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa đỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xà lách mỡ Iceberg",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt cá mặn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá mặn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bò lát",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá chai khô đã rút xương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Ngo rihanh lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đọt nhãn lồng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá ngò tây dùng để trang trí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tây tím nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá sủ tầm kg",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cốt cà phê",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá lạc phi lê",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "than hoa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tôm pha",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm mũ ni con kkg",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thảo mộc luộc lòng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh phở tráng chảo từ phụ phẩm làm mì căn hoặc phở tươi phở khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm biển nõn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau dền dền đỏ dền trắng hay dền cơm đều được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa đỏ bánh đa cua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ ngải bún",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh tráng dẻo không cần nhúng nước hiệu Phương Trang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá măng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vị chiên cá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm thịt nạc rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Giá đỗ bắp cải tim luộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xà lách cà rốt bắp cải tím",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mì chũ rau củ vắt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chao môn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thịt heo bằm trứng gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cải ngọt cải thìa cải thảo bắp cải",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương tamari",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bắp cải cà rốt nấm bào ngư nấm mèo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá bột nêmtiêuđường",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương tỏiớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành lá hành khô mùi tàu gừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lòng gà tim gan mề",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm nên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bã đậu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô hành lá gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bã đậu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dạ dày cá basa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả cá măng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà chua beef cắt múi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xốt salad",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tỏi xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "kicap",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương lạt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường bột nêmnước mắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "kim chi su hào hoặc kim chi cải thảo kim chi củ cải vv",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cáy còng đỏ ba khía",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá đùi gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước dashi hoặc nước lọc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cần tây hành Tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá đùi gà nắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ quả các loại bạn thích loại nào thì dùng loại đó nhen Nhiều hay ít",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tỏi khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thịt lợn thịt bò thái mỏng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà bát tương ứng quả",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước ngâm cà khử độc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà chín tới",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh canh bột gạo loại có sẵn ngoài chợ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bún hoặc phở",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau thơm các loại nhất định phải có rau kinh giới và rau ngổ ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tím cọng hành lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lạc vừng đã rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm chanh ớt tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô tỏi bột nghệ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau thơm lạc rang nếu có",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ cà rốt củ khoai tây củ hành tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô quả trứng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau cải quả cà chua rau thì là hành ngò gai của tùng gia đình vài lát gừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "kg khổ hoa mướp đắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khoai sọ gram khoảng củ nhỡ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường dầu ăn mắm dầu hào",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Màu lá dứa và nếp cẩm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt nạc dê",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá nục nướng than hoa Nghệ An con",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Riêu tôm thịt xay sẵn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Súp Lơ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ khoai sọ sót lại",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá bò to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hoa tỏi ba góc onion weed tỏi hoa ng three cornered leek",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cu Cà rôthanh lahanh tim",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực lá g",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau rocket",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ cắt sẵn đông lạnh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rổ rau càng cua to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vị pizza hương thảo lá xô thơm húng tây khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp Ngô nếp tách hạt giã dập",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chanh me",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "qua chanh dây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt lợn lạc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào vừađịnh mua đỗ xanh mà không có hixhix",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương nhật kikkoman",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "húng quế tây basil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá trèn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá điêu hồng khoảng khoanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xà lách gr",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau thơm như húng bạc hà húng Hà Nội rau mùi ta",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá rô bí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá măng g",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào thái con chì",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước ép lá dứa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương Maggi thanh dịu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thịt gà lóc xương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai sáp vàng đã gọt sạch",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nguyệt quế",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt cà pasta của",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Kẹp gắp kéo cắt cọ quét",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm tôm nguyên chất",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ậu nưa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm hành",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt lá dứa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cafe đen đậm đặc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lon cream soda",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước luộc chân giò thảo mộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bông chuối",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ồ chua củ cải cà rốt ngâm chua ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu điều có thể thay dầu ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau basil khô hoặc rau ngò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà rôt mini",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh đa gạo lứt tuỳ ăn nhiều ít",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả mực hoặc mực viên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mướp đắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "men loại instant men khô không cần kích hoạt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm chay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Súp lơ lấy phần vừa ăn thui nha",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp hoa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước nắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau ngũ gia bì",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Vỏ bánh đậu xanh cuốn chả giò Tìm mua dễ dàng tại các cửa hàng tạp hoá Giá giao động kbịch Mua bịch là đủ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá Lá rong biển cuốn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tỏi tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì gói không lấy các gói gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá rô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm đất nguyên vỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nhỏ lá hẹ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "băp cai hanh lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Sa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực nang nhỏ hoặc mực ống mực lá nhỏ đều được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá mặn tầm gr",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "phô mai con bò cười tán nhuyễn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nhân thịt và rau củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước lọc chừng chén ăn cơm nước",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà phê hòa tan",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm biển hoang dã hoặc tôm gì cũng được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá basil húng tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "súp lơ xanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tép hoặc chai mắm nêm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hạt nên phở bò Aji quick",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măm tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ nấu kèm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm con tôm nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khoai sọ vừa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm cang xanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mướp đắng to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "muông cà phê hat nêm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "me rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hoa thiên ly",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả lụa ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm biển hấp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hộp cà chua cô đặc hoặc sốt cà chua cho pizza",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mít",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau xà lách các loại rau thơm và rau cải đắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Táo tàu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t trái bỏ hạt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vị trộn salad",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bơ đậu phộng tương đen",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ri Nhật",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh tráng gạo lức",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vị ướp cá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương Nhật Kikkoman",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ xào",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tỏi gà tây vừa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thịt nạc bò heo trâu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước ăn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà rốt măng tây nấm đùi gà tất cả cắt hạt lựu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nguyên liệu nước tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bắp xà lách mỡ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm đất hoặc tôm bạc nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai tây củ cà rốt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau răm hành cà chua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá rô to khoanh cá basa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước sốt salad",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau củ quả cắt sẵn ở siêu thị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mướp đắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Xả ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "miến đậu xanh bún tàu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm xào tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá chanh thơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lươn ca hôi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương HQ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm biển",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gừng riềng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước nắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải vàng ngâm chua ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vải",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tỏi hành lá nước tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá trô biển",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm chua ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Giấm táo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau ăn kèm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tỏi ớt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ậu hũ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau sống xà lách cải con húng lủi giá cây bắp chuối diếp cá lá hẹ quê",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cơm gạo lứt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mì lứt hoặc mì rau củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xương cá hoặc xương heo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "má đùi gà lọc bỏ xương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bia giúp bánh giòn hơn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Muốiường dầu ăn dầu hào nước tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đùi tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải Kana rửa sạch tách từng lá Riêng phần thân thì cắt xéo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm càng xanh lột",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bề bề ghẹ vụn tôm nõn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thịt kho trứng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "húng quế bạn có thể dùng lá tươi hay khô đều được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cần tỏi tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước trộn bánh tráng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dấm ăn dấm táo ok",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá Kombu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải trắng bào vỏ chẻ dọc và cắt lát dầy cm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm nhỏ bóc vỏ sẵn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bưởi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sò mía",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương nhật",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cơm rim",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nhỏ lá chanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bún tàu miến đậu xanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm nêm hoặc mắm cái",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt lạc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh tráng gạo vừa đủ cho hai người",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Sốt tôm rim",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm tôm pha chấm cuốn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t không cần nếu nhà có bé nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "súp lơ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khuôn rau câu silicon me bông conkhuôn nho va lơn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đùi tỏi gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mắm cá cơm nguyên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai lang mật à Lạt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nâm bao ngư",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh đa canh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau húng hà nội hoặc húng bạc hà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Măng tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải trắng mình dùng cải tròn navet",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ tuỳ ý",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt nạc gà hoặc ức đùi cánh lườn gì cũng được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Súp lơ xanh không bắt buộc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hanh lahanh tim băm nho",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "trứng gà ta mẹ Măng dùng trứng chim trĩ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hoa rô thái nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măng tây cắt thành từng khúc nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương đen",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương nhật tôi dùng hiệu kikkoman",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương em bé",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "boa rô to hoặc cây nhỏ cả lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương nhật",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương dùng kèm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thìa cafe hắc xì dầuhoặc nước hàng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước hầm xương cô đặc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "su hào non mới",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vỏ tôm này tết mình làm tôm khô nên mình giữ lại vỏ tôm cho ngọt nước",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ tuỳ thích",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mì",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thịt ức gà đã lọc xương da rửa sạch thái miếng vừa ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá nem",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt terriyaki màu dừa nước tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá vỏ sủi cảo mua sẵn ngoài tiệm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ hỗn hợp tùy ý",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tắc nước cốt chanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tươngxì dầu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau thơm rau húng quế Vietnamese mint and basil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô hoặc boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xương đuôi lợn hoặc gói cốt xương heo gà mua sẵn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Sốt mayone không cần nêm gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu đậu phộng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nắm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nươc dưa tươi hoăc nươc loc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau ngò ôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực ghim sữa Phú Yên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước cốt chanh dây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ca cơm tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xà lách mỡ rửa sạch để ráo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau thơm húng lủi mùi bạc hà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá móc mật",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "basil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Vài cọng măng tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cốt chanh dây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cơm đã nấu chín nguội cũng được không cần hâm lại vì khi quay trong lò vi sóng sẽ như cơm mới nấu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khoai lang mật",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nươc dưa tươi co thê thêm nươc dưa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt cà chua basil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Olive",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khô cá dứa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ri Nhật caycay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mực lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực lá tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước vo gạo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nguyên liệu pha mắm nêm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá cải salad leaves",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Phân ăn kem",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau bầu đất",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá điêu hồng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Chân giò hầm nấm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh mỳ nhiều vỏ mỏng ruột",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá tầng dầy",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau cang cua",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực mực nang mực ống mực lá lớn nhỏ đều ok",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Súp lơ xanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá mắc mật",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xathan gum",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Súp lơ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước chấm mắm nêm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Basil khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải trắng Navet",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Khuôn lợn cá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "húng quế khô Phụng dùng loại rắc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vẹm Newzealand",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vẹm đã tách vỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau quế",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà chua cherry",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Riềng xả ớt khô lá chanh hành tím tỏi chanhdầu màu điều",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá ổi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bí non",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mì Udon dẹp sợi bánh canh VN là ngon nhất ạ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mì mình xài mì nghệ cọng to",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thịt bò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thanh cua cắt nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá nếp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà rôt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu ăn dầu hào nước tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa mình dùng loại đóng hộp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "pasta hoặc mì trứng tuỳ ý",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vị oyster nước tương gừng tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giấm gạo hoặc giấm táo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bia hoặc Cocacola thêm nếu cần",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mứt gừng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mứt chanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Quét mặt bánh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực lá size nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Me trăng răc lên banh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá Rau ngót",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dừa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nguyên liệu trộn thịt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "súp lơ xanh rau củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước ml nếu không có trứng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nươc Loc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ương quy",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bôt ngot",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nươc côt tra xanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "toi bằm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cai trăng got vo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "muông canh dâu ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành phi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nươc côt dưaml bia",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ca rô khoang gr",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cân nươc lăt khuc rưa sach đê raoơt trai",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cu cai trăng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thit xa xiu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cai mâm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mlml nươc âm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đâu hanh la",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măm xay măm linhmăm lócmăm sặc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá Basil trang trí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xiu muôi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bôt chiên gion",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "muông canh tương hôt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "muông canh đương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lardon cắt hạt lựu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành hoa cắt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ăn canh nhỏ mắm tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chen gao",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tương đen",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá húng tây khô Basil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cải cúc cá nhân mình thấy không cần thiết lắm Có hay k cũng được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá quế khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành khô vài cái đầu hành",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bún thường ngoài chợ bán theo ký người tầm nửa ký là vừa còn bún khô thì vắt cho người",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngỗ ngò om",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nâm meo ngâm nơ rưa sach đê rao va căt nho",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bi đo nâu chin nghiên nhuyên tao mau vang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ca chi vang va ca ngân",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương ăn phở",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bông so đũa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá ngò tây persil",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mực ống nhỏ mực sữa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá Ngò gai",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá cải diếp xà lách romaine",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá rau diếp xoăn đỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà chua beef",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá chua dâm but",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá thơm khô provence",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương nấu canh HQ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương Hàn Quốc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hoa giây hoa đâu biêc và hoa xuyên chi theo ý thich",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cây hung lui",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước tương dầu hào không có không dùng dầu hào cũng được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "peanut butter bơ đậu phộng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lê hoặc táo hoa quả biến tấu theo sở thích ưu tiên chọn quả có vị không quá ngọt như vải nhãn mít sầu riêng Mình hay dùng lê táo nho và quả bơ cho các loại salad",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá rau mồng tơi hoặc chân vịt lá dứa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt chanh dây chanh leo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hắc xì dầukhông có thì cho nhiều nước tương chút là được",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bắp bao tử",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Húng Lủi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau ăn kèm các loại",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu nên chọn dầu oliu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mỳ lấy lượng vừa ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Các loại rau ăn kèm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nụ hoa mươp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mọc tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mọc thịt mình thường mua thịt xay trộn gia vị và mộc nhĩ nấm hương viên sẵn để ngăn đá để tiện nấu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t đen ăn phở",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Tương bần",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đầu hành bằm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành phi mua sẵn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò ôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hoa atiso",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mỳ ăn liền",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá húng quế tây khô dried basil tuỳ ý",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mẻ chén ăn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ức gà phi lê ka",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tép hoặc tôm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau bò khai đã nhặt sạch",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t chin su",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắmcá nhạt lên cần mắm đậm không cần",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương maggi đậm đặc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "n kèm Cá cơm rim dưa mắm trộn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mỡ heo nước dầu ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "trà túi lọc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "noodle",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu hạt lanh",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau cải mơ non",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Canh ngót rau cần nước",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bánh mì giònbánh mì bơ tỏi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ri Nị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lát hoài sơn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đỗ trọng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lát cam thảo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương Maggi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành baro thái khúc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá kim cuộn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "giấm táo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà chua cherry cà chua thường hoặc cà chua bi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Vị Cà phê",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Vị Lá dứa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chân gà rút xương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngô tách hạt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hộp gr ậu hũ non",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cây hành hoa mùi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hột gà",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả cá thu cá măng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá bò kg làm sạch",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ường phèn viên nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ruốc ngon",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Phần mỳ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Phần rau ăn kèm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ậu cove",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "t tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau xanh ăn kèm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thơm xắt mỏng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Ngán",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành ta",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau húng lủi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Salicorne rau ngón biển",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chả giò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương hột ít mặn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nhỏ rau húng lủi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hanh timơt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành baro cắt nhỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "súp lơ trắng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xìa dầu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương hàn quốc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương bần",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tương hột cay Vân Nam",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Mỳ ý gói",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Bông so đũa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bông kim châm khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ba chỉ liền dải",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thơm chín",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngồng su hào",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cần tây hành khô gia vị",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ba chỉ chia miếng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá rong biển cuốn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ngò tây trang trí",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dền cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá dứa xay nhuyễn lấy ml",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm nớt nhỏ tôm nhỏ vỏ sẽ mềm nên không phải bóc vỏ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá rong biển cuộn cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau bò khai",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "màu cà phê",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước cốt dừa dão",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thơm bằm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu thực vật để chiên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Dầu thực vật để chiên",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá măng cắt khúc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau sống rau đắng húng quế diếp cá cải non tía tô hẹ rau càng cua rau muống chẽ ngò rídưa leo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá dứa g lá dứa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà chua cherry đủ màu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm cá rò",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cà rốt ngâm chua ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "húng chanh rau tần dầy lá",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Lá mơ lông",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm Belacan",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cơm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tôm nõn rim",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ức cá dứa nắng ức cá basa",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "vừng rang",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá húng quế",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "óc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "đùi gà góc tư rút xương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Nước đá dùng khi xay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau thơm các loại húng lủi húng quế húng cay diếp cá tía tô kinh giới lá sung lá cóc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "bánh gạo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "xà lách xoăn Friseline",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "to hành baro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Cá chay khô chay hoặc cá thu lát chay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dạ dày cá ba sa khoảng gram",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hành tây cà rốt ngâm chua ngọt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "khoai tím",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cơm trỏng tươi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mắm ruốc đặc",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá mắm cơm vừa ăn",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau cải rau cần rau chân vịt",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "măng tây nấm",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "mật mía Nghệ An",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước chấm thịt quay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "lá rong biển vài bánh tráng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "sốt xào nui mì",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "củ khoai sọ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "hỗn hợp rau củ đông lạnh đậu cà rốt bắp",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước tương tsuyu",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "dầu ăn đủ để chiên tôi dùng dầu trái bơ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cốt tomyum thật ra cái này là thói quen của mình không có không ảnh hưởng mọi người ạ cái lọ tomyum mình có để hình ở bài mì udon rồi mọi người cần thì xem ở đấy nhé",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nấm lộc nhung khô",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "ầu trắng hành boaro",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "chao môn hoặc các loại chao khác",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Gia vịmì chính nước tương",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Sốt xào rau củ",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Thính gạo",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá cơm trổng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cà ra khoảng gram",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "nước mám",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Rau húng quế Tây",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "thơm rim",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "rau húng cay húng lủi",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "Hành tỏiporo phi vàng",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá lóc chay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "tiêu đen",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá chay",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    },
+    {
+      "raw_name": "cá bánh đường",
+      "row_count": 1,
+      "reason": "< 50 rows, xử lý sau"
+    }
+  ],
+  "result": {
+    "total_fixed": 444,
+    "details": [
+      {
+        "raw_name": "nước tương",
+        "correct_id": 11828,
+        "ids_count": 203,
+        "rows_affected": "(dry run)",
+        "status": "OK"
+      },
+      {
+        "raw_name": "nước",
+        "correct_id": 6101,
+        "ids_count": 150,
+        "rows_affected": "(dry run)",
+        "status": "OK"
+      },
+      {
+        "raw_name": "Nước tương",
+        "correct_id": 11828,
+        "ids_count": 91,
+        "rows_affected": "(dry run)",
+        "status": "OK"
+      }
+    ]
+  }
+}

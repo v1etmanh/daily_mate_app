@@ -1,0 +1,125 @@
+Bạn là chuyên gia ẩm thực Việt Nam.
+
+Dưới đây là các cặp nguyên liệu. Mỗi cặp gồm:
+- raw_name      : tên nguyên liệu thô (có thể viết tắt, lỗi chính tả nhỏ)
+- mapped_to     : tên nguyên liệu chuẩn đang được gán
+
+Câu hỏi: "raw_name" này và "mapped_to" có phải là 2 nguyên liệu THỰC SỰ KHÁC NHAU không?
+Ví dụ: "hành lá" và "hành tím" → KHÁC NHAU thật sự
+        "hành lá" và "hành lá tươi" → GIỐNG NHAU (chỉ là cách gọi khác)
+        "hành" và "hành tím" → CÓ THỂ GIỐNG (hành thường = hành tím ở VN)
+
+────────────────────────────────────────────────────────
+pattern_id=3801 | raw="lá hẹ lớn" | mapped_to="lá" | dish="Canh hẹ nấu mọc thịt, đậu và nấm rơm"
+pattern_id=3802 | raw="nước cốt dừa dão" | mapped_to="nước dừa" | dish="Thịt bò xào lá cách"
+pattern_id=3803 | raw="nạc cà chua xay" | mapped_to="cà chua" | dish="Đùi Vịt Sốt Cà Chua, Nấm Mỡ & Olive Xanh"
+pattern_id=3804 | raw="bột cumin bột hạt thì là" | mapped_to="Bột (chung)" | dish="Đùi Vịt Sốt Cà Chua, Nấm Mỡ & Olive Xanh"
+pattern_id=3805 | raw="Gừng tỏi hành lá rau mùi gia vị" | mapped_to="hành lá" | dish="Thịt bò, vó bò xào bắp cải"
+pattern_id=3806 | raw="thơm bằm" | mapped_to="rau thơm" | dish="Cá ngừ hấp"
+pattern_id=3807 | raw="dầu thực vật để chiên" | mapped_to="dầu bơ" | dish="Nấm Kim Châm Cuộn Rong Biển Chiên Giòn Chay"
+pattern_id=3808 | raw="Dầu thực vật để chiên" | mapped_to="dầu bơ" | dish="Thịt Xíu Hội An"
+pattern_id=3809 | raw="bánh canh khô bạn có thể dùng bánh canh tươi nhen" | mapped_to="bánh" | dish="Bánh canh nấm, đậu và rong biển"
+pattern_id=3810 | raw="Cá măng cắt khúc" | mapped_to="măng" | dish="Cá măng (cá nhồng) sốt cà"
+pattern_id=3811 | raw="chả bì ớt xiêm xanh" | mapped_to="ớt" | dish="Lẩu Riêu Cua Đồng Bắp Bò Ngày Quốc Khánh 2/9"
+pattern_id=3812 | raw="Rau sống rau đắng húng quế diếp cá cải non tía tô hẹ rau càng cua rau muống chẽ ngò rídưa leo" | mapped_to="cua" | dish="Bánh Xèo Tôm Mực"
+pattern_id=3813 | raw="Nấm ớt chuông Tảo chile" | mapped_to="ớt" | dish="Tảo Chile xào nấm và ớt chuông"
+pattern_id=3814 | raw="rau thơm các loại Tía tô Kinh giới Húng lủi Húng quế Ngò gai" | mapped_to="kinh giới" | dish="Bún Đậu Thịt Luộc Mắm Tôm"
+pattern_id=3815 | raw="Hanh lahanh timtoitiêu" | mapped_to="gia vị" | dish="Canh tôm và mộc nấu khổ qua"
+pattern_id=3816 | raw="ngọt tuỳ sở thích" | mapped_to="đường" | dish="Nui Nấu Tôm Thịt"
+pattern_id=3817 | raw="lá dứa g lá dứa" | mapped_to="dứa" | dish="Bánh da lợn vân thủy"
+pattern_id=3818 | raw="cà chua cherry đủ màu" | mapped_to="trái cherry" | dish="Nấm Mỡ Xào Cà Chua Bi (Vegan)"
+pattern_id=3819 | raw="tôm đã lột vỏ bỏ đầu đuôi" | mapped_to="tôm thẻ loại to" | dish="Mì GÓI xào giòn với tôm-mực"
+pattern_id=3820 | raw="mắm cá rò" | mapped_to="nước mắm" | dish="Trứng Luộc Mắm Cá Rò"
+pattern_id=3821 | raw="tôm nõn đã bóc vỏ" | mapped_to="tôm thẻ loại to" | dish="Mì Gói Nấu Tôm Nõn & Cải Xoăn Kale"
+pattern_id=3822 | raw="lá bắp cải và đậu cove" | mapped_to="đậu que" | dish="Soup rau củ chay"
+pattern_id=3823 | raw="súp lơ xanh gram" | mapped_to="bông cải" | dish="Súp lơ xanh xào thịt bò"
+pattern_id=3824 | raw="tương ớt xí muội ăn kèm" | mapped_to="ớt" | dish="Thịt nhồi chuối xanh"
+pattern_id=3825 | raw="lá rau diếp" | mapped_to="lá" | dish="Bánh Mì Chay Kẹp Rau Củ Đơn Giản"
+pattern_id=3826 | raw="Cà rốt ngâm chua ngọt" | mapped_to="cà chua" | dish="Bánh Mì Chay Kẹp Rau Củ Đơn Giản"
+pattern_id=3827 | raw="Rau củ nhà còn bông cải trắng xanh cà rốt" | mapped_to="bông cải" | dish="Bento box 14: cơm nắm gochujang + trứng cuộn + thịt bò xào + rau củ"
+pattern_id=3828 | raw="hành tây vài nhánh hành lá" | mapped_to="hành lá" | dish="Lươn đồng xào rau ngổ"
+pattern_id=3829 | raw="bột báng" | mapped_to="Bột (chung)" | dish="Chè xoài bột báng thạch rau câu"
+pattern_id=3830 | raw="vó bò" | mapped_to="thịt bò" | dish="Nấm ngọc châm, cà rốt xào thịt bò và vó bò"
+pattern_id=3831 | raw="húng chanh rau tần dầy lá" | mapped_to="chanh" | dish="Canh CÁ nấu khế & húng chanh"
+pattern_id=3832 | raw="ậu hũ nấm mèo hoặc đậu hũ trắng bình thường" | mapped_to="nấm mèo" | dish="Lá mơ lông cuốn đậu hũ"
+pattern_id=3833 | raw="Lá mơ lông" | mapped_to="mơ" | dish="Lá mơ lông cuốn đậu hũ"
+pattern_id=3834 | raw="thịt ngựa bạch thái mỏng" | mapped_to="Thịt ngựa" | dish="Thịt ngựa bạch nhúng mẻ"
+pattern_id=3835 | raw="Rau nêm om ngò gai" | mapped_to="rau om" | dish="Canh chua tôm, đầu mực"
+pattern_id=3836 | raw="rau Húng lủi" | mapped_to="húng láng" | dish="Gỏi Bưởi Hồng Cơm Dừa Tôm Thịt"
+pattern_id=3837 | raw="lá xà lách tuỳ sở thích" | mapped_to="lá" | dish="Sandwich tôm"
+pattern_id=3838 | raw="bột chiên khô rau củ tùy ý đậu bắp carrot khoai" | mapped_to="cà rốt" | dish="Còi sò điệp lăn bột, rau củ ngũ sắc sốt xì dầu cho bé"
+pattern_id=3839 | raw="nạc xay có mỡ" | mapped_to="mỡ" | dish="Chả cốm xanh làm với chả cá thác lác"
+pattern_id=3840 | raw="Tỏi băm gia vị hành lá mùi tàu" | mapped_to="hành lá" | dish="Khoai tây, bí ngô xào thịt bò"
+pattern_id=3841 | raw="mắm Belacan" | mapped_to="nước mắm" | dish="Đậu Đũa Xào Sa Tế Tôm và Mắm Belacan Malaysia"
+pattern_id=3842 | raw="cá cơm" | mapped_to="cơm" | dish="Cá cơm, lạc đỏ rang mắm tỏi"
+pattern_id=3843 | raw="Sốt ướp sườn" | mapped_to="sốt" | dish="Sườn Heo Nướng Tảng"
+pattern_id=3844 | raw="tôm nõn rim" | mapped_to="ram tôm" | dish="Canh rau muống tôm nõn"
+pattern_id=3845 | raw="ức cá dứa nắng ức cá basa" | mapped_to="dứa" | dish="Ức Cá Dứa Kho Tiêu"
+pattern_id=3846 | raw="vừng rang" | mapped_to="đậu phộng" | dish="Cá cơm, lạc đỏ rang mắm tỏi"
+pattern_id=3847 | raw="ớt chuông đỏ vàng" | mapped_to="ớt" | dish="📣 Thịt bò xào húng quế kiểu Thái 🥩🫑🧅🌿"
+pattern_id=3848 | raw="lá húng quế" | mapped_to="quế" | dish="📣 Thịt bò xào húng quế kiểu Thái 🥩🫑🧅🌿"
+pattern_id=3849 | raw="xúc xích heo" | mapped_to="thịt heo" | dish="Mì tobokki phomai xúc xích heo"
+pattern_id=3850 | raw="cá lóc chỉ lấy phần xương" | mapped_to="cá lóc" | dish="Canh ngót rau cần nước"
+pattern_id=3851 | raw="tương đen của trung dark soy sauce" | mapped_to="sốt" | dish="Thịt kho với giò"
+pattern_id=3852 | raw="bắp bò" | mapped_to="thịt bò" | dish="Bắp bò luộc kiểu Hàn 사태수육"
+pattern_id=3853 | raw="đuôi bò" | mapped_to="thịt bò" | dish="Phở đuôi bò, gà"
+pattern_id=3854 | raw="Rau sông xà lachhung luihung quêdiêp cá" | mapped_to="rau sống" | dish="Phở Cuốn Thịt Heo"
+pattern_id=3855 | raw="Hat nêm muôi" | mapped_to="gia vị" | dish="Mì Udon Gà Và Nấm Đông Cô"
+pattern_id=3856 | raw="óc" | mapped_to="hạt óc chó" | dish="Óc heo hầm ngải cứu"
+pattern_id=3857 | raw="thịt ba chỉ bò Mỹ" | mapped_to="Thịt ba chỉ" | dish="Bò cuộn nấm kim châm nướng BBQ"
+pattern_id=3858 | raw="Gừng hành tỏi khô ớt khô gia vị" | mapped_to="gia vị" | dish="Cá rô phi nấu nấm, cải xoong"
+pattern_id=3859 | raw="đùi gà góc tư rút xương" | mapped_to="xương gà" | dish="Thịt gà chiên xù"
+pattern_id=3860 | raw="Tắc ớt xả" | mapped_to="ớt" | dish="Tai heo trộn rong sụn sốt thái"
+pattern_id=3861 | raw="Cá không da" | mapped_to="lườn cá" | dish="Chả cá"
+pattern_id=3862 | raw="là băm" | mapped_to="thì là" | dish="Chả cá"
+pattern_id=3863 | raw="Nước đá dùng khi xay" | mapped_to="nước dùng" | dish="Chả cá"
+pattern_id=3864 | raw="rau thơm các loại húng lủi húng quế húng cay diếp cá tía tô kinh giới lá sung lá cóc" | mapped_to="Hành ngò" | dish="Nấm Đùi Gà Trộn Thính"
+pattern_id=3865 | raw="bánh gạo" | mapped_to="gạo" | dish="Bánh gạo cay ăn kèm ba chỉ bò áp chảo"
+pattern_id=3866 | raw="xà lách xoăn Friseline" | mapped_to="cải xoăn" | dish="Salad Friseline Trộn Cá Cơm Muối"
+pattern_id=3867 | raw="to hành baro" | mapped_to="hành lá" | dish="Bánh gạo cay ăn kèm ba chỉ bò áp chảo"
+pattern_id=3868 | raw="mini brie cheese" | mapped_to="phô mai" | dish="Xoài cuộn đùi heo muối 🇪🇸"
+pattern_id=3869 | raw="Cá chay khô chay hoặc cá thu lát chay" | mapped_to="Cá chày" | dish="Cá chay sốt cà chua"
+pattern_id=3870 | raw="đọt lá chùm ruột non" | mapped_to="lá" | dish="Lá Chùm Ruột Xào Thịt"
+pattern_id=3871 | raw="bánh sandwich" | mapped_to="sandwich" | dish="Súp kem thịt gà khoai sọ + sandwich 🍞"
+pattern_id=3872 | raw="dạ dày cá ba sa khoảng gram" | mapped_to="bao tử heo" | dish="Dạ dày cá ba sa nướng"
+pattern_id=3873 | raw="Bọt chiên xù" | mapped_to="vụn bánh mì" | dish="Thịt nạc dăm heo chiên xù kiểu Nhật"
+pattern_id=3874 | raw="bột hạt mùi" | mapped_to="Bột (chung)" | dish="Cá hồi muối"
+pattern_id=3875 | raw="Rau xanh tuỳ sở thích" | mapped_to="rau sống" | dish="Mì udon hầm rau củ Eatclean"
+pattern_id=3876 | raw="hành tây cà rốt ngâm chua ngọt" | mapped_to="cà chua" | dish="Chả Cá Trộn Rau Muống"
+pattern_id=3877 | raw="khoai tím" | mapped_to="khoai mỡ" | dish="Khoai Tím Nấu Chả Mọc Tôm"
+pattern_id=3878 | raw="rong rau câu xu xoa" | mapped_to="rong biển" | dish="Thạch rau câu (xu xoa)"
+pattern_id=3879 | raw="cá cơm trỏng tươi" | mapped_to="cơm" | dish="Canh Cá Cơm Trỏng Nấu Ngót"
+pattern_id=3880 | raw="sữa hạt yến mạch" | mapped_to="sữa" | dish="Rau câu sữa hạt"
+pattern_id=3881 | raw="cá thu máu cá ngừ khoảng kg" | mapped_to="cá ngừ" | dish="Cá ngừ kho dứa (thơm)"
+pattern_id=3882 | raw="mắm ruốc đặc" | mapped_to="nước mắm" | dish="Bầu chần tôm kho đánh ruốc Huế"
+pattern_id=3883 | raw="cá mắm cơm vừa ăn" | mapped_to="cơm" | dish="Cá Mắm Sốt Cà Chua (chua ngọt)"
+pattern_id=3884 | raw="mứt dâu tằm" | mapped_to="mứt" | dish="SP.0932 - Cá Hồi Áp Chảo Sốt Dâu Tằm & Salad Giấm Mè"
+pattern_id=3885 | raw="nước bột bắp" | mapped_to="Bột (chung)" | dish="SP.0932 - Cá Hồi Áp Chảo Sốt Dâu Tằm & Salad Giấm Mè"
+pattern_id=3886 | raw="mì udon" | mapped_to="mì" | dish="Mì udon nấu cà chua, ớt chuông, nấm kim châm"
+pattern_id=3887 | raw="Hành tía tô lá lốt" | mapped_to="hành lá" | dish="Đầu cá lăng nấu thịt chuối đậu"
+pattern_id=3888 | raw="Riềng xay mẻ bột nghệ mắm tôm gia vị" | mapped_to="Bột (chung)" | dish="Đầu cá lăng nấu thịt chuối đậu"
+pattern_id=3889 | raw="sốt nấm hương" | mapped_to="sốt" | dish="Mì Trứng Trộn Sốt Nấm Hương"
+pattern_id=3890 | raw="tim gan cật heo" | mapped_to="thịt heo" | dish="Mì Trứng Trộn Sốt Nấm Hương"
+pattern_id=3891 | raw="rau mùi ngò gai rau răm rau thơm" | mapped_to="rau răm" | dish="Gỏi Sứa Trộn Dưa Rau Muống"
+pattern_id=3892 | raw="ớt chuông xanh vàng đỏ" | mapped_to="ớt" | dish="Thịt Heo Rừng Xào Cải Chua Ớt Chuông"
+pattern_id=3893 | raw="sốt lẩu chua hải sản" | mapped_to="sốt" | dish="Lẩu cá diêu hồng chua cay dịp 30.4"
+pattern_id=3894 | raw="Xôi chè tráng miệng" | mapped_to="xôi" | dish="Lẩu cá diêu hồng chua cay dịp 30.4"
+pattern_id=3895 | raw="sách bò đã làm sạch" | mapped_to="thịt bò" | dish="Sách bò xào dứa"
+pattern_id=3896 | raw="Rau cải rau cần rau chân vịt" | mapped_to="cần tây" | dish="Bún tôm Hải Phòng"
+pattern_id=3897 | raw="măng tây nấm" | mapped_to="măng" | dish="Canh cá thì là"
+pattern_id=3898 | raw="mật mía Nghệ An" | mapped_to="củ nghệ" | dish="Tôm rang thịt ba chỉ + dứa"
+pattern_id=3899 | raw="thịt heo bò băm" | mapped_to="thịt bò" | dish="Thịt Băm Sốt Đậu Hủ Non Cà Chua"
+pattern_id=3900 | raw="nước chấm thịt quay" | mapped_to="nước thịt kho" | dish="Thịt Heo Quay Kho Sa Tế Nước Dừa"
+────────────────────────────────────────────────────────
+
+Trả về DUY NHẤT JSON array, không markdown, không giải thích.
+Mỗi phần tử:
+{
+  "pattern_id"  : <số nguyên, giữ nguyên>,
+  "verdict"     : "DIFFERENT" | "SAME" | "UNCERTAIN",
+  "reason"      : "<lý do ngắn tối đa 10 từ tiếng Việt>"
+}
+
+- DIFFERENT : 2 nguyên liệu thực sự khác nhau → mapping SAI thật
+- SAME      : thực ra là cùng một nguyên liệu (dù tên hơi khác) → mapping ĐÚNG, đánh nhầm
+- UNCERTAIN : quá mơ hồ, không đủ context để kết luận

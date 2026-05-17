@@ -1,0 +1,1214 @@
+pattern_id,raw_name,wrong_name,wrong_en,row_count,dish_examples,verdict,reason,row_ids
+1,nước tương,nước,water,203,Tôm rim bơ tỏi | Cơm Chiên Gà Rau Củ,DIFFERENT,Nước tương và nước lọc là hai loại lỏng khác nhau,"20933,20946,20979,21145,21436,21481,21523,21563,21594,21633,21660,21889,22557,22830,22946,22969,23058,23109,23340,23767,23946,23974,24441,24457,25075,25378,26849,27123,27344,27819,27934,28296,28342,28535,28639,28721,29072,29165,29254,29492,29798,29823,29864,30098,30153,30167,30256,30345,30486,30504,31057,31077,31125,31155,31204,31307,31394,31455,31474,31548,31595,31645,31660,31716,31751,32091,32244,32322,32779,32850,32884,33065,33073,33154,33195,33255,33273,33431,33493,33689,33734,33930,33967,34029,34808,35270,35387,35480,35501,35512,35595,35695,35871,36815,36938,37019,37318,37381,37389,37512,37602,37634,37650,37813,38014,38086,38094,38315,38461,38618,38867,39037,39210,39238,39365,39385,39528,39551,40264,40634,40798,40804,41348,41388,42077,42149,42186,42263,42314,42436,42526,42665,42807,44709,46158,46466,46490,46549,46979,47339,47430,47501,47574,47821,47909,47917,48032,50083,51067,51112,51196,51242,51511,52871,52901,53196,53232,53550,53567,53625,53726,53815,53831,53843,54126,54302,54576,58495,60229,60892,60907,60913,60932,60998,61008,61077,61621,61652,61768,62028,62177,62185,62275,62319,62418,62441,62590,62876,62900,62925,63040,63274,63379,63486,63517,63664,63721,63765,63843,63915,63951,64100,64130"
+2,nước,nước dừa,coconut water,150,"Hải sản Phú Quý hấp: mực ống, cua gạo, cua mặt trăng và nhum tươi | Mỳ trộn tôm thịt sốt cà",DIFFERENT,Nước lọc và nước dừa có bản chất khác nhau,"20864,21031,21399,21462,21583,21615,21623,21904,22086,24361,25143,25247,25265,25454,25828,26414,26438,26995,27269,27379,27531,27685,27886,28019,28038,28280,28496,29059,29169,29250,29537,29554,30002,30039,30725,30773,31137,31168,31295,31696,31923,32260,32366,32547,32555,32565,32898,33037,33823,33858,33873,34084,34300,34363,34741,34774,34811,34943,35007,35018,35130,35191,35416,35573,35744,36079,36194,36242,36823,36877,37462,37654,38524,38753,38841,38909,39322,39353,39371,39772,39844,39931,40595,40604,40992,41084,41269,41273,41833,42097,42123,42439,42466,42499,42669,42974,43164,43459,44275,44583,44600,44672,45047,45366,45472,45486,45535,45639,45784,46256,46302,46433,46808,47364,47715,47830,48184,49307,49964,50917,51610,52921,52972,53313,53360,53792,53959,54032,54104,54351,61097,61102,61411,61476,61669,61881,62019,62486,62550,62605,62947,63124,63296,63447,63748,63780,63862,63886,64152,64418"
+3,Nước tương,nước,water,91,Miến xào tôm thịt | Bí Nụ Xào Nấm Hoàng Kim Chay,DIFFERENT,Nước tương và nước lọc không cùng loại,"23047,24514,24617,24965,25243,25316,25438,25916,26024,26239,26318,26352,26642,27423,27450,27466,27471,27480,27863,27929,28089,28250,28287,28805,29089,29962,30329,30639,31528,31601,31702,31746,31823,31833,32022,32253,32558,32660,33054,33548,33712,33856,34095,34164,34373,34437,34451,34495,34856,35102,35690,36043,36313,36564,36631,36705,36727,36840,36953,37179,37416,37489,37578,37595,38145,38354,39641,39981,41776,42403,42534,43124,43268,44235,45291,45651,46835,47063,47260,50953,51444,51487,53846,60956,61352,61846,62399,63901,64006,64588,64646"
+4,dầu mè,Mè (Vừng),sesame seeds,80,Mì Đuôi Heo Hầm Ngũ Trân | Mì Nấu Rau Muống Tóp Mỡ,DIFFERENT,"Dầu mè là chất béo, mè là hạt nguyên bản","21104,21222,21249,21524,21659,21708,21905,22475,22919,23043,23145,23296,23976,24098,24188,24496,24502,25836,26856,29100,29328,30258,31741,32185,32540,33068,33100,33840,33965,34047,34056,34255,35672,35747,35797,37021,37167,37210,37685,38205,38308,39545,39560,40495,40806,41520,41737,41778,42012,42151,42316,42919,43673,44865,46492,46981,47740,47998,48169,49919,49945,50170,54057,54372,54531,54554,54568,58496,59463,61278,61405,62179,62356,62803,62901,63047,63458,63796,64417,64492"
+6,thơm,rau thơm,herbs,54,"Canh Chua Chả Cá Hố, Rau Sam, Bông Giờ | Salad ớt chuông thịt bò",DIFFERENT,"Thơm (dứa) là trái cây, rau thơm là rau gia vị","15987,19818,20894,20971,21355,21953,22328,22351,22390,23349,23564,23904,24688,24781,25226,25416,25799,25812,25990,26101,27198,27432,27951,28788,28823,28863,28959,29994,30043,30466,30782,31118,32864,34328,35950,36558,37323,37987,38110,40859,41000,41750,42292,46973,60970,60989,61123,61525,61544,62130,62329,62828,62962,64204"
+9,bột nghệ,Bột (chung),flour,41,Bí ngòi nhồi thịt bò bỏ lò | SP.0823 - Cá Basa Nướng Muối Sả Nghệ,DIFFERENT,"Bột nghệ là gia vị, bột chung quá mơ hồ","21980,22316,22647,24630,25002,27764,28218,29862,30210,31546,32031,32460,32537,32860,33232,33817,35117,35189,35567,36588,37002,38172,38597,40920,41039,41336,41938,43356,46539,47743,49331,49981,50892,51514,53710,58498,61653,61679,62801,62994,64109"
+10,củ cà rốt,bã củ cà rốt,carrot pulp,38,Chả giò hải sản sốt mayo | Mực xào rau củ xốt chua cay,DIFFERENT,Củ tươi và bã sau khi ép là khác nhau,"6019,6079,6354,6506,6604,7407,8182,8937,9045,12036,13230,13237,13371,13426,13454,14582,14710,16704,17206,18049,18052,18143,18406,19630,19636,19672,19703,19865,19966,19989,19993,20132,20500,20555,20567,20637,20756,20798"
+11,tương ớt,ớt,chili pepper,37,Tôm rim bơ tỏi | Đậu bắp hấp sốt thịt bằm,DIFFERENT,"Tương ớt là sốt chế biến, ớt là quả tươi","20934,22162,22999,24143,24786,26674,28307,29013,29025,29650,30060,30522,30570,30825,31661,32230,32385,32778,32933,33056,35006,35369,35438,35727,35783,38619,45360,45864,50095,53557,54498,54525,61731,61780,61807,62420,63009"
+13,bột canh,Bột (chung),flour,33,Mực Trứng Hấp Gừng | Cá nục một nắng,DIFFERENT,"Bột canh là gia vị mặn, không phải bột nền","21204,21986,22434,26287,26309,27167,27666,28707,29237,29396,30010,30441,30568,31620,32178,33156,33352,33371,33685,33698,33772,34136,34318,34507,37823,39082,45356,45499,46332,46624,46967,62305,63924"
+14,cải trắng,cải thảo,napa cabbage,31,Bún rau củ chay | Gỏi Cuốn Thịt Xá Xíu & Hoa Sen Cạn,DIFFERENT,Cải trắng (củ cải) khác hoàn toàn cải thảo,"8293,10126,22955,23935,27735,28021,28301,30157,31840,32209,33484,34132,34635,37610,38673,38946,39103,39111,39118,39709,39855,41749,41798,43137,43206,44286,45092,45397,46860,47263,48165"
+15,Nước,nước dừa,coconut water,31,Bánh Xèo Bò Trứng | Canh Cá nấu dưa,DIFFERENT,Nước và nước dừa là hai thành phần khác nhau,"25503,27030,28365,29294,29855,29970,30497,36121,37063,38360,38887,42685,43083,43804,44013,49891,53123,53257,54236,54293,63890,64249,64297,64356,64368,64386,64427,64474,64501,64551,64635"
+16,thịt bò,thịt bê,veal,30,Thịt Bò Xào Cà Chua Dưa Leo | Trứng Chiên Thịt Bò,DIFFERENT,Thịt bò và thịt bê là hai độ tuổi khác nhau,"6299,7133,10129,11168,11171,11591,11778,12008,12323,12332,12361,12554,12562,12692,13041,13192,13335,14351,15069,17163,17373,17376,17797,18111,18378,18728,18775,19220,20313,20411"
+18,Hành phi,hành tím,shallot,27,Gỏi Ức Gà Rau Tiến Vua | Súp Sò Điệp Bong Bóng Cá,DIFFERENT,"Hành phi là thành phẩm, hành tím là nguyên liệu tươi","6201,9043,10156,11885,12179,17268,20247,20344,51894,52645,54621,57142,57143,57148,57698,57881,57975,58069,58138,58362,59485,59486,59645,59711,60424,60428,60573"
+20,nước cốt dừa,nước dừa,coconut water,27,CÀ RY rau củ quả | Cà ri TÔM với chuối sáp,DIFFERENT,Nước cốt dừa đậm đặc hơn nước dừa,"21537,23980,26916,29803,30245,30410,30965,32294,33659,37327,37374,37772,39421,39568,39579,40063,40425,40467,41145,41153,41318,43576,44053,44781,45563,47948,49881"
+22,Dầu mè,Mè (Vừng),sesame seeds,27,Cà tím cuộn đậu hũ hấp (món chay) | Củ Sen Kẹp Tôm Chiên Giòn,DIFFERENT,"Dầu mè là chất béo, vừng là hạt","23274,25187,25462,25613,26221,31367,31591,32251,32493,34323,34859,34901,34934,35810,36047,36956,37233,37582,37928,41297,41801,42634,42909,43148,51043,51446,51453"
+23,hành phi,hành tím,shallot,26,Gỏi bắp cải rau má | Canh khoai mỡ nấu tép khô thịt xay,DIFFERENT,Hành phi và hành tím tươi trạng thái khác nhau,"7344,7714,9304,11101,11889,12281,13141,13671,14217,14979,15413,16455,16714,16717,17861,20617,53506,56960,57495,58443,58832,60431,60508,60509,60839,60841"
+24,me,lá me,tamarind leaves,26,Canh chua chả cá chiên | Canh chua cá bông lau,DIFFERENT,Me (quả/sốt) khác với lá me,"21357,22312,23159,23406,23902,24318,25802,26235,26960,29075,29483,30044,32906,33556,34154,37357,38490,39598,46174,47461,50802,53967,60649,60982,61861,63786"
+25,măng tây,măng,bamboo shoots,25,Nui Tóc Tiên Nấu Chả Tôm Quết & Măng Tây | Steak bò sốt phomai,DIFFERENT,Măng tây và măng tre là hai loài khác nhau,"21256,22018,23084,23284,23326,23556,23569,23937,24471,26828,29630,31468,34736,35322,35824,36513,36980,39810,42079,42879,43175,45228,46659,53898,62893"
+26,rau cần,cần tây,celery,24,"Bánh đa Quỳnh Côi xào giò, rau cần nước | Canh Cải Thảo Nấu Thịt Bằm",DIFFERENT,Rau cần (nước) khác với cần tây,"9268,11331,12201,12590,13213,17038,19685,25174,26195,27999,29265,30013,30192,30769,33261,37312,37324,38715,39309,39518,41894,42743,42771,43535"
+28,Tương ớt,ớt,chili pepper,22,Gỏi chả+heo quay | BÒ KHO ĐƠN GIẢN - AI Cũng LÀM ĐƯỢC,DIFFERENT,"Tương ớt là hỗn hợp, không phải quả ớt","23645,25219,26971,28016,28173,29582,32161,32603,33150,34928,35210,35938,37665,37722,41961,45121,47258,47295,47436,47598,47702,47945"
+32,dầu olive,ô liu,olive,20,Bí Đỏ Um Bò Bằm | Salad Thanh Cua Dâu Tây Sốt Sữa Chua Thì Là,DIFFERENT,"Dầu olive là chất béo, ô liu là quả","22198,29590,31967,35276,36577,37012,38521,41363,41401,45189,45838,45899,45947,47798,49065,49951,50897,51312,53156,62561"
+37,tôm biển,tôm viên,shrimp balls,17,Tôm nõn rim mắm | Dưa gang trộn tôm bóc nõn,DIFFERENT,Tôm biển tươi khác với tôm viên chế biến,"11370,11581,17352,17613,19057,21053,21304,22689,27649,29192,30182,35174,35817,40828,41734,41897,46856"
+39,bột ngũ vị hương,Bột (chung),flour,17,Thịt heo một nắng | Thịt ba rọi 1 nắng áp chảo,DIFFERENT,Ngũ vị hương là gia vị hương liệu,"21713,21811,23140,27181,30722,31038,32092,34805,35230,39212,41054,41536,45775,51078,51266,53594,61961"
+40,củ cải trắng,cải thảo,napa cabbage,16,HỦ TIẾU đuôi heo | Canh Xương Heo Hầm Rau Củ,DIFFERENT,Củ cải trắng khác hoàn toàn cải thảo,"6279,6963,8266,11447,13312,13455,14194,14525,14568,15087,15559,16937,19469,19635,19648,20755"
+41,bắp non,bắp ngọt,sweet corn,16,Sườn Heo Hầm Bắp Non | Cá dấm trắng chiên giòn sốt chua ngọt,DIFFERENT,Bắp non và bắp ngọt là hai giai đoạn/loại,"7272,15697,17915,51766,52006,56132,57612,57613,57697,57793,57878,57977,58266,59282,59775,59781"
+42,giấm,dầu giấm,vinaigrette,16,Cơm sốt tôm chua ngọt 칠리새우덮밥 | Salad thanh cua dưa leo lạnh,DIFFERENT,"Giấm là thành phần, dầu giấm là sốt trộn","13972,21392,26376,27655,31745,31953,32391,34430,36879,38024,39758,40878,45939,46620,46869,53145"
+47,khoai sọ,khoai môn,taro,15,Súp kem khoai sọ thịt heo 🥓mộc nhĩ | Súp kem thịt gà khoai sọ + sandwich 🍞,DIFFERENT,Khoai sọ và khoai môn là hai loại khác nhau,"11564,12823,13183,13526,16502,19254,19309,19338,23821,26510,27372,29174,44312,47037,61253"
+48,bột cà ri,Bột (chung),flour,15,Cà ri TÔM với chuối sáp | Chân nấm đông cô xào lăn,DIFFERENT,Bột cà ri là hỗn hợp gia vị,"23979,32429,34026,36192,37775,38363,40068,40468,40512,40657,41025,42475,44345,53433,63012"
+53,Bột nghệ,Bột (chung),flour,14,Cơm bento: Gà con ham học (Dưa chua xào thịt quay) | Cơm bento: Thịt nạc rang cháy cạnh,DIFFERENT,"Bột nghệ là gia vị, không phải bột nền","21292,23199,24060,24330,24726,24914,28053,30370,32895,35461,36094,39684,44941,46912"
+54,mắm nêm,nước mắm,fish sauce,14,Tim Heo Luộc Chấm Mắm Nêm | Cá chìa vôi nướng muối ớt,DIFFERENT,Mắm nêm và nước mắm có vị khác biệt,"27658,29227,29734,36910,37399,38954,43862,52880,52920,53782,61079,61821,62103,63255"
+55,nước hầm xương,nước,water,13,Canh nước hầm xương nấu bí xanh và nấm đùi gà | SP.0988 - Bánh Canh Tôm Thịt Miền Tây,DIFFERENT,Nước hầm xương khác nước lọc thông thường,"6552,9442,11633,13967,16462,18025,18144,19016,22747,24698,25101,25296,42559"
+59,bột gà,Bột (chung),flour,13,Mì Đuôi Heo Hầm Ngũ Trân | Bún Riêu Cua Đồng Giò Heo,DIFFERENT,Bột gà (hạt nêm) là gia vị,"21105,21168,21479,21836,22215,22222,22262,22418,22465,22687,32182,42362,60975"
+60,Nước chấm,nước,water,13,Mực Trứng Hấp Gừng | Cá Chim Trắng Biển Hấp Gừng Kèm Rau Củ,DIFFERENT,"Nước chấm là sốt pha, không phải nước lọc","21203,28798,28810,29680,30453,34522,36593,37115,40074,40505,40622,44370,44682"
+61,dầu hào chay,chay,vegetarian,13,Nộm rong sụn nấm đùi gà (món chay) | Đậu hũ non sốt nấm kim châm (món chay),DIFFERENT,"Dầu hào chay là gia vị, chay là khái niệm","21684,23947,23961,25074,25379,31549,33494,35388,35940,37651,46465,63983,64113"
+65,thịt xay,thịt vịt,duck,12,Nui sao nấu hẹ thịt băm | Canh cà chua thịt xay tép khô,DIFFERENT,Thịt xay (thường là heo) khác thịt vịt,"8072,8136,8176,15601,15808,15812,18283,19878,20420,21118,60698,61444"
+69,su hào,su su,chayote,12,Thịt HEO kho sệt | Món canh với các loại củ và thịt xay,DIFFERENT,Su hào và su su là hai loại quả/củ khác,"21969,22152,23410,26576,27545,30787,32039,40883,46616,50668,53424,63253"
+70,rau càng cua,cua,crab,12,Rau càng cua trộn bò trứng | Gỏi rau càng cua thịt bò,DIFFERENT,"Rau càng cua là thực vật, cua là động vật","22821,22888,22898,22931,22958,28589,36548,37258,37914,39754,46865,61180"
+72,bột hành,Bột (chung),flour,12,Thịt lợn nướng ướp kiểu Hàn Quốc | Bắp GIÒ heo khìa nước dừa,DIFFERENT,Bột hành là gia vị hương liệu,"24500,29975,32887,34169,34906,35333,44858,47406,47505,54216,54422,62030"
+77,mì trứng,Trứng gà,Chicken Egg,11,Mì trứng xào rau | Mì trứng xào tôm nõn,DIFFERENT,"Mì trứng là sợi mì, không phải quả trứng","7248,8253,9987,10014,10022,10983,12504,12555,16465,16492,18587"
+78,Rau ăn kèm,lá lốt,betel leaves,11,Mực Trứng Hấp Gừng | Bún cá nấu thơm (dứa)| Lẩu cá chay,DIFFERENT,"Rau ăn kèm quá chung, lá lốt quá cụ thể","21200,24523,24898,24911,25010,25022,28565,28717,43986,45809,47261"
+79,mắm ruốc,nước mắm,fish sauce,11,Bún Bò Quảng Nam | Bún bò tái giò heo,DIFFERENT,Mắm ruốc đặc khác với nước mắm lỏng,"24084,31263,32271,36365,36903,38298,39077,39502,45528,60180,64620"
+81,mực lá,lá,leaves,11,Phở sắn chiên giòn sốt mực xào rau củ chua ngọt | Mực Sốt Thái,DIFFERENT,"Mực lá là hải sản, lá là bộ phận cây","25410,27069,32985,37222,42490,45058,48066,54848,61511,61529,63644"
+82,Thơm,rau thơm,herbs,11,Cá Đổng Nấu Ngót | Cá trạch kho xả,DIFFERENT,Thơm (dứa) khác hoàn toàn rau thơm,"26082,29983,31852,33350,34572,34770,35009,44221,44501,47293,50801"
+85,dưa chuột,dưa chua,pickled mustard,10,Nộm giò rau củ | Salad tôm bóc nõn - #healthy,DIFFERENT,Dưa chuột tươi khác dưa chua đã muối,"9981,11650,11828,13036,13495,16408,17575,20072,20499,23816"
+86,mì,bánh mì,bread,10,"Mì gói xào rau muống tóp mỡ | Mì Ý sốt kem, thịt băm, củ dền",DIFFERENT,Mì gói và bánh mì là hai loại khác biệt,"20879,21647,22854,23608,23909,26026,35725,38281,44959,64266"
+91,lá dứa,dứa,pineapple,10,Xôi cua | Tàu hủ nước đường làm bằng rau câu dẻo,DIFFERENT,Lá dứa (thơm) khác quả dứa (thơm/khóm),"33090,35021,37832,43449,43458,44277,45037,47535,53208,63826"
+92,tôm càng xanh,tôm thẻ loại to,shrimp,9,Canh khoai tây cà rốt nấu tôm càng xanh | Lẩu ghẹ hải sản chua ngọt,DIFFERENT,Tôm càng xanh và tôm thẻ là loài khác,"7005,10266,18531,22724,23128,23156,24191,24310,28808"
+97,giấm gạo,gạo,rice,9,Bún Riêu Cua Đồng Giò Heo | Cá Nục Nấu Ngót,DIFFERENT,"Giấm gạo là chất lỏng chua, gạo là hạt","21169,22216,22419,22596,22968,32464,41257,53538,62527"
+100,bột tỏi,tỏi,garlic,9,Phi Lê Cá Lóc Áo Bột Chiên Giòn | BÒ viên,DIFFERENT,"Bột tỏi là gia vị khô, tỏi là củ tươi","26604,30030,30250,32886,34168,38131,41015,41037,41887"
+102,húng quế,quế,Cinnamon,9,Gỏi Xoài Khô Cá Sặc | Gỏi Củ Cải Tôm Càng Nướng,DIFFERENT,"Húng quế là rau, quế là vỏ thân thảo dược","29894,32215,33290,37452,37865,50067,62416,63492,64439"
+104,tôm nõn,tôm thẻ loại to,shrimp,8,Củ niễng xào tôm nõn | Canh cải thìa tôm thịt,DIFFERENT,"Tôm nõn là tôm bóc vỏ, không nhất thiết là tôm thẻ","6768,8658,13713,17010,18071,21177,21704,53191"
+107,lòng trắng trứng,Trứng gà,Chicken Egg,8,Bánh qui nấm | Mực viên chiên,DIFFERENT,"Lòng trắng là một phần, trứng gà là nguyên quả","9562,18858,19164,23634,29478,34904,43181,53160"
+109,nước màu,nước,water,8,Cá lăng kho lạt | Cá Kèo Kho Thịt Ba Rọi,DIFFERENT,"Nước màu là gia vị, nước là chất lỏng trung tính","22632,22677,31228,33508,35172,35553,36675,39491"
+110,Mắm nêm,nước mắm,fish sauce,8,Bún mắm nêm tai heo | Mì lá cuốn cá cam nướng,DIFFERENT,Mắm nêm và nước mắm là hai loại mắm khác nhau,"23403,25060,28932,30604,31515,38108,39435,62345"
+111,đùi gà,nấm đùi gà,king oyster mushroom,8,Nấm ngọc tẩm xào thịt gà | Đu đủ kho thịt,DIFFERENT,"Đùi gà là thịt, nấm đùi gà là thực vật","23715,25702,40969,51245,60706,61695,62069,63451"
+114,Nước màu,nước,water,8,Cá bống biển kho mặn | Cá đối kho hành ớt,DIFFERENT,"Nước màu là caramen, khác hoàn toàn nước lọc","27208,30131,36112,37221,43393,44225,52257,53398"
+115,tim heo,thịt heo,pork,8,Tim Heo Luộc Chấm Mắm Nêm | Tim Heo Xào Đậu Que Cà Rốt,DIFFERENT,"Tim heo là nội tạng, thịt heo là phần cơ","27652,31623,34415,36439,40873,41005,41008,41041"
+116,bánh canh,bánh,cake,8,Bánh canh cua thịt gà | Bánh canh cua giò heo,DIFFERENT,"Bánh canh là sợi bột, bánh là từ quá chung","30387,33340,36898,39110,45614,45929,49931,63016"
+121,Rau cần,cần tây,celery,7,"Canh Khoai Tây Nấu Rau Cần, Cà Chua, Thì Là | Canh chua rau cần rong biển",DIFFERENT,Rau cần (cần ta) khác với cần tây,"7044,10305,10422,10700,19817,39572,44919"
+123,nấm lộc nhung khô,nấm kim châm,enoki mushroom,7,Miến Xào Nấm Lộc Nhung Chay | NẤM lộc nhung xào bí nụ,DIFFERENT,Nấm lộc nhung và nấm kim châm là hai loại khác nhau,"9228,9252,12067,12831,14370,15257,15724"
+128,bắp ngô,râu bắp ngô,corn silk,7,Cơm Chiên Gà Rau Củ | Nem thịt dọn tủ,DIFFERENT,"Bắp ngô là hạt/cùi, râu bắp là bộ phận khác","20941,21849,24958,25680,32367,33043,62843"
+130,Hành khô gia vị,gia vị,seasoning,7,"Rau muống xào mướp, giá đỗ | Canh rau ngót nấu cá",DIFFERENT,"Hành khô là nguyên liệu cụ thể, không phải gia vị chung","22754,22867,23442,27306,60518,60793,62952"
+132,Dầu hào chay,chay,vegetarian,7,Bí Nụ Xào Nấm Hoàng Kim Chay | Bông Kim Châm Kho Rau Củ Chay,DIFFERENT,"Dầu hào là gia vị, chay là tính chất món ăn","24513,25244,28187,30496,35400,46399,64022"
+133,Giấm,dầu giấm,vinaigrette,7,Lẩu đầu cá hồi nấu măng chua | Gỏi thốt nốt tôm thịt,DIFFERENT,Giấm và dầu giấm (sốt trộn) khác nhau,"26810,27239,31366,32241,32284,33764,43875"
+134,Hành hoa,nước,water,7,Bún tôm Quảng Ninh | Cá chim nướng mỡ hành,DIFFERENT,"Hành hoa là rau, nước là chất lỏng","29767,31061,32435,33559,34502,34991,36425"
+135,nước màu dừa,nước dừa,coconut water,7,Thịt Heo Kho Cùi Dừa 🥥 | Cá Bạc Má Kho Măng,DIFFERENT,"Nước màu dừa là nước hàng, khác nước dừa tươi","29776,51278,53136,54501,62054,63088,64578"
+136,dấm táo,táo,apple,7,Thịt Chiên Giòn Sốt Chua Ngọt Hàn Quốc (Tangsuyuk) | Salad Tôm Xào Tỏi Rau Quả Sốt Mù Tạt,DIFFERENT,"Dấm táo là chất lỏng chua, táo là trái cây","34779,36579,43603,45837,50876,53157,61178"
+137,hành khô,hành tây,onion,7,Canh măng mực | Mực xào su hào,DIFFERENT,Hành khô (tím) và hành tây là hai loại khác nhau,"51495,55353,55601,60008,63235,63734,64725"
+140,đậu hủ trắng,đậu trắng,white beans,6,"Bún Gạo Lứt Nước Lèo Cà Chua Nấm Hương Chay | Đậu Hủ Kho Thịt Băm, Nấm Hương Sốt Nước Tương",DIFFERENT,"Đậu hủ làm từ đậu nành, khác đậu trắng hạt","7748,9792,9823,11527,12316,18480"
+141,rau cần nước,cần tây,celery,6,Rau cần nước nấu cá | Cá LÓC xào rau cần nước,DIFFERENT,Cần nước và cần tây là hai loại khác nhau,"7970,9167,17854,18185,23573,27414"
+142,hành khô,hành lá,green onion,6,Canh măng mực | Lẩu tôm bầu,DIFFERENT,Hành khô và hành lá là hai bộ phận/loại khác,"8677,8746,8861,17572,52225,54437"
+143,đậu hũ trắng,đậu hũ trứng,egg tofu,6,Đậu hũ chiên nước mắm | Chả đậu hũ bắp nấm rong biển dọn tủ,DIFFERENT,Đậu hũ trắng và đậu hũ trứng khác thành phần,"13087,14031,14237,14249,17480,18256"
+146,tôm bóc nõn,tôm thẻ loại to,shrimp,6,Mì Gói Nấu Tôm Nõn & Đậu Que Vàng | Bánh Canh Nấm Hải Sản,DIFFERENT,Tôm bóc nõn không nhất thiết là tôm thẻ to,"21183,48067,52989,53311,61185,63571"
+147,Bò,bò viên,beef balls,6,Bò Xào Cải Xoăn Kale | Xà Lách Trộn Thịt Bò,DIFFERENT,"Bò là thịt tươi, bò viên là thực phẩm chế biến","21813,31277,34245,43494,46133,48094"
+149,lá chanh,chanh,lime,6,Chà bông cá thu | Bún riêu hải sản,DIFFERENT,Lá chanh và quả chanh dùng mục đích khác nhau,"22421,30186,34250,42318,42949,64701"
+150,cá điêu hồng,cá hồng,snapper,6,Cá điêu hồng kho bầu | Lẩu gà và cá điêu hồng chua ngọt...🍅🌶🌽,DIFFERENT,Cá điêu hồng và cá hồng là hai loài khác,"22634,33120,34529,41099,42898,45553"
+153,Nước trộn gỏi,nước,water,6,Gỏi hoa chuối tôm thịt | Gỏi tôm rau muống,DIFFERENT,"Nước trộn gỏi là hỗn hợp gia vị, không phải nước","23371,24294,29952,30394,34484,41865"
+154,bò,bò viên,beef balls,6,Lẩu cá diêu hồng | Canh chua bò,DIFFERENT,"Bò là thịt tươi, bò viên là dạng chế biến","24312,27745,30235,38183,45136,58564"
+155,Rau càng cua,cua,crab,6,Nộm rau càng cua | Canh rau càng cua,DIFFERENT,"Rau càng cua là thực vật, cua là động vật","24484,31678,35035,35773,41862,62851"
+158,nước lá dứa,dứa,pineapple,6,Rau câu giòn lá dứa | Rau câu trứng,DIFFERENT,Lá dứa (lá nếp) khác quả dứa (thơm),"26413,28283,30412,33661,43578,44119"
+159,dừa,nước dừa,coconut water,6,"Bánh canh phồng tôm | Cá ngân kho chuối xanh, cà chua",DIFFERENT,Cùi dừa/quả dừa khác với nước dừa,"26658,27111,37406,45767,49333,54202"
+161,Me,lá me,tamarind leaves,6,Lẩu đầu cá hồi nấu măng chua | Canh chua bò,DIFFERENT,Quả me/nước me khác với lá me,"26808,27752,36672,36749,41307,46285"
+164,Lá chanh,chanh,lime,6,Tôm rang chao lá chanh | Thịt nướng lá chanh,DIFFERENT,Lá chanh và quả chanh là hai bộ phận khác,"30813,32056,40918,46998,64167,64566"
+166,trai thơm,rau thơm,herbs,6,Canh cá dìa nấu thơm cà chua | Bún cá- chả cá - sứa Nha Trang,DIFFERENT,Trai thơm (quả dứa) khác rau thơm,"33394,34101,35217,36907,42848,46719"
+167,Dầu mè thơm,Mè (Vừng),sesame seeds,6,🌱 Canh Súp Mandu Rong Biển Đậu Hủ Chay | Miến Nấu Tôm Nấm và Rong Biển Wakame,DIFFERENT,"Dầu mè là chất béo, mè là hạt","33836,42207,44361,45096,50722,61848"
+168,bôt ngot,bột ngô,cornstarch,6,Chả giò hải sản | Tôm rim thịt,DIFFERENT,"Bột ngọt là gia vị, bột ngô là tinh bột","48729,48831,48855,48872,52324,61501"
+169,mắm tôm,nước mắm,fish sauce,5,Thịt bắp giò (đùi heo) nấu giả cầy | Lẩu Riêu Cua Đồng Bắp Bò Ngày Quốc Khánh 2/9,DIFFERENT,Mắm tôm và nước mắm có mùi vị khác biệt,"6626,9440,15107,18982,29784"
+171,ba chỉ,ba chỉ bò,beef belly,5,Thịt ba chỉ nướng NCKD | Bento box 13: Bánh bao thịt kho Đài Loan,DIFFERENT,Ba chỉ heo thường khác ba chỉ bò,"7164,19201,34669,41241,62333"
+172,tôm nhỏ,tôm thẻ loại to,shrimp,5,Canh cải con tôm thịt | Tôm thịt rang hẹ,DIFFERENT,Tôm nhỏ khác với tôm thẻ loại to,"8000,8001,10813,13109,48148"
+173,nấm lộc nhung,nấm kim châm,enoki mushroom,5,Củ sen kho nấm lộc nhung (món chay) | Súp lơ xào nấm lộc nhung (món chay),DIFFERENT,Nấm lộc nhung khác hoàn toàn nấm kim châm,"8049,8630,11791,12079,15134"
+174,Lòng trắng trứng,Trứng gà,Chicken Egg,5,Chả Đậu Hũ Lòng Trắng Trứng | Sandwich nhân tôm,DIFFERENT,Lòng trắng là một phần của trứng gà,"8071,10404,38299,41602,51381"
+175,bánh canh,bánh chả,meat pastry,5,"Bánh canh hẹ nấu cá | Bánh canh xào nấm đùi gà, cà chua, phô mai",DIFFERENT,"Bánh canh là sợi bột, bánh chả là quà vặt","8087,8785,9719,16338,16485"
+177,Rau ôm,rau má,pennywort,5,Canh chua thịt bò đậu hũ | Mì lá tươi nấu bò,DIFFERENT,Rau ôm (ngò om) khác hoàn toàn rau má,"9957,24883,35353,37358,37502"
+178,nấm hải sản,mỳ hải sản,instant noodles,5,Miến om hải sản | Bạch tuộc xào nấm,DIFFERENT,"Nấm hải sản là nấm, mỳ hải sản là món ăn","10616,11243,12139,13449,16340"
+179,sấu,bắp cải,cabbage,5,Cá mím nấu chua | Canh chua đầu cá hồng,DIFFERENT,"Sấu là quả chua, bắp cải là rau","10728,16109,18874,58838,63969"
+180,Nước sốt,nước cốt,extract,5,Cá dìa hấp mùng tơi | Nấm chiên chay,DIFFERENT,Nước sốt gia vị khác với nước cốt (dừa/thịt),"12211,13073,14283,14657,18371"
+183,Gừng hành tỏi,hành tỏi,garlic and onion,5,"Canh cá rô phi nấu nấm, cải xoong | Phi lê cá diêu hồng sốt cà chua",DIFFERENT,"Gừng hành tỏi là hỗn hợp, không chỉ hành tỏi","13975,16164,16167,16566,19483"
+186,húng lủi,húng láng,spearmint,5,Salad Cá Trích Xông Khói | Rau Diếp Cuốn Phi Lê Bò Áp Chảo & Kim Chi Chấm Sốt Ssamjang Hàn Quốc,DIFFERENT,Húng lủi và húng láng là hai loại khác nhau,"19677,19789,20511,59640,59863"
+188,hanh lá,lá,leaves,5,"Nấm rơm kho nước tương | Bún Bò Huế (Nạm bò, chân giò, xương bò, giò sống)",DIFFERENT,"Hành lá là rau cụ thể, lá là từ quá chung","21504,33951,36636,37712,52287"
+195,cá,cá hú,pangasius fish,5,Canh rau ngót nấu cá | Cá hấp nấm,DIFFERENT,"Cá là từ chung, cá hú là loài cụ thể","22865,34490,34668,37617,41098"
+196,gà,xương gà,chicken bones,5,Lẩu gà nấu nấm | Mì Quảng tôm gà trứng,DIFFERENT,Thịt gà khác với xương gà,"24013,24800,39706,39834,61707"
+198,Mắm tôm,Tôm muối,Salted shrimp,5,Đọt Su Su Luộc Chấm Mắm Tôm | Đậu hũ chiên chấm mắm tôm,DIFFERENT,"Mắm tôm là mắm lên men, khác tôm muối","26979,27055,29046,32912,33025"
+200,xương ống,xương gà,chicken bones,5,Mì Chũ cá chiên giòn | Bún ốc bò,DIFFERENT,Xương ống (heo) khác với xương gà,"28048,29037,29447,35340,45816"
+201,cá mó,cá sòng,horse mackerel,5,Cá Mó Chiên Xả Tỏi Ớt | Cá mó chiên muối tôm (NCKD),DIFFERENT,Cá mó và cá sòng là hai loài cá khác nhau,"28416,28443,28485,28610,44478"
+202,thìa cafe bột canh,Bột (chung),flour,5,Tự làm ruốc tôm ngon hơn hàng! | Canh thịt viên (món canh chung cho các loại rau củ),DIFFERENT,"Bột canh là gia vị hỗn hợp, không phải bột chung","30127,31556,40616,41174,41392"
+203,Hành tím tỏi,tỏi,garlic,5,[Món Chay] Rau câu sợi xào sò điệp chay | Mực xào cà ri satế,DIFFERENT,"Hành tím tỏi là hỗn hợp, không chỉ có tỏi","33152,39157,40943,54470,63361"
+204,cơm mẻ,cơm,cooked rice,5,Khế chua nấu dấm cá trắm | Giò heo giả cầy,DIFFERENT,"Cơm mẻ là gia vị lên men, không phải cơm","35085,43628,45715,60974,64053"
+205,hành hoa,nước,water,5,Đậu đũa cuộn thịt | Cháo cá song (mú),DIFFERENT,"Hành hoa là rau, không phải nước","36005,37892,62654,62667,62682"
+208,cần nước,cần tây,celery,4,Canh khoai tây rau cần | Canh ngót rau cần nước,DIFFERENT,Cần nước và cần tây là hai loại rau khác nhau,"6884,15322,27484,34343"
+209,bắp cải trắng,cải thảo,napa cabbage,4,Thịt Heo Ngũ Vị & Salad Bắp Cải Mentaiko | SP.0950 - Thăn Heo Rim Sốt Teriyaki,DIFFERENT,Bắp cải trắng và cải thảo là hai loại cải khác,"7473,11736,17515,19241"
+211,thịt má heo,hành lá,green onion,4,Cá ngừ kho củ cải khô | Cá nục tròn kho chuối xanh và củ cải khô,DIFFERENT,"Thịt má heo là thịt, hành lá là rau","8166,9592,9636,18641"
+212,hành khô,hành tỏi,garlic and onion,4,Canh củ nấu cá và rau cần | Phở sắn thịt băm sấu,DIFFERENT,"Hành khô là hành tím, không bao gồm tỏi","8408,9085,9568,17015"
+214,tôm,Tôm khô,Dried shrimp,4,Trứng chiên tép khô hải sản | Tôm Khô Sấy Nồi Chiên Không Dầu,DIFFERENT,Tôm tươi và tôm khô có tính chất khác nhau,"8560,18515,24205,40523"
+216,thịt lợn,ức gà,chicken breast,4,Heo kho tiêu | Thịt lợn rang dứa (trái thơm),DIFFERENT,Thịt lợn và ức gà là hai loại thịt khác,"8691,10407,11420,13225"
+218,bánh đa Quỳnh Côi,bánh phở,pho noodles,4,"Bánh đa Quỳnh Côi xào giò, rau cần nước | Bánh đa cá rô",DIFFERENT,Bánh đa và bánh phở làm từ bột gạo nhưng khác,"9269,16532,18824,18844"
+219,tương hột,tương ớt,chili sauce,4,Cá Hú Kho Tương Hột Nấm Hương | Phi lê cá điêu hồng chưng tương,DIFFERENT,"Tương hột làm từ đậu, khác với tương ớt","9409,26192,31454,41023"
+222,hành băm,hành tăm (củ nén),shallot,4,Cá dìa hấp mùng tơi | Thịt kho cơm dừa cho bé,DIFFERENT,"Hành băm là hành lá/tím, khác hành tăm (củ nén)","12214,33755,44261,45774"
+224,ngò,bột ngò,coriander powder,4,Món canh bí đỏ nấu tôm eatclean | Chả cá thác lác nhồi khổ qua,DIFFERENT,"Ngò là rau tươi, bột ngò là gia vị khô","12866,13067,13552,14575"
+225,tôm đất,tôm thẻ loại to,shrimp,4,Canh Cải Kale Nấu Tôm Đất | 🌿Lá bồ công anh xào tôm đất 🦐,DIFFERENT,Tôm đất và tôm thẻ là hai loài khác nhau,"12900,20526,25867,33589"
+233,Tỏi ớt,ớt,chili pepper,4,Gỏi rau muống | Phi lê cá lóc chiên mắm tỏi ớt,DIFFERENT,"Tỏi ớt là hỗn hợp, không chỉ có ớt","21116,23956,38336,38418"
+234,Hành lá hành tím,hành lá,green onion,4,Chả lụa kho nấm đùi gà | Mì chũ lứt với nạm bò hầm,DIFFERENT,Hỗn hợp hành lá hành tím không chỉ là hành lá,"21132,28008,30670,47016"
+235,củ su hào,su su,chayote,4,Canh Củ Dền Su Hào Nấu Thịt Heo | RAU CỦ ngâm nước mắm,DIFFERENT,Su hào và su su là hai loại củ khác nhau,"21698,53679,53797,62837"
+236,táo đỏ,táo,apple,4,Chè bắp nấm tuyết | Cháo hạt mix thịt gà 🍗 nấm 🍄táo đỏ,DIFFERENT,Táo đỏ khô khác với quả táo tươi thông thường,"21804,26663,45867,60856"
+240,tôm càng,tôm thẻ loại to,shrimp,4,Hủ tiếu trộn khô với tôm càng | Gỏi khoai môn TÔM càng,DIFFERENT,Tôm càng và tôm thẻ là hai loài cá biệt,"22733,23074,32105,34432"
+242,bắp chuối bào,chuối,banana,4,Bún bò gân chả bì đơn giản | Gỏi hoa chuối tôm thịt,DIFFERENT,"Bắp chuối là hoa chuối, không phải quả chuối","23359,23366,23377,30047"
+244,dầu mè đen,Mè (Vừng),sesame seeds,4,SP.0809 - Chén Thịt Hấp Trứng Gà | Cải thìa xào nấm hương,DIFFERENT,"Dầu mè là chất lỏng, mè (vừng) là hạt","24182,33368,33697,38973"
+246,cá điêu hồng kg,cá hồng,snapper,4,Phi Lê Cá Điêu Hồng Chiên Giòn Chấm Mắm Ngò | Phi lê cá điêu hồng chưng tương,DIFFERENT,Cá điêu hồng và cá hồng là hai loài khác,"25341,26189,44323,61672"
+247,Xương heo,thịt heo,pork,4,Món rau cải nấu với xương heo | Canh bóng bì rau củ,DIFFERENT,Xương heo và thịt heo có mục đích nấu khác,"26069,26122,31188,40773"
+249,nước màu hàng,nước,water,4,Cá Bò Ngừ Kho Heo Quay | Cá Liệt Lợ Kho Tiêu,DIFFERENT,"Nước màu là caramen, không phải nước lọc","26256,26368,26553,46863"
+250,mắm tỏi ớt,ớt,chili pepper,4,Cá Hố Chiên Xoài Bằm | Gỏi Bao Tử Heo,DIFFERENT,"Mắm tỏi ớt là nước chấm, không chỉ là ớt","26483,26578,38734,63151"
+251,quất,quả việt quất,blueberry,4,"Salad Thịt Bằm Trứng | Nộm thịt heo, giá đỗ, rau răm",DIFFERENT,Quất (tắc) khác hoàn toàn quả việt quất,"26530,29235,35128,61779"
+252,ường cát,cá hường,snapper,4,Đọt Su Su Luộc Chấm Mắm Tôm | Gỏi xơ mít trộn tôm và tai heo,DIFFERENT,"Đường cát là gia vị, cá hường là cá","26980,29117,31650,46944"
+256,thìa cafe dầu mè đen,Mè (Vừng),sesame seeds,4,"Nấm đùi gà áp chảo (ngày 3) | Cháo nấm chay thơm ngon, mát bổ (ngày 1)",DIFFERENT,"Dầu mè đen là tinh dầu, không phải hạt mè","27816,27895,33540,45502"
+258,đầu hành,nấm mèo,wood ear mushroom,4,🌱 Canh Nấm Mỡ Đậu Hủ Lá É (Vegan) | Cá kho rau răm (vị hơi nhạt),DIFFERENT,Đầu hành và nấm mèo hoàn toàn khác nhau,"28371,29914,31206,64440"
+259,Lá dứa,dứa,pineapple,4,Xôi vò thịt xá xíu | Chè táo đỏ nấm tuyết hạt sen mộc nhĩ phổ tai,DIFFERENT,Lá dứa và quả dứa (thơm) khác nhau hoàn toàn,"29805,29969,37411,46067"
+260,nước hàng,nước,water,4,Cá kho dưa | Cá kìm kho gừng,DIFFERENT,Nước hàng (caramen) khác với nước thường,"30037,31246,32572,59455"
+264,táo tàu,táo,apple,4,Canh Gà Hầm Nấm | Lẩu nấm thập cẩm,DIFFERENT,"Táo tàu là loại khô, khác táo tươi","31458,34577,44644,62256"
+268,Bánh tráng gạo,gạo,rice,4,Cuốn Bún Đậu Hủ Chấm Mắm Tôm | Gỏi Cuốn Ức Gà & Rau Củ Ngũ Sắc,DIFFERENT,"Bánh tráng gạo đã qua chế biến, không phải gạo","33019,36773,38550,38560"
+272,nươc côt dưa,dưa,pickles,4,Bánh Trung Thu Rau Câu Nhân Flan | Xôi lá cẩm thịt xá xíu,DIFFERENT,Nước cốt dừa khác với quả dưa (melon/cucumber),"35144,35887,37556,46745"
+274,Hành tỏi khô,tỏi,garlic,4,Ba chỉ rim đậu hũ | Cá phèn kho,DIFFERENT,"Hành tỏi khô gồm cả hành, không chỉ tỏi","41243,42725,43252,45661"
+276,mắm ruốc Huế,nước mắm,fish sauce,4,Thịt kho ruốc sả | Cơm gạo lứt thịt rang mắm ruốc,DIFFERENT,Mắm ruốc và nước mắm là hai loại khác biệt,"44537,52839,54084,54509"
+277,Dầu thực vật,dầu bơ,Avocado oil,4,Nui Xào Tôm Súp Lơ | Cua Lột Chiên Bột,DIFFERENT,"Dầu thực vật chung chung, không nhất thiết là dầu bơ","50967,52595,53006,58436"
+278,Hành khô,hành lá,green onion,4,"Bagels Bacon, Trứng, Phô Mai và Tôm | Cá trắm kho trám",DIFFERENT,Hành khô (tím) khác với hành lá,"51762,52009,52555,59571"
+280,tương đen,nước tương,Soy sauce,4,"Mì trộn rau củ | Sườn bò, bò viên hầm ăn với bánh mì",DIFFERENT,Tương đen và nước tương là hai loại khác,"52007,58943,63740,64342"
+281,rau húng lủi,húng láng,spearmint,4,Gỏi Đu Đủ Xanh Tôm Thịt | Gỏi nấm bào ngư chay,DIFFERENT,Húng lủi và húng láng là hai loại húng khác,"58203,58687,58938,61025"
+284,mắm tỏi ớt,hành tỏi ớt,garlic chili mix,3,Gỏi Rau Má Tôm Đất | Gỏi Thịt Bò Hoa Chuối,DIFFERENT,"Mắm tỏi ớt là nước chấm, không phải nguyên liệu thô","6055,6236,12484"
+287,ớt xanh đỏ,ớt xanh,green chili,3,Cá Chim Hấp Nước Tương Kiểu Hongkong | Đậu hũ và tàu hũ ky cuộn rim sả ớt (món chay),DIFFERENT,"Ớt xanh đỏ gồm cả ớt đỏ, không chỉ xanh","6431,9129,10670"
+288,Bắp non,bắp ngọt,sweet corn,3,Rau Củ Xào Ngũ Sắc | Bông cải baby xào bắp non & nấm hầu thủ,DIFFERENT,Bắp non và bắp ngọt là hai giai đoạn/loại khác,"6465,8805,59565"
+291,lát gừng,lá gừng,ginger leaves,3,Cá thu chiên không tanh | Óc Heo Chiên Trứng,DIFFERENT,"Lát gừng là củ, lá gừng là lá","6898,10427,20067"
+294,Thính gạo,bột gạo,rice flour,3,Chạo nấm chay | Da heo luộc trộn thính,DIFFERENT,"Thính gạo là gạo rang xay, khác bột gạo sống","7266,9391,10482"
+299,măng tươi,mồng tơi,malabar spinach,3,Thịt gà xào măng | Canh Giò Heo Nấu Măng,DIFFERENT,Măng tươi và mồng tơi là hai loại khác nhau,"8028,18086,18134"
+301,Nước đá,nước,water,3,Rau muống ngâm chua | Bí quyết để có GAN heo mềm ngon,DIFFERENT,Nước đá và nước thường khác nhau về trạng thái,"8281,16474,31836"
+304,hành phi,hành lá,green onion,3,Rau càng cua sốt dầu giấm | Bánh Tráng Cuốn Đậu Hủ Muối Tôm Hành Phi,DIFFERENT,"Hành phi làm từ hành củ, không phải hành lá","8838,17294,52469"
+305,ớt xay,ớt xanh,green chili,3,Bún BÒ xào Nam bộ | Đậu Hũ Lắc Sa Tế Chay,DIFFERENT,"Ớt xay thường là ớt đỏ, không phải ớt xanh","9225,12794,19321"
+310,dầu dừa,dừa,coconut,3,Pancake rau bina | Đậu hũ chấm mắm tôm với lá tía tô và kinh giới,DIFFERENT,"Dầu dừa là chất béo chiết xuất, không phải dừa quả","10726,33080,47676"
+316,Hành phi,hành tỏi,garlic and onion,3,Bún Riêu Cua Bắp Bò | Gỏi Rau Tiến Vua Chả Lụa,DIFFERENT,"Hành phi từ hành củ, không phải hành tỏi hỗn hợp","12433,52422,52641"
+318,mắm tỏi ớt,nước mắm,fish sauce,3,Gỏi Sứa Rau Muống | Cá Hố Chiên Xoài Bằm Mắm Tỏi Ớt,DIFFERENT,"Mắm tỏi ớt là nước chấm pha, không phải nước mắm nguyên chất","12917,18786,37628"
+322,vừng,dầu vừng,sesame oil,3,Thịt chiên vừng | Thịt xay rim cà chua,DIFFERENT,"Vừng là hạt, dầu vừng là chất béo chiết xuất","14798,14799,40808"
+323,bơ đậu phộng,đậu phộng,peanut,3,SP.0912 - Ba Rọi Heo Hồng Xíu | Bò Bía Chay,DIFFERENT,Bơ đậu phộng là sản phẩm chế biến từ đậu phộng,"14885,32600,47556"
+325,dầu hạt lanh,dầu hạt nho,grapeseed oil,3,"Salad Rau Diếp Xoăn, Bắp Cải Tím & Ức Gà Áp Chảo | Cá Đuối Luộc Súp Bouillon Kèm Đậu Hà Lan Cà Rốt",DIFFERENT,Hạt lanh và hạt nho là hai loại khác nhau,"16087,19559,19669"
+326,Nước hầm xương,nước,water,3,Bánh canh chả cá | SP.0750 - Mực Nhúng Giấm,DIFFERENT,"Nước hầm xương chứa đạm, khác nước lọc thường","16484,30306,47166"
+327,Tỏi ớt,tỏi,garlic,3,Cơm thịt khìa (kiểu cơm tấm Long Xuyên) | Cá cơm than hấp cuốn bánh tráng,DIFFERENT,"Tỏi ớt là hỗn hợp, không chỉ có tỏi","16572,19847,20924"
+335,lá kim,lá,leaves,3,Rau giá trộn lá kim | Lá kim cuốn đậu phụ rim,DIFFERENT,"Lá kim là rong biển, không phải lá nói chung","21247,21434,30255"
+336,mè,rau mè,perilla leaves,3,Salad thanh cua dưa leo lạnh | Thịt heo normandy và phô mai,DIFFERENT,"Mè là hạt, rau mè (lá mè) là rau","21394,41064,63744"
+337,dầu Olive,ô liu,olive,3,Trứng Chiên Dưa Leo Tôm Áp Chảo | Nấm Mỡ Sốt Bơ Tỏi,DIFFERENT,"Dầu olive là chất béo, ô liu là quả","21478,34705,61234"
+339,cá hồng,cá diêu hồng,tilapia,3,Cá Hồng một nắng sốt chua ngọt | Bún cá hồng chấm,DIFFERENT,Cá hồng và cá diêu hồng là hai loài khác nhau,"21856,27773,27832"
+341,phô mai con bò cười,thịt bò,beef,3,"Soup nấm, bí đỏ, phô mai | Hàu Nướng Phô Mai Con Bò Cười",DIFFERENT,Phô mai và thịt bò hoàn toàn khác nhau,"22177,28942,42719"
+342,cá cam,cam,orange,3,Cá cam kho tộ | Mì lá cuốn cá cam nướng,DIFFERENT,"Cá cam là loài cá, cam là trái cây","22355,25057,41432"
+345,rau củ hỗn hợp,rau sống,fresh herbs,3,Nem bơ hải sản | SP.0796 - Súp Tóc Tiên Thịt Viên,DIFFERENT,Rau củ hỗn hợp khác với rau sống,"22791,25458,26169"
+347,Mắm ruốc Huế,nước mắm,fish sauce,3,Bún bò gân chả bì đơn giản | Bánh canh cá lóc Huế,DIFFERENT,"Mắm ruốc làm từ con khuyết, khác nước mắm","23362,28482,32302"
+348,Nghệ tươi hoặc bột nghệ,Bột (chung),flour,3,Cá trê biển nấu hoa chuối | Đậu hũ xào nghệ lá lốt,DIFFERENT,Nghệ không phải là loại bột chung chung,"23536,53390,61702"
+350,thanh cua,cua,crab,3,"Súp tóc tiên óc heo,thanh cua và tôm | Snack thanh cua",DIFFERENT,"Thanh cua là giả cua, không phải cua thật","24175,35105,40950"
+351,bột rau câu dẻo,Bột (chung),flour,3,Rau câu cá chép | Rau câu nhãn kỹ tử,DIFFERENT,Bột rau câu là loại bột đặc thù,"24281,27974,37405"
+353,bánh đa,bánh tráng,rice paper,3,Mì Quảng tôm trứng | Mì Quảng tôm cua nấu bằng mì Chũ,DIFFERENT,Bánh đa nướng khác hoàn toàn bánh tráng mềm,"24895,28071,63374"
+356,Xương ống,xương gà,chicken bones,3,Lẩu riêu cua lông/ cà ra | Bún tôm Quảng Ninh,DIFFERENT,Xương ống (thường là heo/bò) khác xương gà,"25207,29764,36403"
+361,lá cà ri,lá,leaves,3,Bún hải sản chua ngọt thanh nhẹ | Bánh mì ciabatta kẹp tôm,DIFFERENT,Lá cà ri là loại lá gia vị cụ thể,"25777,43051,61813"
+366,mắm tép,tép,small shrimp,3,Thịt chưng mắm tép | Mắm tép chưng thịt,DIFFERENT,Mắm tép là sản phẩm lên men từ tép,"26638,43513,46519"
+369,gao,nghêu,clam,3,Cháo tim heo hạt sen | Cháo chân bò hầm đậu xanh,DIFFERENT,Gạo (viết thiếu dấu) khác hoàn toàn nghêu,"27385,31768,39695"
+370,nước tương tamari,nước,water,3,Bông Tỏi Ba Góc Xào Bò Bằm | Salad Cá Trích Xông Khói,DIFFERENT,"Nước tương Tamari là gia vị, không phải nước lọc","27859,50877,51038"
+371,Hành hoa hành khô,nước,water,3,Đậu non sốt nấm hành (món chay) | Đậu hũ xào mướp đắng,DIFFERENT,"Hành hoa hành khô là gia vị, không phải nước","28188,35392,39221"
+372,Nước tương Nhật,nước,water,3,Sushi Gan Cá Monkfish | Sushi Cơm Cuộn Bọc Trứng Cá Chuồn,DIFFERENT,"Nước tương Nhật là gia vị, không phải nước lọc","28630,28887,37426"
+373,Mắm cá cơm,cơm,cooked rice,3,CÁ TAI TƯỢNG chiên xù | Cá lóc nướng sa tế,DIFFERENT,Mắm cá cơm khác hoàn toàn cơm,"28954,41767,45032"
+374,hành tỏi băm nhỏ,tỏi,garlic,3,Ba Rọi Kho Quẹt Rau Luộc | Râu mực sốt me,DIFFERENT,"Hành tỏi là hỗn hợp, không chỉ có tỏi","28974,38662,62540"
+377,Bột mì,Bột (chung),flour,3,Bún cá lóc nấu dễ - nhanh - ngon | Cá Viên Chiên Từ Mì Gói,DIFFERENT,Bột mì là loại bột ngũ cốc đặc thù,"29282,44961,46770"
+378,cá cơm than,cơm,cooked rice,3,Cá cơm than nhúng dấm | Cá cơm kho cay,DIFFERENT,"Cá cơm than là cá, không phải cơm","29370,30588,35334"
+379,bột nếp,Bột (chung),flour,3,"Bánh nếp nhân thịt | Bánh ít Trần nhân đậu xanh, thịt băm",DIFFERENT,Bột nếp là loại bột từ gạo nếp,"29872,36852,63711"
+384,hẹ lá,lá,leaves,3,Bánh hỏi thịt nướng | Bún nghệ xào LÒNG HEO,DIFFERENT,"Hẹ lá là rau gia vị, không phải lá chung","30554,51500,53244"
+386,Cá ngừ,hộp cá ngừ,canned tuna,3,Cá ngừ đại dương áp chảo | Cơm chộn rong biển nhân cá ngừ,DIFFERENT,Cá ngừ tươi khác với cá ngừ đóng hộp,"31550,37206,61266"
+387,Nước cốt dừa,nước dừa,coconut water,3,Thạch rau câu sợi lá dứa – cốt dừa – café | Cá hồi sốt chanh dừa,DIFFERENT,Nước cốt dừa béo hơn nhiều so với nước dừa,"31651,36069,38533"
+394,chuối,hoa chuối,banana blossom,3,Cá kho riềng | 💚 Bánh Mì Sandwich Chuối & Phô Mai Bò Cười 😜,DIFFERENT,Chuối quả khác với hoa chuối,"33449,47113,63135"
+395,dầu mè thơm,Mè (Vừng),sesame seeds,3,Bánh Xếp Mandu Nhân Thịt & Kim Chi Cay Chiên Nước | Bánh Xếp Nhật Gyoza Nhân Thịt Chiên Áp Chảo,DIFFERENT,"Dầu mè là chất béo, mè là hạt","33926,47930,51235"
+396,whipping,đậu nành,soybeans,3,Rau câu nén vàng | Bánh trung thu rau câu,DIFFERENT,"Whipping cream là sữa bò, không phải đậu nành","34812,34944,35068"
+397,Nước tương cho bé,nước,water,3,Chả cá kiểu Nhật - Gà sốt cà rốt | Bò xào cà rốt cho bé,DIFFERENT,"Nước tương là gia vị, không phải nước lọc","34842,46137,48008"
+398,Nước chấm chua ngọt,nước,water,3,Cá Nướng Cuốn Bánh Tráng | Gỏi Cuốn Ức Gà & Rau Củ Ngũ Sắc,DIFFERENT,"Nước chấm là hỗn hợp pha, không phải nước lọc","35126,36780,41358"
+399,lá hẹ,lá,leaves,3,Gỏi cuốn tôm thịt | Canh đậu hủ giá hẹ (món chay),DIFFERENT,Lá hẹ là loại rau cụ thể,"36465,37631,40008"
+400,Bột hành,Bột (chung),flour,3,Bún cá cay | Nui bò bằm phô mai đút lò,DIFFERENT,"Bột hành là gia vị khô, không phải bột chung","37302,39623,42425"
+402,Rau củ hỗn hợp,rau sống,fresh herbs,3,Rau củ thuỷ tinh sốt thịt bằm | Nui rau củ,DIFFERENT,Rau củ hỗn hợp không nhất thiết là rau sống,"38081,39741,40301"
+403,Mỡ hành,mỡ,lard,3,Bánh tráng trộn cá viên chiên | Bánh tráng trộn thịt băm,DIFFERENT,"Mỡ hành là hỗn hợp mỡ và hành, khác mỡ nguyên","38557,38566,41765"
+404,Súp lơ,súp,soup,3,Cá hồi nướng sốt Teriyaki | Bánh mực cho bé,DIFFERENT,"Súp lơ là rau, súp là món ăn lỏng","39645,42654,64300"
+409,Nấm,nấm mèo,wood ear mushroom,3,Rau Củ Luộc Chấm Nước Mắm Dằm Trứng Lòng Đào | Mỳ Ý sốt kem nấm phiên bản dành cho em bé,DIFFERENT,Nấm nói chung khác hoàn toàn nấm mèo (mộc nhĩ),"43998,45740,46248"
+410,hành tím tép tỏi,tỏi,garlic,3,Mực xào sa tế cayy ngon xĩuuuuu 😋😋 #BEPVANG | Bò xào hẹ 😋😋 #bepvang,DIFFERENT,"Gồm cả hành tím và tỏi, không chỉ có tỏi","44157,44762,46701"
+413,nước tương HQ,nước,water,3,Đậu non rim nấm kim châm healthy | Đậu hũ rim Hàn Quốc - Mapo tofu,DIFFERENT,"Nước tương là gia vị, không phải nước lọc","49564,49923,53698"
+415,dầu thực vật,dầu bơ,Avocado oil,3,Mì Bò Stroganoff - Beef Stroganoff Pasta | Taco Heo Xé và Bắp Cải Trộn - Pulled Pork Tacos & Creamy Coleslaw,DIFFERENT,Dầu thực vật nói chung khác dầu bơ,"51576,55111,55432"
+418,Tôm càng xanh,tôm thẻ loại to,shrimp,2,Tôm Càng Nướng Phô Mai | Lẩu Tôm Càng Xanh Chua Cay,DIFFERENT,Tôm càng xanh khác hoàn toàn tôm thẻ,"5985,6262"
+420,hành phi,hành tỏi,garlic and onion,2,"Gỏi Rau Má Tôm Đất | Cháo Cá Nấu Bầu, Nấm Rơm, Trứng Vịt Lộn",DIFFERENT,"Hành phi chỉ làm từ hành, không có tỏi","6056,7003"
+423,thịt bò phile,thịt vai bò,beef shoulder,2,Vòng nguyệt quế (salad xà lách xoong trộn bò) | Bún thịt bò trụng,DIFFERENT,Thịt phi lê bò khác thịt vai bò,"6646,19716"
+426,Hành phi,hẹ,chives,2,Bún Nấm Cá Thác Lác Khổ Qua | Bánh Canh Gà Nấm Hẹ,DIFFERENT,"Hành phi làm từ hành tím, khác cây hẹ","6953,56883"
+428,Nấm hải sản,mỳ hải sản,instant noodles,2,Mì (bún) gạo lứt hải sản chua cay | Canh Nấm Hải Sản,DIFFERENT,"Nấm hải sản là nấm, mỳ hải sản là mỳ","7733,8695"
+430,Hành tím tỏi,hành tím,shallot,2,"Củ sen, ớt chuông và cà chua nhồi chả cá sốt cà | Cá Trích Kho Tiêu",DIFFERENT,"Gồm cả hành và tỏi, không chỉ hành tím","7809,11686"
+435,Rau bồ ngót Nhật,rau ngót,sweet leaf bush,2,"Canh bồ ngót Nhật và tôm mực | Canh tôm, bồ ngót Nhật, cà rốt",DIFFERENT,Rau bồ ngót Nhật khác rau ngót ta,"8119,29300"
+437,Măng tươi,mồng tơi,malabar spinach,2,Lẩu nấm lá é | Măng Xào Hành Tây Rau Răm Chay,DIFFERENT,Măng tươi khác hoàn toàn rau mồng tơi,"8225,8333"
+438,Cá mó,cá mối,fish,2,Cá Mó Chiên Sả | Cá Mó Chiên Giòn - 25 phút,DIFFERENT,Cá mó và cá mối là hai loài khác nhau,"8340,9198"
+443,t tươi,tỏi,garlic,2,Cá Sòng hấp cuốn bánh tráng rau sống | 🌱 Canh Súp Mandu Rong Biển Đậu Hủ Chay,DIFFERENT,"t tươi thường là ớt tươi, không phải tỏi","8835,58263"
+445,bóng cá chay,Cá chày,chub fish,2,Gỏi bóng cá chay trộn gỏi dưa leo siêu dễ làm | Bóng cá chay rim mè rang,DIFFERENT,Bóng cá chay khác cá chày (một loại cá thật),"8986,9101"
+446,Rau ngò,rau om,rice paddy herb,2,Súp Sò Điệp Bong Bóng Cá | Gỏi nấm tuyết,DIFFERENT,Rau ngò (ngò rí) khác rau om (ngổ),"9032,14860"
+451,Cần nước,cần tây,celery,2,"Ếch Xào Rau Cần Nước | Mì xào bò,cần nước",DIFFERENT,Cần nước khác hoàn toàn cần tây,"9299,34246"
+452,Hành lá ớt,hành lá,green onion,2,"Đậu Hủ Kho Thịt Băm, Nấm Hương Sốt Nước Tương | Cơm bento: Mèo con phơi nắng (Cá nục kho thơm)",DIFFERENT,"Hỗn hợp hành lá và ớt, không chỉ hành lá","9795,22352"
+453,củ khoai sọ,khoai môn,taro,2,"Canh cua rau rút khoai sọ | Canh cua nấu khoai sọ, rau muống, rau ngổ",DIFFERENT,Khoai sọ và khoai môn cùng họ nhưng khác loại,"10048,17663"
+459,hành khô,hẹ,chives,2,Thịt heo nướng lá lốt cuốn kèm lá mơ lông | Bạch tuộc xào nấm,DIFFERENT,Hành khô (hành tím) khác hoàn toàn hẹ,"10419,11255"
+461,bí non,bí xanh,winter melon,2,Bí non xào tôm nõn | Mì rau củ xào bò băm,DIFFERENT,Bí non (bí đỏ non) khác bí xanh (bí đao),"10507,41772"
+467,gạch cua đồng,Trứng cua,Crab roe,2,Sủi cảo xíu mại cua | Bún Riêu Cua Bắp Bò,DIFFERENT,"Gạch cua là cơ quan sinh sản, không phải trứng","11048,12432"
+470,Hành lá hành củ,hành lá,green onion,2,"Canh chua cá ngần | Thịt vịt xào măng, ớt chuông, hành tây",DIFFERENT,Gồm cả hành lá và hành củ,"11374,13062"
+472,Nấm lộc nhung khô,nấm kim châm,enoki mushroom,2,Canh bí xanh nấm lộc nhung | Miến xào rau cần nấm lộc nhung,DIFFERENT,Nấm lộc nhung khác hoàn toàn nấm kim châm,"11587,14219"
+474,Tỏi ớt,hành tỏi ớt,garlic chili mix,2,"Thịt heo xào húng Thái “Pad Krapow Moo” 🌿 | Gỏi mực nang, su hào",DIFFERENT,"Chỉ có tỏi ớt, thiếu hành","11982,13439"
+475,Tỏi hành tím,hành tím,shallot,2,SP.0941 - Thịt Bò Xào Ớt Chuông Tàu Xì | Bánh canh phồng tôm nấu tôm,DIFFERENT,Gồm cả tỏi và hành tím,"11994,14411"
+476,rau bồ ngót,rau bồng,sea vegetable,2,Canh Rau Ngót Nấu Mọc | Canh Rau Bồ Ngót Nấu Giò Sống,DIFFERENT,Rau bồ ngót khác rau bồng (rau bồng bồng),"12248,12267"
+479,Mắm tôm,nước mắm,fish sauce,2,Bún Riêu Cua Bắp Bò | Cá điêu hồng om dưa,DIFFERENT,Mắm tôm khác hoàn toàn nước mắm,"12435,44329"
+480,Hành ngò,hành lá,green onion,2,Canh bí đỏ thịt vai xay nấu con ruốc | Thịt vai heo kho củ cải,DIFFERENT,Ngò và hành lá là hai loại khác nhau,"12722,12732"
+482,hành lá hành củ,hành lá,green onion,2,"Măng sặt xào thịt bò | Canh thịt bò bằm nấu nấm hương tươi, khoai tây, cà rốt",DIFFERENT,Gồm cả hành lá và hành củ,"13061,14092"
+485,thịt sườn,ức gà,chicken breast,2,Thịt sườn kho nước dừa | Thịt sườn thăn kho nước dừa,DIFFERENT,Thịt sườn (heo) khác ức gà,"13927,20291"
+487,Hành khô hành lá,hành lá,green onion,2,Canh khoai lang nấu thịt bằm | Trứng đúc thịt băm rang,DIFFERENT,Gồm cả hành khô và hành lá,"14093,39123"
+488,Rau cần nước,cần tây,celery,2,Miến xào rau cần nấm lộc nhung | Bún cá nấu thơm (dứa)| Lẩu cá chay,DIFFERENT,Rau cần nước khác cần tây,"14218,24525"
+490,Rau ôm ngò gai,ngò gai,culantro,2,Canh bí đỏ thịt viên | Canh bí đỏ thịt xay gà xé,DIFFERENT,Rau ôm và ngò gai là hai loại khác nhau,"14549,19665"
+494,tương bần,nước mắm,fish sauce,2,Bò/bê luộc chấm tương bần | Cá trắm kho trám,DIFFERENT,"Tương bần làm từ đậu nành, khác nước mắm","15029,52008"
+495,mắm tép,nước mắm,fish sauce,2,"Thịt ba chỉ rim mắm tép | Mắm tép rang tôm khô, thịt",DIFFERENT,Mắm tép khác hoàn toàn nước mắm,"15054,16688"
+498,hành baro,hành lá,green onion,2,Bắp bò luộc kiểu Hàn 사태수육 | 순두부찌개- Canh đậu phụ non Hàn Quốc,DIFFERENT,Hành baro (tỏi tây) khác hành lá,"15230,53509"
+500,Mì trứng,Trứng gà,Chicken Egg,2,Mì bò đài loan | Lẩu Bò Tiềm (Bò Nạm và Bò Viên),DIFFERENT,"Mì trứng là sợi mì, không phải quả trứng","16001,43993"
+502,chay khô,chay,vegetarian,2,Cá mối kho chuối xanh | Cá thu vẩy sốt cà chua,DIFFERENT,"Chay khô là quả khô, chay là khái niệm chung","16569,16685"
+505,rau húng lủi,rau húng chó,mint,2,Gỏi Đu Đủ Xanh Tôm Thịt | Gỏi trái cóc tôm thịt,DIFFERENT,Húng lủi và húng chó là hai loại rau khác nhau,"16713,20302"
+509,cải đắng,cải thảo,napa cabbage,2,"Canh củ nấu cá quả, tôm | Canh gà nấu cải đắng và nấm đông cô",DIFFERENT,Cải đắng và cải thảo là hai loại cải khác nhau,"17499,17878"
+510,lá húng quế bạc hà,bạc hà,mint,2,Phở khô trộn nấm đông cô (món chay),DIFFERENT,Lá húng quế và bạc hà khác hoàn toàn nhau,"17570,53228"
+515,tàu hủ,tàu hũ ky,tofu skin,2,Cá rô phi chiên giòn(món chay) | Tàu hủ và thịt sốt sa tế,DIFFERENT,"Tàu hủ là đậu hũ miếng, khác tàu hũ ky","18889,35840"
+517,nõn tôm biển,tôm viên,shrimp balls,2,Mì Quảng Xào Tôm Thịt Eat Clean,DIFFERENT,Nõn tôm tươi khác với tôm viên chế biến,"19272,61263"
+532,Rau củ,rau sống,fresh herbs,2,Mì UDON tươi xào rau củ | Phở xào tôm 🦐,DIFFERENT,Rau củ xào khác với rau sống ăn kèm,"21584,45333"
+536,mỡ hành,mỡ,lard,2,Bánh Canh Bột Xắt Cá Lóc | Đậu Hũ Trứng Chà Bông Mỡ Hành,DIFFERENT,"Mỡ hành là hỗn hợp, mỡ là chất béo thô","22467,31925"
+543,miến tỏi đen,tỏi,garlic,2,Miến tỏi đen nấu thịt | Miến tỏi đen xào thịt ba rọi,DIFFERENT,"Miến làm từ tinh bột, tỏi là gia vị","23279,24221"
+544,Bột ngũ vị hương,Bột (chung),flour,2,Thịt ba rọi chiên (nhanh gọn) | Bò né cuốn bánh tráng 🥩🍀,DIFFERENT,"Ngũ vị hương là gia vị, không phải bột nền","23391,33713"
+549,mì gạo,gạo,rice,2,Mì xào trứng rau ngót | Mì gạo thịt băm,DIFFERENT,"Mì gạo là sợi mì, gạo là hạt nguyên bản","23754,44962"
+555,bột rau câu,Bột (chung),flour,2,Rau câu cam | Rau câu sữa dừa lá cẩm,DIFFERENT,"Bột rau câu là chất tạo đông, không phải bột","24230,39420"
+556,Nước tương dầu hào,nước,water,2,"Nấm đùi gà kho gừng, xả, ớt | Nấm đùi gà kho tiêu",DIFFERENT,"Nước tương, dầu hào là gia vị, không phải nước","24423,27996"
+558,Nước luộc gà,thịt gà,chicken,2,Gà nấu nấm và mì lá tươi | Eatclean / Cháo Yến Mạch Thịt Bằm Nấm + Trứng Lòng Đào,DIFFERENT,"Nước luộc gà là lỏng, thịt gà là rắn","24795,44439"
+559,Húng quế,quế,Cinnamon,2,Mì lá tươi nấu bò | Canh Mực Nấu Mướp Húng Quế,DIFFERENT,"Húng quế là rau thơm, quế là vỏ cây","24884,64366"
+560,Lá gừng,gừng,ginger,2,Nấm Kho Lá Gừng Chay | Nấm Hấp Lá Gừng Chay,DIFFERENT,Lá gừng và củ gừng có công dụng khác nhau,"25070,50122"
+563,vẹm xanh,rau thơm,herbs,2,"Cháo hải sản (vẹm xanh và mực) | Bào Ngư, Sò Điệp, Vẹm Xanh, Ốc Bulot, Tôm Hùm Đất- Sốt Cajun Bơ Tỏi",DIFFERENT,"Vẹm xanh là hải sản, không phải rau thơm","25273,45163"
+564,Mắm ruốc,nước mắm,fish sauce,2,Canh Khế Bò Mắm Ruốc | Thịt kho mắm ruốc,DIFFERENT,Mắm ruốc và nước mắm dạng thức khác nhau,"25325,45669"
+565,Chanh dây,chanh,lime,2,Đậu hũ sốt chanh dây hạt chia | Cá hồi sốt chanh dây,DIFFERENT,Chanh dây khác hoàn toàn chanh thường,"25352,31196"
+569,nước màu dừa nước hàng,nước dừa,coconut water,2,Thịt Kho Hạt Dẻ | THỊT om chuối đậu (phiên bản nhà tôi),DIFFERENT,Nước màu khác nước dừa,"25558,53371"
+570,bánh canh bột gạo,Bột (chung),flour,2,"Bánh canh chả cá, cá lóc | Bánh canh xương bò viên",DIFFERENT,"Bánh canh là sợi, không phải bột khô","25572,35339"
+575,Cá cam,cam,orange,2,Canh chua cá cam | Bún cá cam,DIFFERENT,"Cá cam là cá, cam là trái cây","25837,47289"
+578,ngô,bột ngô,cornstarch,2,Sandwich nấm chay | Bánh bao nguyên cám bò ngô cheese,DIFFERENT,Ngô nguyên hạt khác với bột ngô,"25940,47975"
+581,cà rôt,cà tím,eggplant,2,Mì Ý Spaghetti Xốt Nấm Chay | Bánh Mandu Hấp Nhân Tôm Thịt,DIFFERENT,Cà rốt và cà tím là hai loại khác nhau,"26132,34199"
+582,Giấm gạo,gạo,rice,2,Canh cá chim nấu ngót | Rau củ xào chay sốt chua ngọt,DIFFERENT,"Giấm gạo là lỏng, gạo là hạt","26246,28252"
+587,giá đậu xanh,đậu xanh,mung beans,2,Canh Chua Tôm Măng Trúc | Mì Cay Nongshim Nấm & Thịt Trai (Vẹm Đen),DIFFERENT,"Giá là mầm cây, đậu xanh là hạt","26867,41849"
+588,cá lạc,đậu phộng,peanut,2,Cá lạc kho nghệ tươi | SP.0777 - Cá Lạc Đút Lò,DIFFERENT,"Cá lạc là động vật, đậu phộng là thực vật","26899,26903"
+590,nước cốt chanh dây,chanh,lime,2,Mực Sốt Thái | Râu Mực Sốt Thái,DIFFERENT,Chanh dây khác hoàn toàn chanh thường,"27071,28577"
+598,Sa tế chay,chay,vegetarian,2,Đậu phụ xào sa tế - Ngày 5 | Đậu hủ tứ xuyên chay,DIFFERENT,"Sa tế là gia vị, chay là khái niệm","27979,44007"
+600,chanh dây,chanh,lime,2,Salad chanh dây cải xoong Nhật với cá sòng | Phile cá diêu hồng chiên giòn sốt chanh dây,DIFFERENT,Chanh dây khác hoàn toàn chanh thường,"28042,63530"
+601,ngồng tỏi,tỏi,garlic,2,"Ngồng tỏi, ớt chuông xào chả cá thác lác | SP.0691 - Thăn Heo Xào Ngồng Tỏi",DIFFERENT,"Ngồng tỏi là mầm hoa, khác với củ tỏi","28058,41227"
+602,Pha nước trộn,nước,water,2,Gỏi rau càng cua chay | Rau càng cua trộn chay,DIFFERENT,"Nước trộn là hỗn hợp gia vị, không phải nước lọc","28276,30856"
+605,mắm ruốc huế,nước mắm,fish sauce,2,Thịt xào mắm ruốc | Bò nhúng mắm ruốc,DIFFERENT,"Mắm ruốc là mắm đặc, khác với nước mắm","28494,37966"
+606,hành tím tỏi,tỏi,garlic,2,Lẩu mắt má heo | Mì Quảng gà cá tôm,DIFFERENT,"Gồm cả hành tím và tỏi, không chỉ có tỏi","28694,51346"
+612,rổ rau càng cua,cua,crab,2,Gỏi gà bắp cải càng cua | Gỏi Càng Cua Gà Vàng Pháp 🇫🇷,DIFFERENT,"Rau càng cua là thực vật, cua là động vật","29390,47189"
+614,hành hương,nấm hương,shiitake mushroom,2,🌱 Đậu Hủ Chiên Sốt Tương Dầu Hành Chay (Vegan) | Bánh xèo cá kình,DIFFERENT,"Hành hương là hành củ, không phải nấm hương","29795,34088"
+616,hat nêm chay,chay,vegetarian,2,"Canh chay rong biển đậu hủ nấm kim châm | Canh chua chay đậu hủ trắng,nấm kim châm và cà chua",DIFFERENT,"Hạt nêm là gia vị, không phải món chay","29838,34888"
+621,rau quế,quế,Cinnamon,2,SP.0750 - Mực Nhúng Giấm | SP.0885 - Cuốn Rau Thơm Chấm Thịt Kho,DIFFERENT,"Rau quế là húng quế, khác vỏ cây quế","30312,61761"
+623,Hành tây hành lá,hành lá,green onion,2,Bánh canh cua thịt gà | Mực sa tế,DIFFERENT,"Gồm hành tây và hành lá, không chỉ hành lá","30388,43090"
+624,Tỏi gừng ớt,ớt,chili pepper,2,Cá bơn chiên giòn | Bắp bò ngâm mắm trộn gỏi xoài,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ có ớt","30894,42682"
+625,chanh ớt,ớt,chili pepper,2,Bún đậu cua | Bún khế chả cá,DIFFERENT,"Hỗn hợp chanh và ớt, không chỉ có ớt","31223,32706"
+627,Tỏi hành băm,tỏi,garlic,2,Thịt bò sốt teriyaki cho người giảm cân | Rau Cải Bó Xôi Xào Thịt Bò,DIFFERENT,"Hỗn hợp tỏi và hành, không chỉ có tỏi","32027,43606"
+628,thính gạo rang,gạo,rice,2,Bì Cuốn Nấm Chay | Lạp Bò Lào - Gỏi Bò Lào 🇱🇦,DIFFERENT,"Thính là bột gạo rang, khác với hạt gạo","32691,38935"
+629,Bột,bột tỏi,garlic powder,2,Bánh BÒ nướng chảo | Há Cảo Nhân Tôm Thịt,DIFFERENT,Bột làm bánh khác hoàn toàn với bột tỏi,"32714,50097"
+634,Cần,cần tây,celery,2,Mực mai (mực nang) xào su su | Mực luộc bia,DIFFERENT,Cần (cần ta) khác với cần tây,"33792,37058"
+636,mắm ruốc chà Huế,nước mắm,fish sauce,2,Bún Bò Huế Tái Nạm | Thịt Kho Mắm Ruốc Sa Tế,DIFFERENT,Mắm ruốc khác hoàn toàn nước mắm,"33881,37568"
+639,Rau,rau răm,vietnamese coriander,2,"Ức gà áp chảo vị chanh cùng rau củ | Mì, hủ tiếu giò heo",DIFFERENT,"Rau là từ chung, rau răm là loại cụ thể","33999,41214"
+641,Hành khô hành hoa,nước,water,2,Thịt viên tứ hỉ (thịt viên đầu sư tử) | Cà tím xào thịt băm rang,DIFFERENT,"Hành khô hành hoa là rau, không phải nước","34111,36523"
+642,hành tỏi,tỏi,garlic,2,Ruột Heo Khìa Nước Dừa | Bánh mì thịt khìa,DIFFERENT,"Hỗn hợp hành tỏi, không chỉ có tỏi","34277,42089"
+646,cá cơm khô,cơm,cooked rice,2,Gỏi Cá Cơm Khô | Cá cơm rim ăn chơi,DIFFERENT,"Cá cơm là cá, cơm là tinh bột","34874,36200"
+647,Boaro,nấm mèo,wood ear mushroom,2,"Canh chua chay đậu hủ trắng,nấm kim châm và cà chua | Đậu khuôn sốt nấm tươi",DIFFERENT,"Boaro là tỏi tây, khác với nấm mèo","34885,42523"
+648,sữa,sữa chua,yogurt,2,Tôm phô mai bỏ lò | Hoàn thánh cá hồi sốt kem hạnh nhân,DIFFERENT,Sữa tươi/sữa đặc khác với sữa chua,"35069,38368"
+651,nước chấm,nước,water,2,Vú heo nướng chao | Cá điêu hồng chiên,DIFFERENT,"Nước chấm là mắm pha, không phải nước","35373,41102"
+652,Hat nêm chay,chay,vegetarian,2,Canh chay đậu hủ nấu mướp và rau | Gỏi nấm bào ngư chay,DIFFERENT,"Hạt nêm là gia vị, không phải món chay","35542,37285"
+654,Gà,xương gà,chicken bones,2,Canh hầm thịt gà với rau củ | Súp hải sản,DIFFERENT,Thịt gà và xương gà dùng khác nhau,"35982,40311"
+655,Tỏi hành tím,tỏi,garlic,2,Canh hầm thịt gà với rau củ | SP.0941 - Thịt Bò Xào Ớt Chuông Tàu Xì,DIFFERENT,"Hỗn hợp tỏi hành, không chỉ có tỏi","35983,62944"
+656,Tỏi hành sả,tỏi,garlic,2,Thịt nướng xiên que | Mắm ruốc xào thịt,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ có tỏi","36151,38493"
+660,lá mắc mật,mật ong,Honey,2,Thịt nướng lá mắc mật | Heo Quay Da Giòn Lá Mắc Mật,DIFFERENT,Lá mắc mật khác hoàn toàn mật ong,"37032,54213"
+664,nươc côt hoa đâu biêc,nước,water,2,Rau câu hoa hồng 2 lớp | Rau câu sợi,DIFFERENT,Nước cốt hoa khác hoàn toàn nước lọc,"37563,43136"
+666,chanh leo,chanh,lime,2,Thịt gà sốt chanh dây | Cá hồi sốt chanh leo cho bé,DIFFERENT,Chanh leo (chanh dây) khác hoàn toàn chanh,"37804,40520"
+669,Riềng sả gừng bột nghệ,sả,lemongrass,2,Cá song (mú) nấu kiểu chả cá Lã Vọng | Cá song nướng riềng mẻ,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ có sả","38069,38074"
+671,nước tương Nhật,nước,water,2,"Thịt heo xào kim chi kiểu Nhật🐷 | Cơm Cá Hồi, Súp Lơ Đút Lò",DIFFERENT,"Nước tương là gia vị, không phải nước","38307,61037"
+672,Hoàn thánh nhân nấm,nấm,mushroom,2,Hoàn thánh cá hồi sốt kem hạnh nhân | Hoàn thánh tôm thịt sốt tỏi tương,DIFFERENT,"Hoành thánh là món ăn, nấm là nguyên liệu","38366,38400"
+674,Hành lá tỏi,hành lá,green onion,2,Sandwich cá ngừ ốp la | Cá nục sốt cà,DIFFERENT,"Hỗn hợp hành tỏi, không chỉ hành lá","38654,44311"
+676,Tim heo,thịt heo,pork,2,"Tim lợn xào rau củ | Bí non, ớt chuông xào tim heo",DIFFERENT,"Tim heo là nội tạng, không phải thịt","38872,45677"
+677,Hành lá ngò rí,hành lá,green onion,2,"🌱 Bún Nưa Nấu Nấm & Cà Chua Ba Màu | Hủ Tíu Ức Gà, Nấm & Rau Củ",DIFFERENT,"Hỗn hợp hành ngò, không chỉ hành lá","38979,39866"
+679,mùi,hạt mùi,coriander seeds,2,Bún hải sản | Súp gà nấm bổ dưỡng,DIFFERENT,Rau mùi (ngò rí) khác với hạt mùi,"39061,39832"
+681,nước cốt dừa hoặc sữa,nước dừa,coconut water,2,Nui gà sốt cà ri rau củ | Cá hồi lăn vụn dừa,DIFFERENT,Nước cốt dừa khác hoàn toàn nước dừa,"39143,40698"
+685,nước tương maggi,nước,water,2,🌱 Nấm Mỡ Kho Nước Tương Chay (Vegan) | Nui Trộn Thịt Vẹm & Rau Củ Sốt Tương Xào,DIFFERENT,"Nước tương là gia vị, không phải nước","39314,42108"
+686,Dầu mè đen,Mè (Vừng),sesame seeds,2,SP.0698 - Tàu Hũ Trứng Hấp Thịt | SP.0664 - Thịt Băm Chưng Khoai Môn,DIFFERENT,"Dầu mè là chất béo, mè là hạt","39748,47138"
+687,khoai,rau muống,water spinach,2,"Cháo khoai lang cá hồi | Tôm Nướng Sa Tế, Ba Rọi Heo và Rau Củ Nướng",DIFFERENT,Khoai lang khác hoàn toàn rau muống,"39845,44096"
+689,Mè,rau mè,perilla leaves,2,Cơm nắm ruốc cá hồi | Canh bò Hàn Quốc pha ke cho bé :)),DIFFERENT,Mè (vừng) khác hoàn toàn rau mè,"39954,43498"
+691,Tỏi ớt băm nhuyễn,ớt,chili pepper,2,Bún Trộn Bò Xào Sả (Bún Bò Xào Nam Bộ) | Gỏi Cuốn Phi Lê Cá Bơn Chiên Giòn,DIFFERENT,"Hỗn hợp tỏi ớt, không chỉ có ớt","41205,41561"
+698,Ngô,bột ngô,cornstarch,2,Xốt Pizza Bò | Súp cua,DIFFERENT,Ngô (bắp) nguyên hạt khác với bột ngô,"43155,47074"
+699,Hành tỏi bằm,tỏi,garlic,2,Tôm Nõn Rang (Rim) Cực Phẩm | Cá kho tộ,DIFFERENT,"Hỗn hợp hành tỏi, không chỉ có tỏi","43616,48122"
+700,ml,nước,water,2,Yến mạch thịt bằm | Đậu hũ non bắp,DIFFERENT,"ml là đơn vị đo lường, không phải nước","43652,47896"
+703,Lá basil khô,Mè (Vừng),sesame seeds,2,Cá Dẹp (Flat Fish) Chiên Tươi Sốt Cà Chua | Sốt Bò Cà Chua Slow Cook,DIFFERENT,Basil (húng tây) khác hoàn toàn với mè,"44491,45830"
+704,mỳ,mỳ chính,MSG,2,Mì tôm | Lẩu tôm bầu,DIFFERENT,"Mỳ là thực phẩm, mỳ chính là gia vị","44977,64030"
+705,Vẹm xanh,rau thơm,herbs,2,"Mì Hải Sản (cá hồi, vẹm, tôm và mộc) | Tom Yum",DIFFERENT,"Vẹm là hải sản, không phải rau thơm","45127,45283"
+709,Hành tỏi ớt,ớt,chili pepper,2,Mắm Cá Lóc Đồng Chưng Thịt Trứng | Thịt heo bọc sả chiên dòn,DIFFERENT,"Hành tỏi ớt là hỗn hợp, không chỉ có ớt","46040,47006"
+714,tương đậu,nước tương,Soy sauce,2,Thịt Luộc Bossam (보쌈) - Ẩm thực Hàn Quốc | Đậu hũ rim Hàn Quốc - Mapo tofu,DIFFERENT,Tương đậu (đặc) khác nước tương (lỏng),"48529,49920"
+716,cu ca rôt,cá rô,perch,2,"Bánh canh cá cờ, đậu hủ từ cơm nguội, bột gạo, bột năng | Măng tây,cà rốt và bông cải xanh xào thịt bò",DIFFERENT,"Củ cà rốt là rau củ, cá rô là cá","48813,50756"
+721,ngo ri,lá nori,nori,2,Đậu hủ chiên giòn sốt cay(món chay) | Cá hồi xốt chanh dây,DIFFERENT,"Ngò rí là rau, lá nori là rong biển","49714,49831"
+723,cải diếp xoăn endive,cải xoăn,kale,2,"Thuyền Taco Gà & Rau Quả | Salad Rau Diếp Xoăn, Bắp Cải Tím & Ức Gà Áp Chảo",DIFFERENT,Diếp xoăn endive khác cải xoăn kale,"49991,53475"
+727,Cá mó,cá sòng,horse mackerel,2,Cá Mó Chiên Sả | Cá Mó Chiên Giòn - 25 phút,DIFFERENT,Cá mó và cá sòng là hai loài khác nhau,"51473,63994"
+732,Hành baro,hành lá,green onion,2,Thịt ba chỉ nướng tại gia kiểu Hàn Quốc | Đậu hũ rim cay ngọt Hàn Quốc 두부조림,DIFFERENT,Hành baro (tỏi tây) khác hành lá,"53510,53613"
+734,cà ri dầu,cà tím,eggplant,2,Cà Ri Đùi Ếch Chôm Chôm | Cà Ri Cá Chim,DIFFERENT,"Cà ri dầu là gia vị, cà tím là rau","54180,64119"
+737,sấu,gia vị,seasoning,2,Canh Sấu Nấu Mộc Và Thịt Bò | Rau Muống Luộc và Nước Luộc Rau,DIFFERENT,"Sấu là quả/chất làm chua, không phải gia vị chung","56281,56891"
+740,bông kim châm,nấm kim châm,enoki mushroom,2,Bún cá lóc | Canh bông kim châm tôm thịt,DIFFERENT,Bông kim châm khác nấm kim châm,"57979,60166"
+741,tương đen,nước mắm,fish sauce,2,"Bún sườn bò, bò viên | Bún bò viên",DIFFERENT,Tương đen khác hoàn toàn nước mắm,"59024,59568"
+742,ngò tây,măng tây,asparagus,2,Măng tây xào bò | Măng tây cà chua xào thịt,DIFFERENT,Ngò tây (parsley) khác măng tây,"59484,60309"
+743,Gừng hành tỏi khô,tỏi,garlic,2,"Bún cá rô phi, chả cá | Cá sủ nấu canh chua với chả cá",DIFFERENT,Hỗn hợp gừng hành tỏi khô không chỉ có tỏi,"59685,61165"
+744,ngô bao tử,bắp ngọt,sweet corn,2,"Ngô bao tử, phù trúc (tàu hũ ky), nấm tuyết xào trứng | Rau Xào Ngũ Sắc",DIFFERENT,Ngô bao tử (ngô non) khác bắp ngọt (già),"60568,64931"
+745,rau dền cơm,cơm,cooked rice,2,Rau dền cơm nấu mọc tôm thịt | Canh hến rau dền cơm,DIFFERENT,"Rau dền cơm là rau, không phải cơm","60783,62951"
+747,Su hào,su su,chayote,2,Gỏi nấm tuyết | Su hào xào nấm đùi gà và bắp,DIFFERENT,Su hào và su su là hai loại khác,"62438,64567"
+751,củ Hành tây tím,hành tím,shallot,1,Cá Khế Chiên Sốt Chua Ngọt,DIFFERENT,Hành tây tím và hành tím là khác nhau,6010
+752,Cải mèo,nấm mèo,wood ear mushroom,1,Canh Cải Mèo Thịt Băm,DIFFERENT,"Cải mèo là rau, nấm mèo là nấm",6028
+754,cắt lát Gừng,bột gừng,ginger powder,1,Cá Chim Hấp,DIFFERENT,Gừng lát tươi khác bột gừng,6047
+755,băm nhỏ Tỏi,bột tỏi,garlic powder,1,Cá Chim Hấp,DIFFERENT,Tỏi băm tươi khác bột tỏi,6051
+756,tôm đất nhỏ hoặc tép đồng,tôm thẻ loại to,shrimp,1,Gỏi Rau Má Tôm Đất,DIFFERENT,Tôm đất/tép đồng nhỏ khác tôm thẻ to,6054
+757,Khoai muống,rau muống,water spinach,1,Canh khoai muống nấu nấm,DIFFERENT,Khoai muống (khoai sọ) khác rau muống,6062
+759,tôm sắt biển,tôm sú,shrimp,1,Bún hải sản đơn giản,DIFFERENT,Tôm sắt biển và tôm sú là hai loài khác,6072
+762,thịt nạc đùi,thịt nạc dăm,pork shoulder,1,JAMBON thịt nguội,DIFFERENT,Thịt nạc đùi khác thịt nạc dăm (vai),6103
+763,bột hồng cúc bột gạo men đỏ,bột gạo,rice flour,1,JAMBON thịt nguội,DIFFERENT,"Bột hồng cúc là phụ gia màu, không phải gạo",6117
+768,nước cốt hành tỏi xay,hành tỏi ớt,garlic chili mix,1,Thịt Ba Chỉ Nướng Lá Mắc Mật,DIFFERENT,Cốt hành tỏi không có ớt,6165
+773,thịt diềm thăn bò,nạc thăn,pork tenderloin,1,Thịt bò xào bông cải,DIFFERENT,"Diềm thăn là thịt bụng, nạc thăn là thịt lưng",6193
+774,sả củ tỏi,sả,lemongrass,1,Khô bò ướt mềm ngon,DIFFERENT,"Sả củ tỏi là hỗn hợp, không chỉ có sả",6194
+776,ngò rí trang trí,đậu phộng,peanut,1,Gỏi Thịt Bò Hoa Chuối,DIFFERENT,"Ngò rí là rau, đậu phộng là hạt",6242
+778,sốt kho đa dụng,sốt chua ngọt,sweet sour sauce,1,Cá Hú Kho Tiêu (Siêu Hao Cơm),DIFFERENT,Sốt kho đa dụng khác sốt chua ngọt,6269
+784,ngò già lấy cả gốc,ngò gai,culantro,1,Cá Chim Hấp Nước Tương Kiểu Hongkong,DIFFERENT,Ngò già (mùi) khác hoàn toàn ngò gai,6444
+785,khô cá lóc,kho cá,braised fish,1,Gỏi Xòai Xanh trộn khô cá lóc,DIFFERENT,"Khô cá lóc là nguyên liệu, kho cá là món",6455
+797,Khô cá mặn chay không bắt buộc,Cá chày,chub fish,1,Canh Rau Cải Cúc Nấu Đơn Giản,DIFFERENT,Khô cá mặn chay khác cá chày (cá thật),6622
+798,Cooking cream,đậu nành,soybeans,1,"Mì Ý Xốt Kem Cheese với Bacon, Nấm Mối và Bông Cải Xanh",DIFFERENT,Cooking cream từ sữa khác đậu nành,6644
+800,nước màu thốt nốt,nước,water,1,Chà Bông Heo (Ruốc) Bằng Máy Làm Mochi,DIFFERENT,"Nước màu thốt nốt là gia vị, không phải nước",6742
+802,thịt đùi,Thịt ba chỉ,pork belly,1,Heo quay giòn bì kiểu 3: không xăm bì hoặc ngâm giấm,DIFFERENT,Thịt đùi và thịt ba chỉ là hai phần khác nhau,6872
+803,bột bắp,bột nếp,glutinous rice flour,1,Bánh trôi nước nhân thịt gà nấm và đậu xanh,DIFFERENT,Bột bắp và bột nếp có tính chất hoàn toàn khác,6890
+810,nước cốt kẹo,gấc,gac fruit,1,Xôi thỏi vàng cá koi,DIFFERENT,Nước cốt kẹo và gấc hoàn toàn khác nhau,7073
+811,lá rau tần dày,rau tần ô,chrysanthemum greens,1,Canh Chua Đầu Cá Mú Đen,DIFFERENT,Rau tần dày lá và rau tần ô khác nhau,7081
+814,Rau cải thảo,cải thìa,bok choy,1,Miến xào rau nấm thanh nhẹ,DIFFERENT,Cải thảo và cải thìa là hai loại cải khác,7191
+815,Pha mắm tôm,nước mắm,fish sauce,1,Bún Đậu Mắm Tôm Lòng Heo Luộc,DIFFERENT,Mắm tôm và nước mắm là hai loại mắm khác,7230
+818,ường nâu,nấm bào ngư,oyster mushroom,1,Nấm Rơm khô rim mặn với tiêu xanh,DIFFERENT,Lỗi gõ 'đường nâu' không liên quan nấm bào ngư,7398
+825,Nước hầm xương rau củ dashi,nước,water,1,Nui Chữ Nấu Thịt Băm (Món ăn sáng cho bé),DIFFERENT,Nước dùng dashi khác nước lọc thông thường,7640
+826,Trái giác,khế,starfruit,1,Cá Nâu Kho Trái Giác Miền Tây,DIFFERENT,Trái giác và khế là hai loại quả khác nhau,7658
+827,Bò băm,nạm bò,beef brisket,1,Nui Nơ Sốt Bò Cà Chua Bỏ Lò,DIFFERENT,Bò băm khác nạm bò nguyên miếng,7662
+828,Hành phi,tỏi,garlic,1,Phở xào bò,DIFFERENT,Hành phi khác tỏi,7771
+832,Phở sắn,củ đậu,jicama,1,Cá Nục Hấp Cuốn Rau Muống và Phở Sắn,DIFFERENT,"Phở sắn làm từ sắn, khác củ đậu (mận)",7881
+833,Mắm tép,nước mắm,fish sauce,1,Thịt Ba Chỉ Xào Mắm Tép,DIFFERENT,Mắm tép khác hoàn toàn nước mắm,7914
+837,tép tỏi,tép,small shrimp,1,Thịt bê xào lá lốt,DIFFERENT,Tép tỏi khác tép (động vật thủy sinh),8082
+846,chả cá thu cá măng,chả cá lóc,fish cake,1,Canh Khổ Qua Dồn Chả Cá,DIFFERENT,Cá thu/măng khác cá lóc,8314
+847,nước cốt chanh tắc,nước,water,1,Cá Mó Chiên Sả,DIFFERENT,Nước cốt chanh tắc khác nước lọc,8341
+848,Mắm cá,nước mắm,fish sauce,1,Mắm chưng - Trứng thịt,DIFFERENT,Mắm cá (dạng đặc) khác nước mắm (lỏng),8342
+853,mắm cá linh,nước mắm,fish sauce,1,Thịt heo luộc- mắm đu đủ,DIFFERENT,Mắm cá linh khác nước mắm,8416
+863,củ hành,bột hành,Onion powder,1,Khoai môn bọc thịt chiên giòn,DIFFERENT,Củ hành tươi khác bột hành khô,8552
+864,cá trác,cá tra,pangasius,1,Cá trác kho dưa môn,DIFFERENT,Cá trác và cá tra là hai loài khác nhau,8553
+865,dưa môn,khoai môn,taro,1,Cá trác kho dưa môn,DIFFERENT,Dưa môn (dọc mùng muối) khác củ khoai môn,8554
+877,Nấm trùng thảo,mực,squid,1,Mướp hương xào nấm trùng thảo,DIFFERENT,Nấm trùng thảo khác hoàn toàn mực,8722
+884,cá diêu hồng chay gr,Cá chày,chub fish,1,Cá diêu hồng chay sốt cà chua,DIFFERENT,Cá diêu hồng chay khác cá chày thật,8855
+889,má đùi gà,nấm đùi gà,king oyster mushroom,1,NẤM nhồi thịt gà hấp,DIFFERENT,Má đùi gà khác nấm đùi gà,8952
+890,dưa hường,dưa lưới,Cantaloupe,1,Canh dưa hường nấu nấm kim châm,DIFFERENT,Dưa hường (dưa non) khác dưa lưới,8956
+893,Hành boaro,hành lá,green onion,1,Nui xào bò,DIFFERENT,Hành boaro (tỏi tây) khác hành lá,9010
+896,Chả quế,chả huế,hue sausage,1,SP.0995 - Bò Bía Mặn,DIFFERENT,Chả quế và chả huế là hai loại khác nhau,9050
+897,Hột gà,bột gà,chicken powder,1,SP.0995 - Bò Bía Mặn,DIFFERENT,Hột gà (trứng) khác bột gà (gia vị),9052
+899,Mật dừa nước,mật ong,Honey,1,SP.0995 - Bò Bía Mặn,DIFFERENT,Mật dừa nước khác mật ong,9082
+901,ầu hành boaro,nấm mèo,wood ear mushroom,1,Tàu Hũ Ky Cuộn Kho Thơm Nấm (Món chay),DIFFERENT,"Đầu hành boaro là rau, nấm mèo là nấm",9135
+902,mắm Cá Trèn,nước mắm,fish sauce,1,Mắm Cá Trèn Trộn Thịt Luộc,DIFFERENT,"Mắm cá trèn là mắm nguyên con, khác nước mắm",9200
+903,rau ngò,rau om,rice paddy herb,1,Miến Xào Nấm Lộc Nhung Chay,DIFFERENT,Rau ngò (ngò rí) khác hoàn toàn rau om,9217
+906,Hành tím ớt đỏ,hành tím,shallot,1,Cá bống kho khô với nghệ,DIFFERENT,"Gồm cả hành và ớt, không chỉ hành tím",9394
+907,gạch cua,Trứng cua,Crab roe,1,Lẩu Riêu Cua Đồng Bắp Bò Ngày Quốc Khánh 2/9,DIFFERENT,"Gạch cua là gan tụy, không phải trứng cua",9412
+908,chả bì ớt xiêm xanh,ớt xanh,green chili,1,Lẩu Riêu Cua Đồng Bắp Bò Ngày Quốc Khánh 2/9,DIFFERENT,"Chả bì ớt xiêm là món ăn, không phải nguyên liệu ớt",9435
+911,cải hồng,cải ngọt,choy sum,1,🌱 Bún Đậu Hủ Nước Tương Trộn Rau Củ,DIFFERENT,Cải hồng và cải ngọt là hai loại cải khác nhau,9484
+915,Hành lá ngò rí,rau ngò rí,coriander leaves,1,Xíu Mại Trứng Cút Da Heo,DIFFERENT,Gồm cả hành lá và ngò rí,9543
+919,nước cốt dừa tươi,nước dừa,coconut water,1,RAU CÂU nhãn tươi,DIFFERENT,Nước cốt dừa khác nước dừa (nước trong quả),9610
+920,Lá bắp cải hành lá,lá bắp cải,cabbage leaves,1,"Cải bắp cuộn tôm, thịt",DIFFERENT,Gồm cả bắp cải và hành lá,9616
+923,Chanh ớt,chanh trà,tea lemon,1,Bánh canh xương sụn chả cá,DIFFERENT,Chanh ớt khác chanh trà (một loại chanh cụ thể),9720
+924,lá Basil,Mè (Vừng),sesame seeds,1,Súp Chua Cá Hồng Biển Hương Vị Địa Trung Hải,DIFFERENT,"Lá Basil là húng tây, khác hoàn toàn mè",9807
+926,dụm heo,hành lá,green onion,1,Dụm heo hầm,DIFFERENT,Dụm heo (móng heo) không phải hành lá,9876
+929,ốc bươu,nước,water,1,Ốc Bươu Nhồi Thịt Hấp,DIFFERENT,"Ốc bươu là động vật, khác nước",9926
+930,Tỏi ớt chanh gừng,tỏi gừng,garlic ginger,1,Nạm bò luộc,DIFFERENT,"Gồm 4 loại, không chỉ có tỏi gừng",9939
+933,Hành tím hành lá cắt nhỏ,hành tím,shallot,1,Canh bí đao (bí xanh) nấu thịt bằm đơn giản,DIFFERENT,Gồm cả hành tím và hành lá,9969
+934,tàu hũ trắng,đậu hũ trứng,egg tofu,1,Tôm hấp tàu hũ trắng sauce nước tương,DIFFERENT,"Tàu hũ trắng làm từ đậu nành, khác đậu hũ trứng",9990
+937,tim gan cật heo,tim heo,pork heart,1,Mì Trứng Trộn Sốt Nấm Hương,DIFFERENT,"Gồm tim, gan, cật; không chỉ có tim",10001
+938,t sừng rau răm,rau răm,vietnamese coriander,1,Măng le kho nước tương rau răm,DIFFERENT,Gồm ớt sừng và rau răm,10055
+942,tinh bột khoai tây,khoai tây,potato,1,Thịt chiên xù chấm sốt chua ngọt,DIFFERENT,Tinh bột khoai tây khác củ khoai tây tươi,10110
+943,xà lách ta,xà lách tím,red lettuce,1,Rau sống sốt chanh dây,DIFFERENT,Xà lách ta (xà lách mỡ) khác xà lách tím,10211
+946,nấm mỡ nấm đông cô,nấm hương,shiitake mushroom,1,Canh gà phi lê nấu cải bẹ và nấm mỡ,DIFFERENT,Gồm nấm mỡ và nấm đông cô,10336
+954,bột rau câu agar,bún,rice vermicelli,1,Rau câu nhãn,DIFFERENT,Bột rau câu agar khác hoàn toàn bún,10565
+955,bò xay,nạm bò,beef brisket,1,Bánh Mì Bò Phô Mai,DIFFERENT,Bò xay khác nạm bò (nguyên miếng),10591
+956,bao tử cá basa,Bong bóng cá,Fish maw,1,Bao tử CÁ BASA khìa nước dừa,DIFFERENT,Bao tử cá khác bong bóng cá,10593
+959,Nước sốt tương dầu hành,nước tương,Soy sauce,1,Mực Ống Nhỏ Nhồi Thịt Sốt Tương Dầu Hành,DIFFERENT,Sốt tương dầu hành khác nước tương nguyên chất,10623
+960,ậu phụ trắng,đậu hũ trứng,egg tofu,1,Đậu Phụ Tứ Xuyên Mapo Tofu 麻婆豆腐,DIFFERENT,Đậu phụ trắng khác đậu hũ trứng,10659
+967,rau rocket hoặc spinach,nước,water,1,"Salad rau rocket, salami, táo, lê và Burrata",DIFFERENT,"Rau rocket/spinach là rau, khác nước",10814
+969,wonton noodles lá mì,bún hoành thánh,wonton noodles,1,"Wonton, seafood noodles, crispy chicken (hoành thánh, mì hải sản, gà giòn)",DIFFERENT,Mì hoành thánh khác bún hoành thánh,10824
+970,tay nấm nhung hươu khô,nấm kim châm,enoki mushroom,1,🌱 Canh Rau Dền Nấu Nấm Lộc Nhung Khô,DIFFERENT,Nấm nhung hươu khác nấm kim châm,10844
+971,hột gà,bột gà,chicken powder,1,SP.0969 - Hột Gà Chiên Thịt Heo Bằm,DIFFERENT,Hột gà (trứng) khác bột gà (gia vị),10861
+976,trứng cua,trứng cá,fish roe,1,Sủi cảo xíu mại cua,DIFFERENT,Trứng cua khác trứng cá,11042
+977,Bánh đa mì gạo phở khô,bánh phở,pho noodles,1,Bánh đa rau ngót chả rong biển,DIFFERENT,Bánh đa/mì gạo khác bánh phở,11069
+981,dầu mè,dầu hẹ,chive oil,1,"Canh Hẹ, Đậu Hũ Trứng Nấu Nấm Rơm",DIFFERENT,Dầu mè khác dầu hẹ,11154
+983,tôm he,tôm sú,shrimp,1,Tôm nõn rim tiêu,DIFFERENT,Tôm he và tôm sú là hai loài khác nhau,11159
+987,tôm trứng rang,ram tôm,shrimp rolls,1,Rau tầm bóp nấu tôm trứng,DIFFERENT,Tôm trứng rang khác món ram tôm,11196
+989,Dầu oliu dầu hào,dầu hào,oyster sauce,1,Bạch tuộc xào nấm,DIFFERENT,Gồm dầu oliu và dầu hào,11256
+993,Hành lá thìa là,hành lá,green onion,1,Bún tôm Hải Phòng,DIFFERENT,Gồm hành lá và thìa là,11380
+995,Hành tây hành lá rau răm,hành tây,onion,1,Mì Quảng gà cá tôm,DIFFERENT,"Gồm hành tây, hành lá, rau răm",11402
+996,hành tím tỏi,hành tím,shallot,1,Mì Quảng gà cá tôm,DIFFERENT,Gồm cả hành và tỏi,11403
+999,mắm cá,nước mắm,fish sauce,1,Cà tím bung với cá bông lau,DIFFERENT,Mắm cá (mắm nguyên con) khác nước mắm,11482
+1000,ường trắng,Trứng gà,Chicken Egg,1,Bánh bao thịt trứng cút truyền thống,DIFFERENT,Đường trắng khác hoàn toàn trứng gà,11506
+1001,mấy lát gừng,lá gừng,ginger leaves,1,Canh Cá Dưa Chua Tứ Xuyên nhái Hảo La Má La,DIFFERENT,"Lát gừng là củ, khác hoàn toàn lá gừng",11534
+1002,tắc hoặc trái chanh,nước,water,1,💚 Cơm Taco Okinawa Chay Với Đậu Hủ (Vegan),DIFFERENT,"Tắc/chanh là quả chua, không phải nước lọc",11539
+1004,Ngò,bột ngò,coriander powder,1,Dưa gang trộn tôm bóc nõn,DIFFERENT,"Ngò là rau tươi, bột ngò là gia vị khô",11582
+1007,nấm mỡ,nấm rơm,straw mushroom,1,Lẩu thịt rau củ,DIFFERENT,Nấm mỡ và nấm rơm là hai loại khác nhau,11611
+1012,tàu hũ chiên,tàu hũ ky,tofu skin,1,Canh nấm kim châm rau thì là,DIFFERENT,Tàu hũ chiên khác hoàn toàn tàu hũ ky,11713
+1015,phomai hải sản,hải sản,seafood,1,Viên hải sản chiên kèm ớt chuông xào hành tây,DIFFERENT,Phô mai hải sản là hỗn hợp chế biến,11850
+1018,thịt bò phần sườn,ức gà,chicken breast,1,Thịt bò luộc #healthy,DIFFERENT,Sườn bò khác hoàn toàn ức gà,11946
+1019,Bột thính,bột hành,Onion powder,1,Nem thính chay từ nấm đùi gà,DIFFERENT,"Thính làm từ gạo, không phải bột hành",11962
+1021,xíu vừng,dầu vừng,sesame oil,1,"Gỏi măng tây, thịt bò",DIFFERENT,"Vừng là hạt, dầu vừng là chất lỏng",12028
+1024,sốt lẩu chua hải sản,sốt chua ngọt,sweet sour sauce,1,Lẩu cá diêu hồng chua cay dịp 30.4,DIFFERENT,Sốt lẩu Thái khác sốt chua ngọt,12172
+1027,bánh đa,bánh phở,pho noodles,1,Lẩu cua đồng,DIFFERENT,Bánh đa và bánh phở là hai loại khác,12193
+1029,khoai tím,khoai từ,yam,1,Khoai Tím Nấu Chả Mọc Tôm,DIFFERENT,Khoai tím và khoai từ là hai loại khác,12250
+1030,lá é trắng,rau basil,basil,1,Canh Cá Dìa Nấu Lá É,DIFFERENT,Lá é và basil là hai loại khác nhau,12266
+1036,Củ cải trắng cà rốt,cải thảo,napa cabbage,1,"Bún chả cá, thịt bằm",DIFFERENT,"Củ cải, cà rốt khác hoàn toàn cải thảo",12425
+1039,ngồng su hào,rau cải ngồng,choy sum,1,Ngồng su hào xào thịt bò,DIFFERENT,Ngồng su hào khác hoàn toàn cải ngồng,12462
+1042,thịt xay rang,thịt bò,beef,1,Mì trộn bò xào,DIFFERENT,Thịt xay (thường heo) khác thịt bò,12517
+1053,bánh đa nắm,bánh tráng,rice paper,1,"Bánh đa tôm, mọc, chả cá",DIFFERENT,Bánh đa khác hoàn toàn bánh tráng,12982
+1066,súp lơ trắng,cải thảo,napa cabbage,1,Súp lơ trắng xào tôm nấm,DIFFERENT,Súp lơ trắng khác hoàn toàn cải thảo,13242
+1069,nước hầm xương gà,nước,water,1,Rau thù lù (hoặc tầm bóp) nấu gà,DIFFERENT,Nước hầm xương gà khác nước lọc,13298
+1071,mắm dì Cẩn,nước mắm,fish sauce,1,Bún cá cuốn chấm mắm dì Cẩn 🤤,DIFFERENT,"Mắm dì Cẩn là mắm nêm, không phải nước mắm",13385
+1073,Hạt mít,nước,water,1,Hạt mít kho tiêu rau răm,DIFFERENT,"Hạt mít là chất rắn, không phải nước",13412
+1080,thịt luộc,thịt nguội,ham,1,Salad thịt luộc vét tủ lạnh,DIFFERENT,Thịt luộc tươi khác thịt nguội chế biến,13470
+1083,Cá phèn hồng,cá diêu hồng,tilapia,1,Cá phèn um muối ớt,DIFFERENT,Cá phèn hồng khác hoàn toàn cá diêu hồng,13514
+1091,Nước hầm xương gà,nước,water,1,Súp Bắp Cua,DIFFERENT,Nước hầm gà khác nước lọc,13638
+1097,mắm cá linh xay,nước mắm,fish sauce,1,Mắm cá linh chưng thịt trứng,DIFFERENT,Mắm cá linh khác hoàn toàn nước mắm,13834
+1099,nấm mỡ nâu,nấm bào ngư,oyster mushroom,1,Bò Wellington,DIFFERENT,Nấm mỡ nâu khác hoàn toàn nấm bào ngư,13839
+1103,Hành lá rau răm thì là,rau răm,vietnamese coriander,1,"Đầu, đuôi cá lăng nấu canh chua",DIFFERENT,"Hỗn hợp nhiều loại rau, không chỉ rau răm",13891
+1104,Gừng hành khô tỏi,hành tỏi,garlic and onion,1,"Đầu, đuôi cá lăng nấu canh chua",DIFFERENT,"Hỗn hợp có gừng, hành, tỏi",13892
+1106,Nấm lộc nhung,nấm kim châm,enoki mushroom,1,Đậu que xào nấm lộc nhung,DIFFERENT,Nấm lộc nhung khác hoàn toàn nấm kim châm,13943
+1107,Bột khoai tây,khoai tây,potato,1,Thịt chiên ăn cùng sốt chua ngọt,DIFFERENT,Bột khoai tây khác hoàn toàn củ khoai tây,13944
+1109,to hành baro,nấm mèo,wood ear mushroom,1,Bánh gạo cay ăn kèm ba chỉ bò áp chảo,DIFFERENT,Hành baro khác hoàn toàn nấm mèo,14001
+1110,tôm,tôm viên,shrimp balls,1,Canh bắp cải nấu tôm thịt viên,DIFFERENT,Tôm tươi khác hoàn toàn tôm viên chế biến,14015
+1111,củ gừng to,củ nghệ,turmeric root,1,Thịt má heo kho nghệ rất ngon mà không ngấy,DIFFERENT,Gừng và nghệ là hai loại củ khác nhau,14027
+1112,trứng chiên thịt,Trứng gà,Chicken Egg,1,Bún trộn thịt viên,DIFFERENT,"Trứng chiên thịt là món ăn, không phải trứng gà",14048
+1113,nhân khổ qua,Thịt băm,Minced pork,1,Canh bắp cải nấu thịt mộc nhĩ,DIFFERENT,Nhân khổ qua khác hoàn toàn thịt băm,14049
+1115,thính gạo rang,bột gạo,rice flour,1,Nấm Đùi Gà Trộn Thính,DIFFERENT,Thính gạo khác hoàn toàn bột gạo sống,14072
+1116,cá mặn chay nhỏ không bắt buộc,Cá chày,chub fish,1,Cơm chiên rong biển cá mặn chay,DIFFERENT,Cá mặn chay khác hoàn toàn cá chày,14089
+1117,Củ nén củ hành tím,hành tím,shallot,1,Cá Bống Đồng Kho Cay,DIFFERENT,Hỗn hợp củ nén và hành tím,14097
+1118,mùi ta,ngò gai,culantro,1,Su su cà rốt xào tôm,DIFFERENT,Mùi ta (ngò rí) khác hoàn toàn ngò gai,14129
+1122,Nấm lộc nhung khô không bắt buộc,nấm kim châm,enoki mushroom,1,Soup khoai tây kem nấm,DIFFERENT,Nấm lộc nhung khác hoàn toàn nấm kim châm,14164
+1123,rau cải ngọt,rau cải đắng,bitter greens,1,Gỏi gà rau cải ngọt,DIFFERENT,Cải ngọt khác hoàn toàn cải đắng,14180
+1124,Hành lá răm thì là,rau răm,vietnamese coriander,1,Cá sốt cà chua,DIFFERENT,Hỗn hợp nhiều loại lá thơm,14184
+1125,đậu que cà rốt,cà rốt,carrot,1,Đậu hũ hấp rau củ,DIFFERENT,Hỗn hợp đậu que và cà rốt,14263
+1131,hành poro băm,rau răm,vietnamese coriander,1,Tảo Xoắn Xào Rau Răm Chay,DIFFERENT,Hành poro khác hoàn toàn rau răm,14300
+1137,giấm ăn,dầu giấm,vinaigrette,1,"TAI, MŨI heo ngâm nước mắm",DIFFERENT,Giấm ăn khác hoàn toàn sốt dầu giấm,14363
+1156,Tỏi băm gia vị,gia vị,seasoning,1,"Phở (bánh đa) xào rau bò khai, thịt bò",DIFFERENT,"Tỏi băm là nguyên liệu cụ thể, không chỉ gia vị",14823
+1158,thịt nướng,heo quay,roast pork,1,Bánh phở cuốn thịt nướng,DIFFERENT,Thịt nướng khác hoàn toàn heo quay,14835
+1159,má đui ga,nấm đùi gà,king oyster mushroom,1,Mì Udon Gà Và Nấm Đông Cô,DIFFERENT,"Má đùi gà là thịt, khác nấm đùi gà",14868
+1163,bột tỏi bột hành,bột hành,Onion powder,1,Mực tẩm bột chiên giòn đơn giản,DIFFERENT,Hỗn hợp bột tỏi và bột hành,14905
+1165,nước ấm,nước mẻ,fermented rice sauce,1,Sườn Heo Nướng Tảng,DIFFERENT,Nước ấm khác hoàn toàn nước mẻ,14923
+1166,Nước trộn,nước mắm,fish sauce,1,Phở Sắn Trộn Thịt Bò,DIFFERENT,Nước trộn gỏi khác hoàn toàn nước mắm,14938
+1167,con ruốc,mắm ruốc,shrimp paste,1,Canh rau tần ô nấu con ruốc,DIFFERENT,Con ruốc khô/tươi khác mắm ruốc lên men,14998
+1168,riềng sả,riềng,galangal,1,Cá trứng kho,DIFFERENT,"Hỗn hợp riềng sả, không chỉ riềng",15000
+1169,thịt bắp giò,nấm hương,shiitake mushroom,1,"Thịt bắp giò kho măng, nấm hương",DIFFERENT,Thịt bắp giò khác hoàn toàn nấm hương,15046
+1173,ớt xắt,ớt xanh,green chili,1,Mì Gói Nấm Lộc Nhung Chay,DIFFERENT,"Ớt xắt thường là ớt đỏ, không phải ớt xanh",15137
+1176,hành poro băm nhỏ,rau răm,vietnamese coriander,1,Mì Xào Nấm Chay,DIFFERENT,Hành poro khác hoàn toàn rau răm,15143
+1178,hành khô to,hành tỏi,garlic and onion,1,Chả tôm mực viên chiên xù,DIFFERENT,Hành khô khác hoàn toàn tỏi,15171
+1179,rau nhút,rau muống,water spinach,1,Dưa chua rau nhút,DIFFERENT,Rau nhút khác hoàn toàn rau muống,15195
+1183,tỏi phi hoặc hành phi,nấm mèo,wood ear mushroom,1,Canh Chua Khô Ức Cá Basa,DIFFERENT,Tỏi/hành phi khác hoàn toàn nấm mèo,15255
+1184,hành poro,hành lá,green onion,1,Nấm Lộc Nhung và Tảo Xoắn Xào Sả Ớt Chay,DIFFERENT,Hành poro khác hoàn toàn hành lá,15259
+1193,lạt,bơ,butter,1,Nấm đùi gà xào bơ tỏi,DIFFERENT,"Lạt (bơ lạt) là tính chất, không phải bơ",15461
+1194,thit bo,tim bò,beef heart,1,Phở Cuốn Bò Xào,DIFFERENT,Thit bo (thịt bò) khác hoàn toàn tim bò,15469
+1197,tương hôt,tương ớt,chili sauce,1,Đậu hủ kho tương,DIFFERENT,Tương hột khác hoàn toàn tương ớt,15535
+1200,Rau mùi tàu,rau mùi,coriander leaves,1,Đậu phụ om cà chua,DIFFERENT,Mùi tàu (ngò gai) khác rau mùi (ngò rí),15591
+1204,tắc vắt nước cốt,nước cốt chanh,lime juice,1,"Canh Chua Chả Cá Hố, Rau Sam, Bông Giờ",DIFFERENT,Nước cốt tắc khác với nước cốt chanh,15976
+1213,nấm mỡ trắng,nấm bào ngư,oyster mushroom,1,Nui Sốt Kem Nấm Thì Là & Cá Hồi Gravlax,DIFFERENT,Nấm mỡ và nấm bào ngư là hai loài khác,16195
+1219,mỡ hành,mỡ heo,lard,1,Bún thịt nướng đậu hũ,DIFFERENT,"Mỡ hành gồm hành và dầu/mỡ, khác mỡ heo thuần",16367
+1221,củ cải trắng củ,cải thảo,napa cabbage,1,Miến Nấu Cua Tuyết,DIFFERENT,Củ cải trắng và cải thảo là hai loại khác,16453
+1228,hành poro băm nhỏ,hẹ,chives,1,Mì Nấm Chay,DIFFERENT,Hành poro (tỏi tây) khác hoàn toàn rau hẹ,16598
+1239,sấu,dưa chua,pickled mustard,1,Cá thu nấu dưa cải chua,DIFFERENT,"Sấu là quả, khác với dưa cải muối chua",16742
+1241,củ cải trắng vừa,cải thảo,napa cabbage,1,Canh tôm khô củ cải,DIFFERENT,Củ cải trắng khác hoàn toàn cải thảo,16805
+1243,khô cá trèn,cá trê,catfish,1,"Khô Cá Trèn, Cá Chốt Chiên Chấm Mắm Me",DIFFERENT,Cá trèn và cá trê là hai loài khác,16828
+1244,Củ cải trắng,cải thảo,napa cabbage,1,Bánh Canh Cá Lóc,DIFFERENT,Củ cải trắng khác hoàn toàn cải thảo,16845
+1245,Bánh canh,bánh chả,meat pastry,1,Bánh Canh Cá Lóc,DIFFERENT,"Bánh canh là sợi bột, bánh chả là bánh kẹo",16846
+1246,hành baro,rau răm,vietnamese coriander,1,순두부찌개- Canh đậu phụ non Hàn Quốc,DIFFERENT,Hành baro khác hoàn toàn rau răm,16901
+1247,tôm bé,tôm thẻ loại to,shrimp,1,해물전 - Bánh xèo hải sản Hàn Quốc,DIFFERENT,Tôm bé (tép) khác tôm thẻ loại to,16905
+1248,rau Húng lủi,rau húng chó,mint,1,Gỏi Bưởi Hồng Cơm Dừa Tôm Thịt,DIFFERENT,Húng lủi (bạc hà) khác húng chó (quế),17014
+1255,cá hấp,cá hộp,canned fish,1,Bánh tráng cuốn cá hấp,DIFFERENT,Cá hấp tươi khác với cá đóng hộp,17202
+1256,chanh ớt,chanh trà,tea lemon,1,"Mì Quảng gà, heo",DIFFERENT,"Chanh ớt là hỗn hợp, không phải chanh trà",17222
+1263,tôm đồng,tôm sú,shrimp,1,Tôm trứng rang lá chanh,DIFFERENT,Tôm đồng khác hoàn toàn tôm sú,17346
+1269,đậu làng Mơ,mơ,apricot,1,Đậu làng Mơ rim thịt băm,DIFFERENT,"Đậu làng Mơ là đậu hũ, không phải quả mơ",17393
+1272,tôm khô loại,tôm thẻ loại to,shrimp,1,SP.0881 - Mướp Hương Xào Tôm Khô,DIFFERENT,Tôm khô khác tôm thẻ tươi loại to,17475
+1273,cá mối,Cá chày,chub fish,1,Cá mối kho chay,DIFFERENT,Cá mối và cá chày là hai loài khác,17505
+1284,Dưa chuột,dưa chua,pickled mustard,1,Tôm cuốn lá cải xốt xì dầu,DIFFERENT,Dưa chuột tươi khác dưa cải muối chua,17757
+1285,Cà rối,bột cà ri,Curry powder,1,Tôm cuốn lá cải xốt xì dầu,DIFFERENT,"Cà rối (cà rốt) là rau củ, không phải cà ri",17758
+1287,ường củ cải,củ cải,radish,1,Chè xoài bột báng thạch rau câu,DIFFERENT,"Đường củ cải là gia vị, không phải củ cải",17774
+1292,thit heo,huyết heo,pork blood,1,"Bánh xèo tôm thịt,nấm bào ngư ăn kèm rau cải xanh và rau sống",DIFFERENT,Thịt heo khác hoàn toàn huyết heo,17943
+1295,cai trăng,cải thảo,napa cabbage,1,"Bánh xèo tôm thịt,nấm bào ngư ăn kèm rau cải xanh và rau sống",DIFFERENT,Cải trắng (củ cải) khác hoàn toàn cải thảo,17961
+1296,thịt bò nạc,nạc heo,lean pork,1,Soup Bò hầm rau củ,DIFFERENT,Thịt bò nạc khác hoàn toàn nạc heo,17962
+1298,Cà rốt ngâm chua ngọt,sốt chua ngọt,sweet sour sauce,1,Bánh Mì Chay Kẹp Rau Củ Đơn Giản,DIFFERENT,"Cà rốt chua ngọt là rau, không phải sốt",17985
+1301,mì gạo,bún,rice vermicelli,1,Mì gạo nấu thịt viên,DIFFERENT,"Mì gạo là sợi mì khô, khác với bún tươi",18128
+1302,ngó môn,khoai môn,taro,1,Ngó Môn Xào Thịt Bò,DIFFERENT,"Ngó môn là ngó của cây môn, không phải củ",18129
+1303,Màu gạch tôm,Trứng cua,Crab roe,1,SP.0865 - Canh Cà Rốt Chả Cua,DIFFERENT,"Màu gạch tôm là phẩm màu/gạch tôm, khác trứng cua",18161
+1307,mì chùm ngây,chùm ngây,moringa leaves,1,Mì chùm ngây trộn thịt chả,DIFFERENT,"Mì chùm ngây là chế phẩm, không phải rau tươi",18298
+1311,lá su hào,su hào,kohlrabi,1,Canh Lá Su Hào Thịt Băm Viên,DIFFERENT,Lá su hào khác hoàn toàn với củ su hào,18364
+1313,giá sạch,giá hẹ,bean sprouts,1,Cá bớp nấu canh chua,DIFFERENT,"Giá sạch là giá đỗ, không phải giá hẹ hỗn hợp",18463
+1315,thịt xay,thịt chay,plant-based meat,1,Canh rau đay nấu tôm thịt,DIFFERENT,"Thịt xay là thịt thật, không phải thịt chay",18560
+1316,mì tôm,ram tôm,shrimp rolls,1,Mì gói nấu tôm trứng,DIFFERENT,"Mì tôm là mì gói, khác với ram tôm",18596
+1320,rau sắng,rau sống,fresh herbs,1,Canh rau sắng nấu tôm,DIFFERENT,Rau sắng (rau ngót rừng) không phải rau sống,18668
+1324,cá ông cụ,cá bè,fish,1,Cá ông cụ chiên sốt chua ngọt,DIFFERENT,Cá ông cụ (cá mặt quỷ) khác cá bè,18710
+1328,nấm trà tân,nấm tràm,melaleuca mushroom,1,Bánh Xèo Nấm,DIFFERENT,Nấm trà tân khác với nấm tràm đặc sản,18755
+1329,bắp khô,bắp ngọt,sweet corn,1,Bánh Xèo Nấm,DIFFERENT,Bắp khô (ngô hạt) khác bắp ngọt (ngô Mỹ),18758
+1337,Bò xay,nạm bò,beef brisket,1,Canh Cà Chua Bò Rau Răm,DIFFERENT,Bò xay (thịt vụn) không phải nạm bò,19051
+1338,dưa hồng gram,dưa lưới,Cantaloupe,1,Canh dưa hồng nấu tôm,DIFFERENT,Dưa hồng (dưa hường) khác hoàn toàn dưa lưới,19056
+1342,củ hành khô,hành lá,green onion,1,Canh rong xà lách thịt bằm đậu hũ (rong lục ulva),DIFFERENT,Củ hành khô khác hoàn toàn với hành lá,19135
+1350,đậu phụ chiên,đậu hũ trứng,egg tofu,1,Mì Quảng Xào Tôm Thịt Eat Clean,DIFFERENT,Đậu phụ chiên khác với đậu hũ trứng béo,19273
+1351,t chin su,tỏi,garlic,1,Ba chỉ sốt tắc (heo),DIFFERENT,Ớt (viết tắt t) Chinsu khác hoàn toàn tỏi,19304
+1356,cá trèn,cá trê,catfish,1,Cá Trèn Kho Tiêu,DIFFERENT,Cá trèn và cá trê là hai loài khác nhau,19448
+1363,nụ inh hương,nấm hương,shiitake mushroom,1,Món Pháp Blanquette De Veau - Thịt Bê Hầm Cà Rốt Nấm Phủ Sốt Bơ Trứng,DIFFERENT,Nụ đinh hương khác hoàn toàn nấm hương,19616
+1364,tôm,bánh phồng tôm,shrimp crackers,1,Súp bánh phồng tôm nấu sườn,DIFFERENT,Tôm tươi khác hoàn toàn bánh phồng tôm,19634
+1372,Tôm tuỳ ý,bề bề,mantis shrimp,1,Tôm xào bơ tỏi,DIFFERENT,Tôm và bề bề (tôm tít) là khác nhau,19976
+1375,ớt ngò,ớt sừng,red chili,1,Tôm và nghêu hấp sả,DIFFERENT,"Ớt ngò là hỗn hợp gia vị, không phải ớt sừng",20150
+1377,lá me đất,lá me,tamarind leaves,1,Canh me đất thịt băm,DIFFERENT,Lá me đất khác hoàn toàn lá cây me,20175
+1381,chuôi chát,chuối sáp,banana,1,Cá Chốt Om Măng Chua Khế Chuối Chát,DIFFERENT,Chuối chát (chuối hột/non) khác chuối sáp,20268
+1395,tôm chua Huế,nước mắm,fish sauce,1,Gỏi đu đủ tôm chua Huế,DIFFERENT,"Tôm chua là mắm dạng con, khác nước mắm",20580
+1398,hộp cá sốt cà,hộp cá ngừ,canned tuna,1,CÀ đắng om cá hộp,DIFFERENT,Hộp cá sốt cà (thường cá nục) khác cá ngừ,20648
+1402,khoai môn,khoai môn,taro,1,Xương đuôi heo và móng giò nấu khoai Mán vàng,DIFFERENT,Khoai môn khác khoai mán (khoai môn rừng),20726
+1404,canh chua,chà chua,pickled vegetables,1,Bún tôm nấu chua,DIFFERENT,"Canh chua là món ăn, chà (cà) chua là quả",20803
+1406,tỏi củ hành khô,tỏi,garlic,1,Thịt ba chỉ xốt mận hậu,DIFFERENT,Gồm cả tỏi và hành khô,20854
+1408,khóm hành tím,hành tím,shallot,1,"Hải sản Phú Quý hấp: mực ống, cua gạo, cua mặt trăng và nhum tươi",DIFFERENT,Gồm khóm (dứa) và hành tím,20868
+1410,mộc nhĩ tai nấm hương khô,nấm hương,shiitake mushroom,1,Bún mọc tôm,DIFFERENT,Gồm mộc nhĩ và nấm hương,20913
+1414,Gừng hành tỏi ớt,hành lá,green onion,1,Rau sắn muối nấu đầu cá ông lão,DIFFERENT,"Gồm gừng hành tỏi ớt, không chỉ hành lá",20986
+1415,tôm rảo tằm hoặc tép,tôm thẻ loại to,shrimp,1,"Gỏi hoa chuối, tôm, rau sam",DIFFERENT,"Tôm rảo, tép khác tôm thẻ loại to",20990
+1416,măng tây rừng,măng,bamboo shoots,1,"🌱 Salad Su Hào, Nấm & Măng Tây Rừng Sốt Hành Tăm",DIFFERENT,Măng tây khác măng tre/trúc,21001
+1418,mật ong siro phong,mật ong,Honey,1,"🌱 Salad Su Hào, Nấm & Măng Tây Rừng Sốt Hành Tăm",DIFFERENT,Gồm mật ong và siro phong,21007
+1420,tôm sắt bóc nõn rim mắm,ram tôm,shrimp rolls,1,Mỳ trộn tôm thịt sốt cà,DIFFERENT,Tôm sắt khác ram tôm (món ăn/tôm ram),21029
+1421,Gia vị hành tỏi hành lá ớt,hành lá,green onion,1,Cá cơm khô rim,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ hành lá",21045
+1422,Hành củ hành lá rau răm thìa là gia vị,hành lá,green onion,1,Rau sắn muối nấu chả cá,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ hành lá",21049
+1423,mỳ gạo lứt,gạo,rice,1,Mỳ gạo lứt trộn sốt cà tóp mỡ thịt băm,DIFFERENT,"Mỳ gạo lứt là sản phẩm từ gạo, không phải gạo",21056
+1426,vịt,trứng vịt,duck egg,1,VỊT tiềm nấm hương & bắp non,DIFFERENT,Thịt vịt khác trứng vịt,21149
+1427,Rau nêm hành lá ngò rí,hành lá,green onion,1,VỊT tiềm nấm hương & bắp non,DIFFERENT,Gồm hành lá và ngò rí,21156
+1428,dĩa rau đi kèm ngò gai giá kinh giới bắp chuối hành lá ớt,hành lá,green onion,1,Bún Riêu Cua Đồng Giò Heo,DIFFERENT,"Gồm nhiều loại rau, không chỉ hành lá",21172
+1433,bột gà Chicken Powder,thịt gà,chicken,1,Mì Nấu Rau Muống Tóp Mỡ,DIFFERENT,"Bột gà là gia vị, không phải thịt gà",21221
+1439,thì là hành lá dill green onion,hành lá,green onion,1,Món phụ/Side dish: Khoai tây xào thịt bằm/Potatoes stir-fried with minced pork,DIFFERENT,Gồm thì là và hành lá,21325
+1440,Hành tỏi hành răm thìa là gia vị,tỏi,garlic,1,Cá chim om dưa,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ tỏi",21339
+1441,cá diêu hồng hoặc cá lóc,cá lóc,snakehead fish,1,CÁ diêu hồng hấp với củ sắn,DIFFERENT,Cá diêu hồng khác cá lóc,21377
+1444,sữa chua dầu ăn,sữa chua,yogurt,1,Bánh canh phồng tôm kim chi,DIFFERENT,Hỗn hợp sữa chua và dầu ăn,21426
+1445,dầu tía tô,tía tô,perilla leaves,1,Đậu phụ rim,DIFFERENT,Dầu tía tô khác lá tía tô,21484
+1446,nước cốt dừa ml,nước dừa,coconut water,1,Rau củ kho nước cốt dừa,DIFFERENT,Nước cốt dừa khác nước dừa,21513
+1450,hành củ hành lá,hành lá,green onion,1,Cá liệt kho mặn,DIFFERENT,Gồm hành củ và hành lá,21617
+1452,cá én nắng,cá chuồn,flying fish,1,Cơm rang cá én 1 nắng,DIFFERENT,Cá én và cá chuồn là khác nhau,21653
+1453,cá măng phi lê nắng,măng,bamboo shoots,1,Cá măng biển 1 nắng chiên giòn sốt chua ngọt,DIFFERENT,Cá măng khác rau măng,21657
+1455,khô cá dứa một nắng,dứa,pineapple,1,Khô cá dứa một nắng rim nước mắm mè,DIFFERENT,Cá dứa khác quả dứa (thơm),21733
+1458,khô cá dứa chiên,dứa,pineapple,1,Cơm chiên khô cá dứa một nắng tóp mỡ,DIFFERENT,Cá dứa khác quả dứa (thơm),21759
+1459,lá dưa,dưa,pickles,1,"Chè bắp,khoai môn,nấm tuyết và lá cẩm",DIFFERENT,Lá dứa (lá nếp) khác quả dứa,21767
+1463,Miến gạo hoặc miến giong,gạo,rice,1,Nem thịt dọn tủ,DIFFERENT,Miến khác bột gạo/gạo,21851
+1464,khô cá dứa một nắng g,dứa,pineapple,1,Khô cá dứa một nắng rim cay,DIFFERENT,Cá dứa khác quả dứa (thơm),21870
+1472,cá dứa baby nắng,dứa,pineapple,1,Khô cá DỨA kho thơm,DIFFERENT,Cá dứa khác quả dứa (thơm),21951
+1473,sốt kho cá,cá dứa,pangasius,1,Khô cá DỨA kho thơm,DIFFERENT,Sốt kho cá khác cá dứa,21952
+1474,Cá Dứa một nắng,dứa,pineapple,1,Cá Dứa Một Nắng Chiên Giòn,DIFFERENT,Cá dứa khác quả dứa (thơm),21964
+1475,tépTỏi hành lá,hành lá,green onion,1,Củ cải khô xào thịt,DIFFERENT,Gồm tỏi và hành lá,22002
+1476,Cà chua bi hành tây,cà chua,tomato,1,Steak bò sốt phomai,DIFFERENT,Gồm cà chua và hành tây,22021
+1478,Rau nêm rau thì là hành lá,hành lá,green onion,1,Món ngon từ cá MỜM CƠM SỮA,DIFFERENT,Gồm thì là và hành lá,22048
+1481,nước lá dứa lá nếp,dứa,pineapple,1,Rau câu vân mây lá dứa,DIFFERENT,Lá dứa (lá nếp) khác quả dứa,22088
+1483,Hành mùi gia vị,gia vị,seasoning,1,"Ngô bao tử, phù trúc (tàu hũ ky), nấm tuyết xào trứng",DIFFERENT,Hành mùi khác gia vị chung,22118
+1484,Hành lá mùi tỏi gia vị,hành lá,green onion,1,"Canh bí ngô, thịt bò bằm, nấm linh chi",DIFFERENT,"Hỗn hợp nhiều loại, không chỉ hành lá",22122
+1486,hành tươi,hành tỏi,garlic and onion,1,Cá diêu hồng hấp nấm,DIFFERENT,"Hành tươi chỉ gồm hành, không có tỏi",22137
+1487,Hành răm thìa là củ tỏi,tỏi,garlic,1,Cá diêu hồng hấp nấm,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ tỏi",22138
+1488,Gia vịmì chính nước mắmhạt tiêuớt tươi xay,nước,water,1,Cá kho mắm ớt ba chỉ,DIFFERENT,Hỗn hợp gia vị không phải nước,22181
+1490,rau củ hỗn hợp ngô đậu hà lan cà rốt,cà rốt,carrot,1,Súp gà nấm,DIFFERENT,Hỗn hợp rau củ khác chỉ cà rốt,22200
+1494,Hành ớt,ớt,chili pepper,1,Cá hú kho thịt ba rọi và thơm,DIFFERENT,Gồm hành và ớt,22330
+1495,Hành tỏi nước hàng gia vị,tỏi,garlic,1,Cá cam kho tộ,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ tỏi",22358
+1496,gừng củ riềng củ hành khô,gừng,ginger,1,Cá trôi kho dưa,DIFFERENT,"Gồm gừng, riềng, hành khô",22369
+1498,Gừng hành tỏi hành lá rau răm thìa là,hành lá,green onion,1,Đuôi cá thu sốt cà,DIFFERENT,"Hỗn hợp nhiều loại, không chỉ hành lá",22382
+1500,Mắm ăn cơm,cơm,cooked rice,1,Canh bầu nấu thịt,DIFFERENT,"Mắm là gia vị, cơm là lương thực",22450
+1509,hột tương,tương ớt,chili sauce,1,Khô cá lóc chay,DIFFERENT,"Hột tương là đậu nành lên men, không phải tương ớt",22623
+1517,hoa chuôi,nước,water,1,Hoa Chuối Hột Trộn Tôm,DIFFERENT,"Hoa chuối là rau, không phải nước",22739
+1528,vỏ bò bía,thịt bò,beef,1,Nem bơ hải sản,DIFFERENT,"Vỏ bò bía là bánh tráng, không phải thịt bò",22795
+1538,Hành tím gừng lá chanh,hành lá,green onion,1,Gỏi gà rau càng cua,DIFFERENT,"Hành tím, gừng, lá chanh khác hành lá",22901
+1543,huyết vịt lớn,huyết heo,pork blood,1,Nui giò heo,DIFFERENT,Huyết vịt khác hoàn toàn huyết heo,22953
+1544,rau Càng Cua,cua,crab,1,"Salad Rau Càng Cua, Trứng, Thịt Bò",DIFFERENT,"Rau càng cua là thực vật, không phải cua",22961
+1546,bắp nếp,gạo nếp,glutinous rice,1,Bắp Nếp Hầm Sườn Heo,DIFFERENT,"Bắp nếp là ngô, không phải gạo nếp",23003
+1547,trai dưa tươi,dưa,pickles,1,Tôm Càng Xanh Luộc Nước Dừa Tươi,DIFFERENT,Trái dừa (lỗi chính tả) khác dưa,23007
+1570,Hành ngò bột nêmtiêu,Bột (chung),flour,1,Bông bí nhồi thịt nấu canh,DIFFERENT,Hành ngò nêm tiêu không phải bột,23526
+1582,miến tỏi đen hoặc miến thường,tỏi,garlic,1,Miến cá nấu cà,DIFFERENT,"Miến tỏi đen là miến, không phải tỏi",23654
+1593,thanh cua surimi,cua,crab,1,Mì Gói Nấu Nấm Mỡ & Thanh Cua Surimi,DIFFERENT,"Thanh cua làm từ cá, không phải cua",23856
+1602,bò lát chay,thịt bò,beef,1,SP.0814 - Khổ Qua Xào Bò Chay,DIFFERENT,"Bò lát chay là đồ giả mặn, không phải thịt bò",23958
+1604,Rau ăn kèm bắp chuối bào giá rau cải con rau húng lũi hoặc rau thơm xà lách,bắp cải,cabbage,1,Mì QUẢNG sườn-tôm,DIFFERENT,"Hỗn hợp rau sống, không phải bắp cải",24000
+1608,nước ngọt có ga,nước,water,1,Bánh khọt mì tôm,DIFFERENT,Nước ngọt có ga khác hoàn toàn nước lọc,24058
+1609,Dưa leo ớt,ớt,chili pepper,1,Cơm chiên hải sản,DIFFERENT,Hỗn hợp dưa leo và ớt,24072
+1610,sườn lát,sườn heo,pork ribs,1,Giò heo cuộn chiên giòn (món chay),DIFFERENT,Sườn lát chay khác hoàn toàn sườn heo thật,24095
+1616,nước tương ít mặn,nước,water,1,Nấm kho tàu hủ,DIFFERENT,"Nước tương là gia vị, không phải nước lọc",24142
+1622,hũ đậu ngâm đóng hộp,đậu hũ,tofu,1,Taco thịt bò và taco tôm cá với salsa xoài,DIFFERENT,"Đậu đóng hộp thường là đậu hạt, không phải đậu hũ",24198
+1624,cu cà rôt,cà tím,eggplant,1,"Đậu hủ xào nấm mèo,cà rốt và tàu hủ ki",DIFFERENT,Cà rốt khác hoàn toàn cà tím,24212
+1628,cải trắng lớn,cải thảo,napa cabbage,1,DƯA món (Rau củ quả ngâm mắm đường),DIFFERENT,Cải trắng (củ cải) khác hoàn toàn cải thảo,24376
+1629,su hào lớn hoặc đu đủ xanh chưa chín,su su,chayote,1,DƯA món (Rau củ quả ngâm mắm đường),DIFFERENT,Su hào/đu đủ khác hoàn toàn su su,24378
+1630,Hành hoa ko cần thiết,cần tây,celery,1,Đậu sốt nấm kiểu Trung,DIFFERENT,Hành hoa khác hoàn toàn cần tây,24395
+1634,cần tàu cắt khúc cm,cần tây,celery,1,Cá Thu Nấu Ngót,DIFFERENT,Cần tàu khác hoàn toàn cần tây (cần Mỹ),24426
+1636,Xà lách mỡ,mỡ,lard,1,🌱 Bento Salad Bơ & Nấm Mỡ Sốt Quýt,DIFFERENT,"Xà lách mỡ là rau, không phải mỡ động vật",24449
+1638,Vừng rang lạc rang,đậu phộng,peanut,1,Nộm rau càng cua,DIFFERENT,Vừng và lạc (đậu phộng) là hai loại khác nhau,24487
+1640,riềng củ hành củ tỏi miếng nghệ nhỏ lá lốt,hành lá,green onion,1,Cá tầm nướng riềng,DIFFERENT,"Hỗn hợp gia vị củ, không có hành lá",24532
+1643,Hành củ dầu ăn hoặc mỡ,dầu ăn,Vegetable Oil,1,Rau bắp cải xào,DIFFERENT,"Hỗn hợp hành và chất béo, không chỉ dầu ăn",24547
+1651,rau cần nước lấy phần cọng,cần tây,celery,1,Bún Gạo Xào Tim Heo,DIFFERENT,Cần nước khác hoàn toàn cần tây,24613
+1662,đậu bắp rau cần tây,đậu bắp,okra,1,Lá hoành thánh chiên kèm rau củ xào,DIFFERENT,Hỗn hợp đậu bắp và cần tây,24741
+1664,rau câu chân vịt khô,thịt vịt,duck,1,Chè rau câu chân vịt,DIFFERENT,"Rau câu chân vịt là tảo, không phải thịt vịt",24754
+1667,Rau ăn kèm cải con giá bắp chuối,bắp cải,cabbage,1,Mì lá tươi trộn thịt băm,DIFFERENT,"Hỗn hợp rau sống, không phải bắp cải",24811
+1670,Bắp mỹ cà rốt,cà rốt,carrot,1,Soup tôm bong bóng cá,DIFFERENT,Hỗn hợp bắp và cà rốt,24863
+1671,Nấm đông cô bột bắp,Bột (chung),flour,1,Soup tôm bong bóng cá,DIFFERENT,Nấm đông cô khác hoàn toàn bột bắp,24864
+1682,tiết heo,thịt heo,pork,1,Cổ vịt nhồi tiết heo,DIFFERENT,"Tiết heo là máu, không phải thịt heo",25083
+1690,cà ra to,cà tím,eggplant,1,Lẩu riêu cua lông/ cà ra,DIFFERENT,"Con cà ra là loại cua, không phải cà tím",25202
+1691,Mẻ mắm tôm,Tôm muối,Salted shrimp,1,Lẩu riêu cua lông/ cà ra,DIFFERENT,Mẻ mắm tôm khác hoàn toàn tôm muối hạt,25204
+1699,cà ra,cà tím,eggplant,1,Riêu cà ra (cua lông),DIFFERENT,"Con cà ra là loại cua, không phải cà tím",25269
+1703,tomato sauce,cà chua,tomato,1,Nui lứt xào bò và nấm kim châm,DIFFERENT,"Sốt cà chua là gia vị, không phải quả cà chua",25309
+1704,Mắm ngò,nước mắm,fish sauce,1,Phi Lê Cá Điêu Hồng Chiên Giòn Chấm Mắm Ngò,DIFFERENT,"Mắm ngò là nước chấm, không phải nước mắm thuần",25342
+1706,tàu hũ ky lá khô,lá,leaves,1,Đậu hũ sốt chanh dây hạt chia,DIFFERENT,Tàu hũ ky khác với lá (chung chung),25350
+1709,catfish,cá trê,catfish,1,Cháo catfish(cá bông lau),DIFFERENT,Cá bông lau khác loài với cá trê,25385
+1714,tim heo kg,thịt heo,pork,1,Tim heo trộn,DIFFERENT,"Tim heo là nội tạng, không phải thịt heo",25403
+1716,phở sắn,sắn,cassava,1,Phở sắn chiên giòn sốt mực xào rau củ chua ngọt,DIFFERENT,"Phở sắn là sợi phở, không phải củ sắn",25409
+1727,Thanh cua,cua,crab,1,Canh hải sản nấu nấm,DIFFERENT,"Thanh cua thường làm từ cá, không phải cua",25535
+1733,cải trắng nhỏ,cải thảo,napa cabbage,1,Mì Bò Viên,DIFFERENT,Cải trắng nhỏ (củ cải) khác cải thảo,25552
+1735,tôm sắt biển,tôm thẻ loại to,shrimp,1,Cải Bẹ Trắng Xào Tôm Sắt,DIFFERENT,Tôm sắt khác hoàn toàn tôm thẻ,25560
+1736,cải bẹ trắng,cải thảo,napa cabbage,1,Cải Bẹ Trắng Xào Tôm Sắt,DIFFERENT,Cải bẹ trắng khác hoàn toàn cải thảo,25561
+1738,Tôm sắt bóc nõn,tôm thẻ loại to,shrimp,1,Canh rau muống nấu tôm sắt,DIFFERENT,Tôm sắt khác hoàn toàn tôm thẻ,25576
+1739,Rau củ hỗn hợp chén mắm,rau sống,fresh herbs,1,Cơm rang hải sản kimchi,DIFFERENT,Rau củ hỗn hợp khác với rau sống,25582
+1740,Lá bò bía,thịt bò,beef,1,Chả nem nấm,DIFFERENT,"Lá bò bía là vỏ bánh, không phải thịt bò",25596
+1742,tóc tiên to bằng quả trứng gà,Trứng gà,Chicken Egg,1,Súp Tôm Tóc Tiên,DIFFERENT,"Tóc tiên là rong/nấm, không phải trứng gà",25605
+1743,tôm tít tươi sống,tôm thẻ loại to,shrimp,1,Tôm tít (bề bề) bóc nõn xào rau quả,DIFFERENT,Tôm tít (bề bề) khác hoàn toàn tôm thẻ,25615
+1744,rau cân,rau câu,agar / agar-agar,1,Canh cá nâu nấu ngót,DIFFERENT,Rau cân (cần) khác hoàn toàn rau câu,25620
+1748,Xốt cà chua,cà chua,tomato,1,Nui sò xốt nấm cà chua,DIFFERENT,Xốt cà chua khác với quả cà chua tươi,25641
+1749,thịt gà nạc,nạc heo,lean pork,1,Canh Yellow Squash thịt gà,DIFFERENT,Thịt gà khác hoàn toàn nạc heo,25645
+1750,Gia vi ngò,ngò gai,culantro,1,Canh Yellow Squash thịt gà,DIFFERENT,Ngò (mùi) khác hoàn toàn ngò gai,25646
+1753,súp,súp chay,vegetarian soup,1,Bún Nưa Nấu Tôm & Rong Biển,DIFFERENT,"Súp là món ăn, không phải súp chay",25675
+1761,Oyster,nấm đùi gà,king oyster mushroom,1,Mướp khía xào nấm và miến,DIFFERENT,Oyster (hàu/nấm bào ngư) khác nấm đùi gà,25835
+1768,bánh đa đỏ,bánh phở,pho noodles,1,Bánh Đa Đỏ Trộn Thịt Bò,DIFFERENT,Bánh đa đỏ khác hoàn toàn bánh phở,25909
+1774,Xà lách mỡ Iceberg,mỡ,lard,1,"💚 Salad Nấm Mỡ, Olive & Phô Mai Feta",DIFFERENT,"Xà lách mỡ là rau, không phải mỡ",26092
+1778,thịt cá mặn,Cá tuyết muối,Salted cod,1,SP.0787 - Tàu Hũ Non Chưng Thịt Xay & Cá Mặn,DIFFERENT,Cá mặn VN khác cá tuyết muối,26150
+1780,cá mặn,Cá tuyết muối,Salted cod,1,Cơm chiên thịt quay cá mặn,DIFFERENT,Cá mặn VN khác cá tuyết muối,26182
+1782,bò lát,thịt bò,beef,1,Thịt nạc kho tiêu (món chay),DIFFERENT,Bò lát chay khác với thịt bò mặn,26208
+1792,cá chai khô đã rút xương,cá chỉ vàng,yellowstripe scad,1,Cá chai khô rim mắm đường,DIFFERENT,Cá chai khác hoàn toàn cá chỉ vàng,26386
+1793,Ngo rihanh lá,lá,leaves,1,Canh đọt nhãn lồng nấu tôm tươi,DIFFERENT,"Ngò rí, hành lá không phải lá (chung)",26393
+1797,đọt nhãn lồng,nhãn,longan,1,SP.0783 - Canh Đọt Nhãn Lồng Nấu Chả Cá,DIFFERENT,Đọt nhãn lồng (lạc tiên) không phải nhãn,26431
+1798,Lá ngò tây dùng để trang trí,lá,leaves,1,Cá Hồi Sốt Cam Tỏi Ớt,DIFFERENT,Ngò tây (parsley) không phải lá (chung),26458
+1799,hành tây tím nhỏ,hành tím,shallot,1,Đậu Cô Ve Xào Thịt Heo,DIFFERENT,Hành tây tím khác với hành tím (hành ta),26473
+1825,cá sủ tầm kg,cá tầm,sturgeon,1,Cá sủ nấu măng chua,DIFFERENT,Cá sủ và cá tầm là hai loài khác nhau,26837
+1833,cốt cà phê,cà tím,eggplant,1,Rau Câu Sơn Thuỷ,DIFFERENT,Cà phê khác hoàn toàn cà tím,26914
+1835,cá lạc phi lê,đậu phộng,peanut,1,SP.0775 - Cá Lạc Chiên Sả Hành,DIFFERENT,"Cá lạc là cá, không phải đậu phộng",26962
+1836,than hoa,nước,water,1,Thịt Heo Xiên Que Nướng Lá Chuối,DIFFERENT,"Than hoa là chất đốt, không phải nước",26992
+1837,Mắm tôm pha,Tôm muối,Salted shrimp,1,Đậu Hủ Chiên Giòn Chấm Mắm Tôm Kèm Kinh Giới Tía Tô,DIFFERENT,Mắm tôm khác với tôm muối,27023
+1847,tôm mũ ni con kkg,tôm thẻ loại to,shrimp,1,Ghẹ và tôm mũ ni luộc cạn với sả,DIFFERENT,Tôm mũ ni khác loài với tôm thẻ,27171
+1848,Thảo mộc luộc lòng,nấm mèo,wood ear mushroom,1,Đồ Lòng Bò Xào Rau Răm Ngũ Vị Hương,DIFFERENT,Thảo mộc khác hoàn toàn nấm mèo,27184
+1871,Bánh phở tráng chảo từ phụ phẩm làm mì căn hoặc phở tươi phở khô,bánh tráng,rice paper,1,Bánh Phở Tráng Chảo Trộn Thịt Xào,DIFFERENT,Bánh phở khác hoàn toàn bánh tráng,27543
+1873,tôm biển nõn,tôm viên,shrimp balls,1,Rau tập tàng nấu tôm,DIFFERENT,Tôm nõn tươi khác với tôm viên,27569
+1875,Rau dền dền đỏ dền trắng hay dền cơm đều được,cơm,cooked rice,1,Canh rau dền nấu tép,DIFFERENT,Rau dền cơm khác hoàn toàn cơm,27576
+1876,bánh đa đỏ bánh đa cua,cua,crab,1,Bánh đa đỏ tôm chả cá,DIFFERENT,Bánh đa cua khác hoàn toàn cua,27591
+1877,củ ngải bún,bún,rice vermicelli,1,Bún cá lóc hương vị Khmer,DIFFERENT,"Ngải bún là củ, không phải bún",27599
+1880,bánh tráng dẻo không cần nhúng nước hiệu Phương Trang,cần tây,celery,1,Cá sòng luộc cạn cuốn bánh tráng chấm mắm tôm,DIFFERENT,Bánh tráng khác hoàn toàn cần tây,27613
+1882,cá măng,măng,bamboo shoots,1,Cá Măng Nấu Lá É,DIFFERENT,"Cá măng là cá, không phải măng",27726
+1887,Gia vị chiên cá,cá hồng,snapper,1,Bún cá hồng chấm,DIFFERENT,Gia vị chiên khác với cá hồng,27780
+1902,Tôm thịt nạc rang,ram tôm,shrimp rolls,1,Cơm Tôm Thịt Nạc Rang & Rau Luộc Eat Clean,DIFFERENT,Tôm thịt rang khác món ram tôm,27953
+1903,Giá đỗ bắp cải tim luộc,bắp cải,cabbage,1,Cơm Tôm Thịt Nạc Rang & Rau Luộc Eat Clean,DIFFERENT,"Hỗn hợp rau, không chỉ bắp cải",27955
+1904,Xà lách cà rốt bắp cải tím,cà rốt,carrot,1,Bún Trộn Tôm & Thịt Nạc Eat Clean,DIFFERENT,"Hỗn hợp salad, không chỉ cà rốt",27958
+1905,Mì chũ rau củ vắt,lá mì,cassava leaves,1,Mì Chũ Xào Bò,DIFFERENT,"Mì chũ làm từ gạo, không phải lá mì",27982
+1906,chao môn,khoai môn,taro,1,SP.0760 - Khô Thịt Chay,DIFFERENT,Chao môn là đậu phụ lên men với môn,27988
+1910,Thịt heo bằm trứng gà,Trứng gà,Chicken Egg,1,"Mì trộn thịt heo bằm, trứng ốp la",DIFFERENT,Gồm thịt bằm và trứng gà,28044
+1911,Cải ngọt cải thìa cải thảo bắp cải,cải thảo,napa cabbage,1,"Mì trộn thịt heo bằm, trứng ốp la",DIFFERENT,Hỗn hợp nhiều loại cải,28046
+1913,Nước tương tamari,nước,water,1,🌱 Mì Chũ Xào Rau Củ Chay (Vegan),DIFFERENT,"Nước tương là gia vị, không phải nước",28099
+1916,Bắp cải cà rốt nấm bào ngư nấm mèo,nấm mèo,wood ear mushroom,1,Há cảo rau củ,DIFFERENT,Hỗn hợp nhiều loại nấm và rau,28152
+1917,Hành lá bột nêmtiêuđường,hành lá,green onion,1,Há cảo rau củ,DIFFERENT,"Hỗn hợp gia vị, không chỉ hành lá",28153
+1918,Nước tương tỏiớt,nước,water,1,Há cảo rau củ,DIFFERENT,Nước tương không phải là nước,28155
+1921,Hành lá hành khô mùi tàu gừng,hành lá,green onion,1,Mì Chũ nấu xương đuôi heo,DIFFERENT,"Hỗn hợp rau gia vị, không chỉ hành",28197
+1922,lòng gà tim gan mề,tim gà,chicken heart,1,Nấm xào tim gan mề gà,DIFFERENT,"Hỗn hợp lòng, gan, mề và tim",28215
+1924,mắm nên,nước mắm,fish sauce,1,Thịt Ba Chỉ Luộc Chấm Mắm Nêm,DIFFERENT,Mắm nêm khác nước mắm,28324
+1927,Bã đậu,đậu xanh,mung beans,1,Bánh tôm đậu nành,DIFFERENT,Bã đậu nành khác đậu xanh,28355
+1928,Hành khô hành lá gia vị,hành lá,green onion,1,"Canh rau, củ, nấm",DIFFERENT,"Hỗn hợp hành lá, hành khô, gia vị",28366
+1930,bã đậu,đậu xanh,mung beans,1,Viên thịt bã đậu chiên,DIFFERENT,Bã đậu nành khác đậu xanh,28384
+1931,dạ dày cá basa,bao tử heo,pork stomach,1,Dạ cá basa khìa nước dừa,DIFFERENT,Dạ dày cá khác bao tử heo,28421
+1932,chả cá măng,măng,bamboo shoots,1,"Chả Cá, Trứng Cút Chiên Sốt Cà Chua Chấm Rau Sống",DIFFERENT,Chả cá măng khác măng (rau),28457
+1933,cà chua beef cắt múi,thịt bò,beef,1,"Chả Cá, Trứng Cút Chiên Sốt Cà Chua Chấm Rau Sống",DIFFERENT,Cà chua beef khác thịt bò,28461
+1937,Xốt salad,salad,salad,1,Salad cải kale rau mầm,DIFFERENT,Xốt salad khác rau salad,28617
+1940,hành tỏi xay,tỏi,garlic,1,"Má heo, mõm heo khìa nước dừa",DIFFERENT,Gồm cả hành và tỏi,28661
+1942,kicap,mùi tây,parsley,1,Râu mực xào lá quế,DIFFERENT,"Kicap là nước tương, không phải mùi tây",28686
+1943,tương lạt,tương ớt,chili sauce,1,Râu Mực Luộc Sả Mắm Ăn Kèm Bí Ngòi Áp Chảo,DIFFERENT,Tương lạt khác tương ớt,28722
+1944,ường bột nêmnước mắm,Bột (chung),flour,1,Ruốc cá hồi bổ dưỡng cho cả nhà,DIFFERENT,Hỗn hợp gia vị không phải bột,28734
+1946,kim chi su hào hoặc kim chi cải thảo kim chi củ cải vv,su su,chayote,1,Canh Kim Chi Râu Mực,DIFFERENT,Su hào/cải thảo khác su su,28743
+1949,cáy còng đỏ ba khía,giò heo,pork hock,1,Canh mùng tơi rau đay nấu cáy còng đỏ (ba khía),DIFFERENT,"Cáy còng là cua, khác giò heo",28826
+1951,cá đùi gà,đùi gà,chicken drumstick,1,Cá đùi gà chiên giòn,DIFFERENT,"Cá đùi gà là cá, không phải gà",28873
+1953,nước dashi hoặc nước lọc,nước,water,1,"Cơm Nát, Cá chưng nước tương cho bé",DIFFERENT,"Nước dashi là nước dùng, khác nước lọc",28897
+1958,cần tây hành Tây,hành tây,onion,1,Mực xào ớt chuông 😋,DIFFERENT,Gồm cả cần tây và hành tây,28938
+1961,cá đùi gà nắng,đùi gà,chicken drumstick,1,Cá đùi gà kho keo,DIFFERENT,"Cá đùi gà là cá, không phải gà",29004
+1962,Rau củ quả các loại bạn thích loại nào thì dùng loại đó nhen Nhiều hay ít,rau sống,fresh herbs,1,Mì udon trộn sốt teriyaki và rau củ xào,DIFFERENT,Rau củ quả khác rau sống,29014
+1964,hành tỏi khô,tỏi,garlic,1,Mì udon trộn sốt teriyaki và rau củ xào,DIFFERENT,Gồm hành khô và tỏi khô,29019
+1965,Thịt lợn thịt bò thái mỏng,thịt bò,beef,1,Mì tôm thịt,DIFFERENT,Gồm cả thịt lợn và thịt bò,29021
+1966,cà bát tương ứng quả,cà tím,eggplant,1,Cà bát luộc chấm mắm tôm,DIFFERENT,Cà bát khác cà tím,29044
+1967,Nước ngâm cà khử độc,cà tím,eggplant,1,Cà Bát Xanh Muối Xổi Trộn Mắm Tôm,DIFFERENT,Nước ngâm không phải là quả cà,29058
+1969,cà chín tới,cà tím,eggplant,1,Cá thu sốt cà phiên bản lười,DIFFERENT,Cà chua khác cà tím,29102
+1974,bánh canh bột gạo loại có sẵn ngoài chợ,Bột (chung),flour,1,Bánh canh gà nấm :):),DIFFERENT,"Bánh canh làm từ bột, không phải bột",29182
+1977,Bún hoặc phở,bún,rice vermicelli,1,Phở trộn thịt gà xào,DIFFERENT,Phở khác bún,29314
+1978,Rau thơm các loại nhất định phải có rau kinh giới và rau ngổ ngò,rau om,rice paddy herb,1,Nộm rau muống tép,DIFFERENT,Rau ngổ khác rau om,29340
+1980,hành tím cọng hành lá,hành lá,green onion,1,Trứng chiên với thịt heo và lá lốt,DIFFERENT,Gồm hành tím và hành lá,29353
+1981,Lạc vừng đã rang,đậu phộng,peanut,1,Nộm rau muống,DIFFERENT,"Lạc là đậu phộng, vừng là mè",29356
+1982,Mắm chanh ớt tỏi,ớt,chili pepper,1,Nộm rau muống,DIFFERENT,"Hỗn hợp gia vị, không chỉ ớt",29357
+1984,Hành khô tỏi bột nghệ,tỏi,garlic,1,Cơm chiên rau củ,DIFFERENT,Hỗn hợp nhiều loại gia vị,29363
+1985,Rau thơm lạc rang nếu có,đậu phộng,peanut,1,Gỏi rau tiến vua tôm thịt,DIFFERENT,Gồm rau thơm và lạc rang,29367
+1986,củ cà rốt củ khoai tây củ hành tây,rau tạp,mixed greens,1,Cơm cà ri bò kiểu Nhật,DIFFERENT,Các loại củ cụ thể khác rau tạp,29383
+1989,hành khô quả trứng,Trứng gà,Chicken Egg,1,Thịt thăn heo chiên xù,DIFFERENT,Gồm hành khô và trứng,29428
+1991,Rau cải quả cà chua rau thì là hành ngò gai của tùng gia đình vài lát gừng,cà chua,tomato,1,Bún cá mùa hè,DIFFERENT,Hỗn hợp nhiều loại rau quả,29437
+1992,kg khổ hoa mướp đắng,mướp,luffa,1,Lẩu chả cá thác lác khổ qua,DIFFERENT,Khổ qua khác mướp,29449
+1993,Khoai sọ gram khoảng củ nhỡ,khoai mỡ,purple yam,1,Canh xương khoai sọ rau muống,DIFFERENT,Khoai sọ khác khoai mỡ,29466
+1998,ường dầu ăn mắm dầu hào,nước mắm,fish sauce,1,Gà kho nấm hương chua ngọt,DIFFERENT,Hỗn hợp nhiều loại gia vị,29542
+1999,Màu lá dứa và nếp cẩm,dứa,pineapple,1,Rau câu pha lê,DIFFERENT,Lá dứa khác quả dứa,29556
+2018,thịt nạc dê,nạc heo,lean pork,1,Cháo thịt dê đậu xanh,DIFFERENT,Thịt dê khác hoàn toàn thịt heo,29814
+2020,cá nục nướng than hoa Nghệ An con,củ nghệ,turmeric root,1,Cá nục Nghệ An nướng than hoa sốt cà chua Thanh Hoá,DIFFERENT,Địa danh Nghệ An không phải củ nghệ,29830
+2021,Riêu tôm thịt xay sẵn,tôm thẻ loại to,shrimp,1,"Bún Riêu không cần cua vẫn thơm ngon, siêu dễ",DIFFERENT,Riêu tôm thịt xay khác tôm thẻ nguyên con,29843
+2022,Súp Lơ,súp,soup,1,Rau Củ Quả Hầm Kem (Chay),DIFFERENT,"Súp lơ là rau, súp là món ăn",29852
+2024,củ khoai sọ sót lại,khoai mỡ,purple yam,1,Gân bò hầm khoai sọ,DIFFERENT,Khoai sọ và khoai mỡ là hai loại khác,29885
+2025,cá bò to,thịt bò,beef,1,Cá bò nướng muối ớt,DIFFERENT,"Cá bò là cá, không phải thịt bò",29902
+2032,su hào to,su su,chayote,1,"Hà xào su hào, rau cần",DIFFERENT,Su hào và su su là hai loại khác,30012
+2033,hoa tỏi ba góc onion weed tỏi hoa ng three cornered leek,hành lá,green onion,1,Cá John Dory (Cá Dây Nhật) Nướng Bơ & Hoa Tỏi Ba Góc,DIFFERENT,"Hoa tỏi thuộc họ hành tỏi, không phải hành lá",30022
+2043,cu Cà rôthanh lahanh tim,cà tím,eggplant,1,Giò sống trộn nấm hương chiên,DIFFERENT,"Cà rốt, hành khác hoàn toàn cà tím",30177
+2044,mực lá g,lá,leaves,1,Bún riêu hải sản,DIFFERENT,"Mực lá là hải sản, không phải lá",30179
+2049,rau rocket,nước,water,1,Beef & Reef Salad,DIFFERENT,"Rau rocket là rau, không phải nước",30231
+2064,Rau củ cắt sẵn đông lạnh,rau sống,fresh herbs,1,Mì xào bò viên rau củ,DIFFERENT,Rau củ đông lạnh khác rau sống tươi,30518
+2072,rổ rau càng cua to,cua,crab,1,Rau càng cua trộn ruốc xào & trứng luộc,DIFFERENT,"Rau càng cua là rau, không phải cua",30683
+2079,Gia vị pizza hương thảo lá xô thơm húng tây khô,bánh pizza,pizza,1,Pizza đế mỏng kiểu Florence (vị nấm),DIFFERENT,Gia vị thảo mộc khác đế bánh pizza,30747
+2081,bắp Ngô nếp tách hạt giã dập,gạo nếp,glutinous rice,1,Chả tôm thịt rong biển,DIFFERENT,"Bắp nếp là ngô, không phải gạo nếp",30761
+2083,chanh me,chanh,lime,1,Canh cá hồi nấu ngót,DIFFERENT,Chanh và me là hai vị chua khác,30772
+2092,qua chanh dây,chanh,lime,1,Cá hồi xốt chanh dây,DIFFERENT,Chanh dây khác hoàn toàn quả chanh,30865
+2096,thịt lợn lạc,đậu phộng,peanut,1,Thịt cuốn rau củ tẩm bột rán,DIFFERENT,Thịt lợn nạc khác hoàn toàn đậu phộng,30905
+2097,su hào vừađịnh mua đỗ xanh mà không có hixhix,su su,chayote,1,Thịt cuốn rau củ tẩm bột rán,DIFFERENT,Su hào và su su là hai loại khác,30907
+2101,nước tương nhật kikkoman,nước,water,1,Cơm Bò Truffle Ponzu,DIFFERENT,"Nước tương là gia vị, không phải nước lọc",30978
+2102,húng quế tây basil,Mè (Vừng),sesame seeds,1,Cua Đi Picnic,DIFFERENT,Húng quế tây khác hoàn toàn mè (vừng),30995
+2108,cá trèn,cá ngạnh,catfish,1,Cá trèn chiên giòn,DIFFERENT,Cá trèn và cá ngạnh là hai loài khác nhau,31224
+2110,cá điêu hồng khoảng khoanh,cá hồng,snapper,1,Cá điêu hồng kho lạt,DIFFERENT,Cá điêu hồng khác loài với cá hồng biển,31250
+2112,Xà lách gr,bún,rice vermicelli,1,Xà Lách Trộn Thịt Bò,DIFFERENT,"Xà lách là rau, không phải bún",31275
+2118,Rau thơm như húng bạc hà húng Hà Nội rau mùi ta,bạc hà,mint,1,Salad xoài rau xanh dầu dấm,DIFFERENT,"Húng/mùi là rau thơm, khác bạc hà (dọc mùng)",31356
+2120,cá rô bí,bí ngòi vàng,yellow zucchini,1,Cá Rô Bí Kho Tiêu,DIFFERENT,"Cá rô bí là cá, không phải bí ngòi",31393
+2123,cá măng g,măng,bamboo shoots,1,Cá Măng Chiên Giòn,DIFFERENT,"Cá măng là cá, không phải măng thực vật",31408
+2135,su hào thái con chì,su su,chayote,1,Canh thịt viên (món canh chung cho các loại rau củ),DIFFERENT,Su hào khác hoàn toàn su su,31554
+2140,Nước ép lá dứa,dứa,pineapple,1,Thạch rau câu sợi lá dứa – cốt dừa – café,DIFFERENT,Lá dứa (lá nếp) khác quả dứa (thơm),31652
+2141,Nước tương Maggi thanh dịu,nước,water,1,Nấm nướng giấy bạc eat clean,DIFFERENT,"Nước tương là gia vị, không phải nước lọc",31669
+2143,Thịt gà lóc xương,xương gà,chicken bones,1,Thịt gà sốt nước tương,DIFFERENT,Thịt gà lóc xương khác hoàn toàn xương gà,31748
+2155,khoai sáp vàng đã gọt sạch,khoai lang,sweet potato,1,Thịt heo quay kho chao,DIFFERENT,Khoai sáp khác hoàn toàn khoai lang,31881
+2157,nguyệt quế,quế,Cinnamon,1,"Nạm bò, gân bò hầm",DIFFERENT,Lá nguyệt quế khác hoàn toàn vỏ quế,31909
+2158,sốt cà pasta của,nui,pasta,1,Mý Ý Thịt Viên Sốt Cà Chuẩn Từ Đầu Bếp Trưởng Vùng Sicily Ý,DIFFERENT,Sốt cà pasta khác hoàn toàn nui,31976
+2161,Kẹp gắp kéo cắt cọ quét,cọ,palm fruit,1,Thịt Nướng Hàn Quốc,DIFFERENT,"Dụng cụ (kéo, gắp) không phải nguyên liệu cọ",32009
+2164,mắm tôm nguyên chất,nước mắm,fish sauce,1,Chả cá Lã Vọng với cá basa,DIFFERENT,Mắm tôm và nước mắm là hai loại khác nhau,32036
+2170,ậu nưa,nước,water,1,Đậu nưa trộn thịt bằm sốt bbq,DIFFERENT,Đậu nưa (konjac) không phải nước lọc,32127
+2173,Mắm hành,nước mắm,fish sauce,1,Đậu Hũ Chiên Chà Bông Mắm Hành,DIFFERENT,"Mắm hành là xốt, không phải nước mắm nguyên chất",32162
+2178,nước cốt lá dứa,dứa,pineapple,1,RAU CÂU lá dứa-sữa dừa-cà phê,DIFFERENT,Lá dứa khác hoàn toàn quả dứa (thơm),32293
+2179,nước cafe đen đậm đặc,nước,water,1,RAU CÂU lá dứa-sữa dừa-cà phê,DIFFERENT,"Cà phê đen là thức uống, không phải nước",32295
+2181,lon cream soda,kem,cream,1,"Bò sốt vang, cream soda",DIFFERENT,"Cream soda là nước giải khát, không phải kem",32321
+2186,Nước luộc chân giò thảo mộc,giò,pork sausage,1,Mỳ chân giò / mỳ bò thảo mộc,DIFFERENT,Nước luộc không phải là nguyên giò,32431
+2188,bông chuối,chuối,banana,1,"Salad bông chuối, cải mầm ngọt, và cá hồi",DIFFERENT,"Bông chuối là hoa, không phải quả chuối",32440
+2197,ồ chua củ cải cà rốt ngâm chua ngọt,cà chua,tomato,1,Bò Bía Chay,DIFFERENT,Củ cải cà rốt khác hoàn toàn cà chua,32596
+2201,Dầu điều có thể thay dầu ăn,hạt điều,cashew,1,Thịt ba rọi xá xíu,DIFFERENT,"Dầu điều là chất béo, khác hạt điều nguyên hạt",32673
+2203,rau basil khô hoặc rau ngò,Mè (Vừng),sesame seeds,1,Mỳ ý thịt xông khói sốt kem thơm béo !!!,DIFFERENT,"Basil/ngò là rau thơm, không phải mè vừng",32679
+2214,cà rôt mini,cà tím,eggplant,1,Bánh canh gà và nấm,DIFFERENT,Cà rốt mini khác hoàn toàn cà tím,32853
+2219,Bánh đa gạo lứt tuỳ ăn nhiều ít,bánh phở,pho noodles,1,Bánh đa gạo lứt nấu đậu hũ non,DIFFERENT,Bánh đa khác hoàn toàn bánh phở,32915
+2220,chả mực hoặc mực viên,thịt viên,meatballs,1,Súp nấm hương rau củ thịt nguội,DIFFERENT,Chả mực/viên mực khác thịt viên (thường là heo/bò),32927
+2224,Mướp đắng,mướp,luffa,1,Somtum Mực - Gỏi đu đủ mắm Thái + Mực,DIFFERENT,Mướp đắng (khổ qua) khác hoàn toàn mướp,32966
+2226,men loại instant men khô không cần kích hoạt,cần tây,celery,1,Bánh mì mềm cuộn thịt,DIFFERENT,Men (yeast) khác hoàn toàn rau cần tây,32977
+2232,tôm chay,tôm,shrimp,1,Bún gạo lức xào bò tôm mực (CHAY),DIFFERENT,Tôm chay khác hoàn toàn tôm thật,33160
+2241,Súp lơ lấy phần vừa ăn thui nha,súp,soup,1,Mì xào trứng rau củ,DIFFERENT,"Súp lơ là rau, khác món súp",33275
+2242,bắp hoa,nước,water,1,Phở Bắp Bò,DIFFERENT,Bắp hoa (thịt bò) khác hoàn toàn nước,33282
+2244,nước nắm,nước,water,1,Thịt ram,DIFFERENT,"Nước mắm là gia vị, không phải nước lọc",33303
+2245,rau ngũ gia bì,rau sống,fresh herbs,1,Rau ngũ gia bì xào trứng,DIFFERENT,Rau ngũ gia bì khác nhóm rau sống thông thường,33305
+2253,Vỏ bánh đậu xanh cuốn chả giò Tìm mua dễ dàng tại các cửa hàng tạp hoá Giá giao động kbịch Mua bịch là đủ,đậu xanh,mung beans,1,Chả giò tôm thịt béo thơm đơn giản ❤️,DIFFERENT,"Vỏ bánh làm từ bột, không phải hạt đậu xanh",33413
+2254,lá Lá rong biển cuốn cơm,cơm,cooked rice,1,Kimbap Cá Ngừ Ngâm Dầu,DIFFERENT,Lá rong biển khác hoàn toàn cơm,33459
+2255,tỏi tây,tỏi,garlic,1,Thịt bò dần xào dứa,DIFFERENT,Tỏi tây (leek/poro) khác hoàn toàn tỏi ta,33471
+2257,mì gói không lấy các gói gia vị,gia vị,seasoning,1,Mì Gói Xào Nấm Rơm Sốt Dầu Hào,DIFFERENT,"Mì gói là thực phẩm chính, không phải gia vị",33487
+2263,cá rô,cá rô phi,tilapia,1,Cá rô chiên giòn,DIFFERENT,Cá rô (đồng) khác hoàn toàn cá rô phi,33637
+2265,Tôm đất nguyên vỏ,tôm thẻ loại to,shrimp,1,Tôm rang gạo lứt cải thìa chả cá,DIFFERENT,"Tôm đất nhỏ, khác hoàn toàn tôm thẻ to",33644
+2269,su hào nhỏ,su su,chayote,1,Rau củ xào giò nấm chay,DIFFERENT,Su hào khác hoàn toàn su su,33673
+2272,boaro,nấm mèo,wood ear mushroom,1,"Miến xào măng, nấm",DIFFERENT,Boaro (hành tỏi tây) khác nấm mèo,33731
+2279,nhỏ lá hẹ,lá,leaves,1,Bánh Xếp Mandu Nhân Thịt & Kim Chi Cay Chiên Nước,DIFFERENT,Lá hẹ khác hoàn toàn lá (chung),33920
+2287,băp cai hanh lá,lá,leaves,1,Bún cá- chả cá - sứa Nha Trang,DIFFERENT,Hành lá khác hoàn toàn lá (chung),34103
+2298,Sa,cá ba sa,pangasius fish,1,Bún Bò Huế(Xương Bò),DIFFERENT,Cá basa khác hoàn toàn xương bò/món bún bò,34184
+2299,mực nang nhỏ hoặc mực ống mực lá nhỏ đều được,lá,leaves,1,Bún Mực Nang Baby,DIFFERENT,Mực nang/ống khác hoàn toàn mực lá,34221
+2314,cá mặn tầm gr,cá tầm,sturgeon,1,Gỏi xoài cá mặn,DIFFERENT,"Cá mặn là cá khô muối, không phải cá tầm",34480
+2323,phô mai con bò cười tán nhuyễn,thịt bò,beef,1,Mì thịt bằm bí ẩn,DIFFERENT,Phô mai khác hoàn toàn thịt bò,34609
+2331,Nhân thịt và rau củ,rau sống,fresh herbs,1,Bánh Mặn Mini Nhân Thịt & Rau Củ,DIFFERENT,Nhân thịt rau củ khác rau sống,34754
+2336,nước lọc chừng chén ăn cơm nước,cơm,cooked rice,1,Đậu hũ chiên sốt cà chua chay,DIFFERENT,Nước lọc khác hoàn toàn cơm,34837
+2347,cà phê hòa tan,cà tím,eggplant,1,Bánh trung thu rau câu,DIFFERENT,Cà phê khác hoàn toàn cà tím,34949
+2355,tôm biển hoang dã hoặc tôm gì cũng được,tôm viên,shrimp balls,1,Salad Cà Chua Tôm Biển,DIFFERENT,Tôm biển tươi khác với tôm viên,35058
+2356,lá basil húng tây,Mè (Vừng),sesame seeds,1,Salad Cà Chua Tôm Biển,DIFFERENT,Lá basil khác hoàn toàn mè,35061
+2358,súp lơ xanh,súp,soup,1,Tôm Xào Súp Lơ Xanh,DIFFERENT,"Súp lơ là rau, không phải súp",35086
+2362,Mắm tép hoặc chai mắm nêm,tép,small shrimp,1,Cá lóc nướng nckd,DIFFERENT,Mắm tép/mắm nêm khác với con tép,35112
+2364,hạt nên phở bò Aji quick,thịt bò,beef,1,Lẩu Bò Thuốc Bắc Ngày Mưa 🌧,DIFFERENT,Hạt nêm vị bò khác thịt bò,35133
+2369,măm tôm,nước mắm,fish sauce,1,Canh bún giò heo,DIFFERENT,Mắm tôm khác hoàn toàn nước mắm,35166
+2370,Rau củ nấu kèm,rau sống,fresh herbs,1,"Canh chân giò hầm với cà tím, đậu ve, và rau cải mầm",DIFFERENT,Rau củ nấu kèm khác rau sống,35202
+2372,tôm con tôm nhỏ,tôm thẻ loại to,shrimp,1,Tôm viên sốt teriyaki cho bé >1y,DIFFERENT,Tôm con nhỏ khác với tôm thẻ to,35260
+2375,Khoai sọ vừa,khoai môn,taro,1,Canh cua-khoai sọ-rau muống,DIFFERENT,Khoai sọ và khoai môn là khác nhau,35303
+2376,tôm cang xanh,tôm thẻ loại to,shrimp,1,Canh chua tôm càng xanh hoa chuối,DIFFERENT,Tôm càng xanh khác tôm thẻ to,35349
+2379,mướp đắng to,mướp,luffa,1,Đậu hũ xào mướp đắng,DIFFERENT,Mướp đắng (khổ qua) khác mướp,35391
+2385,muông cà phê hat nêm,cà tím,eggplant,1,Chả nấm chay,DIFFERENT,Hạt nêm khác hoàn toàn cà tím,35528
+2387,me rang,me,tamarind,1,Bóng cá chay chiên giòn mè rang,DIFFERENT,Mè rang khác hoàn toàn quả me,35534
+2394,hoa thiên ly,nước,water,1,Thịt bò xào hoa thiên lý,DIFFERENT,"Hoa thiên lý là rau, không phải nước",35700
+2396,chả lụa ớt,ớt,chili pepper,1,Bún Riêu Nấu Nấm Đông Trùng Hạ Thảo,DIFFERENT,Chả lụa ớt khác hoàn toàn ớt,35717
+2397,tôm biển hấp,tôm viên,shrimp balls,1,Bún Riêu Nấu Nấm Đông Trùng Hạ Thảo,DIFFERENT,Tôm biển hấp khác tôm viên,35719
+2400,hộp cà chua cô đặc hoặc sốt cà chua cho pizza,bánh pizza,pizza,1,Pizza Cá Ngừ Hộp & Mozzarella Tươi,DIFFERENT,Sốt cà chua khác đế bánh pizza,35756
+2401,mít,mít non,young jackfruit,1,Thạch rau câu mít :,DIFFERENT,Mít chín khác mít non,35766
+2403,Rau xà lách các loại rau thơm và rau cải đắng,rau cải đắng,bitter greens,1,Phở cuốn thịt bò,DIFFERENT,Hỗn hợp nhiều loại rau,35771
+2405,Táo tàu,táo,apple,1,Canh đuôi heo củ sen,DIFFERENT,"Táo tàu là táo khô, khác táo tươi",35814
+2407,t trái bỏ hạt,đậu,beans,1,Tàu hủ và thịt sốt sa tế,DIFFERENT,Ớt bỏ hạt không phải đậu,35842
+2410,Gia vị trộn salad,salad,salad,1,"💚 Salad Nui Ống, Nấm, Cà Chua, Olive & Fêta Healthy (Vegetarian)",DIFFERENT,Gia vị trộn khác rau salad,35860
+2415,Bơ đậu phộng tương đen,đậu đen,black beans,1,Cuốn đậu hũ eatclean,DIFFERENT,Bơ đậu phộng khác đậu đen,35957
+2416,cà ri Nhật,cà tím,eggplant,1,Cơm thịt heo chiên xù và cà ri Nhật (curry katsu),DIFFERENT,Sốt cà ri không phải cà tím,35962
+2418,bánh tráng gạo lức,gạo,rice,1,Bò lá lốt (eatclean-nckd),DIFFERENT,Bánh tráng là sản phẩm từ gạo,35974
+2420,Gia vị ướp cá,cá hồi,salmon,1,Lườn Cá Hồi Teriyaki Nướng Cuốn Tỏi & Tía Tô,DIFFERENT,Gia vị ướp khác cá hồi,35988
+2421,Nước tương Nhật Kikkoman,nước,water,1,Lườn Cá Hồi Teriyaki Nướng Cuốn Tỏi & Tía Tô,DIFFERENT,Nước tương không phải nước lọc,35992
+2423,Rau củ xào,rau sống,fresh herbs,1,Bò Bía,DIFFERENT,Rau xào khác rau sống,36025
+2426,tỏi gà tây vừa,tỏi,garlic,1,Chân gà tây nấu nấm hương,DIFFERENT,"Tỏi gà tây là đùi gà, không phải tỏi",36061
+2428,Thịt nạc bò heo trâu,thịt bò,beef,1,Trứng cút thịt viên phiên bản nâng cấp món thịt kho tàu,DIFFERENT,"Gồm bò, heo, trâu không chỉ bò",36080
+2429,nước ăn cơm,cơm,cooked rice,1,Trứng cút thịt viên phiên bản nâng cấp món thịt kho tàu,DIFFERENT,Nước ăn cơm không phải cơm,36086
+2430,Cà rốt măng tây nấm đùi gà tất cả cắt hạt lựu,măng,bamboo shoots,1,Súp Tôm và Gà,DIFFERENT,Măng tây khác măng tre/trúc,36089
+2433,Nguyên liệu nước tương,nước,water,1,Ganjang Gejang- Cua ngâm tương,DIFFERENT,Nước tương không phải nước lọc,36119
+2434,bắp xà lách mỡ,mỡ,lard,1,Salad Thịt Băm Rang Tương Cà,DIFFERENT,"Xà lách mỡ là rau, không phải mỡ",36137
+2436,Hành tươi,hành tỏi,garlic and onion,1,Canh sấu thịt băm rang,DIFFERENT,Hành tươi thường chỉ có hành,36160
+2437,Tôm đất hoặc tôm bạc nhỏ,tôm thẻ loại to,shrimp,1,Mì Quảng Gà Tôm Trứng,DIFFERENT,Tôm đất khác tôm thẻ to,36164
+2438,khoai tây củ cà rốt,cà rốt,carrot,1,Nui thịt bằm,DIFFERENT,Gồm khoai tây và cà rốt,36182
+2440,Rau răm hành cà chua,rau răm,vietnamese coriander,1,Canh cá Diếc (lỗi 😂),DIFFERENT,"Gồm nhiều loại, không chỉ rau răm",36187
+2442,cá rô to khoanh cá basa,cá rô,perch,1,Món cá kho ăn cơm với nộm (gỏi) rau muống 👏,DIFFERENT,Cá rô khác cá basa,36193
+2444,Nước sốt salad,salad,salad,1,Salad bò cải mầm,DIFFERENT,Nước sốt khác rau salad,36240
+2446,rau củ quả cắt sẵn ở siêu thị,cải,mustard greens,1,Súp chay rau củ,DIFFERENT,Rau củ quả chung khác cải,36251
+2454,mướp đắng,mướp,luffa,1,Mướp đắng đúc trứng thịt,DIFFERENT,Mướp đắng khác mướp thường,36422
+2455,Xả ớt,ớt,chili pepper,1,Cá Ninja Xào Sả Ớt !!!,DIFFERENT,Sả khác ớt,36446
+2460,miến đậu xanh bún tàu,đậu xanh,mung beans,1,Miến Đậu Xanh Xào Mực Nang & Rau Củ,DIFFERENT,Miến khác hạt đậu xanh,36539
+2462,Tôm xào tỏi,tỏi,garlic,1,Salad Tôm Xào Tỏi Rau Quả Sốt Mù Tạt,DIFFERENT,Tôm không phải tỏi,36573
+2465,lá chanh thơm,chanh,lime,1,Canh chay: chả cá khế thìa là,DIFFERENT,Lá chanh khác quả chanh,36619
+2466,lươn ca hôi,lươn,eel,1,Lườn cá hồi kho hành ớt,DIFFERENT,Lườn cá hồi không phải lươn,36633
+2470,Nước tương HQ,nước,water,1,Giò heo hầm thảo mộc Hàn Quốc,DIFFERENT,Nước tương không phải nước lọc,36656
+2472,Tôm biển,tôm viên,shrimp balls,1,Cháo tôm mix cà chua (7m28d),DIFFERENT,Tôm biển tươi khác tôm viên,36667
+2473,Gừng riềng,gừng,ginger,1,Cá trắm kho trám,DIFFERENT,Gừng khác riềng,36684
+2474,Nước nắm,nước,water,1,Cá trắm kho trám,DIFFERENT,Nước mắm không phải nước lọc,36685
+2478,cải vàng ngâm chua ngọt,cải ngọt,choy sum,1,Gỏi Cuốn Ức Gà & Rau Củ Ngũ Sắc,DIFFERENT,Cải muối chua khác cải tươi,36779
+2480,vải,chè vải,lychee dessert,1,Rau câu vải nước dừa,DIFFERENT,Quả vải khác món chè vải,36797
+2482,Tỏi hành lá nước tương,hành lá,green onion,1,Cá ngừ kho cà,DIFFERENT,"Hỗn hợp tỏi, hành, tương",36809
+2483,cá trô biển,cá trôi,carp,1,Bún cá cuốn,DIFFERENT,Cá trố biển khác cá trôi,36842
+2484,Mắm chua ngọt,nước mắm,fish sauce,1,"Bánh ít Trần nhân đậu xanh, thịt băm",DIFFERENT,Mắm chua ngọt khác nước mắm,36856
+2485,Giấm táo,táo,apple,1,Cơm thịt ram chua ngọt,DIFFERENT,Giấm táo khác quả táo,36861
+2486,rau ăn kèm,lá lốt,betel leaves,1,Cơm thịt ram chua ngọt,DIFFERENT,Rau ăn kèm chung khác lá lốt,36863
+2489,Mắm tỏi ớt,ớt,chili pepper,1,Chả Ram Tôm Đất,DIFFERENT,Nước mắm tỏi ớt không chỉ ớt,36869
+2492,ậu hũ trắng,đậu hũ trứng,egg tofu,1,Đậu hũ rong biển,DIFFERENT,Đậu hũ trắng khác đậu hũ trứng,37016
+2494,Rau sống xà lách cải con húng lủi giá cây bắp chuối diếp cá lá hẹ quê,bắp cải,cabbage,1,Mì Quảng Cá Lóc,DIFFERENT,"Hỗn hợp rau, không chỉ bắp cải",37130
+2497,cơm gạo lứt,gạo,rice,1,Eatclean cơm gạo lứt+ bò lúc lắc,DIFFERENT,Cơm gạo lứt khác hạt gạo,37183
+2499,Hành boaro,nấm mèo,wood ear mushroom,1,Bún gạo lứt xào rau củ,DIFFERENT,Hành boaro khác nấm mèo,37194
+2500,mì lứt hoặc mì rau củ,gạo lứt,brown rice,1,Mì lứt tôm sốt bơ lạnh 🍤🥑🧄,DIFFERENT,Mì lứt khác hạt gạo lứt,37214
+2506,xương cá hoặc xương heo,thịt heo,pork,1,Bún cá cay,DIFFERENT,Xương cá và thịt heo là hai loại khác nhau,37293
+2507,má đùi gà lọc bỏ xương,xương gà,chicken bones,1,Mì Ý sốt kem gà nấm,DIFFERENT,Má đùi lọc xương khác hoàn toàn với xương gà,37341
+2513,bia giúp bánh giòn hơn,bánh,cake,1,Bánh xèo nấm chay,DIFFERENT,"Bia là đồ uống, bánh là món ăn",37606
+2524,Muốiường dầu ăn dầu hào nước tương,nước,water,1,MÓN PHILIPPIN: MIẾN XÀO GÀ HEO KIỂU PHILIPPIN 🇵🇭,DIFFERENT,"Gia vị, dầu ăn khác hoàn toàn nước",37905
+2526,đùi tỏi,tỏi,garlic,1,Đùi gà chiên (nhưng bên trong thịt rất mọng nước),DIFFERENT,"Đùi tỏi là phần thịt gà, không phải tỏi",37939
+2531,cải Kana rửa sạch tách từng lá Riêng phần thân thì cắt xéo,lá,leaves,1,Khao Kha Moo - Giò Heo Hầm (Thailand),DIFFERENT,"Cải Kana là rau, không phải lá nói chung",38013
+2536,tôm càng xanh lột,tôm thẻ loại to,shrimp,1,Tôm càng lột sốt trứng muối,DIFFERENT,Tôm càng xanh khác tôm thẻ,38066
+2547,Bề bề ghẹ vụn tôm nõn,tôm thẻ loại to,shrimp,1,Nem rế nấm hải sản,DIFFERENT,"Bề bề, ghẹ khác hoàn toàn tôm thẻ",38161
+2553,Thịt kho trứng,bột gia vị,seasoning powder,1,Xôi Thịt Kho Trứng,DIFFERENT,"Thịt kho trứng là món ăn, không phải bột",38324
+2555,húng quế bạn có thể dùng lá tươi hay khô đều được,lá,leaves,1,Cà ri tôm,DIFFERENT,"Húng quế là rau cụ thể, không phải lá",38365
+2564,Cần tỏi tây,tỏi,garlic,1,Thịt ba chỉ gác bếp xào hành tây,DIFFERENT,"Cần tây/tỏi tây là rau, không phải tỏi",38531
+2566,Nước trộn bánh tráng,bánh tráng,rice paper,1,Bánh tráng trộn cá viên chiên,DIFFERENT,Nước trộn khác với bánh tráng,38551
+2567,Dấm ăn dấm táo ok,táo,apple,1,Cá Mackerel Nướng Dấm,DIFFERENT,"Dấm táo là gia vị, không phải táo quả",38583
+2570,lá Kombu,hành tím,shallot,1,SANPAIJIRU - SOUPS KHOAI TÂY CÁ HỒI,DIFFERENT,"Lá Kombu là rong biển, không phải hành",38630
+2571,cải trắng bào vỏ chẻ dọc và cắt lát dầy cm,cải thảo,napa cabbage,1,SANPAIJIRU - SOUPS KHOAI TÂY CÁ HỒI,DIFFERENT,Cải trắng (củ cải) khác cải thảo,38633
+2576,Tôm nhỏ bóc vỏ sẵn,tôm thẻ loại to,shrimp,1,Canh Cải Non Nấu Tôm,DIFFERENT,Tôm nhỏ bóc vỏ khác tôm thẻ to,38691
+2577,Bưởi,nem bưởi,grapefruit roll,1,Gỏi bưởi tôm thịt,DIFFERENT,"Bưởi là trái cây, nem bưởi là món",38693
+2581,sò mía,mía,sugarcane,1,"Lẩu Thái Hải Sản, Bò, Gà",DIFFERENT,"Sò mía là hải sản, không phải mía",38720
+2589,Nước tương nhật,nước,water,1,Cuốn Maki Bơ & Cá Ngừ,DIFFERENT,"Nước tương là gia vị, không phải nước",38896
+2590,cá cơm rim,cơm,cooked rice,1,Bánh tráng trộn cá cơm rim,DIFFERENT,Cá cơm rim khác với cơm,38913
+2591,nhỏ lá chanh,chanh,lime,1,Lạp Bò Lào - Gỏi Bò Lào 🇱🇦,DIFFERENT,Lá chanh khác với quả chanh,38932
+2597,bún tàu miến đậu xanh,đậu xanh,mung beans,1,Cá Tuyết Hấp (Chưng) Bún Tàu & Lá Tỏi Gấu,DIFFERENT,Bún tàu/miến khác hoàn toàn đậu xanh,39016
+2602,Mắm nêm hoặc mắm cái,nước mắm,fish sauce,1,Chả Giò Cá Cuốn Bánh Tráng Chấm Mắm Cái,DIFFERENT,"Mắm nêm là mắm cá, khác nước mắm trong",39084
+2610,thịt lạc,đậu phộng,peanut,1,Thịt chiên,DIFFERENT,"Thịt lạc (nạc) là thịt, không phải đậu phộng",39167
+2613,Bánh tráng gạo vừa đủ cho hai người,gạo,rice,1,Bánh Tráng Trộn Tôm Rim,DIFFERENT,"Bánh tráng là thành phẩm, không phải gạo nguyên hạt",39198
+2614,Sốt tôm rim,ram tôm,shrimp rolls,1,Bánh Tráng Trộn Tôm Rim,DIFFERENT,Sốt tôm rim không phải là ram tôm,39205
+2626,Mắm tôm pha chấm cuốn,nước mắm,fish sauce,1,Lá Tỏi Gấu Cuộn Bò Bằm Xiên Que Nướng,DIFFERENT,Mắm tôm khác hoàn toàn nước mắm,39388
+2635,t không cần nếu nhà có bé nhỏ,cần tây,celery,1,Cá lóc kho,DIFFERENT,Câu ghi chú không phải là cần tây,39513
+2646,súp lơ,súp,soup,1,Sandwich cua nướng (baby food),DIFFERENT,"Súp lơ là rau, súp là món nước",39664
+2661,Khuôn rau câu silicon me bông conkhuôn nho va lơn,me,tamarind,1,Rau câu bắp 2 lớp,DIFFERENT,"Khuôn silicon là dụng cụ, không phải me",39909
+2662,đùi tỏi gà,tỏi,garlic,1,"Combo món chiên: đùi gà chiên, tôm chiên, khoai lang chiên",DIFFERENT,"Đùi tỏi gà là thịt, không phải tỏi gia vị",39910
+2663,Mắm cá cơm nguyên,cơm,cooked rice,1,Cá nục hấp hành cuốn rau muống do lướt tóp tóp quá nhiều,DIFFERENT,Mắm cá cơm khác hoàn toàn gạo cơm,39928
+2671,khoai lang mật à Lạt,mật ong,Honey,1,Cà ri cà tím khoai lang mật và đậu hũ non chay,DIFFERENT,Khoai lang mật khác hoàn toàn mật ong,40065
+2682,nâm bao ngư,cá,fish,1,"Bánh canh chay sườn chay gà,đậu hủ và nấm bào ngư",DIFFERENT,"Nấm bào ngư là thực vật, cá là động vật",40235
+2702,bánh đa canh,bánh phở,pho noodles,1,Canh cua đồng mồng tơi,DIFFERENT,Bánh đa và bánh phở là hai loại sợi khác nhau,40544
+2703,Rau húng hà nội hoặc húng bạc hà,bạc hà,mint,1,Gỏi sứa xoài xanh rau húng,DIFFERENT,Rau húng bạc hà khác với dọc mùng (bạc hà Nam),40548
+2704,Măng tây,măng,bamboo shoots,1,Măng tây sốt nấm (ver.2),DIFFERENT,Măng tây và măng tre là hai loại thực vật khác,40564
+2705,cải trắng mình dùng cải tròn navet,cải thảo,napa cabbage,1,Thịt Kho Tiêu & Củ Cải Trắng,DIFFERENT,Củ cải trắng khác hoàn toàn cải thảo,40567
+2710,Rau củ tuỳ ý,rau sống,fresh herbs,1,Nui sao thịt bằm rau củ,DIFFERENT,Rau củ xào/nấu khác với rau sống ăn kèm,40594
+2716,rau củ,rau sống,fresh herbs,1,Cá hồi lăn vụn dừa,DIFFERENT,Rau củ nói chung khác với định nghĩa rau sống,40693
+2726,thịt nạc gà hoặc ức đùi cánh lườn gì cũng được,cánh gà,chicken wings,1,Thịt Gà Kho Rau Răm,DIFFERENT,Thịt nạc/ức/đùi khác với bộ phận cánh gà,40817
+2727,Súp lơ xanh không bắt buộc,súp,soup,1,Canh sườn nấm rong biển,DIFFERENT,"Súp lơ là rau, không phải món súp",40827
+2731,Hanh lahanh tim băm nho,tim heo,pork heart,1,"Tim heo xào bông cải xanh,su su và bắp cải",DIFFERENT,Hành tím/lá khác hoàn toàn nội tạng tim heo,40900
+2732,trứng gà ta mẹ Măng dùng trứng chim trĩ,măng,bamboo shoots,1,Bí ngô hấp tôm yến mạch (baby food),DIFFERENT,Trứng chim trĩ khác hoàn toàn măng,40932
+2736,hoa rô thái nhỏ,nước,water,1,"Cơm Chiên Cá Thu, Cá Hồi & Rong Biển",DIFFERENT,"Hoa rô (boa-rô) là rau, không phải nước",40960
+2738,măng tây cắt thành từng khúc nhỏ,măng,bamboo shoots,1,Cơm bò xào măng tây,DIFFERENT,Măng tây khác măng tre/trúc thông thường,40977
+2739,nước tương đen,nước,water,1,Cơm bò xào măng tây,DIFFERENT,"Nước tương đen là gia vị, không phải nước lọc",40978
+2745,nước tương nhật tôi dùng hiệu kikkoman,nước dùng,broth,1,Thịt Kho Đài Loan,DIFFERENT,"Nước tương là gia vị, không phải nước dùng",41053
+2746,Nước tương em bé,nước,water,1,Thịt heo normandy và phô mai,DIFFERENT,"Nước tương là gia vị, không phải nước lọc",41065
+2747,boa rô to hoặc cây nhỏ cả lá,lá,leaves,1,Súp Miso Rong Biển Đậu Hủ Nấm Mỡ,DIFFERENT,"Boa rô là cây rau, không phải lá chung chung",41082
+2751,nước tương nhật,nước,water,1,Rice Bowl - Cơm Quinoa Trộn Ức Gà Xé & Rau Quả Tươi,DIFFERENT,"Nước tương là gia vị, không phải nước lọc",41125
+2752,Nước tương dùng kèm,nước dùng,broth,1,Tô Cơm Trộn Cá Ngừ (Tuna Rice Bowl),DIFFERENT,"Nước tương là gia vị, không phải nước dùng",41140
+2755,thìa cafe hắc xì dầuhoặc nước hàng,nước,water,1,Thịt kho đậu,DIFFERENT,"Hắc xì dầu là gia vị, không phải nước",41176
+2756,Nước hầm xương cô đặc,nước,water,1,"Mì, hủ tiếu giò heo",DIFFERENT,Nước hầm xương khác nước lọc thông thường,41213
+2760,su hào non mới,su su,chayote,1,"Tôm nấu su hào, cà rốt bào",DIFFERENT,Su hào và su su là hai loại khác,41246
+2761,vỏ tôm này tết mình làm tôm khô nên mình giữ lại vỏ tôm cho ngọt nước,Tôm khô,Dried shrimp,1,Bánh canh ghẹ chả cá,DIFFERENT,Vỏ tôm tươi khác hoàn toàn tôm khô,41278
+2765,Rau củ tuỳ thích,rau sống,fresh herbs,1,Thịt viên rau củ sốt me,DIFFERENT,Rau củ nấu kèm khác hoàn toàn rau sống,41304
+2767,Mì,bánh mì,bread,1,Mì ý sốt cà chua nhân thịt,DIFFERENT,Mì (sợi) khác hoàn toàn bánh mì,41320
+2770,thịt ức gà đã lọc xương da rửa sạch thái miếng vừa ăn,xương gà,chicken bones,1,Mì Ý xốt kem gà nấm,DIFFERENT,Thịt ức gà khác hoàn toàn xương gà,41403
+2773,Lá nem,lá,leaves,1,Cá diêu hồng hấp bia,DIFFERENT,Lá nem (bánh tráng) khác lá cây nói chung,41470
+2778,sốt terriyaki màu dừa nước tương,nước dừa,coconut water,1,Lươn kho bầu nấm,DIFFERENT,Nước tương/teriyaki khác hoàn toàn nước dừa,41507
+2781,Lá vỏ sủi cảo mua sẵn ngoài tiệm,lá,leaves,1,Súp Sủi Cảo Tôm Hầm Nấm,DIFFERENT,"Vỏ sủi cảo làm từ bột, không phải lá",41598
+2782,Tôm,bánh phồng tôm,shrimp crackers,1,Tôm chiên phồng,DIFFERENT,Tôm tươi khác hoàn toàn bánh phồng tôm,41601
+2786,Rau củ hỗn hợp tùy ý,rau sống,fresh herbs,1,Canh chả cua rau củ,DIFFERENT,Rau củ hỗn hợp nấu canh khác rau sống,41619
+2787,nước tắc nước cốt chanh,chanh,lime,1,Mực Nhồi Thịt Sốt Sate,DIFFERENT,Quả tắc (quất) khác hoàn toàn quả chanh,41648
+2789,nước tươngxì dầu,nước,water,1,Mì nưa xào rau nấm,DIFFERENT,"Nước tương/xì dầu là gia vị, không phải nước",41679
+2794,Rau thơm rau húng quế Vietnamese mint and basil,bạc hà,mint,1,Bún bò chua cay,DIFFERENT,Rau húng quế/ngò gai khác hoàn toàn bạc hà,41827
+2797,Hành khô hoặc boaro,nấm mèo,wood ear mushroom,1,Đậu hủ Tứ Xuyên (nấm),DIFFERENT,Hành khô/boa-rô khác hoàn toàn nấm mèo,41856
+2800,xương đuôi lợn hoặc gói cốt xương heo gà mua sẵn,xương gà,chicken bones,1,Bún cá Hải Phòng,DIFFERENT,Xương lợn (heo) khác hoàn toàn xương gà,41881
+2811,Sốt mayone không cần nêm gia vị,cần tây,celery,1,Nem hải sản !,DIFFERENT,Sốt mayone khác hoàn toàn cần tây,42042
+2813,dầu đậu phộng,đậu phộng,peanut,1,Canh Chuối Chát Nấu Giò Heo,DIFFERENT,Dầu đậu phộng khác hạt đậu phộng,42059
+2819,nắm,bắp cải,cabbage,1,Móng giò rau tiến vua ngâm mắm,DIFFERENT,Nắm (lượng) khác hoàn toàn bắp cải,42121
+2823,nươc dưa tươi hoăc nươc loc,dưa,pickles,1,Rau câu sữa bắp nước cốt dừa,DIFFERENT,Nước dừa tươi khác quả dưa,42169
+2828,rau ngò ôm,rau ngò rí,coriander leaves,1,Canh Chua Cá Đuối,DIFFERENT,Ngò ôm khác hoàn toàn ngò rí,42296
+2833,mực ghim sữa Phú Yên,sữa,milk,1,Mực Ghim Sữa Nướng Sả Ớt,DIFFERENT,Mực ghim sữa khác sữa uống,42392
+2836,Nước cốt chanh dây,chanh,lime,1,Rau câu Chép Koi,DIFFERENT,Chanh dây khác hoàn toàn chanh,42412
+2839,Rau củ,cải,mustard greens,1,Bánh mì khô kẹp phomai lăn rau củ,DIFFERENT,Rau củ nói chung khác cải,42418
+2842,ca cơm tươi,cơm,cooked rice,1,Cá cơm chiên giòn xóc mắm tỏi,DIFFERENT,Cá cơm khác hoàn toàn cơm,42539
+2852,xà lách mỡ rửa sạch để ráo,mỡ,lard,1,Gỏi cuốn rau mầm cải đỏ,DIFFERENT,Xà lách mỡ khác mỡ lợn,42658
+2854,Rau thơm húng lủi mùi bạc hà,bạc hà,mint,1,Bắp bò ngâm mắm trộn gỏi xoài,DIFFERENT,Húng lủi khác rau bạc hà,42681
+2867,lá móc mật,mật ong,Honey,1,Thịt heo quay lá móc mật,DIFFERENT,Lá móc mật khác mật ong,42828
+2868,basil,Mè (Vừng),sesame seeds,1,Thịt heo lụi tỏi,DIFFERENT,Basil (húng tây) khác mè,42837
+2869,Vài cọng măng tây,măng,bamboo shoots,1,Thịt heo lụi tỏi,DIFFERENT,Măng tây khác măng tre,42841
+2875,cốt chanh dây,chanh,lime,1,Cá điêu hồng chiên sốt chanh dây + cải bó xôi,DIFFERENT,Chanh dây khác hoàn toàn chanh,42899
+2880,Cơm đã nấu chín nguội cũng được không cần hâm lại vì khi quay trong lò vi sóng sẽ như cơm mới nấu,cần tây,celery,1,Rice Bowl - Cơm Cá Ngừ Sốt Miso Phủ Trứng,DIFFERENT,Cơm khác hoàn toàn cần tây,42984
+2882,Khoai lang mật,mật ong,Honey,1,Thịt nướng rau củ nckd,DIFFERENT,Khoai lang mật khác mật ong,43003
+2884,nươc dưa tươi co thê thêm nươc dưa,dưa,pickles,1,Rau câu dừa ly,DIFFERENT,Nước dừa tươi khác quả dưa,43038
+2885,sốt cà chua basil,Mè (Vừng),sesame seeds,1,Lasagne Sốt Bò Bằm Bolonaise,DIFFERENT,Basil khác hoàn toàn mè,43075
+2899,Olive,dầu ô liu,olive oil,1,"Pizza Thịt Nguội, Phô Mai và Olive",DIFFERENT,Quả olive khác dầu ô liu,43229
+2904,khô cá dứa,dứa,pineapple,1,Eatclean - Canh Chua Cá Hú + Khô Cá Dứa Chiên,DIFFERENT,"Khô cá dứa là cá, dứa là quả",43308
+2906,cà ri Nhật caycay,cà tím,eggplant,1,Cà Ri Bò Nhật Bản 🍛,DIFFERENT,"Cà ri là gia vị, không phải cà tím",43324
+2910,Mực lá,lá,leaves,1,Mực lá hấp gừng,DIFFERENT,"Mực lá là động vật, không phải lá",43378
+2917,mực lá tươi,lá,leaves,1,Mực Xào Chua Ngọt,DIFFERENT,"Mực lá là động vật, không phải lá",43534
+2918,nước vo gạo,gạo,rice,1,Canh kim chi nấm chay,DIFFERENT,Nước vo gạo không phải gạo hạt,43563
+2929,Nguyên liệu pha mắm nêm,nước mắm,fish sauce,1,Gỏi cuốn tôm thịt - Mắm nêm,DIFFERENT,Mắm nêm khác nước mắm,43728
+2931,lá cải salad leaves,lá,leaves,1,Salad Cobb với bánh cá 🥗 (Cobb salad with fish cake),DIFFERENT,"Lá cải salad là rau, không phải lá",43752
+2934,Phân ăn kem,kem,cream,1,Chè trôi nước 4 màu tự nhiên từ rau củ quả,DIFFERENT,Kem ăn chè khác kem (ice cream),43824
+2943,rau bầu đất,bầu,bottle gourd,1,Canh Rau Bầu Đất Nấu Tôm,DIFFERENT,Rau bầu đất khác quả bầu,43935
+2949,Cá điêu hồng,cá hồng,snapper,1,Cá điêu hồng nấu ngót,DIFFERENT,Cá điêu hồng khác cá hồng biển,44001
+2953,Chân giò hầm nấm,chân nấm,mushroom stem,1,Chân giò hầm nấm ăn kèm bánh mỳ,DIFFERENT,Nấm tươi khác chân nấm khô,44059
+2954,Bánh mỳ nhiều vỏ mỏng ruột,vỏ bánh,dough wrapper,1,Chân giò hầm nấm ăn kèm bánh mỳ,DIFFERENT,Bánh mỳ khác vỏ bánh (pastry),44060
+2956,lá tầng dầy,lá,leaves,1,Canh Chua Cá Mú,DIFFERENT,Lá tần dầy là thảo mộc,44075
+2964,rau cang cua,cua,crab,1,🍀Rau Càng Cua Trộn Thịt Bò Miền Trung🍀,DIFFERENT,Rau càng cua không phải cua,44190
+2965,mực mực nang mực ống mực lá lớn nhỏ đều ok,lá,leaves,1,Bún Tàu Xào Mực & Rau Cha Om (ชะอม),DIFFERENT,"Mực là động vật, không phải lá",44197
+2970,Súp lơ xanh,súp,soup,1,Súp lơ xào tôm,DIFFERENT,Súp lơ khác món súp,44264
+2975,Lá mắc mật,mật ong,Honey,1,Thịt heo rừng chiên giòn,DIFFERENT,Lá mắc mật không phải mật ong,44353
+2980,hành tây,tôm thẻ loại to,shrimp,1,Cơm lứt rang mực,DIFFERENT,Hành tây không phải tôm,44453
+2984,xathan gum,dứa,pineapple,1,Bún Thịt Viên Nướng,DIFFERENT,Phụ gia xathan gum không phải dứa,44516
+2994,Súp lơ trắng,súp,soup,1,Thịt Heo Xông Khói Xào Rau,DIFFERENT,Súp lơ trắng không phải súp,44630
+2999,Nước chấm mắm nêm,nước mắm,fish sauce,1,Vào bếp cùng con: gỏi cuốn cá chim biển trắng,DIFFERENT,Mắm nêm khác nước mắm,44692
+3001,Basil khô,Mè (Vừng),sesame seeds,1,Ravioli Sốt Kem Nấm Topping Cá Hồi Xông Khói & Trứng Cá Caviar,DIFFERENT,"Basil là húng tây, khác hoàn toàn mè (vừng)",44727
+3007,nước cốt dừa nhỏ,nước dừa,coconut water,1,Tôm thịt um nước cốt dừa,DIFFERENT,Nước cốt dừa khác nước dừa tươi,44807
+3010,cải trắng Navet,cải thảo,napa cabbage,1,Món Pháp - Pot au Feu (Bò Hầm Rau Củ),DIFFERENT,"Cải trắng Navet là củ cải, không phải cải thảo",44824
+3012,Khuôn lợn cá,gia vị,seasoning,1,"Bánh nướng trung thu con lợn, con cá - Nồi chiên không dầu - Airfrier",DIFFERENT,"Khuôn là dụng cụ, không phải gia vị",44854
+3024,húng quế khô Phụng dùng loại rắc,quế,Cinnamon,1,Mỳ ý sốt kem húng quế và tôm càng xanh sốt phô mai,DIFFERENT,"Húng quế là thảo mộc, quế là vỏ cây",45006
+3028,vẹm Newzealand,rau thơm,herbs,1,Lẩu Hải Sản,DIFFERENT,"Vẹm là hải sản, không phải rau thơm",45057
+3043,vẹm đã tách vỏ,rau thơm,herbs,1,Mì Xào Thịt Trai (Vẹm Đen) Sốt Ớt Siêu Cay,DIFFERENT,"Vẹm là hải sản, không phải rau thơm",45211
+3046,Rau quế,quế,Cinnamon,1,Kim chi nấu cá viên,DIFFERENT,"Rau quế là lá, quế là vỏ cây",45237
+3049,Cà chua cherry,trái cherry,cherry,1,Eat Clean với ức gà chiên bằng nồi chiên không dầu - bún gạo lức - rau luộc,DIFFERENT,"Cà chua cherry là rau, cherry là trái cây",45262
+3051,Riềng xả ớt khô lá chanh hành tím tỏi chanhdầu màu điều,hành lá,green onion,1,Tom Yum,DIFFERENT,Hỗn hợp gia vị không chứa hành lá,45285
+3062,Lá ổi,ổi,guava,1,Nem thịt thính gạo,DIFFERENT,Lá ổi khác hoàn toàn quả ổi,45461
+3077,bí non,bí đỏ,pumpkin,1,"Bí non, ớt chuông xào tim heo",DIFFERENT,Bí non (bí xanh/bí ngòi) khác bí đỏ,45678
+3078,Mì Udon dẹp sợi bánh canh VN là ngon nhất ạ,bánh mì,bread,1,Bánh Canh Hẹ Cá Thu,DIFFERENT,Mì/bánh canh không phải bánh mì,45687
+3090,Mì mình xài mì nghệ cọng to,củ nghệ,turmeric root,1,Mì Nghệ Xào Thịt Trai (Vẹm Đen),DIFFERENT,"Mì nghệ là sợi mì, nghệ là củ",45790
+3091,Thịt bò,thịt bò,beef,1,Bánh bò yến mạch,DIFFERENT,Bánh bò yến mạch không chứa thịt bò,45798
+3093,thanh cua cắt nhỏ,cua,crab,1,Salad Lựu Rau Mầm,DIFFERENT,Thanh cua là giả cua (làm từ cá),45840
+3205,Lá nếp,gạo nếp,glutinous rice,1,Bánh bò nướng chảo nhân dừa,DIFFERENT,Lá nếp (lá dứa) khác hoàn toàn gạo nếp,47225
+3207,Cà rôt,cà tím,eggplant,1,Thịt heo lai nướng,DIFFERENT,Cà rốt khác hoàn toàn cà tím,47262
+3211,Dầu ăn dầu hào nước tương,nước,water,1,Miến trộn giò lụa rau củ,DIFFERENT,"Dầu ăn/dầu hào/nước tương là gia vị, không phải nước",47282
+3212,nước cốt dừa mình dùng loại đóng hộp,nước dừa,coconut water,1,Bánh Canh Nước Cốt Dừa Tôm Thịt Miền Tây,DIFFERENT,Nước cốt dừa khác hoàn toàn nước dừa (trong quả),47285
+3213,pasta hoặc mì trứng tuỳ ý,nui,pasta,1,Mì Bò Stroganoff - Beef Stroganoff Pasta,DIFFERENT,Pasta/mì trứng khác hoàn toàn nui,47300
+3221,Gia vị oyster nước tương gừng tỏi,hàu,oyster,1,Thịt gà xào ớt chuông,DIFFERENT,"Dầu hào (oyster) là gia vị, không phải con hàu",47417
+3232,giấm gạo hoặc giấm táo,táo,apple,1,Heo Xé Trộn Sốt BBQ - BBQ Pulled Pork,DIFFERENT,"Giấm táo là gia vị, không phải quả táo",47499
+3233,bia hoặc Cocacola thêm nếu cần,cần tây,celery,1,Heo Xé Trộn Sốt BBQ - BBQ Pulled Pork,DIFFERENT,Bia/Cocacola khác hoàn toàn cần tây,47516
+3239,mứt gừng,gừng,ginger,1,Bánh trung thu con heo,DIFFERENT,"Mứt gừng là thành phẩm, khác gừng tươi",47563
+3240,mứt chanh,chanh,lime,1,Bánh trung thu con heo,DIFFERENT,"Mứt chanh là thành phẩm, khác quả chanh tươi",47564
+3243,Quét mặt bánh,bánh,cake,1,Bánh trung thu con heo,DIFFERENT,Hỗn hợp quét mặt khác hoàn toàn vỏ bánh,47577
+3244,mực lá size nhỏ,lá,leaves,1,Hải Sản Nướng - Grilled SeaFood Plate 🦞 🐠 🦑 🦐,DIFFERENT,"Mực lá là động vật, không phải lá cây",47583
+3246,Me trăng răc lên banh,me,tamarind,1,Bánh Mì Nhân Gà Nấm,DIFFERENT,Mè (vừng) trắng khác hoàn toàn quả me,47626
+3256,lá Rau ngót,lá,leaves,1,"CHÁO TÔM, RAU NGÓT,BÍ ĐỎ",DIFFERENT,Rau ngót khác hoàn toàn lá (nói chung),47688
+3272,Dừa,nước dừa,coconut water,1,Rau má đậu xanh tự làm tại nhà,DIFFERENT,Dừa khác hoàn toàn nước dừa (trong quả),47982
+3284,Nguyên liệu trộn thịt,chà bông,pork floss (Southern: chà bông / Northern: ruốc),1,Chà bông heo Đài Loan 🇹🇼,DIFFERENT,Nguyên liệu trộn thịt khác chà bông thành phẩm,48103
+3286,Rau,cải,mustard greens,1,Bánh bao gà nấm nguyên cám 🐥🍄,DIFFERENT,Rau nói chung khác hoàn toàn rau cải,48137
+3288,súp lơ xanh rau củ,rau sống,fresh herbs,1,Pizza yến mạch tôm 🍕(Emmy 9m+),DIFFERENT,Súp lơ xanh nấu chín khác rau sống,48150
+3293,nước ml nếu không có trứng,Trứng gà,Chicken Egg,1,"Bánh Ướt Trứng Nhân Tôm Thịt (Bột pha sẵn, bột tự pha và tráng bằng chảo)",DIFFERENT,Nước lọc khác hoàn toàn trứng gà,48368
+3295,Nươc Loc,nước cốt,extract,1,Giò Heo Tiềm Thuốc Bắc,DIFFERENT,Nước lọc khác hoàn toàn nước cốt,48630
+3296,ương quy,xương heo,pork bones,1,Giò Heo Tiềm Thuốc Bắc,DIFFERENT,Đương quy (thuốc bắc) khác xương heo,48637
+3297,Bôt ngot,bột ngô,cornstarch,1,Giò Heo Tiềm Thuốc Bắc,DIFFERENT,"Bột ngọt là gia vị, không phải bột ngô",48640
+3300,nươc côt tra xanh,bí xanh,winter melon,1,Chè trôi nước 4 màu tự nhiên từ rau củ quả,DIFFERENT,Trà xanh khác hoàn toàn bí xanh,48678
+3301,toi bằm,Thịt băm,Minced pork,1,Bún thịt nướng xiên que,DIFFERENT,Tỏi bằm khác hoàn toàn thịt băm,48696
+3305,cai trăng got vo,cải thảo,napa cabbage,1,Hủ tiếu mì xương và thịt heo,DIFFERENT,Cải trắng (củ cải) khác cải thảo,48794
+3307,muông canh dâu ăn,củ canh,root vegetable,1,"Bánh canh cá cờ, đậu hủ từ cơm nguội, bột gạo, bột năng",DIFFERENT,Dầu ăn khác hoàn toàn củ canh,48812
+3312,Hành phi,hành lá,green onion,1,Đậu hủ hấp xốt dầu hào,DIFFERENT,Hành phi (củ) khác hành lá,48888
+3318,nươc côt dưaml bia,nước dừa,coconut water,1,"Bánh xèo tôm,thịt, mực và trứng cút",DIFFERENT,Nước cốt dừa khác nước dừa,48921
+3320,ca rô khoang gr,cá rô phi,tilapia,1,Bún cá rô chả cá,DIFFERENT,Cá rô (đồng) khác cá rô phi,48924
+3321,cân nươc lăt khuc rưa sach đê raoơt trai,cần tây,celery,1,Bún cá rô chả cá,DIFFERENT,Cần nước khác hoàn toàn cần tây,48928
+3329,cu cai trăng,cải thảo,napa cabbage,1,Bún thịt nướng từ nồi chiên không dầu,DIFFERENT,Củ cải trắng khác cải thảo,49091
+3330,thit xa xiu,xốt thịt xá xíu,char siu sauce,1,Mì trứng xào mực và thịt xá xíu,DIFFERENT,Thịt xá xíu khác xốt xá xíu,49098
+3333,cai mâm,tỏi,garlic,1,Món Chay Cải Mầm Trộn Nấm Hương Và Tàu Hủ Ky,DIFFERENT,Cải mầm khác hoàn toàn tỏi,49121
+3334,mlml nươc âm,nước mắm,fish sauce,1,Bánh tráng kẹp bánh ít nhân tôm thịt,DIFFERENT,Nước ấm khác hoàn toàn nước mắm,49126
+3335,đâu hanh la,đậu hà lan,peas,1,"Cá mú hấp hành,gừng,xì dầu và dầu hào",DIFFERENT,Đầu hành lá khác đậu hà lan,49167
+3339,măm xay măm linhmăm lócmăm sặc,nước mắm,fish sauce,1,Mắm chưng thịt bằm hột vịt,DIFFERENT,Mắm các loại khác nước mắm,49226
+3341,lá Basil trang trí,Mè (Vừng),sesame seeds,1,Nấm Mỡ Nhồi Thịt Băm Húng Tây Nướng,DIFFERENT,Lá Basil (húng tây) khác mè,49291
+3345,xiu muôi,xíu mại,siu mai,1,Rau Câu Chữ Tài Lộc Và Thỏi Vàng Cho Ngày Vía Thần Tài,DIFFERENT,Xíu muối khác hoàn toàn xíu mại,49347
+3349,bôt chiên gion,bột xù,breadcrumbs,1,Cá cơm chiên giòn xóc mắm tỏi,DIFFERENT,Bột chiên giòn khác bột xù,49373
+3357,muông canh tương hôt,nước tương,Soy sauce,1,Đậu hủ kho tương hột (món chay),DIFFERENT,Tương hột khác hoàn toàn nước tương,49501
+3358,muông canh đương,củ canh,root vegetable,1,Đậu hủ kho tương hột (món chay),DIFFERENT,Đường khác hoàn toàn củ canh,49502
+3361,lardon cắt hạt lựu,trái lựu,pomegranate,1,"Pizza Lardon, Nấm Mỡ Full 3 Loại Phô Mai",DIFFERENT,Lardon (mỡ heo) khác quả lựu,49531
+3363,hành hoa cắt,nước,water,1,Cá Thu Sốt Cay (dùng sốt ớt ngọt Thái),DIFFERENT,Hành hoa khác hoàn toàn nước,49573
+3365,ăn canh nhỏ mắm tôm,tôm thẻ loại to,shrimp,1,Bún Đậu Mắm Tôm Nhà Làm Siêu Dễ,DIFFERENT,Mắm tôm khác hoàn toàn tôm thẻ,49588
+3372,chen gao,chao,fermented tofu,1,Cháo đậu đỏ ăn kèm cá nục kho,DIFFERENT,Chén gạo khác hoàn toàn chao,49654
+3379,Tương đen,nước tương,Soy sauce,1,Bò Bía Chay,DIFFERENT,Tương đen khác hoàn toàn nước tương,49805
+3388,lá húng tây khô Basil,Mè (Vừng),sesame seeds,1,Mì Ý Dẹt Malfadine Sốt Bò Bằm Cà Chua Cà Rốt,DIFFERENT,Húng tây Basil khác mè,49907
+3399,cải cúc cá nhân mình thấy không cần thiết lắm Có hay k cũng được,cần tây,celery,1,Canh chả cá Hàn Quốc - món nhậu quốc dân,DIFFERENT,Cải cúc khác hoàn toàn cần tây,50033
+3404,lá quế khô,lá,leaves,1,Bò Kho Xốt Vang,DIFFERENT,Lá quế khô không chỉ là lá chung chung,50079
+3412,hành khô vài cái đầu hành,hành tây,onion,1,Canh Khổ Qua Dồn Thịt,DIFFERENT,Hành khô/đầu hành không phải hành tây,50176
+3413,Bún thường ngoài chợ bán theo ký người tầm nửa ký là vừa còn bún khô thì vắt cho người,thì là,dill,1,Bún rau củ chay,DIFFERENT,Bún khác hoàn toàn thì là,50185
+3416,ngỗ ngò om,ngò gai,culantro,1,Canh Chua Đầu Cá Mú Đen,DIFFERENT,Ngò om khác ngò gai,50226
+3417,nâm meo ngâm nơ rưa sach đê rao va căt nho,mỡ,lard,1,Hoành thánh tôm thịt sườn non,DIFFERENT,Nấm mèo không phải mỡ,50234
+3418,Bi đo nâu chin nghiên nhuyên tao mau vang,dầu vừng,sesame oil,1,Bánh rau câu sinh nhật,DIFFERENT,Bí đỏ không phải dầu vừng,50265
+3420,ca chi vang va ca ngân,sả,lemongrass,1,Cá chỉ vàng và cá ngân chiên giòn,DIFFERENT,Cá chỉ vàng không phải sả,50362
+3422,tương ăn phở,tương ớt,chili sauce,1,Thịt ba chỉ khìa,DIFFERENT,Tương đen (ăn phở) khác tương ớt,50369
+3430,bông so đũa,bông bí,pumpkin flower,1,Lẩu cá thác lác,DIFFERENT,Bông so đũa khác bông bí,50546
+3438,Lá ngò tây persil,lá,leaves,1,🌱 Mì Ý Dẹp Capellini Xào Nấm Mỡ & Lá Súp Lơ Trắng (Vegan),DIFFERENT,Ngò tây không chỉ là lá chung,50721
+3445,mực ống nhỏ mực sữa,sữa,milk,1,Mực ống (mực sữa) xào cần tỏi,DIFFERENT,Mực sữa không phải sữa,50764
+3448,lá Ngò gai,lá,leaves,1,Lẩu Đầu Cá Bớp Măng Chua,DIFFERENT,Ngò gai không chỉ là lá chung,50804
+3451,lá cải diếp xà lách romaine,lá,leaves,1,Salad Rau Diếp Cà Chua & Thịt Ba Rọi Rang Cháy Cạnh,DIFFERENT,"Cải diếp là rau, không phải lá",50837
+3456,lá rau diếp xoăn đỏ,lá,leaves,1,Salad Cá Trích Xông Khói,DIFFERENT,"Rau diếp là rau, không phải lá",50870
+3462,cà chua beef,thịt bò,beef,1,Bánh Xèo Nấm,DIFFERENT,Cà chua beef không phải bò,50940
+3465,lá chua dâm but,lá,leaves,1,Canh chua cá cờ,DIFFERENT,Lá chua dâm bụt không phải lá,50958
+3467,lá thơm khô provence,lá,leaves,1,Tabouleh Couscous Rau Củ,DIFFERENT,Lá thơm không chỉ là lá chung,50985
+3472,Nước tương nấu canh HQ,nước,water,1,고추참치 순두부찌개- Canh đậu hũ non cá ngừ cay,DIFFERENT,Nước tương khác nước lọc,51044
+3473,nước tương Hàn Quốc,nước,water,1,제육볶음 Thịt xào cay kiểu Hàn,DIFFERENT,Nước tương khác nước lọc,51054
+3480,Hoa giây hoa đâu biêc và hoa xuyên chi theo ý thich,nước,water,1,Phở Cuốn Bò Xào,DIFFERENT,Hoa đậu biếc không phải nước,51118
+3482,cây hung lui,húng láng,spearmint,1,Phở Cuốn Bò Xào,DIFFERENT,Húng lủi khác húng láng,51133
+3483,Nước tương dầu hào không có không dùng dầu hào cũng được,nước dùng,broth,1,Nấm đùi gà xào bơ tỏi,DIFFERENT,Nước tương/hào không phải nước dùng,51138
+3502,peanut butter bơ đậu phộng,đậu phộng,peanut,1,"Wonton, seafood noodles, crispy chicken (hoành thánh, mì hải sản, gà giòn)",DIFFERENT,Bơ đậu phộng là sản phẩm chế biến từ đậu phộng,51367
+3505,lê hoặc táo hoa quả biến tấu theo sở thích ưu tiên chọn quả có vị không quá ngọt như vải nhãn mít sầu riêng Mình hay dùng lê táo nho và quả bơ cho các loại salad,salad,salad,1,"Salad rau rocket, salami, táo, lê và Burrata",DIFFERENT,"Lê/táo là trái cây, không phải món salad",51371
+3507,lá rau mồng tơi hoặc chân vịt lá dứa,dứa,pineapple,1,Cháo lá dứa thịt băm phi thơm,DIFFERENT,Mồng tơi/chân vịt khác hoàn toàn dứa (thơm),51398
+3511,sốt chanh dây chanh leo,chanh,lime,1,SALAD rau mầm với trứng,DIFFERENT,Chanh dây khác hoàn toàn quả chanh ta,51439
+3514,hắc xì dầukhông có thì cho nhiều nước tương chút là được,thì là,dill,1,Mỳ xào thịt xay,DIFFERENT,Hắc xì dầu khác hoàn toàn rau thì là,51512
+3516,Bắp bao tử,bắp ngọt,sweet corn,1,Hải Sản Nướng - Grilled SeaFood Plate 🦞 🐠 🦑 🦐,DIFFERENT,Bắp bao tử khác hoàn toàn bắp ngọt,51573
+3527,Húng Lủi,húng láng,spearmint,1,Cơm Chiên Rau Xanh,DIFFERENT,Húng lủi và húng láng là hai loại khác nhau,51896
+3530,rau ăn kèm các loại,lá lốt,betel leaves,1,Cá Saba sốt Thái,DIFFERENT,Rau ăn kèm chung chung khác lá lốt cụ thể,51930
+3531,Dầu nên chọn dầu oliu,dầu bơ,Avocado oil,1,Cá hồi sốt chanh dừa,DIFFERENT,Dầu ô liu khác dầu bơ,52057
+3532,Mỳ lấy lượng vừa ăn,nui,pasta,1,Mỳ Ý Hải sản sốt cà chua,DIFFERENT,Mỳ Ý khác nui (pasta dạng ống),52066
+3533,t tươi,mồng tơi,malabar spinach,1,🌱 Bún Bò Huế Chay Nấu Nhanh Với Viên Súp,DIFFERENT,Ớt tươi (t tươi) khác rau mồng tơi,52119
+3536,Các loại rau ăn kèm,lá lốt,betel leaves,1,Lẩu Bò Thuốc Bắc Ngày Mưa 🌧,DIFFERENT,Rau ăn kèm lẩu bò khác lá lốt,52166
+3543,nụ hoa mươp,nước,water,1,Nụ hoa mướp xào thịt heo và nấm bào ngư,DIFFERENT,"Nụ hoa mướp là rau, không phải nước",52286
+3546,t tươi,bột tỏi,garlic powder,1,🌱 Bún Nấm Hương Chay (Vegan),DIFFERENT,Ớt tươi (t tươi) khác bột tỏi,52380
+3551,mọc tôm,tôm thẻ loại to,shrimp,1,Canh bí đỏ nấu mọc tôm thịt,DIFFERENT,Mọc tôm khác hoàn toàn tôm thẻ nguyên con,52523
+3552,mọc thịt mình thường mua thịt xay trộn gia vị và mộc nhĩ nấm hương viên sẵn để ngăn đá để tiện nấu,nấm,mushroom,1,Mì nấu mọc thịt,DIFFERENT,Mọc thịt khác hoàn toàn nấm,52527
+3554,t đen ăn phở,tương ớt,chili sauce,1,🌱 Phở Chay Nấm Đậu Phụ (Vegan),DIFFERENT,Tương đen khác tương ớt,52552
+3555,Tương bần,nước mắm,fish sauce,1,Cá diếc kho tương,DIFFERENT,Tương bần khác nước mắm,52554
+3556,đầu hành bằm,nấm mèo,wood ear mushroom,1,Cá bống biển kho keo,DIFFERENT,Đầu hành khác nấm mèo,52559
+3557,Hành phi mua sẵn,hành lá,green onion,1,Bánh canh chả cá phiên bản lười,DIFFERENT,Hành phi khác hành lá tươi,52561
+3559,ngò ôm,rau ngò rí,coriander leaves,1,Canh tôm bông so đũa,DIFFERENT,Ngò ôm khác ngò rí,52592
+3563,hoa atiso,nước,water,1,Hoa Atiso Hầm Đuôi Heo,DIFFERENT,"Hoa atiso là rau/dược liệu, không phải nước",52770
+3568,mỳ ăn liền,mỳ hải sản,instant noodles,1,Mỳ trộn tôm thịt sốt cà,DIFFERENT,Mỳ ăn liền khác mỳ hải sản (món),52863
+3571,lá húng quế tây khô dried basil tuỳ ý,Mè (Vừng),sesame seeds,1,Cá diêu hồng sốt cà,DIFFERENT,Lá húng quế khác hoàn toàn mè,52893
+3573,mẻ chén ăn cơm,cơm,cooked rice,1,Bò nhúng mẻ,DIFFERENT,Mẻ (men) khác hoàn toàn cơm,52910
+3575,ức gà phi lê ka,lê,pear,1,Mì gà trộn cay cùng với bắp cải và nấm,DIFFERENT,Ức gà khác hoàn toàn quả lê,52956
+3576,tép hoặc tôm,tôm thẻ loại to,shrimp,1,Nộm tép (hoặc tôm),DIFFERENT,Tép (loại nhỏ) khác tôm thẻ to,53023
+3578,rau bò khai đã nhặt sạch,thịt bò,beef,1,Rau bò khai xào thịt băm,DIFFERENT,Rau bò khai khác hoàn toàn thịt bò,53036
+3580,t chin su,su su,chayote,1,Ba chỉ sốt tắc (heo),DIFFERENT,Tương ớt (Chin-su) khác quả su su,53083
+3583,mắmcá nhạt lên cần mắm đậm không cần,cần tây,celery,1,Cá nhâm dim chay,DIFFERENT,Nước mắm khác hoàn toàn cần tây,53106
+3599,nước tương maggi đậm đặc,nước,water,1,Mực Ống Nhỏ Nhồi Thịt Sốt Tương Dầu Hành,DIFFERENT,Nước tương Maggi khác nước lọc,53306
+3601,n kèm Cá cơm rim dưa mắm trộn,cơm,cooked rice,1,CHÁO tôm khô,DIFFERENT,Cá cơm rim và cơm trắng là khác nhau,53328
+3604,mỡ heo nước dầu ăn,dầu ăn,Vegetable Oil,1,CUA đồng kho mặn,DIFFERENT,Mỡ heo và dầu ăn là hai loại chất béo khác,53379
+3605,trà túi lọc,trà xanh,green tea,1,Cá TRẮM kho dưa cải,DIFFERENT,"Trà túi lọc thường là hồng trà, khác trà xanh",53386
+3609,noodle,xúp mì,noodle soup,1,Lẩu thịt rau củ,DIFFERENT,"Noodle là mì sợi, xúp mì là món nước",53473
+3611,dầu hạt lanh,đậu,beans,1,"Salad Rau Diếp Xoăn, Bắp Cải Tím & Ức Gà Áp Chảo",DIFFERENT,Dầu hạt lanh không phải là đậu,53481
+3613,Rau cải mơ non,mơ,apricot,1,Lẩu bò nhúng mẻ,DIFFERENT,Rau cải mơ khác với quả mơ,53527
+3615,Canh ngót rau cần nước,cần tây,celery,1,Bún chả cá viên,DIFFERENT,Cần nước và cần tây là hai loại khác nhau,53576
+3616,Bánh mì giònbánh mì bơ tỏi,tỏi,garlic,1,Súp Kem Nấm Khoai Tây Thì Là,DIFFERENT,Bánh mì không phải là tỏi,53586
+3621,cà ri Nị,cà tím,eggplant,1,Lòng bò xào cà ri,DIFFERENT,"Cà ri là gia vị, không phải cà tím",53645
+3622,lát hoài sơn,lát,galangal,1,Đuôi Heo Hầm Sâm Ngọc Linh,DIFFERENT,"Hoài sơn là dược liệu, không phải lát cắt",53664
+3623,đỗ trọng,đậu,beans,1,Đuôi Heo Hầm Sâm Ngọc Linh,DIFFERENT,"Đỗ trọng là dược liệu, không phải hạt đậu",53665
+3624,lát cam thảo,cam,orange,1,Đuôi Heo Hầm Sâm Ngọc Linh,DIFFERENT,"Cam thảo là dược liệu, không phải quả cam",53666
+3627,nước tương Maggi,nước,water,1,Ruốc Cá Nục,DIFFERENT,Nước tương Maggi khác với nước lọc,53757
+3629,hành baro thái khúc,nấm mèo,wood ear mushroom,1,Thịt lợn luộc kiểu Hàn,DIFFERENT,Hành baro khác hoàn toàn nấm mèo,53774
+3631,lá kim cuộn cơm,cơm,cooked rice,1,Kimbap cuốn rau Eatclean,DIFFERENT,"Lá kim là rong biển, không phải cơm",53787
+3634,giấm táo,táo,apple,1,"Salad ổi, tôm khô sốt dâu tằm",DIFFERENT,"Giấm táo là gia vị, không phải quả táo",53910
+3636,cà chua cherry cà chua thường hoặc cà chua bi,trái cherry,cherry,1,Salad tôm bóc nõn - #healthy,DIFFERENT,Cà chua cherry không phải quả cherry,53997
+3637,Vị Cà phê,cà tím,eggplant,1,"Rau Câu 3 Màu (Lá Dứa, Cà Phê, Sữa Dừa)",DIFFERENT,Hương vị cà phê khác với cà tím,54020
+3638,Vị Lá dứa,dứa,pineapple,1,"Rau Câu 3 Màu (Lá Dứa, Cà Phê, Sữa Dừa)",DIFFERENT,Lá dứa khác với quả dứa (thơm),54022
+3640,chân gà rút xương,xương gà,chicken bones,1,"Gỏi CHÂN GÀ, CÀ PHÁO với TÔM chua",DIFFERENT,Chân gà rút xương không còn xương gà,54045
+3645,ngô tách hạt,đậu,beans,1,Ức gà áp chảo rau củ,DIFFERENT,Ngô (bắp) không phải là đậu,54158
+3652,hộp gr ậu hũ non,hộp nấm,canned mushrooms,1,Canh Nấm Bào Ngư Chay,DIFFERENT,Đậu hũ non khác với nấm,54336
+3654,cây hành hoa mùi,nước,water,1,Phở sắn thịt băm sấu,DIFFERENT,Hành hoa và ngò không phải nước,54355
+3656,Hột gà,thịt gà,chicken,1,SP.0995 - Bò Bía Mặn,DIFFERENT,"Hột gà là trứng, không phải thịt gà",54362
+3670,chả cá thu cá măng,măng,bamboo shoots,1,Canh Khổ Qua Dồn Chả Cá,DIFFERENT,"Cá măng là cá, không phải măng rau",54592
+3673,cá bò kg làm sạch,thịt bò,beef,1,Cá bò kho nghệ,DIFFERENT,"Cá bò là cá, không phải thịt bò",54658
+3674,ngò tây,cần tây,celery,1,Canh chua chả cá rựa,DIFFERENT,Ngò tây (parsley) khác với cần tây,54719
+3683,ường phèn viên nhỏ,cá viên,fish balls,1,Bún cá cam,DIFFERENT,Đường phèn không phải cá viên,55195
+3684,ruốc ngon,chà bông,pork floss (Southern: chà bông / Northern: ruốc),1,Muối sả ruốc thịt ăn liền cho ngày mưa 🤤,DIFFERENT,Ruốc (mắm) khác với chà bông,55259
+3688,Phần mỳ,mỳ chính,MSG,1,Mỳ Ý sốt kem nấm phiên bản dành cho em bé,DIFFERENT,Mỳ sợi khác với mỳ chính (bột ngọt),55598
+3695,Phần rau ăn kèm,lá lốt,betel leaves,1,"Lẩu Kim Chi- Tôm Càng Xanh, Bò, Gà, Các Loại Nấm",DIFFERENT,Rau ăn kèm lẩu rất đa dạng,56131
+3698,ậu cove,củ đậu,jicama,1,Bánh xèo rau củ,DIFFERENT,Đậu cove khác hoàn toàn củ đậu,56393
+3700,t tươi,giò heo,pork hock,1,Canh Chuối Chát Nấu Giò Heo,DIFFERENT,Ớt tươi không phải là giò heo,56494
+3701,Rau xanh ăn kèm,lá lốt,betel leaves,1,Mì Cay Nongshim Nấm & Thịt Trai (Vẹm Đen),DIFFERENT,Rau ăn kèm khác hoàn toàn lá lốt,56495
+3704,Hành khô,hành tây,onion,1,Cháo yến mạch bí đỏ nấm,DIFFERENT,"Hành khô là hành tím, khác hành tây",56641
+3706,thơm xắt mỏng,rau thơm,herbs,1,Canh chua cá bớp,DIFFERENT,"Thơm là quả dứa, không phải rau thơm",56828
+3714,Ngán,thịt ngan,duck meat,1,Canh ngán rau muống,DIFFERENT,Ngán là loài nhuyễn thể khác hoàn toàn ngan,57618
+3716,hành ta,hành tăm (củ nén),shallot,1,Chả Cốm Trứng (Phiên Bản Không Thịt),DIFFERENT,"Hành ta thường là hành tím, khác hành tăm",57699
+3720,Rau húng lủi,húng láng,spearmint,1,Cuốn Bún Đậu Hủ Chấm Mắm Tôm,DIFFERENT,Húng lủi và húng láng là hai loại khác nhau,58070
+3721,Salicorne rau ngón biển,rong biển,seaweed,1,Mì Ý Xào Tôm & Rau Ngón Biển,DIFFERENT,Rau ngón biển khác với rong biển,58134
+3728,chả giò,giò,pork sausage,1,Bún thịt nướng chả giò,DIFFERENT,Chả giò (nem rán) khác với giò lụa,58457
+3731,tương hột ít mặn,nước mắm,fish sauce,1,Cá bơn - halibut hấp tương hột,DIFFERENT,Tương hột khác hoàn toàn nước mắm,58606
+3732,nhỏ rau húng lủi,húng láng,spearmint,1,Gỏi bưởi tai heo,DIFFERENT,Húng lủi và húng láng là hai loại khác nhau,58678
+3735,Hanh timơt,hành tăm (củ nén),shallot,1,Cá lòng tong và tôm sông kho khô,DIFFERENT,Hành tím khác hoàn toàn hành tăm,59022
+3739,hành baro cắt nhỏ,hành lá,green onion,1,Nấm Mỡ Kho Sa Tế,DIFFERENT,Hành baro khác hoàn toàn hành lá,59194
+3743,súp lơ trắng,súp,soup,1,SP.0864 - Gà Viên Nấu Kem Nấm Súp Lơ,DIFFERENT,"Súp lơ là rau, súp là món ăn",59459
+3745,xìa dầu,dầu sate,chili oil,1,Nấm Hải Sản Kho Sa Tế,DIFFERENT,Xì dầu khác hoàn toàn dầu sa tế,59574
+3746,tương hàn quốc,nước mắm,fish sauce,1,Canh sườn bò Galbi Tang Hàn quốc,DIFFERENT,Tương Hàn Quốc khác hoàn toàn nước mắm,59712
+3748,tương bần,nước tương,Soy sauce,1,🌱 Đậu Hủ Kho Tương Nếp Bần (Vegan),DIFFERENT,"Tương bần là tương đặc, khác nước tương",59783
+3750,tương hột cay Vân Nam,tương ớt,chili sauce,1,SP.0776 - Cơm Trộn Tôm Cay,DIFFERENT,"Tương hột làm từ đậu, khác tương ớt",59859
+3754,Mỳ ý gói,mì gói,instant noodles,1,Mỳ ý tôm sốt kem,DIFFERENT,Mì Ý khác hoàn toàn mì gói,60006
+3757,Bông so đũa,cá chai,flathead,1,Lẩu cá tầm măng chua,DIFFERENT,"Bông so đũa là thực vật, không phải cá",60077
+3760,bông kim châm khô,nấm kim châm,enoki mushroom,1,Bông Kim Châm Kho Rau Củ Chay,DIFFERENT,Bông kim châm khác hoàn toàn nấm kim châm,60167
+3762,ba chỉ liền dải,ba chỉ bò,beef belly,1,Thịt kho Đông Pha,DIFFERENT,"Thịt kho Đông Pha dùng heo, không phải bò",60250
+3765,Thơm chín,rau thơm,herbs,1,Mẹt thịt heo luộc cuốn rau sống,DIFFERENT,"Thơm là quả dứa, không phải rau thơm",60305
+3767,ngồng su hào,su su,chayote,1,Ngồng su hào xào thịt bò,DIFFERENT,Ngồng su hào khác hoàn toàn quả su su,60404
+3769,cần tây hành khô gia vị,hành tây,onion,1,"Cần tây, ớt chuông xào thịt gà",DIFFERENT,Hành khô khác hoàn toàn hành tây,60412
+3770,ba chỉ chia miếng,ba chỉ bò,beef belly,1,Thịt nướng ngũ vị,DIFFERENT,"Thịt nướng ngũ vị thường dùng heo, không bò",60507
+3773,Lá rong biển cuốn cơm,cơm,cooked rice,1,"Rong biển cuộn tôm, thịt",DIFFERENT,Lá rong biển khác hoàn toàn cơm,60638
+3774,ngò tây trang trí,rau ngò rí,coriander leaves,1,Súp Kem Bí Đỏ Cá Hồi,DIFFERENT,Ngò tây (parsley) khác với rau ngò rí,60668
+3776,dền cơm,cơm,cooked rice,1,Rau dền cơm nấu ngao,DIFFERENT,"Rau dền cơm là rau, không phải cơm",60792
+3779,hành boaro,nấm mèo,wood ear mushroom,1,Phở Bắp Bò - Hương Vị Việt Tại Hà Lan,DIFFERENT,Hành boaro khác hoàn toàn nấm mèo,60865
+3785,lá dứa xay nhuyễn lấy ml,dứa,pineapple,1,Bánh bò lá dứa,DIFFERENT,Lá dứa khác hoàn toàn quả dứa,61103
+3786,tôm nớt nhỏ tôm nhỏ vỏ sẽ mềm nên không phải bóc vỏ,tôm thẻ loại to,shrimp,1,"Canh bầu, rau dền nấu tôm",DIFFERENT,Tôm nớt/tôm nhỏ khác tôm thẻ to,61117
+3787,lá rong biển cuộn cơm,cơm,cooked rice,1,Nấm Kim Châm Cuộn Rong Biển Chiên Giòn Chay,DIFFERENT,Lá rong biển khác hoàn toàn cơm,61133
+3794,rau bò khai,thịt bò,beef,1,"Rau bò khai xào tóp mỡ, tôm và bánh đa nắm Quỳnh Côi",DIFFERENT,"Rau bò khai là thực vật, không phải bò",61187
+3800,màu cà phê,cà tím,eggplant,1,Rau câu mix,DIFFERENT,Màu cà phê khác hoàn toàn quả cà tím,61222
+3802,nước cốt dừa dão,nước dừa,coconut water,1,Thịt bò xào lá cách,DIFFERENT,Nước cốt dừa dão khác nước dừa tươi,61249
+3806,thơm bằm,rau thơm,herbs,1,Cá ngừ hấp,DIFFERENT,"Thơm bằm là dứa, không phải rau thơm",61335
+3807,dầu thực vật để chiên,dầu bơ,Avocado oil,1,Nấm Kim Châm Cuộn Rong Biển Chiên Giòn Chay,DIFFERENT,Dầu thực vật khác dầu bơ,61337
+3808,Dầu thực vật để chiên,dầu bơ,Avocado oil,1,Thịt Xíu Hội An,DIFFERENT,Dầu thực vật khác dầu bơ,61341
+3810,Cá măng cắt khúc,măng,bamboo shoots,1,Cá măng (cá nhồng) sốt cà,DIFFERENT,"Cá măng là cá, không phải măng",61384
+3812,Rau sống rau đắng húng quế diếp cá cải non tía tô hẹ rau càng cua rau muống chẽ ngò rídưa leo,cua,crab,1,Bánh Xèo Tôm Mực,DIFFERENT,Rau sống không liên quan đến cua,61443
+3817,lá dứa g lá dứa,dứa,pineapple,1,Bánh da lợn vân thủy,DIFFERENT,Lá dứa khác quả dứa,61502
+3818,cà chua cherry đủ màu,trái cherry,cherry,1,Nấm Mỡ Xào Cà Chua Bi (Vegan),DIFFERENT,Cà chua cherry không phải trái cherry,61521
+3820,mắm cá rò,nước mắm,fish sauce,1,Trứng Luộc Mắm Cá Rò,DIFFERENT,Mắm cá rò là mắm nguyên con,61564
+3826,Cà rốt ngâm chua ngọt,cà chua,tomato,1,Bánh Mì Chay Kẹp Rau Củ Đơn Giản,DIFFERENT,Cà rốt khác cà chua,61622
+3831,húng chanh rau tần dầy lá,chanh,lime,1,Canh CÁ nấu khế & húng chanh,DIFFERENT,"Húng chanh là rau, không phải chanh",61674
+3833,Lá mơ lông,mơ,apricot,1,Lá mơ lông cuốn đậu hũ,DIFFERENT,Lá mơ lông khác quả mơ,61797
+3841,mắm Belacan,nước mắm,fish sauce,1,Đậu Đũa Xào Sa Tế Tôm và Mắm Belacan Malaysia,DIFFERENT,Mắm Belacan là mắm tôm/ruốc,61994
+3842,cá cơm,cơm,cooked rice,1,"Cá cơm, lạc đỏ rang mắm tỏi",DIFFERENT,Cá cơm không phải cơm,62012
+3844,tôm nõn rim,ram tôm,shrimp rolls,1,Canh rau muống tôm nõn,DIFFERENT,Tôm nõn rim khác chả ram tôm,62064
+3845,ức cá dứa nắng ức cá basa,dứa,pineapple,1,Ức Cá Dứa Kho Tiêu,DIFFERENT,Cá dứa khác quả dứa,62075
+3846,vừng rang,đậu phộng,peanut,1,"Cá cơm, lạc đỏ rang mắm tỏi",DIFFERENT,Vừng rang khác đậu phộng,62141
+3848,lá húng quế,quế,Cinnamon,1,📣 Thịt bò xào húng quế kiểu Thái 🥩🫑🧅🌿,DIFFERENT,Húng quế khác vỏ quế/bột quế,62221
+3856,óc,hạt óc chó,walnut,1,Óc heo hầm ngải cứu,DIFFERENT,Óc (heo) khác hạt óc chó,62485
+3859,đùi gà góc tư rút xương,xương gà,chicken bones,1,Thịt gà chiên xù,DIFFERENT,Đùi gà rút xương không phải xương gà,62507
+3863,Nước đá dùng khi xay,nước dùng,broth,1,Chả cá,DIFFERENT,Nước đá không phải nước dùng,62569
+3864,rau thơm các loại húng lủi húng quế húng cay diếp cá tía tô kinh giới lá sung lá cóc,Hành ngò,mixed herbs,1,Nấm Đùi Gà Trộn Thính,DIFFERENT,Rau thơm các loại không phải hành ngò,62584
+3865,bánh gạo,gạo,rice,1,Bánh gạo cay ăn kèm ba chỉ bò áp chảo,DIFFERENT,Bánh gạo là thành phẩm từ gạo,62601
+3866,xà lách xoăn Friseline,cải xoăn,kale,1,Salad Friseline Trộn Cá Cơm Muối,DIFFERENT,Xà lách Friseline khác cải xoan (Kale),62611
+3867,to hành baro,hành lá,green onion,1,Bánh gạo cay ăn kèm ba chỉ bò áp chảo,DIFFERENT,Hành baro khác hành lá,62617
+3869,Cá chay khô chay hoặc cá thu lát chay,Cá chày,chub fish,1,Cá chay sốt cà chua,DIFFERENT,Cá chay khác cá chày (cá thật),62646
+3872,dạ dày cá ba sa khoảng gram,bao tử heo,pork stomach,1,Dạ dày cá ba sa nướng,DIFFERENT,Dạ dày cá khác bao tử heo,62796
+3876,hành tây cà rốt ngâm chua ngọt,cà chua,tomato,1,Chả Cá Trộn Rau Muống,DIFFERENT,Hành tây cà rốt không phải cà chua,62909
+3877,khoai tím,khoai mỡ,purple yam,1,Khoai Tím Nấu Chả Mọc Tôm,DIFFERENT,Khoai tím khác khoai mỡ,62934
+3879,cá cơm trỏng tươi,cơm,cooked rice,1,Canh Cá Cơm Trỏng Nấu Ngót,DIFFERENT,Cá cơm không phải cơm,62980
+3882,mắm ruốc đặc,nước mắm,fish sauce,1,Bầu chần tôm kho đánh ruốc Huế,DIFFERENT,Mắm ruốc khác nước mắm,63057
+3883,cá mắm cơm vừa ăn,cơm,cooked rice,1,Cá Mắm Sốt Cà Chua (chua ngọt),DIFFERENT,Cá mắm cơm không phải cơm,63106
+3896,Rau cải rau cần rau chân vịt,cần tây,celery,1,Bún tôm Hải Phòng,DIFFERENT,"Cần tây khác rau cải, rau cần ta",63225
+3897,măng tây nấm,măng,bamboo shoots,1,Canh cá thì là,DIFFERENT,Măng tây khác măng tre/nứa,63301
+3898,mật mía Nghệ An,củ nghệ,turmeric root,1,Tôm rang thịt ba chỉ + dứa,DIFFERENT,Mật mía khác củ nghệ,63329
+3900,nước chấm thịt quay,nước thịt kho,braising sauce,1,Thịt Heo Quay Kho Sa Tế Nước Dừa,DIFFERENT,Nước chấm thịt quay khác nước thịt kho,63359
+3910,lá rong biển vài bánh tráng,bánh tráng,rice paper,1,Đậu cuốn nấm kim châm chay,DIFFERENT,Lá rong biển khác bánh tráng,63719
+3912,sốt xào nui mì,nui,pasta,1,Mì Udon Xào Thịt Bò Cải Ngồng,DIFFERENT,Sốt xào không phải là nui,63757
+3913,củ khoai sọ,khoai mỡ,purple yam,1,Canh cua rau rút khoai sọ,DIFFERENT,Khoai sọ khác hoàn toàn khoai mỡ,63781
+3918,hỗn hợp rau củ đông lạnh đậu cà rốt bắp,gia vị,seasoning,1,Cơm cá hồi nấu gọn trong nồi cơm điện,DIFFERENT,"Rau củ là thực phẩm, không phải gia vị",63827
+3919,nước tương tsuyu,nước,water,1,Cơm cá hồi nấu gọn trong nồi cơm điện,DIFFERENT,"Nước tương là gia vị, không phải nước lọc",63829
+3921,dầu ăn đủ để chiên tôi dùng dầu trái bơ,bơ,butter,1,Cá Tuyết Haddock Tẩm Bột Khô Áp Chảo,DIFFERENT,"Dầu trái bơ là dầu ăn, không phải bơ",63860
+3922,cốt tomyum thật ra cái này là thói quen của mình không có không ảnh hưởng mọi người ạ cái lọ tomyum mình có để hình ở bài mì udon rồi mọi người cần thì xem ở đấy nhé,thì là,dill,1,Đậu bắp xào chả cá,DIFFERENT,Cốt tomyum không liên quan đến thì là,63864
+3931,nấm lộc nhung khô,nấm hương,shiitake mushroom,1,NẤM lộc nhung xào bí nụ,DIFFERENT,Nấm lộc nhung khác nấm hương,63986
+3938,ầu trắng hành boaro,đậu trắng,white beans,1,Đậu hũ và tàu hũ ky cuộn rim sả ớt (món chay),DIFFERENT,Hành boaro khác đậu trắng,64087
+3941,chao môn hoặc các loại chao khác,khoai môn,taro,1,Đậu hũ kho chao/cà chua,DIFFERENT,Chao môn làm từ môn nhưng là gia vị,64181
+3945,Gia vịmì chính nước tương,nước,water,1,Mì trứng xào tôm nõn,DIFFERENT,Nước tương không phải nước lọc,64278
+3950,Sốt xào rau củ,rau sống,fresh herbs,1,Phở xào bò,DIFFERENT,Sốt xào không phải rau sống,64400
+3958,Thính gạo,sung,fig,1,Chạo nấm chay,DIFFERENT,Thính gạo không phải quả sung,64563
+3959,cá cơm trổng,cơm,cooked rice,1,Cá CƠM trổng kho cay,DIFFERENT,Cá cơm không phải cơm,64574
+3962,cà ra khoảng gram,cà tím,eggplant,1,Mỳ sốt cua lông (cà ra) trứng muối,DIFFERENT,Cua cà ra không phải cà tím,64623
+3963,nước mám,nước,water,1,Thịt đùi heo xào khóm,DIFFERENT,Nước mắm không phải nước lọc,64651
+3964,Rau húng quế Tây,quế,Cinnamon,1,Mì Ý xốt Pesto với Bacon và Nấm Mỡ,DIFFERENT,Húng quế Tây khác quế vỏ,64661
+3968,thơm rim,rau thơm,herbs,1,Cá CƠM trổng kho cay,DIFFERENT,"Thơm rim là dứa, không phải rau thơm",64723
+3969,rau húng cay húng lủi,húng láng,spearmint,1,Ốc Bươu Nhồi Thịt Hấp,DIFFERENT,Húng lủi khác húng láng,64729
+3970,Hành tỏiporo phi vàng,hành lá,green onion,1,Gỏi Rau Càng Cua Nấm Mối Chay,DIFFERENT,Hành tỏi poro không phải hành lá,64743
+3980,cá lóc chay,Cá chày,chub fish,1,Cá lóc chay,DIFFERENT,Cá lóc chay không phải cá chày,65011
+3981,tiêu đen,tiêu xanh nhánh,Fresh Green Peppercorns,1,Nấm đùi gà om xốt tiêu đen,DIFFERENT,Tiêu đen khô khác tiêu xanh nhánh,65022
+3988,cá chay,Cá chày,chub fish,1,Lẩu cá chay,DIFFERENT,Cá chay không phải cá chày,65105
+3990,cá bánh đường,cá liệt,fish,1,Cá Bánh Đường Nướng Sả,DIFFERENT,Cá bánh đường khác cá liệt,65134

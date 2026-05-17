@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingredient Mapping Inspector</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0d0f12;
+  --surface:  #13161b;
+  --card:     #1a1e26;
+  --card2:    #1e2330;
+  --border:   #252a35;
+  --border2:  #2f3545;
+  --text:     #e2e8f0;
+  --muted:    #64748b;
+  --dim:      #334155;
+  --accent:   #f97316;
+  --accent2:  #fb923c;
+  --blue:     #38bdf8;
+  --green:    #4ade80;
+  --green2:   #22c55e;
+  --red:      #f87171;
+  --yellow:   #fbbf24;
+  --purple:   #a78bfa;
+  --mono:     'IBM Plex Mono', monospace;
+  --sans:     'IBM Plex Sans Thai', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ── */
+.shell {
+  display: grid;
+  grid-template-rows: 52px 1fr;
+  grid-template-columns: 340px 1fr 280px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 16px;
+}
+
+.topbar-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.topbar-sep { width: 1px; height: 24px; background: var(--border2); }
+
+.stats-row {
+  display: flex;
+  gap: 20px;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.stat-val {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.stat-lbl {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.stat-val.green { color: var(--green); }
+.stat-val.orange { color: var(--accent); }
+
+.topbar-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+.btn-primary:hover { background: var(--accent2); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border2);
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--text); }
+
+.btn-green {
+  background: rgba(74,222,128,.15);
+  color: var(--green);
+  border: 1px solid rgba(74,222,128,.3);
+}
+.btn-green:hover { background: rgba(74,222,128,.25); }
+
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.progress-bar-bg {
+  width: 80px;
+  height: 4px;
+  background: var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--green2);
+  border-radius: 2px;
+  transition: width .4s ease;
+}
+.progress-text {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--green);
+}
+
+/* ── LEFT PANEL ── */
+.left-panel {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.search-wrap {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 6px;
+}
+
+.search-input {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  outline: none;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-input:focus { border-color: var(--accent); }
+
+.filter-btn {
+  padding: 6px 10px;
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.filter-btn.active-filter {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74,222,128,.08);
+}
+.filter-btn:hover:not(.active-filter) { color: var(--text); }
+
+.sort-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.sort-tab {
+  flex: 1;
+  padding: 6px 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: color .15s;
+}
+.sort-tab.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: -1px;
+}
+.sort-tab:hover:not(.active) { color: var(--text); }
+
+.list-wrap {
+  flex: 1;
+  overflow-y: auto;
+}
+.list-wrap::-webkit-scrollbar { width: 3px; }
+.list-wrap::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.ing-item {
+  display: flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .1s;
+  gap: 8px;
+  position: relative;
+}
+.ing-item:hover { background: var(--card); }
+.ing-item.active {
+  background: var(--card);
+  border-left: 3px solid var(--accent);
+  padding-left: 9px;
+}
+.ing-item.mapped {
+  border-left: 3px solid var(--green);
+  padding-left: 9px;
+}
+.ing-item.mapped.active {
+  border-left: 3px solid var(--accent);
+}
+
+.mapped-badge {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.unmapped-badge {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border2);
+  flex-shrink: 0;
+}
+
+.ing-rank {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--dim);
+  width: 20px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.ing-info { flex: 1; min-width: 0; }
+
+.ing-name {
+  font-weight: 500;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ing-name.mapped-text { color: var(--text); }
+
+.ing-sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.ing-mapped-id {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--green);
+  margin-top: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ing-bar-wrap { width: 50px; flex-shrink: 0; }
+.ing-bar-bg { height: 3px; background: var(--border2); border-radius: 2px; overflow: hidden; }
+.ing-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+.ing-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* ── CENTER PANEL ── */
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.detail-header {
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.detail-title {
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.meta-chip {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+}
+.meta-chip span { color: var(--text); font-weight: 600; }
+
+/* ── MAPPING INPUT AREA — removed (now inline per raw name) ── */
+
+.detail-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-content: start;
+}
+.detail-body::-webkit-scrollbar { width: 3px; }
+.detail-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.section-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── RAW NAME ROWS ── */
+.raw-name-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.raw-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  transition: border-color .15s;
+}
+.raw-name-row.row-mapped {
+  border-color: rgba(74,222,128,.3);
+  background: rgba(74,222,128,.04);
+}
+
+.raw-name-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent2);
+  flex: 0 0 auto;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.raw-id-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  padding: 4px 8px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  outline: none;
+  transition: border-color .15s;
+  min-width: 0;
+}
+.raw-id-input::placeholder { color: var(--dim); font-size: 11px; }
+.raw-id-input:focus { border-color: var(--accent); }
+.raw-id-input.input-mapped {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.raw-save-btn {
+  padding: 4px 10px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.raw-save-btn:hover { background: var(--accent2); }
+.raw-save-btn.saved-btn {
+  background: rgba(74,222,128,.15);
+  color: var(--green);
+  border: 1px solid rgba(74,222,128,.3);
+}
+.raw-save-btn.saved-btn:hover { background: rgba(248,113,113,.15); color: var(--red); border-color: rgba(248,113,113,.3); }
+
+.raw-status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--border2);
+}
+.raw-status-dot.dot-mapped { background: var(--green); }
+
+.dish-list { display: flex; flex-direction: column; gap: 3px; }
+.dish-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 9px;
+  background: var(--card);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.dish-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+.dish-name { font-size: 12px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.full-col { grid-column: 1 / -1; }
+
+/* ── RIGHT PANEL (saved mappings) ── */
+.right-panel {
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.right-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.right-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.right-actions {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 6px;
+}
+
+.mapping-list {
+  flex: 1;
+  overflow-y: auto;
+}
+.mapping-list::-webkit-scrollbar { width: 3px; }
+.mapping-list::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.mapping-entry {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .1s;
+}
+.mapping-entry:hover { background: var(--card); }
+
+.mapping-entry-name {
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.mapping-entry-id {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mapping-entry-id::before {
+  content: '→';
+  color: var(--dim);
+}
+
+.mapping-entry-del {
+  float: right;
+  color: var(--dim);
+  font-size: 10px;
+  cursor: pointer;
+  padding: 0 3px;
+  transition: color .1s;
+}
+.mapping-entry-del:hover { color: var(--red); }
+
+.empty-right {
+  padding: 40px 14px;
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* ── DROP / EMPTY STATES ── */
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  color: var(--muted);
+  border: 2px dashed var(--border2);
+  margin: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.drop-zone.dragover { border-color: var(--accent); background: rgba(249,115,22,.04); }
+.drop-icon { font-size: 28px; opacity: .35; }
+.drop-main { font-family: var(--mono); font-size: 12px; color: var(--text); }
+.drop-sub { font-size: 11px; }
+
+.empty-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--card2);
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--green);
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all .2s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast.error { border-left-color: var(--red); }
+
+* { scrollbar-width: thin; scrollbar-color: var(--border2) transparent; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-title">⊞ MAPPING INSPECTOR</div>
+    <div class="topbar-sep"></div>
+    <div class="stats-row" id="stats-row" style="display:none">
+      <div class="stat">
+        <span class="stat-val orange" id="s-ingredients">—</span>
+        <span class="stat-lbl">ingredients</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val" id="s-rows">—</span>
+        <span class="stat-lbl">rows lỗi</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val" id="s-dishes">—</span>
+        <span class="stat-lbl">món ăn</span>
+      </div>
+      <div class="topbar-sep"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="prog-bar" style="width:0%"></div>
+        </div>
+        <span class="progress-text" id="prog-text">0/0 mapped</span>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-green" onclick="exportJSON()" id="export-btn" style="display:none">↓ Export JSON</button>
+      <button class="btn btn-ghost" onclick="importMappings()" id="import-btn" style="display:none">↑ Import JSON</button>
+      <label class="btn btn-primary" for="csv-input">↑ Load CSV</label>
+      <input type="file" id="csv-input" accept=".csv" style="display:none">
+      <input type="file" id="json-input" accept=".json" style="display:none">
+    </div>
+  </header>
+
+  <!-- LEFT PANEL -->
+  <aside class="left-panel">
+    <div class="search-wrap">
+      <input class="search-input" id="search" placeholder="Tìm nguyên liệu..." oninput="filterList()">
+      <button class="filter-btn" id="filter-unmapped-btn" onclick="toggleFilterUnmapped()" title="Chỉ hiện chưa map">∅</button>
+    </div>
+    <div class="sort-tabs">
+      <button class="sort-tab active" onclick="setSort('rows',this)">Rows</button>
+      <button class="sort-tab" onclick="setSort('patterns',this)">Ptns</button>
+      <button class="sort-tab" onclick="setSort('dishes',this)">Món</button>
+      <button class="sort-tab" onclick="setSort('name',this)">A–Z</button>
+    </div>
+    <div class="list-wrap" id="ing-list">
+      <div class="empty-detail" style="padding:40px 0">
+        <span style="opacity:.3;font-size:22px">⬆</span>
+        Load CSV để bắt đầu
+      </div>
+    </div>
+  </aside>
+
+  <!-- CENTER PANEL -->
+  <main class="center-panel" id="center-panel">
+    <div id="drop-zone-main" class="drop-zone"
+         ondragover="event.preventDefault();this.classList.add('dragover')"
+         ondragleave="this.classList.remove('dragover')"
+         ondrop="handleDrop(event)"
+         onclick="document.getElementById('csv-input').click()">
+      <div class="drop-icon">⊞</div>
+      <div class="drop-main">Kéo thả hoặc click để load CSV</div>
+      <div class="drop-sub" style="color:var(--muted)">truly_wrong_mappings.csv</div>
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL — Saved Mappings -->
+  <aside class="right-panel">
+    <div class="right-header">
+      <div class="right-title">✓ Saved Mappings</div>
+      <div class="right-count" id="saved-count">0 entries</div>
+    </div>
+    <div class="right-actions">
+      <button class="btn btn-ghost" style="font-size:10px;flex:1" onclick="exportJSON()">↓ JSON</button>
+      <button class="btn btn-ghost" style="font-size:10px;flex:1;color:var(--red);border-color:rgba(248,113,113,.3)" onclick="clearAllMappings()">✕ Clear all</button>
+    </div>
+    <div class="mapping-list" id="mapping-list">
+      <div class="empty-right">
+        Chưa có mapping nào.<br>
+        Chọn ingredient → điền ID cho từng raw name → Save.
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
+let allData        = [];
+let grouped        = [];
+let mappings       = {};   // { raw_name: standard_ingredient_id }
+let sortMode       = 'rows';
+let activeIng      = null;
+let maxRows        = 1;
+let filterUnmapped = false;
+
+// ── PARSE CSV ─────────────────────────────────────────────────────────────────
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  const headers = splitCSVLine(lines[0]);
+  return lines.slice(1).filter(l => l.trim()).map(line => {
+    const vals = splitCSVLine(line);
+    const obj  = {};
+    headers.forEach((h, i) => obj[h.trim()] = (vals[i] || '').trim());
+    return obj;
+  });
+}
+
+function splitCSVLine(line) {
+  const vals = [];
+  let cur = '', inQ = false;
+  for (const c of line) {
+    if (c === '"') { inQ = !inQ; }
+    else if (c === ',' && !inQ) { vals.push(cur); cur = ''; }
+    else cur += c;
+  }
+  vals.push(cur);
+  return vals.map(v => v.replace(/^"|"$/g, ''));
+}
+
+function groupData(rows) {
+  const map = {};
+  for (const r of rows) {
+    const name = (r.wrong_name || r.ingredient_name || '').trim();
+    if (!name) continue;
+    if (!map[name]) map[name] = { name, patterns: 0, rows: 0, raw_names: new Set(), dishes: new Set() };
+    map[name].patterns++;
+    map[name].rows += parseInt(r.row_count || 1);
+    if (r.raw_name) map[name].raw_names.add(r.raw_name.trim());
+    const dishSrc = r.dish_examples || r.dish_title || '';
+    dishSrc.split('|').forEach(d => { d = d.trim(); if (d) map[name].dishes.add(d); });
+  }
+  return Object.values(map).map(g => ({ ...g, raw_names: [...g.raw_names], dishes: [...g.dishes] }));
+}
+
+function loadCSV(text) {
+  allData = parseCSV(text);
+  grouped = groupData(allData);
+  maxRows = Math.max(...grouped.map(g => g.rows), 1);
+
+  const allDishes = new Set();
+  grouped.forEach(g => g.dishes.forEach(d => allDishes.add(d)));
+
+  document.getElementById('s-ingredients').textContent = grouped.length.toLocaleString();
+  document.getElementById('s-rows').textContent        = grouped.reduce((a,g) => a+g.rows, 0).toLocaleString();
+  document.getElementById('s-dishes').textContent      = allDishes.size.toLocaleString();
+  document.getElementById('stats-row').style.display   = 'flex';
+  document.getElementById('export-btn').style.display  = '';
+  document.getElementById('import-btn').style.display  = '';
+  document.getElementById('drop-zone-main').style.display = 'none';
+
+  updateProgress();
+  renderList();
+}
+
+// ── SORT / FILTER ─────────────────────────────────────────────────────────────
+function setSort(mode, el) {
+  sortMode = mode;
+  document.querySelectorAll('.sort-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderList();
+}
+
+function filterList() { renderList(); }
+
+function toggleFilterUnmapped() {
+  filterUnmapped = !filterUnmapped;
+  const btn = document.getElementById('filter-unmapped-btn');
+  btn.classList.toggle('active-filter', filterUnmapped);
+  btn.title = filterUnmapped ? 'Hiện tất cả' : 'Chỉ hiện chưa map';
+  renderList();
+}
+
+function getSorted() {
+  const q = document.getElementById('search').value.toLowerCase();
+  let items = grouped.filter(g => {
+    const matchQ = !q || g.name.toLowerCase().includes(q) || g.raw_names.some(r => r.toLowerCase().includes(q));
+    // "unmapped" = có ít nhất 1 raw name chưa map
+    const matchF = !filterUnmapped || g.raw_names.some(r => !mappings[r]);
+    return matchQ && matchF;
+  });
+  if (sortMode === 'rows')     items.sort((a,b) => b.rows - a.rows);
+  if (sortMode === 'patterns') items.sort((a,b) => b.patterns - a.patterns);
+  if (sortMode === 'dishes')   items.sort((a,b) => b.dishes.length - a.dishes.length);
+  if (sortMode === 'name')     items.sort((a,b) => a.name.localeCompare(b.name, 'vi'));
+  return items;
+}
+
+// ── RENDER LIST ───────────────────────────────────────────────────────────────
+function renderList() {
+  const items = getSorted();
+  const list  = document.getElementById('ing-list');
+
+  if (!items.length) {
+    list.innerHTML = '<div class="empty-detail" style="padding:40px 0;font-size:11px">Không tìm thấy</div>';
+    return;
+  }
+
+  list.innerHTML = items.map((g, i) => {
+    const pct       = (g.rows / maxRows * 100).toFixed(1);
+    const mappedCnt = g.raw_names.filter(r => mappings[r]).length;
+    const totalRaw  = g.raw_names.length;
+    const allMapped = totalRaw > 0 && mappedCnt === totalRaw;
+    const isActive  = g.name === activeIng;
+    return `
+    <div class="ing-item ${isActive ? 'active' : ''} ${allMapped ? 'mapped' : ''}" onclick="selectIng('${esc(g.name)}')">
+      <div class="${allMapped ? 'mapped-badge' : 'unmapped-badge'}"></div>
+      <div class="ing-rank">${i+1}</div>
+      <div class="ing-info">
+        <div class="ing-name">${esc(g.name)}</div>
+        <div class="ing-sub ${mappedCnt > 0 ? 'style="color:var(--green)"' : ''}">
+          ${mappedCnt > 0
+            ? `${mappedCnt}/${totalRaw} raw mapped · ${g.dishes.length} món`
+            : `${totalRaw} raw · ${g.dishes.length} món`
+          }
+        </div>
+      </div>
+      <div class="ing-bar-wrap">
+        <div class="ing-bar-bg"><div class="ing-bar-fill" style="width:${pct}%"></div></div>
+        <div class="ing-count">${g.rows.toLocaleString()}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── SELECT INGREDIENT ─────────────────────────────────────────────────────────
+function selectIng(name) {
+  activeIng = name;
+  renderList();
+  renderDetail(name);
+}
+
+function renderDetail(name) {
+  const g = grouped.find(x => x.name === name);
+  if (!g) return;
+
+  const totalRows  = grouped.reduce((a,x) => a + x.rows, 0);
+  const pctOfTotal = (g.rows / totalRows * 100).toFixed(1);
+  const mappedCnt  = g.raw_names.filter(r => mappings[r]).length;
+
+  // Build per-raw-name rows
+  const rawRows = g.raw_names.map(rawName => {
+    const savedId  = mappings[rawName] || '';
+    const isMapped = !!savedId;
+    const key      = esc(rawName);
+    return `
+    <div class="raw-name-row ${isMapped ? 'row-mapped' : ''}" id="row-${key}">
+      <div class="raw-status-dot ${isMapped ? 'dot-mapped' : ''}"></div>
+      <div class="raw-name-label" title="${key}">${key}</div>
+      <input
+        class="raw-id-input ${isMapped ? 'input-mapped' : ''}"
+        id="inp-${key}"
+        type="text"
+        value="${esc(savedId)}"
+        placeholder="ingredient_id..."
+        onkeydown="if(event.key==='Enter') saveRawMapping('${key}')"
+        oninput="onRawInput('${key}', this)"
+      >
+      <button
+        class="raw-save-btn ${isMapped ? 'saved-btn' : ''}"
+        id="btn-${key}"
+        onclick="${isMapped ? `clearRawMapping('${key}')` : `saveRawMapping('${key}')`}"
+      >${isMapped ? '✓ clear' : 'Save'}</button>
+    </div>`;
+  }).join('');
+
+  const dishRows = g.dishes.map(d =>
+    `<div class="dish-row"><div class="dish-dot"></div><div class="dish-name">${esc(d)}</div></div>`
+  ).join('');
+
+  const panel = document.getElementById('center-panel');
+  panel.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-title">${esc(name)}</div>
+      <div class="detail-meta">
+        <div class="meta-chip">Rows lỗi: <span>${g.rows.toLocaleString()}</span></div>
+        <div class="meta-chip">% tổng: <span>${pctOfTotal}%</span></div>
+        <div class="meta-chip">Patterns: <span>${g.patterns}</span></div>
+        <div class="meta-chip">Món ảnh hưởng: <span>${g.dishes.length}</span></div>
+        <div class="meta-chip" style="${mappedCnt===g.raw_names.length&&g.raw_names.length>0?'border-color:var(--green);color:var(--green)':''}">
+          Raw mapped: <span style="color:${mappedCnt>0?'var(--green)':'var(--text)'}">${mappedCnt}/${g.raw_names.length}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <div class="full-col">
+        <div class="section-title">Raw names — điền Standard Ingredient ID cho từng raw name</div>
+        <div class="raw-name-list">
+          ${rawRows || '<span style="color:var(--muted);font-size:11px">Không có raw name</span>'}
+        </div>
+      </div>
+      <div class="full-col">
+        <div class="section-title">Món ăn bị ảnh hưởng (${g.dishes.length})</div>
+        <div class="dish-list">${dishRows || '<span style="color:var(--muted);font-size:11px">Không có dữ liệu</span>'}</div>
+      </div>
+    </div>
+  `;
+
+  // Focus first unmapped input
+  setTimeout(() => {
+    const firstUnmapped = g.raw_names.find(r => !mappings[r]);
+    if (firstUnmapped) {
+      const el = document.getElementById('inp-' + esc(firstUnmapped));
+      if (el) el.focus();
+    }
+  }, 50);
+}
+
+// ── PER-RAW-NAME MAPPING ACTIONS ──────────────────────────────────────────────
+function onRawInput(key, inputEl) {
+  // live: if user types, un-style as mapped (they're editing)
+  inputEl.classList.remove('input-mapped');
+}
+
+function saveRawMapping(rawName) {
+  const inp = document.getElementById('inp-' + rawName);
+  if (!inp) return;
+  const val = inp.value.trim();
+  if (!val) { showToast('Nhập ID trước!', true); inp.focus(); return; }
+
+  mappings[rawName] = val;
+  saveMappingsLocal();
+  updateProgress();
+  renderMappingList();
+  renderList();
+
+  // Update this row in-place (no full re-render flicker)
+  const row = document.getElementById('row-' + rawName);
+  const btn = document.getElementById('btn-' + rawName);
+  const dot = row && row.querySelector('.raw-status-dot');
+  if (row) row.classList.add('row-mapped');
+  if (dot) { dot.classList.add('dot-mapped'); }
+  inp.classList.add('input-mapped');
+  if (btn) {
+    btn.className = 'raw-save-btn saved-btn';
+    btn.textContent = '✓ clear';
+    btn.onclick = () => clearRawMapping(rawName);
+  }
+
+  // Auto-focus next unmapped
+  const g = grouped.find(x => x.name === activeIng);
+  if (g) {
+    const nextUnmapped = g.raw_names.find(r => r !== rawName && !mappings[r]);
+    if (nextUnmapped) {
+      const nextEl = document.getElementById('inp-' + esc(nextUnmapped));
+      if (nextEl) nextEl.focus();
+    }
+  }
+
+  showToast(`✓ ${rawName} → ${val}`);
+}
+
+function clearRawMapping(rawName) {
+  delete mappings[rawName];
+  saveMappingsLocal();
+  updateProgress();
+  renderMappingList();
+  renderList();
+
+  // Update row in-place
+  const row = document.getElementById('row-' + rawName);
+  const btn = document.getElementById('btn-' + rawName);
+  const inp = document.getElementById('inp-' + rawName);
+  const dot = row && row.querySelector('.raw-status-dot');
+  if (row) row.classList.remove('row-mapped');
+  if (dot) dot.classList.remove('dot-mapped');
+  if (inp) { inp.value = ''; inp.classList.remove('input-mapped'); inp.focus(); }
+  if (btn) {
+    btn.className = 'raw-save-btn';
+    btn.textContent = 'Save';
+    btn.onclick = () => saveRawMapping(rawName);
+  }
+
+  showToast('Đã xóa mapping', false, true);
+}
+
+function clearAllMappings() {
+  if (!Object.keys(mappings).length) return;
+  if (!confirm(`Xóa tất cả ${Object.keys(mappings).length} mappings?`)) return;
+  mappings = {};
+  saveMappingsLocal();
+  updateProgress();
+  renderList();
+  if (activeIng) renderDetail(activeIng);
+  renderMappingList();
+  showToast('Đã xóa tất cả', false, true);
+}
+
+// ── RENDER SAVED MAPPINGS ─────────────────────────────────────────────────────
+function renderMappingList() {
+  const entries = Object.entries(mappings);
+  const list    = document.getElementById('mapping-list');
+  const count   = document.getElementById('saved-count');
+  count.textContent = `${entries.length} raw names`;
+
+  if (!entries.length) {
+    list.innerHTML = `<div class="empty-right">Chưa có mapping nào.<br>Chọn ingredient → điền ID cho từng raw name.</div>`;
+    return;
+  }
+
+  list.innerHTML = entries.map(([rawName, id]) => `
+    <div class="mapping-entry">
+      <span class="mapping-entry-del" onclick="clearRawMapping('${esc(rawName)}')">✕</span>
+      <div class="mapping-entry-name">${esc(rawName)}</div>
+      <div class="mapping-entry-id">${esc(id)}</div>
+    </div>
+  `).join('');
+}
+
+// ── PROGRESS ──────────────────────────────────────────────────────────────────
+function updateProgress() {
+  // count total unique raw names across all groups
+  const allRaw = new Set();
+  grouped.forEach(g => g.raw_names.forEach(r => allRaw.add(r)));
+  const total = allRaw.size;
+  const done  = Object.keys(mappings).length;
+  const pct   = total ? (done / total * 100) : 0;
+  document.getElementById('prog-bar').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = `${done}/${total} raw mapped`;
+}
+
+// ── EXPORT / IMPORT JSON ──────────────────────────────────────────────────────
+function exportJSON() {
+  const output = {
+    _meta: {
+      exported_at: new Date().toISOString(),
+      description: "raw_name → standard_ingredient_id",
+      total_raw_names_mapped: Object.keys(mappings).length,
+    },
+    mappings: { ...mappings }
+  };
+  const blob = new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `ingredient_mappings_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast(`✓ Exported ${Object.keys(mappings).length} mappings`);
+}
+
+function importMappings() {
+  document.getElementById('json-input').click();
+}
+
+document.getElementById('json-input').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const parsed = JSON.parse(ev.target.result);
+      const data   = parsed.mappings || parsed; // support both formats
+      let count    = 0;
+      for (const [k, v] of Object.entries(data)) {
+        if (k.startsWith('_')) continue;
+        if (typeof v === 'string') { mappings[k] = v; count++; }
+      }
+      saveMappingsLocal();
+      updateProgress();
+      renderList();
+      if (activeIng) renderDetail(activeIng);
+      renderMappingList();
+      showToast(`✓ Imported ${count} mappings`);
+    } catch {
+      showToast('JSON không hợp lệ!', true);
+    }
+  };
+  reader.readAsText(file, 'utf-8');
+  e.target.value = '';
+});
+
+// ── LOCAL STORAGE (backup) ────────────────────────────────────────────────────
+function saveMappingsLocal() {
+  try { localStorage.setItem('ing_mappings', JSON.stringify(mappings)); } catch {}
+}
+function loadMappingsLocal() {
+  try {
+    const s = localStorage.getItem('ing_mappings');
+    if (s) mappings = JSON.parse(s);
+  } catch {}
+}
+
+// ── FILE INPUT ────────────────────────────────────────────────────────────────
+document.getElementById('csv-input').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => loadCSV(ev.target.result);
+  reader.readAsText(file, 'utf-8');
+  e.target.value = '';
+});
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('drop-zone-main').classList.remove('dragover');
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => loadCSV(ev.target.result);
+  reader.readAsText(file, 'utf-8');
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, isError = false, isMuted = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  t.style.borderLeftColor = isError ? 'var(--red)' : isMuted ? 'var(--muted)' : 'var(--green)';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ── UTILS ─────────────────────────────────────────────────────────────────────
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+loadMappingsLocal();
+renderMappingList();
+</script>
+</body>
+</html>

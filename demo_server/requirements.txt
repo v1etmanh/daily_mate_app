@@ -1,0 +1,6 @@
+# Daily Mate Server — Dependencies
+flask>=3.0
+flask-cors>=4.0
+requests>=2.31
+psycopg2-binary>=2.9      # PostgreSQL driver cho Supabase
+python-dotenv>=1.0

@@ -6,13 +6,6 @@ mobile_app/.expo/
 mobile_app/.expo-shared/
 
 # Android
-mobile_app/android/app/build/
-mobile_app/android/.gradle/
-mobile_app/android/build/
-mobile_app/android/captures/
-mobile_app/android/gradlew
-mobile_app/android/gradlew.bat
-mobile_app/android/local.properties
 *.apk
 *.ap_
 *.aab
