@@ -87,6 +87,13 @@ temp/
 *.sqlite
 *.sqlite3
 
+# Secret / credentials — KHÔNG BAO GIỜ commit lên repo
+firebase-service-account.json
+*service-account*.json
+*serviceAccount*.json
+google-services.json
+GoogleService-Info.plist
+
 # IDE
 .vscode/
 .idea/
